@@ -10,6 +10,7 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * João Victor dos Santos Nogueira 
 * Djair Augusto Galdino Soares
 * Gabriel Assis de Souza
+* Kaio Souza Oliveira Mayer
 
 ## Professor
 
