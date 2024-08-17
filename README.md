@@ -9,7 +9,7 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * João Pedro Peres Barbosa
 * João Victor dos Santos Nogueira 
 * Djair Augusto Galdino Soares
-* Nome completo do aluno 6
+* Gabriel Assis de Souza
 
 ## Professor
 
