@@ -1,16 +1,16 @@
-# Nome do projeto
+# C.I.T - Condomínio Inteligente
 
 Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 
 ## Integrantes
 
-* Luis Henrique Gonçalves Barbosa
-* Marcela Mendes Campos
-* João Pedro Peres Barbosa
-* João Victor dos Santos Nogueira 
 * Djair Augusto Galdino Soares
 * Gabriel Assis de Souza
+* João Pedro Peres Barbosa
+* João Victor dos Santos Nogueira 
 * Kaio Souza Oliveira Mayer
+* Luis Henrique Gonçalves Barbosa
+* Marcela Mendes Campos
 
 ## Professor
 
