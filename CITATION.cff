@@ -1,36 +1,34 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: C.I.T - Condomínio Inteligente
 authors:
-  - family-names: sobrenome do aluno 1
-    given-names: Nome do aluno 1 
-  - family-names: sobrenome do aluno 2
-    given-names: Nome do aluno 2 
-  - family-names: sobrenome do aluno 3
-    given-names: Nome do aluno 3 
-  - family-names: sobrenome do aluno 4
-    given-names: Nome do aluno 4 
-  - family-names: sobrenome do aluno 5
-    given-names: Nome do aluno 5 
+  - family-names: Augusto Galdino Soares
+    given-names: Djair
+  - family-names: Assis de Souza
+    given-names: Gabriel
+  - family-names: Peres Barbosa
+    given-names: João Pedro
   - family-names: dos Santos Nogueira
-    given-names: João Victor 
+    given-names: João Victor
+  - family-names: Souza Oliveira Mayer
+    given-names: Kaio
+  - family-names: Gonçalves Barbosa
+    given-names: Luis Henrique
+  - family-names: Mendes Campos
+    given-names: Marcela
 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Marques
+    given-names: Alexandre
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Boechat Seufitelli
+    given-names: Danilo
   - name-suffix: Professora
     affiliation: PUC Minas
-    family-names: Alonso Veloso
-    given-names: Eveline 
-  - name-suffix: Professora
-    affiliation: PUC Minas
-    family-names: Baroni De Carvalho
-    given-names: Juliana Amaral 
-  - name-suffix: Professora
-    affiliation: PUC Minas
-    family-names: De Brito
-    given-names: Aline Norberta
-  - name-suffix: Professora
-    affiliation: PUC Minas
-    family-names: Ribeiro De Souza
-    given-names: Joana Gabriela
+    family-names: Hanne Soares de Andrade
+    given-names: Michelle
     
 keywords:
     - 
