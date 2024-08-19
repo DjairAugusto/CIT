@@ -1,6 +1,7 @@
 # C.I.T - Condomínio Inteligente
 
-Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
+A aplicação C.I.T - Condomínio Inteligente é um software que possui o intuito de auxiliar na vida das organizações de condomínios residencias ao fornecer um meio de comunicação
+e interação entre a organização administrativa e os moradores, também visando a facilitação dos processos de transparência e uso dos espaços comuns através da possibilidade um contato direto e facilitado com o uso de um sistema computacional intuitivo e simples. 
 
 ## Integrantes
 
