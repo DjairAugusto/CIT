@@ -33,19 +33,18 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade Cató
 
 ---
 
-_**Resumo**. Escrever aqui o resumo. O resumo deve contextualizar rapidamente o trabalho, descrever seu objetivo e, ao final, 
-mostrar algum resultado relevante do trabalho (até 10 linhas)._
+O Projeto de Software CIT - Condomínio Inteligente foi desenvolvido na matéria Trabalho Interdiciplinar: Aplicações para Processos de Negócios no curso de Engenharia de Software na PUC Minas. O trabalho foi idealizado a partir das dores dos componentes do grupo ao olharem para os próprios condomínios e sentirem falta de um sistema para gerir o mesmo de forma mais eficiente entre a administração e os inquilinos. O objetivo do software é tratar essas dores trazendo um sistema que vai permitir a gestão do conjunto habitacional de forma automatizada pela administração, e os moradores, facilidade, transparência e comunicação.
 
 ---
 
 
 ## 1. Introdução
 
-Software de gerenciamento de condomínio
+Software de gerenciamento de condomínio.
 
 ### 1.1 Contextualização
 
-O trabalho se trata de uma maneira de gerenciar pequeno a grandes comdominios a nível de gerenciamento, para auxiliar a gerência e ser transparente a todos os moradoras.
+A plataforma Condomínio Inteligente foi pensada a partir dos ideais de gestão, organização e facilitação para moradores e administradores de condomínios. O objetivo é que o sistema possa auxiliar seus usuários, de maneira intuitiva e descomplicada, de um lado, na administração do conjunto habitacional e do outro, na informação, comunicação e transformação das atividades relacionadas ao residencial em processos simples, que podem ser realizados na palma da mão.
 
 ### 1.2 Problema
 
