@@ -41,13 +41,11 @@ mostrar algum resultado relevante do trabalho (até 10 linhas)._
 
 ## 1. Introdução
 
-_Apresente uma frase introdutória definindo o que será apresentado._
+Software de gerenciamento de condomínio
 
 ### 1.1 Contextualização
 
-_Na **contextualização**, o aluno deve dizer do que se trata o trabalho, em que área ou contexto se insere.
-A **contextualização** deve ser desenvolvida de algo mais genérico para algo mais específico. 
-A citação de pesquisas quantitativas é bem aceita aqui (corretamente referenciadas)._
+O trabalho se trata de uma maneira de gerenciar pequeno a grandes comdominios a nível de gerenciamento, para auxiliar a gerência e ser transparente a todos os moradoras.
 
 ### 1.2 Problema
 
