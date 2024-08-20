@@ -1,4 +1,4 @@
-# TITULO DO PROJETO
+CIT - Condomínio Inteligente 
 
 
 Djair Augusto Galdino Soares , djairaugusto08@gmail.com
@@ -48,10 +48,10 @@ A plataforma Condomínio Inteligente foi pensada a partir dos ideais de gestão,
 
 ### 1.2 Problema
 
-  No contexto de um condomínio, nossa aplicação tem como objetivo auxiliar na resolução dos problemas relacionados a comunicação e gestão.
+No contexto de um condomínio, nossa aplicação tem como objetivo auxiliar na resolução dos problemas relacionados a comunicação e gestão.
 No geral, são problemas de desencontros, uma vez que, neste contexto, um condomínio é um grande grupo de pessoas que vivem num local em comum enquanto
 lidam com suas próprias rotinas (sejam elas agitadas ou não).
-  Desta forma, é apresentado o cenário perfeito para uma comunicação falha e ineficiente, o que gera os mais diversos conflitos, como a falta de 
+Desta forma, é apresentado o cenário perfeito para uma comunicação falha e ineficiente, o que gera os mais diversos conflitos, como a falta de 
 transparência da gestão com os moradores, o desconhecimento das regras e acontecimentos do condomínio e as possíveis colisões de horário no que diz
 respeito ao uso dos espaços de uso comum.
 
@@ -77,8 +77,7 @@ Extra:
 
 ### 1.4 Justificativas
 
-_Mostre também as **justificativas** para o 
-desenvolvimento do seu trabalho e, caso deseje, destaque alguma contribuição do trabalho._
+O grupo percebeu a partir de pesquisas que em diversos condomínios e sistemas de gestão de condomínios que existe carência em questão de transparência e organização e que com um mundo completamente digital se precisa de um sistema de gestão mais eficiente que seja de fácil acessos aos moradores e também a própria administração.
 
 ## 2. Participantes do processo
 
