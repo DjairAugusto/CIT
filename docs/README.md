@@ -56,13 +56,23 @@ para tal._
 
 ### 1.3 Objetivo geral
 
-_O aluno deve escrever um pequeno parágrafo ou frase com o **objetivo geral** do trabalho. 
-O objetivo deve ser bem direto, específico e definido com verbos de ação (elaborar, propor, avaliar, comparar, desenvolver, etc.). No caso específico deste projeto, o objetivo deste trabalho é desenvolver um sistema para automação de processos para um problema específico._
+Nosso sistema tem como prioridade facilitar e melhorar a gestão de condôminios, atráves de funcionalidades que possibilitem uma melhor comunicação e transparência entre os residentes e a administração. Além disso, disponibilizar uma atualização em tempo real sobre as informações relevantes, como avisos, mudanças, regras, etc. aos moradores.
 
 #### 1.3.1 Objetivos específicos
 
-_Apresente também alguns (pelo menos 2) **objetivos específicos** dependendo de onde você vai querer 
-concentrar sua prática investigativa, ou como você irá aprofundar seu trabalho._
+Principais:
+* ⁠Reserva de área comum
+* ⁠Reclamação/ ouvidoria
+* ⁠Gestão de Encomendas
+* ⁠Gestão de Condomínio (prestação de contas)
+
+Extra:
+* ⁠Avisos
+* ⁠Contatos
+* ⁠Regras
+* ⁠Horários
+* ⁠Controle de gastos
+* ⁠Controle de moradores/funcionários
 
 ### 1.4 Justificativas
 
