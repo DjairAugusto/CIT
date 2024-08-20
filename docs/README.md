@@ -53,7 +53,8 @@ No geral, são problemas de desencontros, uma vez que, neste contexto, um condom
 lidam com suas próprias rotinas (sejam elas agitadas ou não).
 Desta forma, é apresentado o cenário perfeito para uma comunicação falha e ineficiente, o que gera os mais diversos conflitos, como a falta de 
 transparência da gestão com os moradores, o desconhecimento das regras e acontecimentos do condomínio e as possíveis colisões de horário no que diz
-respeito ao uso dos espaços de uso comum.
+respeito ao uso dos espaços de uso comum. Tudo isso não só afeta a vida dos moradores, mas também dificulta o trabalho do síndico, que fica sobrecarregado ao ter que lidar com
+todas essas situações sem auxílio e tendo pouco tempo para muitos problemas.
 
 ### 1.3 Objetivo geral
 
