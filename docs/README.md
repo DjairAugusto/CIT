@@ -49,10 +49,12 @@ O trabalho se trata de uma maneira de gerenciar pequeno a grandes comdominios a 
 
 ### 1.2 Problema
 
-_Em seguida o aluno deve caminhar a contextualização para descrever o **problema** que o trabalho trata. 
-O **problema** pode ser algo vivido em uma empresa específica. Neste caso, o aluno deve rapidamente apresentar 
-o cenário de problema da empresa. A empresa só deve ser citada explicitamente se o aluno tiver autorização 
-para tal._
+  No contexto de um condomínio, nossa aplicação tem como objetivo auxiliar na resolução dos problemas relacionados a comunicação e gestão.
+No geral, são problemas de desencontros, uma vez que, neste contexto, um condomínio é um grande grupo de pessoas que vivem num local em comum enquanto
+lidam com suas próprias rotinas (sejam elas agitadas ou não).
+  Desta forma, é apresentado o cenário perfeito para uma comunicação falha e ineficiente, o que gera os mais diversos conflitos, como a falta de 
+transparência da gestão com os moradores, o desconhecimento das regras e acontecimentos do condomínio e as possíveis colisões de horário no que diz
+respeito ao uso dos espaços de uso comum.
 
 ### 1.3 Objetivo geral
 
