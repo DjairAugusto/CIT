@@ -1,27 +1,29 @@
 # TITULO DO PROJETO
 
 
-**Nome completo do Aluno 1, email do aluno 1**
+Djair Augusto Galdino Soares , djairaugusto08@gmail.com
 
-**Nome completo do Aluno 2, email do aluno 2**
+Gabriel Assis de Souza, dunkrells23@gmail.com
 
-**Nome completo do Aluno 3, email do aluno 3**
+João Pedro Peres Barbosa, joaopedroperes06@gmail.com
 
-**Nome completo do Aluno 4, email do aluno 4**
+João Victor dos Santos Nogueira, joaovictor8853@gmail.com
 
-**Nome completo do Aluno 5, email do aluno 5**
+Kaio Souza Oliveira Mayer, kaiomayer2005@gmail.com
 
-**Nome completo do Aluno 6, email do aluno 6**
+Luís Henrique Gonçalves Barbosa, luishenrique.gbarbosa21@gmail.com
+
+Marcela Mendes Campos, marcelacamposm2@gmail.com
 
 ---
 
 Professores:
 
-** Prof. Nome do Prof 1 **
+Alexandre Marques
 
-** Prof. Nome do Prof 2 **
+Danilo Boechat Seufitelli
 
-** Prof. Nome do Prof 3 **
+Michelle Hanne Soares de Andrade
 
 ---
 
@@ -39,13 +41,11 @@ mostrar algum resultado relevante do trabalho (até 10 linhas)._
 
 ## 1. Introdução
 
-_Apresente uma frase introdutória definindo o que será apresentado._
+Software de gerenciamento de condomínio
 
 ### 1.1 Contextualização
 
-_Na **contextualização**, o aluno deve dizer do que se trata o trabalho, em que área ou contexto se insere.
-A **contextualização** deve ser desenvolvida de algo mais genérico para algo mais específico. 
-A citação de pesquisas quantitativas é bem aceita aqui (corretamente referenciadas)._
+O trabalho se trata de uma maneira de gerenciar pequeno a grandes comdominios a nível de gerenciamento, para auxiliar a gerência e ser transparente a todos os moradoras.
 
 ### 1.2 Problema
 
