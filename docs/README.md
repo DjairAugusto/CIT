@@ -1,27 +1,29 @@
 # TITULO DO PROJETO
 
 
-**Nome completo do Aluno 1, email do aluno 1**
+Djair Augusto Galdino Soares , djairaugusto08@gmail.com
 
-**Nome completo do Aluno 2, email do aluno 2**
+Gabriel Assis de Souza, dunkrells23@gmail.com
 
-**Nome completo do Aluno 3, email do aluno 3**
+João Pedro Peres Barbosa, joaopedroperes06@gmail.com
 
-**Nome completo do Aluno 4, email do aluno 4**
+João Victor dos Santos Nogueira, joaovictor8853@gmail.com
 
-**Nome completo do Aluno 5, email do aluno 5**
+Kaio Souza Oliveira Mayer, kaiomayer2005@gmail.com
 
-**Nome completo do Aluno 6, email do aluno 6**
+Luís Henrique Gonçalves Barbosa, luishenrique.gbarbosa21@gmail.com
+
+Marcela Mendes Campos, marcelacamposm2@gmail.com
 
 ---
 
 Professores:
 
-** Prof. Nome do Prof 1 **
+Alexandre Marques
 
-** Prof. Nome do Prof 2 **
+Danilo Boechat Seufitelli
 
-** Prof. Nome do Prof 3 **
+Michelle Hanne Soares de Andrade
 
 ---
 
