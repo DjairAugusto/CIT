@@ -62,19 +62,10 @@ Nosso sistema tem como prioridade facilitar e melhorar a gestão de condôminios
 
 #### 1.3.1 Objetivos específicos
 
-Principais:
-* ⁠Reserva de área comum
-* ⁠Reclamação/ ouvidoria
-* ⁠Gestão de Encomendas
-* ⁠Gestão de Condomínio (prestação de contas)
-
-Extra:
-* ⁠Avisos
-* ⁠Contatos
-* ⁠Regras
-* ⁠Horários
-* ⁠Controle de gastos
-* ⁠Controle de moradores/funcionários
+* ⁠Reserva de área comum: facilitar o agendamento de áreas de lazer, possibilitando a visualização da disponibilidade e os valores de forma prática e rápida.
+* ⁠Reclamação/ouvidoria: criar um espaço para que os moradores consigam dar feedback, sugestões ou reclamações para que a administração consiga tomar as providências necessárias.
+* ⁠Gestão de Encomendas: facilitar as entregas e os avisos sobre encomendas que cada residente possa recebar.
+* ⁠Gestão de Condomínio: conectar a administração com os residentes, por meio de prestação de contas, mural de avisos, área de contatos, listagem de regras, horários de funcionamentos e cadastro de moradores/funcionários.
 
 ### 1.4 Justificativas
 
