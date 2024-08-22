@@ -44,7 +44,7 @@ Software de gerenciamento de condomínio.
 
 ### 1.1 Contextualização
 
-A plataforma Condomínio Inteligente foi pensada a partir dos ideais de gestão, organização e facilitação para moradores e administradores de condomínios. O objetivo é que o sistema possa auxiliar seus usuários, de maneira intuitiva e descomplicada, de um lado, na administração do conjunto habitacional e do outro, na informação, comunicação e transformação das atividades relacionadas ao residencial em processos simples, que podem ser realizados na palma da mão.
+De acordo com as nossas pesquisas, percebemos que os condomínios possuem diversos problemas relacionados tanto à gestão administrativa quanto à financeira. Visto que, segundo a pesquisa Panorama dos Condomínios Brasileiros indicou que 25,3% dos entrevistados consideram a gestão financeira um problema. Como consequência, ponderamos cuidadosamente e chegamos à conclusão de que isso poderia ser resolvido facilmente através de inserção de tecnologias nos condomínios. 
 
 ### 1.2 Problema
 
@@ -137,7 +137,7 @@ http://portal.pucminas.br/imagedb/documento/DOC_DSC_NOME_ARQUI20160217102425.pdf
 
 **[1.5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
 
-
+**[1.6]** - DAMASCENA, Breno. Gestão financeira é o maior desafio enfrentado por condomínios brasileiros. ESTADÃO, São Paulo, 30 de Março de 2023. Disponível em: <https://imoveis.estadao.com.br/noticias/gestao-financeira-e-o-maior-desafio-enfrentado-por-condominios-brasileiros/>. Acesso em: 22 ago. 2024.
 
 # APÊNDICES
 
