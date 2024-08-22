@@ -11,7 +11,7 @@ João Victor dos Santos Nogueira, joaovictor8853@gmail.com
 
 Kaio Souza Oliveira Mayer, kaiomayer2005@gmail.com
 
-Luís Henrique Gonçalves Barbosa, luishenrique.gbarbosa21@gmail.com
+Luis Henrique Gonçalves Barbosa, luishenrique.gbarbosa21@gmail.com
 
 Marcela Mendes Campos, marcelacamposm2@gmail.com
 
