@@ -44,7 +44,7 @@ Software de gerenciamento de condomínio.
 
 ### 1.1 Contextualização
 
-De acordo com as nossas pesquisas, percebemos que os condomínios possuem diversos problemas relacionados tanto à gestão administrativa quanto à financeira. Visto que, segundo a pesquisa Panorama dos Condomínios Brasileiros indicou que 25,3% dos entrevistados consideram a gestão financeira um problema. Como consequência, ponderamos cuidadosamente e chegamos à conclusão de que isso poderia ser resolvido facilmente através de inserção de tecnologias nos condomínios. 
+De acordo com as nossas pesquisas, percebemos que os condomínios possuem diversos problemas relacionados tanto à gestão administrativa quanto à financeira. Visto que, segundo a pesquisa Panorama dos Condomínios Brasileiros indicou que 25,3% dos entrevistados consideram a gestão financeira um problema. Como consequência, ponderamos cuidadosamente e chegamos à conclusão de que isso poderia ser resolvido facilmente através de inserção de softwares nos condomínios. 
 
 ### 1.2 Problema
 
