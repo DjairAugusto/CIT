@@ -73,7 +73,17 @@ O grupo percebeu a partir de pesquisas que em diversos condomínios e sistemas d
 
 ## 2. Participantes do processo
 
-_Apresente aqui os perfis dos usuários-chave do sistema. Diversas são as informações que podem ser relevantes para a definição dos perfis dos usuários, tais como idade, gênero, aspectos culturais, nível de educação, entre outros. A pesquisa de mercado pode ser uma ferramenta poderosa para se identificar e caracterizar os perfis de usuários. Apresente claramente o papel a ser desempenhado por cada usuário._
+Síndico/Gestão
+
+Perfil: Geralmente adultos com idade variando entre 30 e 60 anos, com um nível de educação que pode variar desde ensino médio até ensino superior, frequentemente em áreas relacionadas à administração ou áreas afins.
+Aspectos Culturais: Podem ter diferentes níveis de familiaridade com tecnologia, dependendo da sua formação e experiência profissional.
+Papel: Responsável pela administração geral do condomínio, incluindo a gestão financeira, organização de eventos, e manutenção das áreas comuns. O síndico precisa de ferramentas que facilitem a comunicação com os moradores, a gestão das atividades e a transparência nas decisões.
+
+Moradores
+
+Perfil: Variedade de idades, desde jovens adultos até idosos, com níveis diversos de educação e ocupações. Os perfis culturais e tecnológicos podem variar amplamente.
+Aspectos Culturais: Diferentes graus de familiaridade com tecnologia e variabilidade nas expectativas em relação à administração do condomínio.
+Papel: São os principais usuários do sistema para obter informações sobre o condomínio, fazer reservas, registrar reclamações e participar da comunicação com a administração. Necessitam de uma interface intuitiva que forneça informações claras e atualizadas sobre o condomínio.
 
 ## 3. Modelagem do processo de negócio
 
