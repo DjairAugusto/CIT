@@ -89,11 +89,19 @@ Papel: São os principais usuários do sistema para obter informações sobre o 
 
 ### 3.1. Análise da situação atual
 
-_Apresente uma descrição textual de como os sistemas atuais resolvem o problema que se propõe a resolver.  Caso sua proposta seja inovadora e não existam processos claramente definidos, **apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente**, mesmo que não se utilize tecnologia computacional._
+Atualmente, a gestão de condomínios enfrenta diversos desafios, principalmente relacionados à comunicação ineficaz e à falta de transparência entre a administração e os moradores. Muitos condomínios utilizam métodos tradicionais, como quadros de avisos físicos, reuniões presenciais, e registros manuais de reservas de áreas comuns, além de gestão financeira feita através de planilhas e documentos impressos. Esses processos manuais são suscetíveis a erros, atrasos e falhas de comunicação, resultando em insatisfações tanto para os moradores quanto para a administração, além de dificultar o acesso em tempo real às informações e comprometer a precisão dos dados. A falta de integração entre diferentes processos, como a gestão de encomendas, a comunicação de avisos e a resolução de reclamações, também é um problema comum, deixando a administração sobrecarregada e os moradores sem um canal eficiente para se comunicar.
+
+Sistemas que atualmente tentam resolver esses problemas muitas vezes são fragmentados, sem uma interface unificada que atenda às necessidades tanto dos moradores quanto da administração. Esses sistemas não conseguem proporcionar uma experiência integrada, o que limita a sua eficácia na gestão condominial.
 
 ### 3.2. Descrição geral da proposta de solução
 
-_Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias._
+A proposta do software CIT - Condomínio Inteligente é fornecer uma solução integrada que aborde as principais necessidades de gestão de condomínios, melhorando a comunicação, a transparência e a eficiência dos processos. O CIT busca conectar diretamente a administração com os moradores por meio de uma plataforma digital que centraliza todas as operações relevantes, como a reserva de áreas comuns, a gestão de encomendas, a comunicação de avisos e a prestação de contas.
+
+O sistema é projetado para ser intuitivo e acessível, garantindo que todos os perfis de usuários, independentemente do seu nível de familiaridade com a tecnologia, possam utilizá-lo com facilidade. Isso inclui interfaces claras para que os moradores possam acessar informações em tempo real, enviar feedbacks, registrar reclamações e realizar reservas, tudo de maneira prática e rápida.
+
+A proposta do CIT está alinhada com as estratégias e objetivos de negócios dos condomínios, que buscam eficiência operacional e satisfação dos residentes. A centralização das informações em um único sistema reduz a carga de trabalho do síndico e da equipe de gestão, permitindo que se concentrem em tarefas mais estratégicas, enquanto os moradores desfrutam de uma experiência mais transparente e organizada.
+
+As oportunidades de melhorias incluem a automação de processos antes realizados manualmente, a eliminação de erros decorrentes de falhas humanas, e o aumento da satisfação dos moradores através de uma comunicação mais eficaz e da transparência nas operações do condomínio. 
 
 ### 3.3. Modelagem dos processos
 
