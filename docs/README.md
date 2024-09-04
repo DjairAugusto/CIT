@@ -40,7 +40,9 @@ O Projeto de Software CIT - Condomínio Inteligente foi desenvolvido na matéria
 
 ## 1. Introdução
 
-Software de gerenciamento de condomínio.
+Desde os primórdios, a humanidade tende a viver em comunidades, nas quais os integrantes compartilham recursos e espaços para garantir segurança e organização. Com a evolução humana, houve também o crescimento das cidades e o surgimento dos condomínios, trazendo a gestão coletiva como algo essencial para o bem-estar dos moradores. Entretanto, com a rápida evolução da tecnologia, os métodos tradicionais e arcaicos de administração passaram a não atender mais às necessidades de seus usuários.
+
+Dito isso, para que uma ideia primordial possa acompanhar a evolução e enfrentar seus desafios, a tecnologia apresenta soluções modernas. O CIT - Condomínio Inteligente foi desenvolvido com o principal objetivo de facilitar e integrar uma melhor gestão, promovendo uma comunicação clara e uma administração transparente e que traga bons impactos.
 
 ### 1.1 Contextualização
 
