@@ -1,7 +1,6 @@
-# C.I.T - Condomínio Inteligente
+# CIT - Condomínio Inteligente
 
-A aplicação C.I.T - Condomínio Inteligente é um software que possui o intuito de auxiliar na vida das organizações de condomínios residencias ao fornecer um meio de comunicação
-e interação entre a organização administrativa e os moradores, também visando a facilitação dos processos de transparência e uso dos espaços comuns através da possibilidade um contato direto e facilitado com o uso de um sistema computacional intuitivo e simples. 
+A aplicação CIT - Condomínio Inteligente é um software desenvolvido para otimizar a gestão de condomínios residenciais, promovendo uma comunicação eficiente entre a administração e os moradores. O sistema facilita a transparência nos processos administrativos, o uso das áreas comuns e a resolução de questões cotidianas, oferecendo uma interface simples e intuitiva. Além disso, busca automatizar tarefas que tradicionalmente demandam muito tempo, garantindo mais eficiência na gestão, organização e na comunicação interna do condomínio.
 
 ## Integrantes
 
