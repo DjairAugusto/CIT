@@ -52,6 +52,12 @@ Entretanto, a administração de condomínios enfrenta diversos desafios, princi
 
 Com base nesses dados, identificamos que a inserção de softwares de gestão pode ser uma solução viável para resolver esses problemas. Ferramentas tecnológicas têm se mostrado essenciais em diversos setores, e o setor condominial não é diferente. O CIT - Condomínio Inteligente foi projetado com o objetivo de facilitar a comunicação, promover maior transparência nas finanças e otimizar a utilização dos recursos e espaços comuns, oferecendo uma solução integrada e de fácil acesso para moradores e gestores.
 
+[Como a Tecnologia Está Transformando a Gestão de Condomínios](https://www.sindiconet.com.br/informese/tecnologias-na-gestao-condominial-noticias-espaco-noknox#:~:text=A%20tecnologia%20est%C3%A1%20mudando%20o%20jeito%20de%20gerenciar%20condom%C3%ADnios%2C%20pois,mais%20informa%C3%A7%C3%B5es%20%C3%A0%20sua%20disposi%C3%A7%C3%A3o.)
+
+[Panorama dos Condomínios Brasileiros](https://blog.townsq.com.br/gestao-condominial/panorama-dos-condominios-brasileiros/)
+
+[Os Principais Desafios de Gestão e Administração de Condomínios](https://condo.news/administracao-de-condominio/os-principais-desafios-de-gestao-e-administracao-de-condominios/)
+
 ![Panorama](./images/PanoramaCondomíniosBrasileiros.png)
 
 
