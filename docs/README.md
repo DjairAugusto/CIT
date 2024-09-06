@@ -84,7 +84,7 @@ Desenvolver um sistema integrado para a gestão de condomínios que visa otimiza
 
 ### 1.4 Justificativas
 
-O grupo percebeu a partir de pesquisas que em diversos condomínios e sistemas de gestão de condomínios que existe carência em questão de transparência e organização e que com um mundo completamente digital se precisa de um sistema de gestão mais eficiente que seja de fácil acessos aos moradores e também a própria administração.
+A análise dos sistemas de gestão de condomínios revela uma carência significativa em termos de transparência e organização. Em um mundo cada vez mais digital, os métodos tradicionais de administração, frequentemente baseados em registros manuais e comunicação física, não atendem mais às necessidades modernas. A falta de ferramentas digitais eficazes para a comunicação e a gestão interna gera problemas como atrasos, erros e insatisfação dos moradores. Portanto, o desenvolvimento de um sistema de gestão condominial mais eficiente e acessível é fundamental para promover uma administração mais organizada e transparente, beneficiando tanto os moradores quanto a administração do condomínio.
 
 ## 2. Participantes do processo
 
@@ -101,6 +101,8 @@ Aspectos Culturais: Diferentes graus de familiaridade com tecnologia e variabili
 Papel: São os principais usuários do sistema para obter informações sobre o condomínio, fazer reservas, registrar reclamações e participar da comunicação com a administração. Necessitam de uma interface intuitiva que forneça informações claras e atualizadas sobre o condomínio.
 
 ## 3. Modelagem do processo de negócio
+
+A modelagem do processo de negócio é uma etapa crucial para compreender e aprimorar as operações de qualquer organização. No contexto do desenvolvimento do software CIT - Condomínio Inteligente, essa modelagem visa identificar, analisar e redesenhar os processos existentes para garantir que o sistema proposto atenda de maneira eficaz às necessidades de gestão dos condomínios. Esta seção apresenta uma visão detalhada da situação atual, explorando como os métodos tradicionais de gestão são executados e quais são suas limitações. Em seguida, descreve a proposta de solução, abordando como o software CIT pode transformar esses processos, oferecendo uma abordagem mais integrada e eficiente para a administração condominial. O objetivo é mostrar como o novo sistema pretende superar os desafios identificados, melhorar a comunicação e a transparência, e proporcionar uma gestão mais eficiente e satisfatória para todos os envolvidos.
 
 ### 3.1. Análise da situação atual
 
