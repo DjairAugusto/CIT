@@ -64,24 +64,23 @@ Com base nesses dados, identificamos que a inserção de softwares de gestão po
 
 ### 1.2 Problema
 
-No contexto de um condomínio, nossa aplicação tem como objetivo auxiliar na resolução dos problemas relacionados a comunicação e gestão.
-No geral, são problemas de desencontros, uma vez que, neste viés, um condomínio é um grande grupo de pessoas que vivem em um local em comum, enquanto
-lidam com suas próprias rotinas agitadas.
-Desta forma, é apresentado o cenário perfeito para uma comunicação falha e ineficiente, o que gera os mais diversos conflitos, como a falta de 
-transparência da gestão com os moradores, o desconhecimento das regras e acontecimentos do condomínio e as possíveis colisões de horário no que diz
-respeito ao uso dos espaços de uso comum. Tudo isso não só afeta a vida dos moradores, mas também dificulta o trabalho do síndico, que fica sobrecarregado ao ter que lidar com
-todas essas situações sem auxílio, uma vez que ele possui sua propria rotina particular que pode sim entrar em conflíto decorrente de todas as questões já levantadas.
+Em um condomínio, a gestão eficiente é crucial para garantir o bem-estar dos moradores e o bom funcionamento das áreas comuns. No entanto, a realidade atual revela uma série de desafios significativos relacionados à comunicação e administração. Em um ambiente onde um grupo diversificado de pessoas compartilha espaços e recursos, as falhas na comunicação frequentemente se transformam em problemas graves.
+
+A falta de transparência entre a administração e os moradores pode levar a mal-entendidos sobre regras, alterações nas políticas do condomínio e horários de uso das áreas comuns. Esses desencontros não apenas geram conflitos entre os residentes, mas também sobrecarregam o síndico, que deve lidar com essas questões sem um sistema adequado de suporte. A administração enfrenta dificuldades para manter os moradores informados e gerenciar eficientemente as reservas de espaços comuns, além de lidar com reclamações e feedbacks de maneira estruturada. Sem uma ferramenta que centralize essas funções, a gestão torna-se ineficaz, resultando em uma experiência insatisfatória para todos os envolvidos.
 
 ### 1.3 Objetivo geral
 
-Nosso sistema tem como prioridade facilitar e melhorar a gestão de condôminios, atráves de funcionalidades que possibilitem uma melhor comunicação e transparência entre os residentes e a administração. Além disso, disponibilizar uma atualização em tempo real sobre as informações relevantes, como avisos, mudanças, regras, etc. aos moradores.
+Desenvolver um sistema integrado para a gestão de condomínios que visa otimizar a comunicação e a transparência entre a administração e os moradores, automatizando processos administrativos e financeiros, facilitando a gestão das áreas comuns e promovendo um ambiente mais organizado e eficiente. O sistema será projetado para melhorar a interação entre os residentes e a administração, oferecer soluções práticas para a gestão de recursos e promover uma maior acessibilidade às informações relevantes para todos os envolvidos.
 
 #### 1.3.1 Objetivos específicos
 
-* ⁠Reserva de área comum: facilitar o agendamento de áreas de lazer, possibilitando a visualização da disponibilidade e os valores de forma prática e rápida.
-* ⁠Reclamação/ouvidoria: criar um espaço para que os moradores consigam dar feedback, sugestões ou reclamações para que a administração consiga tomar as providências necessárias.
-* ⁠Gestão de Encomendas: facilitar as entregas e os avisos sobre encomendas que cada residente possa recebar.
-* ⁠Gestão de Condomínio: conectar a administração com os residentes, por meio de prestação de contas, mural de avisos, área de contatos, listagem de regras, horários de funcionamentos e cadastro de moradores/funcionários.
+* Facilitar a comunicação entre administração e moradores: Criar um canal eficiente para feedbacks, sugestões e reclamações, publicar comunicados importantes e fornecer informações de contato claras e acessíveis.
+
+* Otimizar o gerenciamento das áreas comuns e recursos do condomínio: Implementar funcionalidades para a visualização e reserva de áreas comuns, gerenciar o recebimento e retirada de encomendas, e controlar o acesso de visitantes ao condomínio.
+
+* Automatizar o controle financeiro e administrativo: Desenvolver sistemas para o registro e controle financeiro do condomínio, emissão de boletos, e gestão dos dados dos moradores, incluindo veículos e animais de estimação.
+
+* Aumentar a transparência e o acesso à informação: Oferecer acesso fácil e atualizado às regras e normas do condomínio, gerenciar assembleias e suas atas, e registrar e gerenciar itens encontrados ou perdidos no condomínio.
 
 ### 1.4 Justificativas
 
