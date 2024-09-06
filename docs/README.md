@@ -52,7 +52,7 @@ Entretanto, a administração de condomínios enfrenta diversos desafios, princi
 
 Com base nesses dados, identificamos que a inserção de softwares de gestão pode ser uma solução viável para resolver esses problemas. Ferramentas tecnológicas têm se mostrado essenciais em diversos setores, e o setor condominial não é diferente. O CIT - Condomínio Inteligente foi projetado com o objetivo de facilitar a comunicação, promover maior transparência nas finanças e otimizar a utilização dos recursos e espaços comuns, oferecendo uma solução integrada e de fácil acesso para moradores e gestores.
 
-![Descrição da imagem](./imagens/Panorama Condomínios Braisleiros.png)
+![Panorama](./images/Panorama Condomínios Braisleiros.png)
 
 
 ### 1.2 Problema
