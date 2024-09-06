@@ -88,7 +88,7 @@ A análise dos sistemas de gestão de condomínios revela uma carência signific
 
 ## 2. Participantes do processo
 
-Síndico/Gestão
+**Síndico/Gestão**
 
 Perfil: Geralmente adultos com idade variando entre 30 e 60 anos, com um nível de educação que pode variar desde ensino médio até ensino superior, frequentemente em áreas relacionadas à administração ou áreas afins.
 
@@ -96,7 +96,7 @@ Aspectos Culturais: Podem ter diferentes níveis de familiaridade com tecnologia
 
 Papel: Responsável pela administração geral do condomínio, incluindo a gestão financeira, organização de eventos, e manutenção das áreas comuns. O síndico precisa de ferramentas que facilitem a comunicação com os moradores, a gestão das atividades e a transparência nas decisões.
 
-Moradores
+**Moradores**
 
 Perfil: Variedade de idades, desde jovens adultos até idosos, com níveis diversos de educação e ocupações. Os perfis culturais e tecnológicos podem variar amplamente.
 
