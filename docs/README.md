@@ -33,20 +33,25 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade Cató
 
 ---
 
-O Projeto de Software CIT - Condomínio Inteligente foi desenvolvido na matéria Trabalho Interdiciplinar: Aplicações para Processos de Negócios no curso de Engenharia de Software na PUC Minas. O trabalho foi idealizado a partir das dores dos componentes do grupo ao olharem para os próprios condomínios e sentirem falta de um sistema para gerir o mesmo de forma mais eficiente entre a administração e os inquilinos. O objetivo do software é tratar essas dores trazendo um sistema que vai permitir a gestão do conjunto habitacional de forma automatizada pela administração, e os moradores, facilidade, transparência e comunicação.
+O projeto CIT - Condomínio Inteligente foi desenvolvido na disciplina de Trabalho Interdisciplinar: Aplicações para Processos de Negócios no curso de Engenharia de Software da PUC Minas. A ideia surgiu a partir da experiência dos membros do grupo, que identificaram a necessidade de um sistema mais eficiente para a gestão de condomínios. O objetivo do software é automatizar processos administrativos, promover uma comunicação clara entre administração e moradores e garantir maior transparência nas decisões e no uso das áreas comuns. Espera-se que o sistema traga facilidade e eficiência tanto para a administração quanto para os residentes, otimizando o gerenciamento do condomínio e melhorando a convivência.
 
 ---
 
 
 ## 1. Introdução
 
-Desde os primórdios, a humanidade tende a viver em comunidades, nas quais os integrantes compartilham recursos e espaços para garantir segurança e organização. Com a evolução humana, houve também o crescimento das cidades e o surgimento dos condomínios, trazendo a gestão coletiva como algo essencial para o bem-estar dos moradores. Entretanto, com a rápida evolução da tecnologia, os métodos tradicionais e arcaicos de administração passaram a não atender mais às necessidades de seus usuários.
+Desde os primórdios, a humanidade tem vivido em comunidades, onde os integrantes compartilham recursos e espaços em busca de segurança e organização. Com o passar do tempo e a urbanização crescente, o modelo de convivência mudou drasticamente. Hoje, grande parte da população reside em cidades, muitas vezes em condomínios, que se tornaram uma solução comum para abrigar grandes grupos em espaços limitados. Esses conjuntos habitacionais oferecem facilidades e segurança, mas também trazem desafios de convivência e administração.
 
-Dito isso, para que uma ideia primordial possa acompanhar a evolução e enfrentar seus desafios, a tecnologia apresenta soluções modernas. O CIT - Condomínio Inteligente foi desenvolvido com o principal objetivo de facilitar e integrar uma melhor gestão, promovendo uma comunicação clara e uma administração transparente e que traga bons impactos.
+A vida em condomínio, com dezenas ou até centenas de pessoas compartilhando áreas comuns e seguindo regras coletivas, pode gerar conflitos e dificuldades de gestão. A falta de uma comunicação clara, a transparência limitada em relação às finanças e o uso desorganizado de espaços comuns são apenas alguns dos problemas que surgem quando tantas pessoas vivem próximas. Para enfrentar esses desafios e acompanhar a evolução tecnológica, é necessário um sistema moderno e eficiente. O CIT - Condomínio Inteligente foi criado com o objetivo de automatizar a gestão, promover uma comunicação clara entre moradores e administração e trazer mais transparência para o dia a dia dos condomínios, ajudando a minimizar conflitos e melhorar a convivência.
 
 ### 1.1 Contextualização
 
-De acordo com as nossas pesquisas, percebemos que os condomínios possuem diversos problemas relacionados tanto à gestão administrativa quanto à financeira. Visto que, segundo a pesquisa Panorama dos Condomínios Brasileiros indicou que 25,3% dos entrevistados consideram a gestão financeira um problema. Como consequência, ponderamos cuidadosamente e chegamos à conclusão de que isso poderia ser resolvido facilmente através de inserção de softwares nos condomínios. 
+Os condomínios residenciais são uma realidade cada vez mais presente nas grandes cidades, uma vez que a verticalização dos espaços urbanos tem sido a solução encontrada para abrigar a crescente população urbana. De acordo com o Instituto Brasileiro de Geografia e Estatística (IBGE), mais de 85% da população brasileira vive em áreas urbanas, e grande parte dessas pessoas reside em prédios e condomínios. Com isso, a gestão desses ambientes torna-se um fator essencial para garantir o bom convívio e a manutenção adequada dos espaços compartilhados.
+
+Entretanto, a administração de condomínios enfrenta diversos desafios, principalmente no que diz respeito à comunicação entre moradores e administração, à transparência na prestação de contas e à utilização das áreas comuns. Segundo o Panorama dos Condomínios Brasileiros, 25,3% dos entrevistados consideram a gestão financeira um problema, enquanto 32% relatam dificuldades relacionadas à organização de serviços e à comunicação entre moradores e síndicos. Esses números evidenciam a necessidade de modernizar os processos de administração condominial, tornando-os mais eficientes e acessíveis para todos os envolvidos.
+
+Com base nesses dados, identificamos que a inserção de softwares de gestão pode ser uma solução viável para resolver esses problemas. Ferramentas tecnológicas têm se mostrado essenciais em diversos setores, e o setor condominial não é diferente. O CIT - Condomínio Inteligente foi projetado com o objetivo de facilitar a comunicação, promover maior transparência nas finanças e otimizar a utilização dos recursos e espaços comuns, oferecendo uma solução integrada e de fácil acesso para moradores e gestores.
+
 
 ### 1.2 Problema
 
