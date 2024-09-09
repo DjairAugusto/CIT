@@ -1,41 +1,8 @@
 ### 3.3.5 Processo 5 – Processo Financeiro(Inserir boleto e financeiro)
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
-Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
-
 ![Exemplo de um Modelo BPMN do PROCESSO 1](images/finacero.jpeg "Modelo BPMN do Processo 1.")
 
 #### Detalhamento das atividades
-
-_Descreva aqui cada uma das propriedades das atividades do processo 5. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
-
-_Os tipos de dados a serem utilizados são:_
-
-_* **Consultar boletos** - área com os tipos de boletos que serão pagos_
-
-_* **Emitir boletos** - função para emitir boletos para moradores_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
-
 
 **Nome da atividade 1**
 
