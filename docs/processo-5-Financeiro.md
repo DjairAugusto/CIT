@@ -1,4 +1,4 @@
-### 3.3.5 Processo 5 – NOME DO PROCESSO
+### 3.3.5 Processo 5 – Processo Financeiro(Inserir boleto e financeiro)
 
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
 Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
@@ -12,9 +12,9 @@ Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
 _Os tipos de dados a serem utilizados são:_
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+_* **Consultar boletos** - área com os tipos de boletos que serão pagos_
 
-_* **Caixa de texto** - campo texto de uma linha_
+_* **Emitir boletos** - função para emitir boletos para moradores_
 
 _* **Número** - campo numérico_
 
