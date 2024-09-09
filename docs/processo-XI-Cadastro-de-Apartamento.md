@@ -1,4 +1,4 @@
-### 3.3.11 Processo XI – Cadastro de Apartamento
+### 3.3.11 Processo 11 – Cadastro de Apartamento
 
 ![Modelo BPMN do PROCESSO 11](images/processo-cadastro-de-moradores.png "Modelo BPMN do Processo 11.")
 
