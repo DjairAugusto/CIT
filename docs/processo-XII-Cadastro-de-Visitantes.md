@@ -4,7 +4,7 @@
 
 #### Detalhamento das atividades
 
-**Nome da atividade 1**
+**Inserir quantidade de visitantes**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
