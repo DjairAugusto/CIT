@@ -1,4 +1,4 @@
-### 3.3.5 Processo 5 – Mural de Avisos
+### 3.3.5 Processo 6 – Mural de Avisos
 
 ![Modelo BPMN do Processo de Mural de Avisos](images/processo-mural-de-avisos.png "Modelo BPMN do Processo 6.")
 
