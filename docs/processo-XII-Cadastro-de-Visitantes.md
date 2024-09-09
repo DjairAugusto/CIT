@@ -8,27 +8,34 @@
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| Número de visitantes | Número  |     mínimo 1 morador           |       1            |
 
 
-**Nome da atividade 2**
+
+**Inserir nome dos visitantes**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| Nome             | Área de Texto  |                |    mínimo de 2 caracteres               |
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+**Escolher  quantidade de automóveis**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Número de Automóveis | Número  |     mínimo 1 morador           |       1            |
+
+**Preencher dados de cada automóvel**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Tipo             | Área de Texto  |       mínimo de 2 caracteres         |    Moto, Carro               |
+|  Modelo     |      Área de Texto            |        mínimo de 1 caracter        |                   |
+|   Placa       |         Área de Texto         |         mínimo de 7 caracteres       |                   |
+|   Cor      |         Área de Texto         |         mínimo de 2 caracteres       |                   |
+
+**Definir dia e horário para visita**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| dia   e horário aproximado        | Dados e Hora   | formato data e hora |                |
+
