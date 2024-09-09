@@ -3,6 +3,7 @@
 ![Modelo BPMN do PROCESSO 13](images/processo-cadastro-do-condominio.png "Modelo BPMN do Processo 13.")
 
 **Sub Processo - Cadastro do Síndico**
+
 ![Modelo BPMN do SUBPROCESSO](images/subprocesso-cadastro-do-sindico.png "Modelo BPMN do SubProcesso.")
 
 #### Detalhamento das atividades
