@@ -1,9 +1,9 @@
-### 3.3.4 Processo 4 – NOME DO PROCESSO
+### 3.3.4 Processo 4 – Prestação de contas
 
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 4. 
 Em seguida, apresente o modelo do processo 4, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 4](images/process.png "Modelo BPMN do Processo 4.")
+![Exemplo de um Modelo BPMN do PROCESSO 4](images/Processos de prestação de conta.png "Modelo BPMN do Processo 4.")
 
 
 #### Detalhamento das atividades
@@ -42,26 +42,23 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| Nome            | Caixa de Texto   | formato de e-mail |                |
+| Preço           | Numero           | mínimo de 8 caracteres |           |
+| Responsavel     | Caixa de Texto   | mínimo de 3 caracteres |           |
+| Tipo            | eleção única     | Pelo menos uma opção selecionada |  Serviço     |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| Anexar Provas        | Coletar provas                 | default           |
 
 
 **Nome da atividade 2**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| Provas          | Arquivos         | Aquivo de imagem ou PDF|                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| Visualizar relatorio |  Gera relatorio                | default           |
+| Salver relatorio     |  Finalizar processo            | default           |
