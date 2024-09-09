@@ -25,6 +25,7 @@
 **Inserir Reclamação**
 
 | **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
+| ---             | ---              | ---                   | ---               |
 | Reclamação      | Área de Texto    | Mínimo de 10 Palavras | NULO              |
 | Anexo           | Imagens          | Nenhuma               | NULO              |
 
@@ -35,6 +36,7 @@
 **Inserir Tipo e Informações**
 
 | **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
+| ---             | ---              | ---                   | ---               |
 | Tipo            | Caixa de Texto   | Mais de 4 letras      | NULO              |
 | Reclamação      | Área de Texto    | Mínimo de 10 Palavras | NULO              |
 | Anexo           | Imagens          | Nenhuma               | NULO              |
@@ -46,6 +48,7 @@
 **Responder o Ticket**
 
 | **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
+| ---             | ---              | ---                   | ---               |
 | Resposta        | Área de Texto    | Mínimo de 10 Palavras | NULO              |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
