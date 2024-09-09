@@ -1,9 +1,7 @@
-### 3.3.5 Processo 5 – NOME DO PROCESSO
+### 3.3.13 Processo 13 – Cadastro do Condomínio
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
-Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
-
-![Exemplo de um Modelo BPMN do PROCESSO 1](images/process.png "Modelo BPMN do Processo 1.")
+![Modelo BPMN do PROCESSO 13](images/processo-cadastro-do-condominio.png "Modelo BPMN do Processo 13.")
+![Modelo BPMN do SUBPROCESSO](images/subprocesso-cadastro-do-sindico.png "Modelo BPMN do SubProcesso.")
 
 #### Detalhamento das atividades
 
