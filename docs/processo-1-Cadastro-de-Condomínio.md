@@ -25,9 +25,8 @@ O Cadastro do Condomínio é o processo inicial essencial para quem deseja come�
 
 Este processo de cadastro é fundamental para configurar o condomínio no sistema e garantir que todas as informações estejam corretamente alinhadas para a gestão eficiente e segura do ambiente condominial.
 
-![Modelo BPMN do PROCESSO 13](images/processo-cadastro-do-condominio.png "Modelo BPMN do Processo 13.")
-
 **Oportunidades de Melhoria no Cadastro do Condomínio**
+
 **Desafios Anteriores:**
 
 * Muitos condomínios não utilizavam plataformas digitais adequadas ou usavam plataformas genéricas que não definem permissões específicas, resultando em confusão e gestão ineficiente.
@@ -39,6 +38,8 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 * Formulário Detalhado: Coleta informações completas e específicas, facilitando a definição precisa de dados do condomínio e de administradores.
 * Geração Automática de Tokens: Tokens são gerados automaticamente para moradores e funcionários, garantindo acesso adequado e segurança.
 * Controle de Permissões: Permissões são definidas de forma integrada pelo síndico, evitando confusões e melhorando a gestão.
+
+![Modelo BPMN do PROCESSO 13](images/processo-cadastro-do-condominio.png "Modelo BPMN do Processo 13.")
 
 #### Detalhamento das atividades
 
