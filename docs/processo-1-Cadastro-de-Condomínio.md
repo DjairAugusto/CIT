@@ -39,7 +39,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 * Geração Automática de Tokens: Tokens são gerados automaticamente para moradores e funcionários, garantindo acesso adequado e segurança.
 * Controle de Permissões: Permissões são definidas de forma integrada pelo síndico, evitando confusões e melhorando a gestão.
 
-![Modelo BPMN do PROCESSO 1](images/processo-cadastro-do-condominio.png "Modelo BPMN do Processo 13.")
+![Modelo BPMN do PROCESSO 1](images/processo-cadastro-do-condominio.png "Modelo BPMN do Processo 1.")
 
 #### Detalhamento das atividades
 **Atividade 1: Acessar sistema**
