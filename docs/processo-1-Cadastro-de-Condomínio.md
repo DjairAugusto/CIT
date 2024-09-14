@@ -43,61 +43,54 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
-
-_Os tipos de dados a serem utilizados são:_
-
-_* **Área de texto** - campo texto de múltiplas linhas_
-
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
-
-
-**Nome da atividade 1**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+**Atividade 1: Acessar sistema**
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| [Fazer login] | Processo de Login  | default   |default
+| [Usar Token]       |          Processo de Token               |                   |
+| [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
 
 
-**Nome da atividade 2**
+**Atividade 2: Preencher Formulário de Cadastro**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| nome do condomínio | 	Caixa de Texto  |                |                   |
+|  número de blocos  |   Número   |  valor inteiro positivo   |                   |
+|  andares  |    Número   |                |  valor inteiro positivo   |
+|  apartamentos por andar  |   Número   | valor inteiro positivo  |                   |
+
+**Definição de Outros Empregados**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Quantidade de funcionários | Seleção Única  |     lista de números           |     |    
+| Cargo dos empregados | Seleção Única		  | lista de cargos possíveis |                   |
+
+**Campos de Marcadores para Definições de Permissões:**
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Editar Área Comum | [tipo de dados]  |                |                   |
+|  Editar Entregas |                  |                |                   |
+|  Editar Ouvidoria |                  |                |                   |
+|  Editar Entregas e Encomendas |                  |                |                   |
+|  Editar Prestação de Contas |                  |                |                   |
+|  Editar Financeiro |                  |                |                   |
+|  Editar Mural de Avisos |                  |                |                   |
+|  Editar Achados e Perdidos |                  |                |                   |
+|  Editar Contatos |                  |                |                   |
+|  Editar Regras e Normas do Condomínio |                  |                |                  
+|  Editar Assembleias |                  |                |                   |
+|  Editar Achados e Perdidos |                  |                |                   |
+|Visualizar lista de Moradores Completa|                 |                |                   |
+|Visualizar lista de Veículos e Nomes|                 |                |                   |
+|  Visualizar lista de Visitantes |                  |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| Próximo | Início da Geração de Tokens  | default |
+
+
+
+
