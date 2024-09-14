@@ -1,7 +1,29 @@
 ### 3.3.1 Processo 1 – CADASTRO DO CONDOMÍNIO
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
-Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
+O Cadastro do Condomínio é o processo inicial essencial para quem deseja começar a utilizar nosso programa de gestão de condomínios. Este processo estabelece a base para o funcionamento do sistema e é crucial para garantir que todos os dados necessários sejam coletados e configurados corretamente.
+
+**Descrição do Processo:**
+1. Preenchimento do Formulário do Condomínio:
+
+* O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais como o tamanho do condomínio, o número de apartamentos, e especificações adicionais.
+  
+2. Definição de Usuários Administrativos:
+
+*Durante o cadastro, o sistema também solicita informações sobre outros usuários administrativos, como o zelador. Essas informações são importantes para definir os cargos e as permissões adequadas na plataforma.
+
+3.Geração de Tokens:
+
+* Após o formulário ser preenchido, o sistema gera tokens únicos para os moradores e funcionários do condomínio.
+
+* **Tokens para Moradores:** Cada apartamento recebe um token específico, permitindo que os moradores se cadastrem no site e se vinculem diretamente ao seu apartamento.
+
+* **Tokens para Funcionários:** Os tokens para funcionários são gerados com base nas informações fornecidas pelo síndico. Estes tokens definem cargos e permissões, permitindo que cada funcionário acesse o sistema com suas credenciais apropriadas.
+
+4.Configuração de Permissões:
+
+*O síndico, posteriormente, pode definir e ajustar as permissões e cargos dos funcionários, garantindo que cada um tenha acesso às funcionalidades necessárias para suas funções.
+
+Este processo de cadastro é fundamental para configurar o condomínio no sistema e garantir que todas as informações estejam corretamente alinhadas para a gestão eficiente e segura do ambiente condominial.
 
 ![Modelo BPMN do PROCESSO 13](images/processo-cadastro-do-condominio.png "Modelo BPMN do Processo 13.")
 
