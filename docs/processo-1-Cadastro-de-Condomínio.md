@@ -27,6 +27,19 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 
 ![Modelo BPMN do PROCESSO 13](images/processo-cadastro-do-condominio.png "Modelo BPMN do Processo 13.")
 
+**Oportunidades de Melhoria no Cadastro do Condomínio**
+**Desafios Anteriores:**
+
+* Muitos condomínios não utilizavam plataformas digitais adequadas ou usavam plataformas genéricas que não definem permissões específicas, resultando em confusão e gestão ineficiente.
+* A gestão manual e a falta de automação causavam erros e atrasos.
+  
+**Melhorias Implementadas:**
+
+* Processo Estruturado: O novo processo de cadastro estabelece um fluxo inicial claro e automatizado para configuração do condomínio.
+* Formulário Detalhado: Coleta informações completas e específicas, facilitando a definição precisa de dados do condomínio e de administradores.
+* Geração Automática de Tokens: Tokens são gerados automaticamente para moradores e funcionários, garantindo acesso adequado e segurança.
+* Controle de Permissões: Permissões são definidas de forma integrada pelo síndico, evitando confusões e melhorando a gestão.
+
 #### Detalhamento das atividades
 
 _Descreva aqui cada uma das propriedades das atividades do processo 1. 
