@@ -47,7 +47,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | [Fazer login] | Processo de Login  | default   |default
-| [Usar Token]       |          Processo de Token               |                   |
+| [Usar Token]       |          Processo de Token               |   default                |
 | [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
 
 
