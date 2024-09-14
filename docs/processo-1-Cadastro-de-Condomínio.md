@@ -1,53 +1,67 @@
-3.3.1 Processo 1 – Cadastro do Condomínio
-Apresento aqui o nome e as oportunidades de melhoria para o processo 1. Em seguida, apresentamos o modelo do processo 1, descrito no padrão BPMN.
+### 3.3.1 Processo 1 – CADASTRO DO CONDOMÍNIO
 
-Exemplo de um Modelo BPMN do PROCESSO 1
+_Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
+Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 
-Detalhamento das atividades
-Descreva aqui cada uma das propriedades das atividades do processo 1. Devem estar relacionadas com o modelo de processo apresentado anteriormente.
+![Exemplo de um Modelo BPMN do PROCESSO 1](images/process.png "Modelo BPMN do Processo 1.")
 
-Os tipos de dados a serem utilizados são:
+#### Detalhamento das atividades
 
-* Área de texto - campo de texto de múltiplas linhas
+_Descreva aqui cada uma das propriedades das atividades do processo 1. 
+Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
-* Caixa de texto - campo texto de uma linha
+_Os tipos de dados a serem utilizados são:_
 
-* Número - campo numérico
+_* **Área de texto** - campo texto de múltiplas linhas_
 
-* Dados - campo do tipo dados (dd-mm-aaaa)
+_* **Caixa de texto** - campo texto de uma linha_
 
-* Hora - campo do tipo hora (hh:mm:ss)
+_* **Número** - campo numérico_
 
-* Dados e Hora - campo do tipo dados e hora (dd-mm-aaaa, hh:mm:ss)
+_* **Data** - campo do tipo data (dd-mm-aaaa)_
 
-* Imagem - campo contendo uma imagem
+_* **Hora** - campo do tipo hora (hh:mm:ss)_
 
-* Seleção única - campo com várias opções de valores que são exclusivos e exclusivos (tradicional radio button ou combobox)
+_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
 
-* Seleção múltipla - campo com várias opções que podem ser selecionadas separadamente (caixa de seleção tradicional ou caixa de listagem)
+_* **Imagem** - campo contendo uma imagem_
 
-* Arquivo - campo de upload de documento
+_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
 
-* Link - campo que armazena uma URL
+_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
 
-* Tabela - campo formado por uma matriz de valores
+_* **Arquivo** - campo de upload de documento_
 
-Nome da atividade 1
+_* **Link** - campo que armazena uma URL_
 
-Campo	Tipo	Restrições	Valor padrão
-[Nome do campo]	[tipo de dados]		
-Exemplo:			
-Conecte-se	Caixa de Texto	formato de e-mail	
-senha	Caixa de Texto	8 caracteres	
-Comandos	Destino	Tipo
-[Nome do botão/link]	Atividade/processo de destino	(padrão/cancelar)
-Exemplo:		
-entrar	Fim do Processo 1	padrão
-cadastrar	Início do processo de cadastro	
-Nome da atividade 2
+_* **Tabela** - campo formado por uma matriz de valores_
 
-Campo	Tipo	Restrições	Valor padrão
-[Nome do campo]	[tipo de dados]		
-Comandos	Destino	Tipo
-[Nome do botão/link]	Atividade/processo de destino	(padrão/cancelar/ )
 
+**Nome da atividade 1**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| [Nome do campo] | [tipo de dados]  |                |                   |
+| ***Exemplo:***  |                  |                |                   |
+| login           | Caixa de Texto   | formato de e-mail |                |
+| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel  ) |
+| ***Exemplo:***       |                                |                   |
+| entrar               | Fim do Processo 1              | default           |
+| cadastrar            | Início do proceso de cadastro  |                   |
+
+
+**Nome da atividade 2**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| [Nome do campo] | [tipo de dados]  |                |                   |
+|                 |                  |                |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
+|                      |                                |                   |
