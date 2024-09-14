@@ -71,21 +71,21 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 **Campos de Marcadores para Definições de Permissões:**
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Editar Área Comum | [tipo de dados]  |                |                   |
-|  Editar Entregas |                  |                |                   |
-|  Editar Ouvidoria |                  |                |                   |
-|  Editar Entregas e Encomendas |                  |                |                   |
-|  Editar Prestação de Contas |                  |                |                   |
-|  Editar Financeiro |                  |                |                   |
-|  Editar Mural de Avisos |                  |                |                   |
-|  Editar Achados e Perdidos |                  |                |                   |
-|  Editar Contatos |                  |                |                   |
-|  Editar Regras e Normas do Condomínio |                  |                |                  
-|  Editar Assembleias |                  |                |                   |
-|  Editar Achados e Perdidos |                  |                |                   |
-|Visualizar lista de Moradores Completa|                 |                |                   |
-|Visualizar lista de Veículos e Nomes|                 |                |                   |
-|  Visualizar lista de Visitantes |                  |                |                   |
+| Editar Área Comum | Seleção Única  |                |                   |
+|  Editar Entregas | Seleção Única |                |                   |
+|  Editar Ouvidoria |  Seleção Única  |                |                   |
+|  Editar Entregas e Encomendas | Seleção Única  |                |                   |
+|  Editar Prestação de Contas | Seleção Única  |                |                   |
+|  Editar Financeiro | Seleção Única |                |                   |
+|  Editar Mural de Avisos | Seleção Única  |                |                   |
+|  Editar Achados e Perdidos |  Seleção Única  |                |                   |
+|  Editar Contatos |Seleção Única  |                |                   |
+|  Editar Regras e Normas do Condomínio |Seleção Única|                |                  
+|  Editar Assembleias | Seleção Única |                |                   |
+|  Editar Achados e Perdidos | Seleção Única  |                |                   |
+|Visualizar lista de Moradores Completa| Seleção Única |                |                   |
+|Visualizar lista de Veículos e Nomes|Seleção Única |                |                   |
+|  Visualizar lista de Visitantes |Seleção Única |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
