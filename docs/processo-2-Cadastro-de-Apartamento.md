@@ -1,7 +1,30 @@
 ### 3.3.2 Processo 2 – CADASTRO DE APARTAMENTO
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
-Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
+O Cadastro de Apartamento é uma etapa essencial para a correta configuração dos moradores no sistema de gestão do condomínio. Esse processo assegura que cada unidade residencial seja devidamente registrada, permitindo uma vinculação clara entre os apartamentos e seus respectivos moradores.
+
+**Descrição do Processo:**
+
+**1. Preenchimento do Formulário de Apartamento:** O responsável pelo condomínio, como o síndico ou administrador, inicia o processo preenchendo um formulário detalhado para cada apartamento. Este formulário coleta dados essenciais como o número do apartamento, o bloco, e o número de vagas de garagem associadas.
+
+**2. Vinculação de Moradores ao Apartamento:** Durante o cadastro, o responsável também adiciona os dados dos moradores da unidade. Isso assegura que, ao se cadastrarem no sistema, os moradores sejam diretamente vinculados ao apartamento correspondente, facilitando o controle e o acesso às funcionalidades do sistema.
+
+**3. Definição de Permissões para o Apartamento:** O sistema permite que o responsável defina permissões específicas para os moradores do apartamento, como acesso à área comum, solicitação de serviços, e consulta ao mural de avisos. Isso garante que cada morador tenha acesso às funcionalidades adequadas à sua unidade.
+
+**4. Geração de Token para Moradores:** Após o cadastro do apartamento, o sistema gera um token único para cada morador. Esse token permite que os moradores realizem seu próprio cadastro no sistema, vinculando-se automaticamente ao apartamento correto.
+
+**Oportunidades de Melhoria no Cadastro de Apartamento**
+
+**Desafios Anteriores:**
+
+* Muitos condomínios não contavam com um processo claro para cadastrar apartamentos e moradores, resultando em informações desorganizadas e desvinculadas entre unidades e moradores.
+* A ausência de um sistema que definisse permissões específicas para cada morador dificultava a gestão das funcionalidades do condomínio.
+  
+**Melhorias Implementadas:**
+
+* Processo Estruturado: O novo processo de cadastro estabelece um fluxo claro para o registro de cada unidade, garantindo que os dados dos apartamentos e moradores estejam corretos e bem organizados.
+* Vinculação de Moradores: A inclusão dos dados dos moradores no cadastro do apartamento permite uma gestão mais eficiente e segura, com acesso direto ao apartamento correspondente.
+* Controle de Permissões: O sistema permite que o responsável configure as permissões específicas de cada morador, aumentando a personalização e a segurança no acesso às funcionalidades do condomínio.
+* Geração Automática de Tokens: A geração de tokens únicos para os moradores facilita o processo de cadastro e garante que cada morador seja vinculado ao apartamento correto, simplificando o gerenciamento.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 1](images/process.png "Modelo BPMN do Processo 1.")
 
