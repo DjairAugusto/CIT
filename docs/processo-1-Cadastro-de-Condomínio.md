@@ -3,6 +3,7 @@
 O Cadastro do Condomínio é o processo inicial essencial para quem deseja começar a utilizar nosso programa de gestão de condomínios. Este processo estabelece a base para o funcionamento do sistema e é crucial para garantir que todos os dados necessários sejam coletados e configurados corretamente.
 
 **Descrição do Processo:**
+
 **1. Preenchimento do Formulário do Condomínio:**
 
 * O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais como o tamanho do condomínio, o número de apartamentos, e especificações adicionais.
