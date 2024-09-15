@@ -103,6 +103,17 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | ---                  | ---                            | ---               |
 | [Próximo] |Processo de Cadastro do Síndico  | default |
 
+**Atividade 3: Processo de Cadastro do Síndico**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Nome | 	Caixa de Texto  |                |                   |
+|  e-mail  |   Número   |  formato de e-mail   |                   |
+|  número de telefone  |    Número   |        |     |
+|  login  |    Caixa de Texto   | formato de e-mail       |     |
+|  senha  |    Caixa de Texto   |     mínimo de 8 caracteres   |     |
+
+
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | [Próximo] | Início da Geração de Tokens  | default |
