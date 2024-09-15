@@ -101,7 +101,12 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
+| [Próximo] |Processo de Cadastro do Síndico  | default |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
 | [Próximo] | Início da Geração de Tokens  | default |
+
 
 
 
