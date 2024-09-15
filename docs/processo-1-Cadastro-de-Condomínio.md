@@ -57,7 +57,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | ---             | ---              | ---            | ---               |
 | nome do condomínio | 	Caixa de Texto  |                |                   |
 |  número de blocos  |   Número   |  valor inteiro positivo   |                   |
-|  andares  |    Número   |                |  valor inteiro positivo   |
+|  andares  |    Número   |     valor inteiro positivo   |  valor inteiro positivo   |
 |  apartamentos por andar  |   Número   | valor inteiro positivo  |                   |
 
 **Definição de Outros Empregados**
