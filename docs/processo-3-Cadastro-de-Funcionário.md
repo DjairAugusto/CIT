@@ -4,13 +4,17 @@ O Cadastro de Funcionário é um processo essencial que permite a integração d
 
 **Descrição do Processo:**
 
-**1. Inserção do Token de Funcionário:** O funcionário inicia o processo inserindo um token único fornecido pelo síndico. Este token vincula o funcionário diretamente ao seu cargo e define suas permissões básicas no sistema.
+**1. Inserção do Token de Funcionário:**
+* O funcionário inicia o processo inserindo um token único fornecido pelo síndico. Este token vincula o funcionário diretamente ao seu cargo e define suas permissões básicas no sistema.
 
-**2. Preenchimento do Formulário de Cadastro:** Após a inserção do token, o funcionário preenche um formulário detalhado com informações pessoais e profissionais. O formulário coleta dados essenciais como nome, contato, cargo e qualquer outra informação relevante.
+**2. Preenchimento do Formulário de Cadastro:**
+* Após a inserção do token, o funcionário preenche um formulário detalhado com informações pessoais e profissionais. O formulário coleta dados essenciais como nome, contato, cargo e qualquer outra informação relevante.
 
-**3. Definição de Login e Senha:** O funcionário cria um login e senha para acessar a plataforma. Este passo é importante para garantir a segurança e a privacidade do acesso do funcionário ao sistema.
+**3. Definição de Login e Senha:** 
+* O funcionário cria um login e senha para acessar a plataforma. Este passo é importante para garantir a segurança e a privacidade do acesso do funcionário ao sistema.
 
-**4. Configuração de Permissões:** Com base nas informações fornecidas pelo funcionário e no cargo associado ao token, o sistema configura automaticamente as permissões de acesso necessárias. O síndico pode revisar e ajustar as permissões posteriormente, conforme necessário.
+**4. Configuração de Permissões:** 
+* Com base nas informações fornecidas pelo funcionário e no cargo associado ao token, o sistema configura automaticamente as permissões de acesso necessárias. O síndico pode revisar e ajustar as permissões posteriormente, conforme necessário.
 
 Este processo de cadastro é crucial para assegurar que todos os funcionários estejam devidamente registrados e configurados no sistema, permitindo uma gestão eficiente e organizada.
 
