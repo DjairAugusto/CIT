@@ -1,4 +1,4 @@
-### 3.3.2 Processo 2 – Ouvidoria
+### 3.3.2 Processo z – Ouvidoria
 
 ![Modelo BPMN do Processo de Ouvidoria](images/processo-ouvidoria.png "Modelo BPMN do Processo 2.")
 
