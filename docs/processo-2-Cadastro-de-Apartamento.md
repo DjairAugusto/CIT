@@ -30,7 +30,7 @@ O Cadastro de Apartamento é uma etapa essencial para a correta configuração d
 * Controle de Permissões: O sistema permite que o responsável configure as permissões específicas de cada morador, aumentando a personalização e a segurança no acesso às funcionalidades do condomínio.
 * Geração Automática de Tokens: A geração de tokens únicos para os moradores facilita o processo de cadastro e garante que cada morador seja vinculado ao apartamento correto, simplificando o gerenciamento.
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](images/process.png "Modelo BPMN do Processo 1.")
+![Modelo BPMN do Processo 2](images/processo-cadastro-de-apartamento.png "Modelo BPMN do Processo 2.")
 
 #### Detalhamento das atividades
 
