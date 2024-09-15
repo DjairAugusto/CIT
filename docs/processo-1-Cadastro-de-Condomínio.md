@@ -6,12 +6,16 @@ O Cadastro do Condomínio é o processo inicial essencial para quem deseja come�
 **1. Preenchimento do Formulário do Condomínio:**
 
 * O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais como o tamanho do condomínio, o número de apartamentos, e especificações adicionais.
-  
+
 **2. Definição de Usuários Administrativos:**
+
+* Após o preenchimento do formulário, o sistema solicita o cadastro do síndico. O síndico deve fornecer informações como nome, contato e dados de autenticação. Este passo é importante para garantir que o responsável pela gestão do condomínio seja registrado e possa acessar o sistema com as permissões adequadas.
+  
+**3. Definição de Usuários Administrativos:**
 
 * Durante o cadastro, o sistema também solicita informações sobre outros usuários administrativos, como o zelador. Essas informações são importantes para definir os cargos e as permissões adequadas na plataforma.
 
-**3. Geração de Tokens:**
+**4. Geração de Tokens:**
 
 * Após o formulário ser preenchido, o sistema gera tokens únicos para os moradores e funcionários do condomínio.
 
@@ -19,7 +23,7 @@ O Cadastro do Condomínio é o processo inicial essencial para quem deseja come�
 
 * **Tokens para Funcionários:** Os tokens para funcionários são gerados com base nas informações fornecidas pelo síndico. Estes tokens definem cargos e permissões, permitindo que cada funcionário acesse o sistema com suas credenciais apropriadas.
 
-**4. Configuração de Permissões:**
+**5. Configuração de Permissões:**
 
 * O síndico, posteriormente, pode definir e ajustar as permissões e cargos dos funcionários, garantindo que cada um tenha acesso às funcionalidades necessárias para suas funções.
 
@@ -36,6 +40,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 
 * Processo Estruturado: O novo processo de cadastro estabelece um fluxo inicial claro e automatizado para configuração do condomínio.
 * Formulário Detalhado: Coleta informações completas e específicas, facilitando a definição precisa de dados do condomínio e de administradores.
+* Cadastro do Síndico: Inclusão do cadastro do síndico garante que o responsável pela gestão esteja registrado e tenha acesso apropriado ao sistema.
 * Geração Automática de Tokens: Tokens são gerados automaticamente para moradores e funcionários, garantindo acesso adequado e segurança.
 * Controle de Permissões: Permissões são definidas de forma integrada pelo síndico, evitando confusões e melhorando a gestão.
 
