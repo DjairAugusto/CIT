@@ -1,4 +1,4 @@
-### 3.3.5 Processo 8 - Contatos
+### 3.3.8 Processo 8 - CONTATOS
 
 O processo de Contatos tem como objetivo organizar e disponibilizar os contatos úteis e importantes para a comunicação entre os moradores e a administração do condomínio. Ele é dividido entre o acesso e edição pela administração e a visualização pelos moradores.
 
@@ -28,70 +28,27 @@ O processo de Contatos tem como objetivo organizar e disponibilizar os contatos 
 #### Detalhamento das atividades
 
 
-**Escolher Ação**
+**Atividade 1: Gerenciamento de Contatos (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Ação | seleção única  | Editar ou Visualizar    | Visualizar           |
-
-**Selecionar Contato(s)**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Selecão | Seleção única  | Contatos cadastrados    |   Não visível         |
-
-**Marcar como visível/Não visível**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Marcar | Seleção única  | Contatos Selecionados    |           |
+| Nome do Contato | seleção única  | Texto simples, obrigatório    |         |
+|Tipo de Contato | seleção única  | Portaria, Interfone, Zelador, Síndicor entre outros    |         |
+| Informações de Contato | Área de texto  | Informações detalhadas |        |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Vísivel  | Fim do processo 1  | Seleção única   |
+| [Adicionar Contato] | Adiciona novo contato  | Default   |
+|[Editar Contato] | Edita informações do contato  |Default   |
+| [Remover Contato] | Remove contato selecionado  | Cancel   |
 
-**Visualizar Contatos**
+**Atividade 2: Visualização de Contatos (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Visualizar | Seleção única  | Contatos Cadastrados    |           |
+| Tipo de Contato | Seleção única  | Contatos Selecionados    |           |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Contatos  | Fim do processo 2 | NULO  |
-
-
-
-**Escolher Ação**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Ação | seleção única  |     Selecionar ou Sair           |      Sair             |
-|                 |                  |                |                   |
-
-**Copiar contato**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Copiar | Seleção única  | Contato Selecionado    |           |
-
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Copiar | Fim do Processo  | Seleção unica   |
-|                      |                                |                   |
-
-**Sair**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Sair | Seleção única  | Abrir seção de contatos    |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Sair  | Fim do processo  | Seleção unica  |
-
-
-
-
+| [Visualizar Contatos]|Mostra contatos disponíveis | Default   |
 
