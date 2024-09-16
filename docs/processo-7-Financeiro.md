@@ -32,30 +32,27 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 
 **Nome da atividade 1**
 
-**Atividade 1 - Acessar o sistema**
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Fazer login] | Processo de Login  | default   |default
-| [Usar Token]       |          Processo de Token               |   default                |
-| [Emitir boletos]           | Processo de Emitir boletos            | default       |
+**Atividade 1 - Enviar boletos**
 
 
-**Atividade 2 - Acessar financeiro**
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                             | ---               |
-| [Financeiro]       | Processo Financeiro           | default          |
-| [Emitir boletos]   | Emitir boletos            |  default          |
-
-
-**Atividade 3 - Enviar boletos**
+| **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
+| ---                |  ---                          | ---               | ---               |
+|                       |                               |             |         |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | [Enviar boletos] | Processo Financeiro  |             | default          |
 
+
+**Atividade 3 - Enviar boletos**
+
+
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
 |                       |                               |             |         |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Enviar boletos] | Processo Financeiro  |             | default          |
+
 
