@@ -80,7 +80,7 @@ Este processo de cadastro garante que cada apartamento esteja corretamente regis
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | [Próximo] | Formulário de Definição de Perfis |default |
-|                      |                                |                   |
+
 
 **Atividade 4: Definição de Perfis e Permissões**
 
