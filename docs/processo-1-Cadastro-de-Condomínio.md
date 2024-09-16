@@ -6,7 +6,7 @@ O Cadastro do Condomínio é o processo inicial essencial para quem deseja come�
 
 **1. Preenchimento do Formulário do Condomínio:**
 
-* O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais, como o tamanho do condomínio, o número de apartamentos e especificações adicionais. Além disso, o formulário inclui a definição dos usuários administrativos que serão responsáveis pela gestão, como o zelador. É aqui que o pode definir e ajustar as permissões e cargos dos funcionários, garantindo que cada um tenha acesso às funcionalidades necessárias para suas funções.
+* O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais, como o tamanho do condomínio, o número de apartamentos e especificações adicionais. Além disso, o formulário inclui a definição dos usuários administrativos que serão responsáveis pela gestão, como o zelador. É aqui que o síndico pode definir e ajustar as permissões e cargos dos funcionários, garantindo que cada um tenha acesso às funcionalidades necessárias para suas funções.
 
 **2. Cadastro do Síndico:**
 
