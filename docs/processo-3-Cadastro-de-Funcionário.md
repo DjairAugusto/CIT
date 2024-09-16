@@ -1,36 +1,41 @@
 ### 3.3.3 Processo 3 – CADASTRO DE FUNCIONÁRIOS
 
-O Cadastro de Funcionário é um processo essencial que permite a integração de funcionários no nosso programa de gestão de condomínios. Este processo facilita a criação de perfis de funcionários e a definição de seus cargos e permissões dentro do sistema.
+O cadastro de funcionários é essencial para garantir que todos os colaboradores do condomínio estejam registrados corretamente e com permissões adequadas. Esse processo assegura que cada funcionário tenha acesso às funcionalidades necessárias de acordo com sua
 
 **Descrição do Processo:**
 
 **1. Inserção do Token de Funcionário:**
-* O funcionário inicia o processo inserindo um token único fornecido pelo síndico. Este token vincula o funcionário diretamente ao seu cargo e define suas permissões básicas no sistema.
 
-**2. Preenchimento do Formulário de Cadastro:**
-* Após a inserção do token, o funcionário preenche um formulário detalhado com informações pessoais e profissionais. O formulário coleta dados essenciais como nome, contato, cargo e qualquer outra informação relevante.
+* O funcionário inicia o processo inserindo um token exclusivo fornecido pelo síndico. Esse token vincula o funcionário diretamente ao sistema e ao seu cargo, configurando automaticamente permissões básicas associadas às suas responsabilid
 
-**3. Definição de Login e Senha:** 
-* O funcionário cria um login e senha para acessar a plataforma. Este passo é importante para garantir a segurança e a privacidade do acesso do funcionário ao sistema.
+**2. Acesso à Plataforma:**
+   
+* Após a inserção do token, o funcionário é redirecionado à plataforma de gestão do condomínio, onde o sistema já identifica seu cargo e associa as permissões adequadas.
 
-**4. Configuração de Permissões:** 
-* Com base nas informações fornecidas pelo funcionário e no cargo associado ao token, o sistema configura automaticamente as permissões de acesso necessárias. O síndico pode revisar e ajustar as permissões posteriormente, conforme necessário.
+**3. Preenchimento do Formulário de Cadastro:**
 
-Este processo de cadastro é crucial para assegurar que todos os funcionários estejam devidamente registrados e configurados no sistema, permitindo uma gestão eficiente e organizada.
+* O funcionário preenche um formulário com suas informações pessoais, como nome, e-mail, telefone, e cargo.
+
+**4. Definição de Login e Senha:**
+   
+* O funcionário define seu login e senha para acessar a plataforma. Esse acesso será utilizado para executar suas atividades e interagir com os moradores e outros funcionários.
+
+**5. Configuração de Permissões:**
+   
+* Com base no cargo associado ao token, o sistema atribui automaticamente as permissões de acesso, que poderão ser revisadas e ajustadas pelo síndico conforme necessário.
 
 **Oportunidades de Melhoria no Cadastro de Funcionário**
 
 **Desafios Anteriores:**
 
-* O processo de cadastro de funcionários era frequentemente manual e não automatizado, levando a erros e ineficiências.
-* Funcionários eram registrados em sistemas genéricos que não definiam claramente cargos e permissões, resultando em confusão e gestão ineficiente.
-  
+* A falta de automação no processo de cadastro dificultava a gestão das responsabilidades e permissões dos funcionários, levando a confusões e erros.
+* Os cadastros manuais demandavam muito tempo para revisão e ajuste das permissões.
+
 **Melhorias Implementadas:**
 
-* Processo Automatizado: O novo processo de cadastro automatiza a integração de funcionários, garantindo uma configuração rápida e precisa.
-* Token Direcionado: O uso de tokens específicos para cargos simplifica a atribuição de permissões e reduz erros de configuração.
-* Formulário Detalhado: Coleta informações completas e necessárias para um registro adequado e preciso do funcionário.
-* Configuração de Permissões: Permissões são configuradas automaticamente com base no cargo definido pelo token, com possibilidade de revisão e ajustes pelo síndico, melhorando a segurança e a gestão.
+* Uso de Tokens: Os tokens fornecidos pelo síndico automatizam o vínculo do funcionário ao sistema e facilitam a atribuição de permissões adequadas.
+* Processo Automatizado: A nova estrutura do processo agiliza o cadastro e garante que os funcionários tenham acesso apenas às funcionalidades necessárias para suas atividades.
+* Revisão Simples: O sistema permite que o síndico revise e ajuste as permissões facilmente, garantindo flexibilidade e controle eficiente sobre os acessos de cada funcionário.
 
 ![Modelo BPMN do PROCESSO 3](images/processo-3-cadastro-de-funcionários.png "Modelo BPMN do Processo 3.")
 
