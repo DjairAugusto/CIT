@@ -1,4 +1,4 @@
-### 3.3.6 Processo 6 – Mural de Avisos
+### 3.3.5 Processo 5 – MURAL DE AVISOS
 
 O mural de avisos para o ambiente de convivência de um condomínio é muito importante para manter os moradores atualizados sobre a situação atual de seu lar.
 O processo apresentado mostra como as informações sobre um aviso serão obtidas e repassadas aos moradores garantindo que as informações alcancem os inquilinos.
