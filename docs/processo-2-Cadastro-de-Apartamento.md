@@ -42,7 +42,7 @@ Este processo de cadastro garante que cada apartamento esteja corretamente regis
 * Formulário Detalhado: Coleta informações completas dos moradores e veículos, facilitando o gerenciamento e a organização.
 * Perfis de Acesso: A definição de diferentes perfis de acesso garante que cada morador tenha a visualização e controle apropriados sobre suas informações e funcionalidades.
 
-![Modelo BPMN do Processo 2](images/processo-cadastro-de-apartamento.png "Modelo BPMN do Processo 2.")
+![Modelo BPMN do Processo 2](images/processo-2-cadastro-de-apartamento.png "Modelo BPMN do Processo 2.")
 
 #### Detalhamento das atividades
 
