@@ -57,61 +57,100 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
-
-_Os tipos de dados a serem utilizados são:_
-
-_* **Área de texto** - campo texto de múltiplas linhas_
-
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
-
-
-**Nome da atividade 1**
+**Atividade 1: Acesso à Área Comum (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
-
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| Áreas Comuns | Seleção única  | Baseada nas áreas cadastradas |                   |
+| Horário de Funcionamento | Data e Hora|Horário disponível para uso|                   |
+| Descrição |Área de texto  | Informações da área selecionada	  |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| [Selecionar Área]| Início do processo de reserva  | Default |
+| [Cancelar]    |   Fim do processo     |  Cancel     |
+
+
+**Atividade 2: Reserva de Área Comum (Moradores)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Selecionar Área Comum |Seleção única  | Baseada nas áreas disponíveis |                   |
+|  Data da Reserva |  Data  | Data disponível no calendário |                   |
+| Horário da Reserva |Hora  |Baseado na disponibilidade |                   |
+| Verificação de Taxa | Caixa de texto  | Exibe taxa associada, se aplicável |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Confirmar Reserva] | Verificação de pagamento  | Default |
+|  [Cancelar]  |  Fim do processo   |    Cancel  |
+
+**Atividade 3: Pagamento de Taxa de Reserva (Moradores)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Valor da Taxa | Número  |  Exibe o valor da taxa |                   |
+|  Data de Vencimento  |  Data | Máximo de 2 dias ou antes do evento  |                   |
+
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Confirmar Pagamento] | Confirmação de reserva  | Default |
+|  [Cancelar Reserva]  |  Cancela a reserva   |  Cancel    |
+
+
+**Atividade 4: Cancelamento de Reserva (Moradores)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Área Comum Reservada  |  Seleção única  | Baseada em reservas existentes   |                   |
+| Data da Reserva  |  Data | Exibe a data da reserva   |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Cancelar Reserva] | Confirma cancelamento da reserva  | Default |
+|  [Voltar] | Retorna ao menu de reservas |     Cancel |
+
+
+**Atividade 5: Gerenciamento de Áreas Comuns (Administradores)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Nome da Área Comum| Caixa de texto  | Texto simples, obrigatório |                   |
+|  Horário de Funcionamento | Data e Hora | Definido pelo administrador  |                   |
+| Descrição |Área de texto  |  Informações detalhadas da área  |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Adicionar Área] | Criação de nova área  | Default |
+| [Excluir Área] | Remover área comum | Cancel |
+
+
+**Atividade 6: Edição de Áreas Comuns (Administradores)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Selecionar Área Comum | [tipo de dados]  |                |                   |
+|Atualizar Horário  |                  |                |                   |
+| Atualizar Descrição | [tipo de dados]  |                |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Salvar Alterações] | Confirma atualização  | Default |
+| [Cancelar] | Fim do processo  |Cancel |
+
+
+**Atividade 7: Gerenciamento de Reservas (Administradores)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Selecionar Reserva | Seleção única  |Baseada em reservas ativas|                   |
+| Alterar Reserva |  Seleção múltipla |   Permite alterar datas e horários  |                   |
+|Cancelar Reserva |Caixa de texto | Confirmação do cancelamento  |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Confirmar Cancelamento] | Fim do processo  | Default |
+| [Voltar] | Retorna ao menu de gerenciamento  | Cancel |
+
+
