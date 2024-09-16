@@ -32,7 +32,7 @@ Este processo de cadastro é crucial para assegurar que todos os funcionários e
 * Formulário Detalhado: Coleta informações completas e necessárias para um registro adequado e preciso do funcionário.
 * Configuração de Permissões: Permissões são configuradas automaticamente com base no cargo definido pelo token, com possibilidade de revisão e ajustes pelo síndico, melhorando a segurança e a gestão.
 
-![Modelo BPMN do PROCESSO 3](images/processo-cadastro-de-funcionários.png "Modelo BPMN do Processo 3.")
+![Modelo BPMN do PROCESSO 3](images/processo-3-cadastro-de-funcionários.png "Modelo BPMN do Processo 3.")
 
 #### Detalhamento das atividades
 
