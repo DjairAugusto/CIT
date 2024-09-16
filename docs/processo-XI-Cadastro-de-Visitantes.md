@@ -1,6 +1,6 @@
 ### 3.3.12 Processo 12 – Cadastro de Visitantes
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](images/processo-cadastro-de-visitante.png "Modelo BPMN do Processo 1.")
+![Exemplo de um Modelo BPMN do PROCESSO 1](images/processo-XI-cadastro-de-visitantes.png "Modelo BPMN do Processo 1.")
 
 #### Detalhamento das atividades
 
