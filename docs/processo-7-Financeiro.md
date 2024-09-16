@@ -6,12 +6,13 @@
 
 **Nome da atividade 1**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+**Atividade 1 - Acessar o sistema**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Processo de Login  | default   |default
+| [Usar Token]       |          Processo de Token               |   default                |
+| [Emitir boletos]           | Processo de Emitir boletos            | default       |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
