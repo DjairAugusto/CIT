@@ -18,7 +18,18 @@
 **Atividade 2 - Acessar financeiro**
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                             | ---               |
+| [Financeiro]       | Processo Financeiro           | default          |
+| [Emitir boletos]   | Emitir boletos            |  default          |
+
+
+**Atividade 3 - Enviar boletos**
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Financeiro]  | Processo Financeiro/ Emitir boletos|  |(default)          |
-| [Enviar boletos] | Processo Financeiro  |             |(default)          |
-|                      |                                |                   |
+| [Enviar boletos] | Processo Financeiro  |             | default          |
+
+| **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
+| ---                |  ---                          | ---               | ---               |
+|                       |                               |             |         |
+
