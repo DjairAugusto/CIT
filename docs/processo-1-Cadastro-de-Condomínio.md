@@ -6,27 +6,19 @@ O Cadastro do Condomínio é o processo inicial essencial para quem deseja come�
 
 **1. Preenchimento do Formulário do Condomínio:**
 
-* O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais como o tamanho do condomínio, o número de apartamentos, e especificações adicionais.
+* O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais, como o tamanho do condomínio, o número de apartamentos e especificações adicionais. Além disso, o formulário inclui a definição dos usuários administrativos que serão responsáveis pela gestão, como o zelador. É aqui que o pode definir e ajustar as permissões e cargos dos funcionários, garantindo que cada um tenha acesso às funcionalidades necessárias para suas funções.
 
-**2. Definição de Usuários Administrativos:**
+**2. Cadastro do Síndico:**
 
-* Após o preenchimento do formulário, o sistema solicita o cadastro do síndico. O síndico deve fornecer informações como nome, contato e dados de autenticação. Este passo é importante para garantir que o responsável pela gestão do condomínio seja registrado e possa acessar o sistema com as permissões adequadas.
-  
-**3. Definição de Usuários Administrativos:**
+* Após o preenchimento do formulário, o sistema solicita o cadastro do síndico. O síndico deve fornecer informações como nome, contato e dados de autenticação. Este passo é crucial para garantir que o responsável pela gestão do condomínio seja registrado e possa acessar o sistema com as permissões adequadas.
 
-* Durante o cadastro, o sistema também solicita informações sobre outros usuários administrativos, como o zelador. Essas informações são importantes para definir os cargos e as permissões adequadas na plataforma.
-
-**4. Geração de Tokens:**
+**3. Geração de Tokens:**
 
 * Após o formulário ser preenchido, o sistema gera tokens únicos para os moradores e funcionários do condomínio.
 
 * **Tokens para Moradores:** Cada apartamento recebe um token específico, permitindo que os moradores se cadastrem no site e se vinculem diretamente ao seu apartamento.
 
 * **Tokens para Funcionários:** Os tokens para funcionários são gerados com base nas informações fornecidas pelo síndico. Estes tokens definem cargos e permissões, permitindo que cada funcionário acesse o sistema com suas credenciais apropriadas.
-
-**5. Configuração de Permissões:**
-
-* O síndico, posteriormente, pode definir e ajustar as permissões e cargos dos funcionários, garantindo que cada um tenha acesso às funcionalidades necessárias para suas funções.
 
 Este processo de cadastro é fundamental para configurar o condomínio no sistema e garantir que todas as informações estejam corretamente alinhadas para a gestão eficiente e segura do ambiente condominial.
 
