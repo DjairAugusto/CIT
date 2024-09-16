@@ -10,7 +10,7 @@ O Cadastro de Apartamento é um processo essencial para garantir que cada unidad
 
 **2. Acesso à Plataforma:**
 
-O morador utiliza o token recebido para acessar a plataforma de gestão do condomínio. O token preenche automaticamente o campo referente ao apartamento, vinculando a unidade ao cadastro.
+* O morador utiliza o token recebido para acessar a plataforma de gestão do condomínio. O token preenche automaticamente o campo referente ao apartamento, vinculando a unidade ao cadastro.
 
 **3. Preenchimento do Formulário de Cadastro:**
 
@@ -24,8 +24,8 @@ O morador utiliza o token recebido para acessar a plataforma de gestão do condo
 
 * O morador define login e senha para acessar a plataforma. São criados dois perfis de acesso:
 
-* Perfil Principal: Tem acesso completo às funcionalidades da plataforma, incluindo áreas financeiras e administrativas.
-* Perfil Secundário: Tem acesso restrito, não podendo visualizar informações financeiras, mas podendo realizar ações como marcar reservas em áreas comuns.
+* **Perfil Principal:** Tem acesso completo às funcionalidades da plataforma, incluindo áreas financeiras e administrativas.
+* **Perfil Secundário:** Tem acesso restrito, não podendo visualizar informações financeiras, mas podendo realizar ações como marcar reservas em áreas comuns.
 Este processo de cadastro garante que cada apartamento esteja corretamente registrado no sistema e que todos os moradores tenham acesso às funcionalidades apropriadas de acordo com seus perfis.
 
 **Oportunidades de Melhoria no Cadastro de Apartamento**
