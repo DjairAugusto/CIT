@@ -64,8 +64,8 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Efetuar Pagamento] | Confirmação do pagamento |             | default          |
-|[Cancelar] | Cancelamento do pagamento |             |cancel        |
+| [Efetuar Pagamento] | Confirmação do pagamento |    Cancel       |  
+|[Cancelar] | Cancelamento do pagamento |   	Cancel  |
 
 
 
