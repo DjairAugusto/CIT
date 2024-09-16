@@ -52,8 +52,8 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 * Automação de Reservas: Integração de pagamento e confirmação automatizados para reservas com taxa.
 * Controle e Flexibilidade: Adição, exclusão e edição de áreas comuns agora são gerenciadas eficientemente pelo administrador, enquanto moradores mantêm um processo simples e direto para reservas.
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](images/processo-4-área-comum-morador.md "Modelo BPMN do Processo 1.")
-![Exemplo de um Modelo BPMN do PROCESSO 1](images/processo-4-área-comum-administrador.md "Modelo BPMN do Processo 1.")
+![Exemplo de um Modelo BPMN do PROCESSO 1](images/processo-4-área-comum-morador.png "Modelo BPMN do Processo 1.")
+![Exemplo de um Modelo BPMN do PROCESSO 1](images/processo-4-área-comum-administrador.png "Modelo BPMN do Processo 1.")
 
 #### Detalhamento das atividades
 
