@@ -14,7 +14,7 @@ O Cadastro do Condomínio é o processo inicial essencial para quem deseja come�
 
 **3. Geração de Tokens:**
 
-* Após o formulário ser preenchido, o sistema gera tokens únicos para os moradores e funcionários do condomínio.
+Após o formulário ser preenchido, o sistema gera tokens únicos para os moradores e funcionários do condomínio.
 
 * **Tokens para Moradores:** Cada apartamento recebe um token específico, permitindo que os moradores se cadastrem no site e se vinculem diretamente ao seu apartamento.
 
