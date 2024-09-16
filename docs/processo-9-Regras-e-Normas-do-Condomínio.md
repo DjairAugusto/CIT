@@ -1,7 +1,7 @@
 ### 3.3.5 Processo 9 – Regras e Normas
 
-![Modelo BPMN do Processo de Regras e Normas](images/processo-regras-e-normas.png "Modelo BPMN do Processo 9.")
-
+![Modelo BPMN do Processo de Regras e Normas](images/processo-9-regras-e-normas-administrador.png "Modelo BPMN do Processo 9.")
+![Modelo BPMN do Processo de Regras e Normas](images/processo-9-regras-e-normas-morador.png "Modelo BPMN do Processo 9.")
 #### Detalhamento das atividades
 
 _Descreva aqui cada uma das propriedades das atividades do processo 5. 
