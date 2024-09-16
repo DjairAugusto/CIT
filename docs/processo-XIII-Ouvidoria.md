@@ -1,4 +1,4 @@
-### 3.3.2 Processo z – Ouvidoria
+### 3.3.13 Processo 13 – OUVIDORIA
 
 O processo de Ouvidoria é uma ferramenta para que os moradores registrem sugestões, reclamações ou solicitações, permitindo que a administração responda de maneira organizada e eficiente.
 
@@ -27,53 +27,40 @@ O processo de Ouvidoria é uma ferramenta para que os moradores registrem sugest
 
 #### Detalhamento das atividades
 
-**Escolher Tipo**
+**Atividade 1: Abertura de Chamados na Ouvidoria (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições**                | **Valor default** |
 | ---             | ---              | ---                           | ---               |
-| Tipo do Ticket  | Seleção Única    | Sugestão, Reclamação ou Outro | Outro             |
-
-
-**Inserir Sugestão e Motivo**
-
-| **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
-| ---             | ---              | ---                   | ---               |
-| Sugestão        | Caixa de Texto   | Mínimo de 10 palavras | NULO              |
-| Motivo          | Área de Texto    | Mínimo de 10 palavras | NULO              |
+| Tipo de Chamado  | Seleção única    |Opções: Sugestão, Reclamação, Outros |            |
+| Descrição do Chamado |Área de texto   | Detalhes do chamado a ser aberto |            |
+|Anexo (Opcional)  | Arquivo    | Anexar documentos relevantes |             |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Enviar               | Analisar Ticket                | default           |
+| [Abrir Chamado]        | Abertura do chamado na ouvidoria          | Default        |
+| [Cancelar]            | Cancelamento da abertura       | Cancel         |
 
-**Inserir Reclamação**
 
-| **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
-| ---             | ---              | ---                   | ---               |
-| Reclamação      | Área de Texto    | Mínimo de 10 Palavras | NULO              |
-| Anexo           | Imagens          | Nenhuma               | NULO              |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Enviar               | Analisar Ticket                | default           |
-
-**Inserir Tipo e Informações**
+**Atividade 2: Resposta aos Chamados na Ouvidoria (Administração)**
 
 | **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
 | ---             | ---              | ---                   | ---               |
-| Tipo            | Caixa de Texto   | Mais de 4 letras      | NULO              |
-| Reclamação      | Área de Texto    | Mínimo de 10 Palavras | NULO              |
-| Anexo           | Imagens          | Nenhuma               | NULO              |
+|Resposta do Administrador     | Área de texto  |Resposta ao chamado do morador |          |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Enviar               | Analisar Ticket                | default           |
+| [Enviar Resposta]          |Envio da resposta ao morador         |Default      |
 
-**Responder o Ticket**
+**Atividade 3: Validação do Ticket**
 
 | **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
 | ---             | ---              | ---                   | ---               |
-| Resposta        | Área de Texto    | Mínimo de 10 Palavras | NULO              |
+|Validar Ticket (Foi resolvido?)    | Seleção Única (sim/não)    |  |            |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Enviar               | Validar Resposta               | default           |
+| [sim]               | Fechar Ticket e postar no histórico           | default           |
+| [não]               | Reabrir chamado              | default           |
+
+
