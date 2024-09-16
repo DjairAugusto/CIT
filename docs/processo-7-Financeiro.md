@@ -52,7 +52,7 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-|[Visualizar Boletos] | Detalhes dos boletos disponíveis  |             | default          |
+|[Visualizar Boletos] | Detalhes dos boletos disponíveis  |              default          |
 
 **Atividade 3: Visualização e Pagamento (Moradores)**
 
