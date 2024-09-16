@@ -30,29 +30,42 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 
 #### Detalhamento das atividades
 
-**Nome da atividade 1**
-
-**Atividade 1 - Enviar boletos**
-
+**Atividade 1: Emissão de Boletos (Administrador)**
 
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
-|                       |                               |             |         |
+| Tipo de Boleto |  Seleção única  | Opções: Água, Gás, Manutenção, Outros |         |
+| Descrição |    Caixa de texto |  Descrição detalhada do serviço |         |
+|Valor|        Numérico       | Valor do boleto |         |
+|Data de Vencimento|    Data |Data limite para pagamento |         |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Enviar boletos] | Processo Financeiro  |             | default          |
+| [Enviar boletos] | Geração do boleto no sistema |       default          |
+|[Cancelar] |Cancelamento da emissão  |  cancel        | 
 
-
-**Atividade 3 - Enviar boletos**
-
+**Atividade 2: Acesso ao Setor Financeiro (Moradores)**
 
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
-|                       |                               |             |         |
+| Lista de Boletos |Tabela|     Lista de boletos disponíveis para o morador   |         |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Enviar boletos] | Processo Financeiro  |             | default          |
+|[Visualizar Boletos] | Detalhes dos boletos disponíveis  |             | default          |
+
+**Atividade 3: Visualização e Pagamento (Moradores)**
+
+| **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
+| ---                |  ---                          | ---               | ---               |
+| Lista de Boletos Pendentes     | Tabela      |  Lista de boletos em aberto    |         |
+| Histórico de Pagamentos    |   Tabela   |  Histórico de pagamentos realizados   |         |
+| Opções de Pagamento   | Botões e campos       |  Código de barras para pagamento  |         |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Efetuar Pagamento] | Confirmação do pagamento |             | default          |
+|[Cancelar] | Cancelamento do pagamento |             |cancel        |
+
 
 
