@@ -14,22 +14,11 @@
 | [Usar Token]       |          Processo de Token               |   default                |
 | [Emitir boletos]           | Processo de Emitir boletos            | default       |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
 
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+**Atividade 2 - Acessar financeiro**
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
+| [Financeiro]  | Processo Financeiro/ Emitir boletos|  |(default)          |
+| [Enviar boletos] | Processo Financeiro  |             |(default)          |
 |                      |                                |                   |
