@@ -1,6 +1,6 @@
 ### 3.3.2 Processo z – Ouvidoria
 
-![Modelo BPMN do Processo de Ouvidoria](images/processo-ouvidoria.png "Modelo BPMN do Processo 2.")
+![Modelo BPMN do Processo de Ouvidoria](images/processo-XIII-ouvidoria.png "Modelo BPMN do Processo 2.")
 
 #### Detalhamento das atividades
 
