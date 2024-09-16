@@ -1,4 +1,4 @@
-### 3.3.4 Processo 4 – Prestação de contas
+### 3.3.14 Processo 14 – PRESTAÇÃO DE CONTAS
 
 O processo de Prestação de Contas organiza as informações financeiras do condomínio, permitindo que a administração publique relatórios detalhados e os moradores acompanhem como os recursos estão sendo utilizados.
 
@@ -30,27 +30,25 @@ O processo de Prestação de Contas organiza as informações financeiras do con
 #### Detalhamento das atividades
 
 
-**Inserir Informações da Conta**
+**Atividade 1: Preenchimento da Prestação de Contas (Administrador)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Nome            | Caixa de Texto   | formato de e-mail |                |
-| Preço           | Numero           | mínimo de 8 caracteres |           |
-| Responsavel     | Caixa de Texto   | mínimo de 3 caracteres |           |
-| Tipo            | eleção única     | Pelo menos uma opção selecionada |  Serviço     |
+|Descrição das Despesas         | Arquivo| obrigatório |                |
+|Data          |Data         | obrigatório |           |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Anexar Provas        | Coletar provas                 | default           |
+| [Salvar Prestação de Contas]     | Salvar prestação de contas               |Default    |
+|[Cancelar]   | Cancelar o preenchimento            |Cancel  |
 
-
-**Visualizar Provas**
+**Atividade 2: Visualização de Prestação de Contas (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Provas          | Arquivos         | Aquivo de imagem ou PDF|                   |
+|Lista de Prestações de Contas      | Tabela     | Lista de prestações de contas disponíveis|                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Visualizar relatorio |  Gera relatorio                | default           |
-| Salver relatorio     |  Finalizar processo            | default           |
+| [Visualizar Prestação] | Abre arquivo selecionado        | Default     |
+|[Cancelar]     |  Finalizar processo            | default           |
