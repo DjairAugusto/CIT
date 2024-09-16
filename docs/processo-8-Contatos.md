@@ -1,6 +1,6 @@
 ### 3.3.5 Processo 8 - Contatos
 
-![Modelo BPMN do Processo de Contatos](images/processo-contatos.png "Modelo BPMN do Processo 8.")
+![Modelo BPMN do Processo de Contatos](images/processo-8-contatos.png "Modelo BPMN do Processo 8.")
 
 #### Detalhamento das atividades
 
