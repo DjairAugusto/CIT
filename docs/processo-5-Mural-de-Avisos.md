@@ -27,8 +27,8 @@ O processo apresentado mostra como as informações sobre um aviso serão obtida
 * Histórico Claro: com a ajuda do sistema, as datas e informações ficam salvas, possibilitando a administração e os moradores saberem quando algo aconteceu.
 * Aviso Imediato: o sistema de notificações possibilita que os moradores se mantenham sempre atualizados sobre o que está acontecendo.
 
-![Modelo BPMN do Processo de Mural de Avisos - Administração](images/processo-6-mural-de-avisos-administracao.png "Modelo BPMN do Processo 6.")
-![Modelo BPMN do Processo de Mural de Avisos - Moradores](images/processo-6-mural-de-avisos-moradores.png "Modelo BPMN do Processo 6.")
+![Modelo BPMN do Processo de Mural de Avisos - Administração](images/processo-5-mural-de-avisos-administracao.png "Modelo BPMN do Processo 6.")
+![Modelo BPMN do Processo de Mural de Avisos - Moradores](images/processo-5-mural-de-avisos-moradores.png "Modelo BPMN do Processo 6.")
 
 #### Detalhamento das atividades
 
