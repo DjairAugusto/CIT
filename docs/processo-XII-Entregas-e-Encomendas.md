@@ -1,4 +1,4 @@
-### 3.3.3 Processo 3 – Entregas e Encomendas
+### 3.3.12 Processo 12 – ENTREGAS E ENCOMENDAS
 
 O processo de Entregas e Encomendas gerencia a chegada e retirada de encomendas no condomínio, oferecendo um fluxo claro tanto para a administração quanto para os moradores.
 
@@ -28,12 +28,37 @@ O processo de Entregas e Encomendas gerencia a chegada e retirada de encomendas 
 
 #### Detalhamento das atividades
 
-**Cadastrar Encomendas**
+**Atividade 1: Registro de Recebimento de Encomendas (Administrador)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Data e Hora de recebimento     | Data e Hora   | Data e hora superior ou anterior da atual |  Data e hora atual              |
+| Foto da Encomenda  | Imagem | 	Foto da encomenda recebida|              |
+| Data de Recebimento  | Data e Hora   | Data e hora do recebimento da encomenda |               |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Cadastrar              | Enviar notificação             | default           |
+|[Registrar Recebimento]            | Finalização do registro de recebimento             |Default       |
+|[Cancelar]       | Cancelamento do registro             |Cancel      |
+
+**Atividade 2: Visualização de Entregas e Encomendas (Morador)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+|Lista de Encomendas  | Tabela| 	Lista de encomendas disponíveis para retirada|              |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|[Cancelar]       | Cancelamento do registro             |Cancel      |
+
+**Atividade 3: Registro de Retirada da Encomenda**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+|Nome do morador  | Caixa de Texto| obrigatório|              |
+| Data de Retirada| Data e Hora   | Data e hora da retirada da encomenda |               |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|[Confirmar Registro]       |Confirmação do registro             |Default   |
+|[Cancelar]       | Cancelamento do registro             |Cancel      |
