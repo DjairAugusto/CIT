@@ -5,6 +5,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 **Descrição do Processo:**
 
 **1. Processo para Moradores**
+
 **1.1 Acesso à Área Comum:**
 
 * Visualização: O morador acessa as áreas comuns disponíveis, visualizando detalhes como horários e descrições.
