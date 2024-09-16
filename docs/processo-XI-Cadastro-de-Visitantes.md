@@ -1,4 +1,4 @@
-### 3.3.12 Processo 12 – Cadastro de Visitantes
+### 3.3.11 Processo 11 – Cadastro de Visitantes
 
 O processo de Cadastro de Visitantes permite que os moradores registrem seus convidados e que a administração tenha controle sobre as visitas recebidas.
 
@@ -26,38 +26,43 @@ O processo de Cadastro de Visitantes permite que os moradores registrem seus con
 
 #### Detalhamento das atividades
 
-**Inserir quantidade de visitantes**
+**Atividade 1: Cadastro de Visitantes (Morador)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Número de visitantes | Número  |     mínimo 1 morador           |       1            |
+|Nome do Visitante |Caixa de texto |     Nome completo do visitante        |                  |
+| CPF do Visitante | Caixa de texto | Número válido de CPF      |                  |
+| Veículo (Opcional)| Número |   Número de veículos (se aplicável)          |                  |
 
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|[Confirmar Cadastro] |Finalização do cadastro do visitante  | 	Default |
+|[Cadastro de veículos]             | Finalização do cadastro do visitante            | default           |
+|[Cancelar]         | Cancelamento do cadastro  |    Cancel     |
 
-
-**Inserir nome dos visitantes**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Nome             | Área de Texto  |                |    mínimo de 2 caracteres               |
-
-**Escolher  quantidade de automóveis**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Número de Automóveis | Número  |     mínimo 1 morador           |       1            |
-
-**Preencher dados de cada automóvel**
+**Atividade 2: Preencher Formulário de Cadastro de Automóveis (Moradores - se aplicável)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Tipo             | Área de Texto  |       mínimo de 2 caracteres         |    Moto, Carro               |
-|  Modelo     |      Área de Texto            |        mínimo de 1 caracter        |                   |
-|   Placa       |         Área de Texto         |         mínimo de 7 caracteres       |                   |
-|   Cor      |         Área de Texto         |         mínimo de 2 caracteres       |                   |
+| Quantidade de automóveis | Número  |	Valor inteiro positivo|    0   |
+| Tipo de automóvel |  Seleção Única  |  Carro/Moto/Outro  |  	Carro   |
+| Modelo do automóvel  |  	Caixa de Texto | Não pode estar vazio se "Quantidade" for maior que 0  |                   |
+| Cor do automóvel | 	Caixa de Texto | Não pode estar vazio se "Quantidade" for maior que 0|                   |
+| Placa do automóvel	  | 	Caixa de Texto| Formato de placa (AAA-1234 ou ABC1D23) |                   |
 
-**Definir dia e horário para visita**
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|[Confirmar Cadastro] |Finalização do cadastro do visitante  | 	Default |
+|[Cancelar]         | Cancelamento do cadastro  |    Cancel     |
+
+**Atividade 3: Visualização de Visitantes**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| dia   e horário aproximado        | Dados e Hora   | formato data e hora |                |
+|Lista de Visitantes	 | Tabela |   Lista de visitantes cadastrados         |                  |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|[Visualizar Visitante] |Detalhes do visitante selecionado | 	Default |
+|[Cancelar]         | Cancelamento do cadastro  |    Cancel     |
 
