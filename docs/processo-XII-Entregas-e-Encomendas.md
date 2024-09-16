@@ -22,7 +22,7 @@ O processo de Entregas e Encomendas gerencia a chegada e retirada de encomendas 
 
 * Notificação Automática: Os moradores são notificados automaticamente quando uma encomenda chega, melhorando a eficiência.
 * Controle de Retirada: A administração registra a retirada de forma organizada, evitando extravios.
-* 
+  
 ![Exemplo de um Modelo BPMN do PROCESSO 3](images/processo-XII-entregas-e-encomendas.png "Modelo BPMN do Processo 3.")
 
 
