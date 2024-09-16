@@ -36,29 +36,43 @@ _Descreva aqui cada uma das propriedades das atividades do processo 5.
 Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
 
-**Cadastrar item perdido**
+**Atividade 1: Cadastro de Item Perdido (Administração)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
-
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| Nome do Item | Caixa de texto |  Texto simples, obrigatório  |                   |
+| Descrição do Item | Área de texto	  | Detalhes sobre o item |                   |
+| Local Onde Foi Encontrado |  Caixa de texto  |Texto simples, obrigatório |                   |
+| Data em que Foi Encontrado | Data  |  Data do achado   |                   |
+| Foto do Item (Opcional)  |   Imagem  |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+|[Cadastrar Item]|Confirma cadastro  | Default |
+|[Cancelar]  |     Fim do processo  |   Cancel  |
+
+
+**Atividade 2: Consulta de Itens Perdidos (Moradores)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+|Filtro de Nome do Item| Caixa de texto  |  Opcional  |                   |
+
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Buscar Itens]| Resultados de busca  |Default|
+|    [Cancelar] |   Fim do processo      |     Cancel|
+
+**Atividade 3: Retirada de Item (Administradores)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+|Item Selecionado | Seleção única | Baseada em itens cadastrados |                   |
+|  Data de Retirada   |  Data  |                |                   |
+|  Responsável pela Retirada |  Caixa de texto    |  Texto obrigatório |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+|[Confirmar Retirada] | Confirma a retirada  | Default |
+|  [Cancelar]   |    Fim do processo  |    Cancel   |
