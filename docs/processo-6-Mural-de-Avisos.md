@@ -1,6 +1,7 @@
 ### 3.3.6 Processo 6 – Mural de Avisos
 
-![Modelo BPMN do Processo de Mural de Avisos](images/processo-mural-de-avisos.png "Modelo BPMN do Processo 6.")
+![Modelo BPMN do Processo de Mural de Avisos - Administração](images/processo-6-mural-de-avisos-administracao.png "Modelo BPMN do Processo 6.")
+![Modelo BPMN do Processo de Mural de Avisos - Moradores](images/processo-6-mural-de-avisos-moradores.png "Modelo BPMN do Processo 6.")
 
 #### Detalhamento das atividades
 
