@@ -32,10 +32,6 @@ O processo de Achados e Perdidos é uma funcionalidade essencial para garantir q
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 5. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
-
-
 **Atividade 1: Cadastro de Item Perdido (Administração)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
