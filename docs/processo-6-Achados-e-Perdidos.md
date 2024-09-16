@@ -3,7 +3,7 @@
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
 Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](images/docs/images/processo-6-achados-e-perdidos.png "Modelo BPMN do Processo 1.")
+![Exemplo de um Modelo BPMN do PROCESSO 1](docs/images/processo-6-achados-e-perdidos.png "Modelo BPMN do Processo 1.")
 
 #### Detalhamento das atividades
 
