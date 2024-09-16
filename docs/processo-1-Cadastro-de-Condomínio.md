@@ -49,7 +49,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 
 **Subprocesso 3: Cadastro do Síndico**
 
-![Modelo BPMN do Subprocesso 3](images/subprocesso-cadastro-do-sindico.png "Modelo BPMN do Subprocesso 3")
+![Modelo BPMN do Subprocesso 3](images/processo-1-subprocesso-cadastro-do-sindico.png "Modelo BPMN do Subprocesso 3")
 
 
 #### Detalhamento das atividades
