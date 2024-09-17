@@ -126,7 +126,32 @@ As oportunidades de melhorias incluem a automação de processos antes realizado
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Nome do Processo](processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+Processo 1 – CADASTRO DO CONDOMÍNIO
+
+[PROCESSO 1 - Nome do Processo](processo-1-Cadastro-de-Condomínio.md "Detalhamento do Processo 1.")
+
+O Cadastro do Condomínio é o processo inicial essencial para quem deseja começar a utilizar nosso programa de gestão de condomínios. Este processo estabelece a base para o funcionamento do sistema e é crucial para garantir que todos os dados necessários sejam coletados e configurados corretamente.
+
+**Descrição do Processo:**
+
+**1. Preenchimento do Formulário do Condomínio:**
+
+* O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais, como o tamanho do condomínio, o número de apartamentos e especificações adicionais. Além disso, o formulário inclui a definição dos usuários administrativos que serão responsáveis pela gestão, como o zelador. É aqui que o síndico pode definir e ajustar as permissões e cargos dos funcionários, garantindo que cada um tenha acesso às funcionalidades necessárias para suas funções.
+
+**2. Cadastro do Síndico:**
+
+* Após o preenchimento do formulário, o sistema solicita o cadastro do síndico. O síndico deve fornecer informações como nome, contato e dados de autenticação. Este passo é crucial para garantir que o responsável pela gestão do condomínio seja registrado e possa acessar o sistema com as permissões adequadas.
+
+**3. Geração de Tokens:**
+
+Após o formulário ser preenchido, o sistema gera tokens únicos para os moradores e funcionários do condomínio.
+
+* **Tokens para Moradores:** Cada apartamento recebe um token específico, permitindo que os moradores se cadastrem no site e se vinculem diretamente ao seu apartamento.
+
+* **Tokens para Funcionários:** Os tokens para funcionários são gerados com base nas informações fornecidas pelo síndico. Estes tokens definem cargos e permissões, permitindo que cada funcionário acesse o sistema com suas credenciais apropriadas.
+
+Este processo de cadastro é fundamental para configurar o condomínio no sistema e garantir que todas as informações estejam corretamente alinhadas para a gestão eficiente e segura do ambiente condominial.
+
 
 [PROCESSO 2 - Nome do Processo](processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
 
