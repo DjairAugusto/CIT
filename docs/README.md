@@ -126,38 +126,33 @@ As oportunidades de melhorias incluem a automação de processos antes realizado
 
 ### 3.3. Modelagem dos processos
 
-Processo 1 – CADASTRO DO CONDOMÍNIO
+[PROCESSO 1 - Cadastro de Condomínio](processo-1-Cadastro-de-Condomínio.md "Detalhamento do Processo 1.")
 
-[PROCESSO 1 - Nome do Processo](processo-1-Cadastro-de-Condomínio.md "Detalhamento do Processo 1.")
+[PROCESSO 2 - Cadastro de Apartamento](processo-2-Cadastro-de-Apartamento.md "Detalhamento do Processo 2.")
 
-O Cadastro do Condomínio é o processo inicial essencial para quem deseja começar a utilizar nosso programa de gestão de condomínios. Este processo estabelece a base para o funcionamento do sistema e é crucial para garantir que todos os dados necessários sejam coletados e configurados corretamente.
+[PROCESSO 3 - Cadastro de Funcionário](processo-3-Cadastro-de-Funcionário.md "Detalhamento do Processo 3.")
 
-**Descrição do Processo:**
+[PROCESSO 4 - Área Comum](processo-4-Área-Comum.md "Detalhamento do Processo 4.")
 
-**1. Preenchimento do Formulário do Condomínio:**
+[PROCESSO 5 - Mural de Avisos](processo-5-Mural-de-Avisos.md "Detalhamento do Processo 4.")
 
-* O usuário inicia o processo preenchendo um formulário detalhado sobre o condomínio. Este formulário coleta informações essenciais, como o tamanho do condomínio, o número de apartamentos e especificações adicionais. Além disso, o formulário inclui a definição dos usuários administrativos que serão responsáveis pela gestão, como o zelador. É aqui que o síndico pode definir e ajustar as permissões e cargos dos funcionários, garantindo que cada um tenha acesso às funcionalidades necessárias para suas funções.
+[PROCESSO 6 - Achados e Perdidos](processo-6-Achados-e-Perdidos.md "Detalhamento do Processo 4.")
 
-**2. Cadastro do Síndico:**
+[PROCESSO 7 - Financeiro](processo-7-Financeiro.md "Detalhamento do Processo 4.")
 
-* Após o preenchimento do formulário, o sistema solicita o cadastro do síndico. O síndico deve fornecer informações como nome, contato e dados de autenticação. Este passo é crucial para garantir que o responsável pela gestão do condomínio seja registrado e possa acessar o sistema com as permissões adequadas.
+[PROCESSO 8 - Contatos](processo-8-Contatos.md "Detalhamento do Processo 4.")
+ 
+[PROCESSO 9 - Regras e Normas](processo-9-Regras-e-Normas-do-Condomínio.md "Detalhamento do Processo 4.")
 
-**3. Geração de Tokens:**
+[PROCESSO 10 - Assembleias](processo-X-Assembleias.md "Detalhamento do Processo 4.")
 
-Após o formulário ser preenchido, o sistema gera tokens únicos para os moradores e funcionários do condomínio.
+[PROCESSO 11 - Cadastro de Visitantes](processo-XI-Cadastro-de-Visitantes.md "Detalhamento do Processo 4.")
 
-* **Tokens para Moradores:** Cada apartamento recebe um token específico, permitindo que os moradores se cadastrem no site e se vinculem diretamente ao seu apartamento.
+[PROCESSO 12 - Entregas e Encomendas](processo-XII-Entregas-e-Encomendas.md "Detalhamento do Processo 4.")
 
-* **Tokens para Funcionários:** Os tokens para funcionários são gerados com base nas informações fornecidas pelo síndico. Estes tokens definem cargos e permissões, permitindo que cada funcionário acesse o sistema com suas credenciais apropriadas.
+[PROCESSO 13 - Ouvidoria](processo-XIII-Ouvidoria.md "Detalhamento do Processo 4.")
 
-Este processo de cadastro é fundamental para configurar o condomínio no sistema e garantir que todas as informações estejam corretamente alinhadas para a gestão eficiente e segura do ambiente condominial.
-
-
-[PROCESSO 2 - Nome do Processo](processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
-
-[PROCESSO 3 - Nome do Processo](processo-3-nome-do-processo.md "Detalhamento do Processo 3.")
-
-[PROCESSO 4 - Nome do Processo](processo-4-nome-do-processo.md "Detalhamento do Processo 4.")
+[PROCESSO 14 - Prestação de Contas](processo-XIV-Prestação-de-Contas.md "Detalhamento do Processo 4.")
 
 ## 4. Projeto da solução
 
