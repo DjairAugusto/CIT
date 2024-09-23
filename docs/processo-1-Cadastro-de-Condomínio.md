@@ -74,7 +74,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | [Fazer login] | Página principal da plataforma  |default |
 | [Cancelar]       |  Acesso ao sistema   |   cancel                |
 
-**Atividade 2: Preencher Formulário de Cadastro**
+**Atividade 3: Preencher Formulário de Cadastro**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -83,14 +83,15 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 |  andares  |    Número   |     valor inteiro positivo   |  valor inteiro positivo   |
 |  apartamentos por andar  |   Número   | valor inteiro positivo  |                   |
 
-**Definição de Outros Empregados**
+**Atividade 3.1: Definição de Outros Empregados**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | Quantidade de funcionários | Seleção Única  |     lista de números           |     |    
-| Cargo dos empregados | Seleção Única		  | lista de cargos possíveis |                   |
+| Cargo dos empregados | Seleção Única		  | lista de cargos possíveis ou outros |                   |
+| Qual (se aplicável) | Caixa de Texto		  | obrigatório |                   |
 
-**Campos de Marcadores para Definições de Permissões:**
+**Atividade 3.2: Campos de Marcadores para Definições de Permissões:**
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | Editar Área Comum | Seleção Única  |                |                   |
@@ -113,7 +114,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | ---                  | ---                            | ---               |
 | [Próximo] |Processo de Cadastro do Síndico  | default |
 
-**Atividade 3: Processo de Cadastro do Síndico**
+**Atividade 4: Processo de Cadastro do Síndico**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
