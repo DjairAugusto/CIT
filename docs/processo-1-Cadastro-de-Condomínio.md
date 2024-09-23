@@ -62,19 +62,8 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | [Usar Token]       |          Processo de Token               |   default                |
 | [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
 
-**Atividade 2: Fazer Login (Obrigatória)**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| login | 	Caixa de Texto  |  formato de e-mail |                   |
-| senha  |   Caixa de Texto   | mínimo de 8 caracteres	  |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Fazer login] | Página principal da plataforma  |default |
-| [Cancelar]       |  Acesso ao sistema   |   cancel                |
-
-**Atividade 3: Preencher Formulário de Cadastro**
+**Atividade 2: Preencher Formulário de Cadastro**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -83,7 +72,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 |  andares  |    Número   |     valor inteiro positivo   |  valor inteiro positivo   |
 |  apartamentos por andar  |   Número   | valor inteiro positivo  |                   |
 
-**Atividade 3.1: Definição de Outros Empregados**
+**Atividade 2.1: Definição de Outros Empregados**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -91,7 +80,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | Cargo dos empregados | Seleção Única		  | lista de cargos possíveis ou outros |                   |
 | Qual (se aplicável) | Caixa de Texto		  | obrigatório |                   |
 
-**Atividade 3.2: Campos de Marcadores para Definições de Permissões:**
+**Atividade 2.2: Campos de Marcadores para Definições de Permissões:**
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | Editar Área Comum | Seleção Única  |                |                   |
@@ -114,7 +103,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | ---                  | ---                            | ---               |
 | [Próximo] |Processo de Cadastro do Síndico  | default |
 
-**Atividade 4: Processo de Cadastro do Síndico**
+**Atividade 3: Processo de Cadastro do Síndico**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
