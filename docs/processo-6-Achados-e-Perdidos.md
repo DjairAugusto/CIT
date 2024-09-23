@@ -32,7 +32,27 @@ O processo de Achados e Perdidos é uma funcionalidade essencial para garantir q
 
 #### Detalhamento das atividades
 
-**Atividade 1: Cadastro de Item Perdido (Administração)**
+**Atividade 1: Acessar sistema**
+
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Processo de Login   |default|
+| [Usar Token]       |          Processo de Token               |   default                |
+| [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
+
+**Atividade 2: Fazer Login (Obrigatória)**
+
+| Campo       | Tipo         | Restrições | Valor default |
+| ---             | ---              | ---            | ---               |
+| login |     Caixa de Texto  |  formato de e-mail |                   |
+| senha  |   Caixa de Texto   | mínimo de 8 caracteres      |                   |
+
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Página principal da plataforma  |default |
+| [Cancelar]       |  Acesso ao sistema   |   cancel                |
+
+**Atividade 2: Cadastro de Item Perdido (Administração)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -48,7 +68,7 @@ O processo de Achados e Perdidos é uma funcionalidade essencial para garantir q
 |[Cancelar]  |     Fim do processo  |   Cancel  |
 
 
-**Atividade 2: Consulta de Itens Perdidos (Moradores)**
+**Atividade 3: Consulta de Itens Perdidos (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -60,7 +80,7 @@ O processo de Achados e Perdidos é uma funcionalidade essencial para garantir q
 | [Buscar Itens]| Resultados de busca  |Default|
 |    [Cancelar] |   Fim do processo      |     Cancel|
 
-**Atividade 3: Retirada de Item (Administradores)**
+**Atividade 4: Retirada de Item (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
