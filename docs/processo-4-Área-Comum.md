@@ -57,6 +57,14 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 
 #### Detalhamento das atividades
 
+**Atividade 1: Acessar sistema**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Processo de Login  | default   |default
+| [Usar Token]       |          Processo de Token               |   default                |
+| [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
+
 **Atividade 1: Acesso à Área Comum (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
