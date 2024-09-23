@@ -31,22 +31,33 @@ O processo apresentado mostra como as informações sobre um aviso serão obtida
 ![Modelo BPMN do Processo de Mural de Avisos - Moradores](images/processo-5-mural-de-avisos-moradores.png "Modelo BPMN do Processo 6.")
 
 #### Detalhamento das atividades
+**Atividade 1: Acessar sistema**
 
-**Atividade 1: Acessar Sistema**
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Processo de Login   |default|
+| [Usar Token]       |          Processo de Token               |   default                |
+| [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
 
-| **Comandos**           | **Destino**             | **Tipo**  |
-|------------------------|-------------------------|-----------|
-| [Fazer Login]          | Processo de Login       | default   |
-| [Cadastrar Condomínio] | Processo de Token       | default   |
-| [Entrar com Token]     | Acessar Mural de Avisos | default   |
+**Atividade 1.1: Fazer Login (Obrigatória)**
 
-**Escolher Ação (Mural de Avisos)**
+| Campo       | Tipo         | Restrições | Valor default |
+| ---             | ---              | ---            | ---               |
+| login |     Caixa de Texto  |  formato de e-mail |                   |
+| senha  |   Caixa de Texto   | mínimo de 8 caracteres      |                   |
+
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Página principal da plataforma  |default |
+| [Cancelar]       |  Acesso ao sistema   |   cancel                |
+
+**Atividade 2: Escolher Ação (Mural de Avisos)**
 
 | **Campo**       | **Tipo**         | **Restrições**      | **Valor default** |
 | ---             | ---              | ---                 | ---               |
 | Ação            | Seleção Única    | Visualizar ou Criar | Visualizar        |
 
-**Selecionar Aviso**
+**Atividade 3: Selecionar Aviso**
 
 | **Campo**       | **Tipo**         | **Restrições**     | **Valor default** |
 | ---             | ---              | ---                | ---               |
@@ -57,7 +68,7 @@ O processo apresentado mostra como as informações sobre um aviso serão obtida
 | Editar               | Editar Aviso                   |                   |
 | Apagar               | Apagar Aviso                   |                   |
 
-**Criar Aviso**
+**Atividade 4: Criar Aviso**
 
 | **Campo**       | **Tipo**         | **Restrições**           | **Valor default** |
 | ---             | ---              | ---                      | ---               |
@@ -71,7 +82,7 @@ O processo apresentado mostra como as informações sobre um aviso serão obtida
 | Criar                | Notificar Moradores            |                   |
 | Cancelar             | Fim                            | cancel            |
 
-**Editar Aviso**
+**Atividade 6: Editar Aviso**
 
 | **Campo**       | **Tipo**         | **Restrições**           | **Valor default** |
 | ---             | ---              | ---                      | ---               |
@@ -80,19 +91,19 @@ O processo apresentado mostra como as informações sobre um aviso serão obtida
 | Imagens         | Imagem           | Nenhuma                  | NULO              |
 | Anexos          | Arquivo          | Nenhuma                  | NULO              |
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
+| **Atividade 7: Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | Salvar               | Notificar Moradores            |                   |
 | Cancelar             | Fim                            | cancel            |
 
-**Apagar Aviso**
+**Atividade 8: Apagar Aviso**
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | Apagar               | Fim                            |                   |
 | Cancelar             | Fim                            | cancel            |
 
-**Escolher Ação (Mural de Avisos - Notificação)**
+**Atividade 9: Escolher Ação (Mural de Avisos - Notificação)**
 
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
