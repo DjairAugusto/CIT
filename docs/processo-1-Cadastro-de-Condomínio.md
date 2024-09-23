@@ -53,14 +53,26 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 
 
 #### Detalhamento das atividades
+
 **Atividade 1: Acessar sistema**
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| [Fazer login] | Processo de Login  | default   |default
+| [Fazer login] | Processo de Login   |default|
 | [Usar Token]       |          Processo de Token               |   default                |
 | [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
 
+**Atividade 2: Fazer Login (Obrigatória)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| login | 	Caixa de Texto  |  formato de e-mail |                   |
+| senha  |   Caixa de Texto   | mínimo de 8 caracteres	  |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Página principal da plataforma  |default |
+| [Cancelar]       |  Acesso ao sistema   |   cancel                |
 
 **Atividade 2: Preencher Formulário de Cadastro**
 
