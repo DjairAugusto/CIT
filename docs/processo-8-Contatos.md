@@ -27,8 +27,28 @@ O processo de Contatos tem como objetivo organizar e disponibilizar os contatos 
 
 #### Detalhamento das atividades
 
+**Atividade 1: Acessar sistema**
 
-**Atividade 1: Gerenciamento de Contatos (Administradores)**
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Processo de Login   |default|
+| [Usar Token]       |          Processo de Token               |   default                |
+| [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
+
+**Atividade 1.2: Fazer Login (Obrigatória)**
+
+| Campo       | Tipo         | Restrições | Valor default |
+| ---             | ---              | ---            | ---               |
+| login |     Caixa de Texto  |  formato de e-mail |                   |
+| senha  |   Caixa de Texto   | mínimo de 8 caracteres      |                   |
+
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Página principal da plataforma  |default |
+| [Cancelar]       |  Acesso ao sistema   |   cancel                |
+
+
+**Atividade 2: Gerenciamento de Contatos (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -42,7 +62,7 @@ O processo de Contatos tem como objetivo organizar e disponibilizar os contatos 
 |[Editar Contato] | Edita informações do contato  |Default   |
 | [Remover Contato] | Remove contato selecionado  | Cancel   |
 
-**Atividade 2: Visualização de Contatos (Moradores)**
+**Atividade 3: Visualização de Contatos (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |

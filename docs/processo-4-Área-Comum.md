@@ -57,15 +57,29 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 
 #### Detalhamento das atividades
 
+#### Detalhamento das atividades
+
 **Atividade 1: Acessar sistema**
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
+| Comandos         |  Destino                   | Tipo |
 | ---                  | ---                            | ---               |
-| [Fazer login] | Processo de Login  | default   |default
+| [Fazer login] | Processo de Login   |default|
 | [Usar Token]       |          Processo de Token               |   default                |
 | [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
 
-**Atividade 1: Acesso à Área Comum (Moradores)**
+**Atividade 1.1: Fazer Login (Obrigatória)**
+
+| Campo       | Tipo         | Restrições | Valor default |
+| ---             | ---              | ---            | ---               |
+| login |     Caixa de Texto  |  formato de e-mail |                   |
+| senha  |   Caixa de Texto   | mínimo de 8 caracteres      |                   |
+
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Página principal da plataforma  |default |
+| [Cancelar]       |  Acesso ao sistema   |   cancel                |
+
+**Atividade 2: Acesso à Área Comum (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -79,7 +93,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 | [Cancelar]    |   Fim do processo     |  Cancel     |
 
 
-**Atividade 2: Reserva de Área Comum (Moradores)**
+**Atividade 3: Reserva de Área Comum (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -93,7 +107,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 | [Confirmar Reserva] | Verificação de pagamento  | Default |
 |  [Cancelar]  |  Fim do processo   |    Cancel  |
 
-**Atividade 3: Pagamento de Taxa de Reserva (Moradores)**
+**Atividade 4: Pagamento de Taxa de Reserva (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -107,7 +121,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 |  [Cancelar Reserva]  |  Cancela a reserva   |  Cancel    |
 
 
-**Atividade 4: Cancelamento de Reserva (Moradores)**
+**Atividade 5: Cancelamento de Reserva (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -120,7 +134,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 |  [Voltar] | Retorna ao menu de reservas |     Cancel |
 
 
-**Atividade 5: Gerenciamento de Áreas Comuns (Administradores)**
+**Atividade 6: Gerenciamento de Áreas Comuns (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -134,7 +148,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 | [Excluir Área] | Remover área comum | Cancel |
 
 
-**Atividade 6: Edição de Áreas Comuns (Administradores)**
+**Atividade 7: Edição de Áreas Comuns (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -148,7 +162,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 | [Cancelar] | Fim do processo  |Cancel |
 
 
-**Atividade 7: Gerenciamento de Reservas (Administradores)**
+**Atividade 8: Gerenciamento de Reservas (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |

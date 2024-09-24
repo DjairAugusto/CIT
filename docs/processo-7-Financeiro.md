@@ -30,7 +30,28 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 
 #### Detalhamento das atividades
 
-**Atividade 1: Emissão de Boletos (Administrador)**
+**Atividade 1: Acessar sistema**
+
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Processo de Login   |default|
+| [Usar Token]       |          Processo de Token               |   default                |
+| [Cadastre seu condomínio]           | Cadastro do Condomínio              | default       |
+
+**Atividade 1.2: Fazer Login (Obrigatória)**
+
+| Campo       | Tipo         | Restrições | Valor default |
+| ---             | ---              | ---            | ---               |
+| login |     Caixa de Texto  |  formato de e-mail |                   |
+| senha  |   Caixa de Texto   | mínimo de 8 caracteres      |                   |
+
+| Comandos         |  Destino                   | Tipo |
+| ---                  | ---                            | ---               |
+| [Fazer login] | Página principal da plataforma  |default |
+| [Cancelar]       |  Acesso ao sistema   |   cancel                |
+
+
+**Atividade 2: Emissão de Boletos (Administrador)**
 
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
@@ -44,7 +65,7 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 | [Enviar boletos] | Geração do boleto no sistema |       default          |
 |[Cancelar] |Cancelamento da emissão  |  cancel        | 
 
-**Atividade 2: Acesso ao Setor Financeiro (Moradores)**
+**Atividade 3: Acesso ao Setor Financeiro (Moradores)**
 
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
@@ -54,7 +75,7 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 | ---                  | ---                            | ---               |
 |[Visualizar Boletos] | Detalhes dos boletos disponíveis  |              default          |
 
-**Atividade 3: Visualização e Pagamento (Moradores)**
+**Atividade 4: Visualização e Pagamento (Moradores)**
 
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
