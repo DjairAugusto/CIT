@@ -48,7 +48,7 @@ O processo de Contatos tem como objetivo organizar e disponibilizar os contatos 
 | [Cancelar]       |  Acesso ao sistema   |   cancel                |
 
 
-**Atividade 2: Gerenciamento de Contatos (Administradores)**
+**Atividade 2: Acessar Contatos (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -62,7 +62,7 @@ O processo de Contatos tem como objetivo organizar e disponibilizar os contatos 
 |[Editar Contato] | Edita informações do contato  |Default   |
 | [Remover Contato] | Remove contato selecionado  | Cancel   |
 
-**Atividade 3: Visualização de Contatos (Moradores)**
+**Atividade 3: Acessar Contatos (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
