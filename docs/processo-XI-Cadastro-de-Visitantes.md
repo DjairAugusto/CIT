@@ -26,7 +26,7 @@ O processo de Cadastro de Visitantes permite que os moradores registrem seus con
 
 #### Detalhamento das atividades
 
-**Atividade 1: Cadastro de Visitantes (Morador)**
+**Atividade 1: Acessar Cadastro de Visitantes (Morador)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -55,7 +55,7 @@ O processo de Cadastro de Visitantes permite que os moradores registrem seus con
 |[Confirmar Cadastro] |Finalização do cadastro do visitante  | 	Default |
 |[Cancelar]         | Cancelamento do cadastro  |    Cancel     |
 
-**Atividade 3: Visualização de Visitantes**
+**Atividade 3: Visualizar Visitantes**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
