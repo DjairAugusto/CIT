@@ -72,6 +72,10 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 |  andares  |    Número   |     valor inteiro positivo   |  valor inteiro positivo   |
 |  apartamentos por andar  |   Número   | valor inteiro positivo  |                   |
 
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Próximo] |Processo de Cadastro de Outros Empregados  | default |
+
 **Atividade 2.1: Definição de Outros Empregados**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
