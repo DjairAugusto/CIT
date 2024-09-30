@@ -79,7 +79,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 | [Fazer login] | Página principal da plataforma  |default |
 | [Cancelar]       |  Acesso ao sistema   |   cancel                |
 
-**Atividade 2: Acesso à Área Comum (Moradores)**
+**Atividade 2: Acessar Área Comum/ Escolher Área Comum para Visualizar (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -93,7 +93,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 | [Cancelar]    |   Fim do processo     |  Cancel     |
 
 
-**Atividade 3: Reserva de Área Comum (Moradores)**
+**Atividade 3: Reservar Área Comum (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -121,7 +121,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 |  [Cancelar Reserva]  |  Cancela a reserva   |  Cancel    |
 
 
-**Atividade 5: Cancelamento de Reserva (Moradores)**
+**Atividade 5: Cancelar Reserva (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -148,13 +148,13 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 | [Excluir Área] | Remover área comum | Cancel |
 
 
-**Atividade 7: Edição de Áreas Comuns (Administradores)**
+**Atividade 7: Editar Horário e Descrição (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Selecionar Área Comum | [tipo de dados]  |                |                   |
-|Atualizar Horário  |                  |                |                   |
-| Atualizar Descrição | [tipo de dados]  |                |                   |
+| Selecionar Área Comum | Seleção Única  |                |                   |
+|Atualizar Horário  |    Data e Hora              |                |                   |
+| Atualizar Descrição | Caixa de Texto  |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
@@ -162,7 +162,7 @@ O processo de Área Comum é fundamental para a gestão das áreas compartilhada
 | [Cancelar] | Fim do processo  |Cancel |
 
 
-**Atividade 8: Gerenciamento de Reservas (Administradores)**
+**Atividade 8: Cancelar/Alterar Reservas de Moradores (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
