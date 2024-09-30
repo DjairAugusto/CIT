@@ -46,14 +46,14 @@ Este processo de cadastro garante que cada apartamento esteja corretamente regis
 
 #### Detalhamento das atividades
 
-**Atividade 1: Acessar sistema via Token**
+**Atividade 1: Inserir Token do Apartamento**
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 |[Inserir Token] | Processo de Validação de Token  | default |
 
 
-**Atividade 2: Preencher Formulário de Cadastro de Apartamento**
+**Atividade 3: Preencher Formulário de Cadastro de Apartamento**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -66,7 +66,7 @@ Este processo de cadastro garante que cada apartamento esteja corretamente regis
 | ---                  | ---                            | ---               |
 |[Próximo] | Formulário de Cadastro de Automóveis | default |
 
-**Atividade 3: Preencher Formulário de Cadastro de Automóveis (opcional)**
+**Atividade 3: Preencher Formulário de Cadastro de Automóvel (opcional)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -82,7 +82,7 @@ Este processo de cadastro garante que cada apartamento esteja corretamente regis
 | [Próximo] | Formulário de Definição de Perfis |default |
 
 
-**Atividade 4: Definição de Perfis e Permissões**
+**Atividade 4: Definir Login e Senha para Perfis**
 
 **Perfil Pricipal:**
 
