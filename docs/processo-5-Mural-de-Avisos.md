@@ -91,19 +91,19 @@ O processo apresentado mostra como as informações sobre um aviso serão obtida
 | Imagens         | Imagem           | Nenhuma                  | NULO              |
 | Anexos          | Arquivo          | Nenhuma                  | NULO              |
 
-| **Atividade 7: Comandos**         |  **Destino**                   | **Tipo**          |
+| **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | Salvar               | Notificar Moradores            |                   |
 | Cancelar             | Fim                            | cancel            |
 
-**Atividade 8: Apagar Aviso**
+**Atividade 7: Apagar Aviso**
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | Apagar               | Fim                            |                   |
 | Cancelar             | Fim                            | cancel            |
 
-**Atividade 9: Escolher Ação (Mural de Avisos - Notificação)**
+**Atividade 8: Escolher Ação (Mural de Avisos - Notificação)**
 
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
