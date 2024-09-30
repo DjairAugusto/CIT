@@ -41,7 +41,7 @@ O cadastro de funcionários é essencial para garantir que todos os colaboradore
 
 #### Detalhamento das atividades
 
-**Atividade 1: Acessar sistema via Token**
+**Atividade 1: Inserir Token de Funcionário**
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
@@ -61,7 +61,7 @@ O cadastro de funcionários é essencial para garantir que todos os colaboradore
 | ---                  | ---                            | ---               |
 |[Próximo] | Formulário de Cadastro de Automóveis | default |
 
-**Atividade 3: Preencher Formulário de Cadastro de Automóveis (opcional)**
+**Atividade 3: Preencher Formulário de Cadastro de Automóveis (se viável)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -77,7 +77,7 @@ O cadastro de funcionários é essencial para garantir que todos os colaboradore
 | [Próximo] | Formulário de Login |default |
 
 
-**Atividade 4: Definição de Perfil**
+**Atividade 4: Definição de Login e Senha para perfil**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
