@@ -27,7 +27,7 @@ O processo de Assembleias é voltado para o registro e compartilhamento das atas
 
 #### Detalhamento das atividades
 
-**Atividade 1: Publicação de Atas de Assembleia (Administrador)**
+**Atividade 1: Acessar Assembleia (Administrador)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -38,7 +38,7 @@ O processo de Assembleias é voltado para o registro e compartilhamento das atas
 | ---                  | ---                            | ---               |
 | [Publicar Ata] | Publicação da ata selecionada  | Default|
 
-**Atividade 2: Visualização de Atas de Assembleia (Moradores)**
+**Atividade 2: Ver Histórico de Assembleia (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
