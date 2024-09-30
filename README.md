@@ -14,7 +14,7 @@ A aplicação CIT - Condomínio Inteligente é um software desenvolvido para oti
 
 ## Professor
 
-* Alexandre Marques
+* Alexandre Marques Alves Silva
 * Danilo Boechat Seufitelli
 * Michelle Hanne Soares de Andrade
 
