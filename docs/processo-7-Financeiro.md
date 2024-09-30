@@ -51,7 +51,7 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 | [Cancelar]       |  Acesso ao sistema   |   cancel                |
 
 
-**Atividade 2: Emissão de Boletos (Administrador)**
+**Atividade 2: Emitir Boletos Para os Moradores (Administrador)**
 
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
@@ -65,7 +65,7 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 | [Enviar boletos] | Geração do boleto no sistema |       default          |
 |[Cancelar] |Cancelamento da emissão  |  cancel        | 
 
-**Atividade 3: Acesso ao Setor Financeiro (Moradores)**
+**Atividade 3: Abrir Setor Financeiro (Moradores)**
 
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
@@ -75,7 +75,7 @@ O morador pode visualizar os boletos pendentes e utilizar as opções do sistema
 | ---                  | ---                            | ---               |
 |[Visualizar Boletos] | Detalhes dos boletos disponíveis  |              default          |
 
-**Atividade 4: Visualização e Pagamento (Moradores)**
+**Atividade 4: Visualizar Boletos em Aberto (Moradores)**
 
 | **Campo**         |  **Tipo**                   | **Restrições**          | **Valor**         |  
 | ---                |  ---                          | ---               | ---               |
