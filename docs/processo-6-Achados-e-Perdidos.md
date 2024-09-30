@@ -52,7 +52,7 @@ O processo de Achados e Perdidos é uma funcionalidade essencial para garantir q
 | [Fazer login] | Página principal da plataforma  |default |
 | [Cancelar]       |  Acesso ao sistema   |   cancel                |
 
-**Atividade 2: Cadastro de Item Perdido (Administração)**
+**Atividade 2: Registrar Item Perdido (Administração)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -68,7 +68,7 @@ O processo de Achados e Perdidos é uma funcionalidade essencial para garantir q
 |[Cancelar]  |     Fim do processo  |   Cancel  |
 
 
-**Atividade 3: Consulta de Itens Perdidos (Moradores)**
+**Atividade 3: Abrir Feed de Achados e Perdidos (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -80,7 +80,7 @@ O processo de Achados e Perdidos é uma funcionalidade essencial para garantir q
 | [Buscar Itens]| Resultados de busca  |Default|
 |    [Cancelar] |   Fim do processo      |     Cancel|
 
-**Atividade 4: Retirada de Item (Administradores)**
+**Atividade 4: Registrar a Retirada de Item Perdido (Administradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
