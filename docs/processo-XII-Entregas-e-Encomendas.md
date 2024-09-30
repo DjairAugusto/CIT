@@ -28,7 +28,7 @@ O processo de Entregas e Encomendas gerencia a chegada e retirada de encomendas 
 
 #### Detalhamento das atividades
 
-**Atividade 1: Registro de Recebimento de Encomendas (Administrador)**
+**Atividade 1: Registro Informações da Encomenda (Administrador)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -41,7 +41,7 @@ O processo de Entregas e Encomendas gerencia a chegada e retirada de encomendas 
 |[Registrar Recebimento]            | Finalização do registro de recebimento             |Default       |
 |[Cancelar]       | Cancelamento do registro             |Cancel      |
 
-**Atividade 2: Visualização de Entregas e Encomendas (Morador)**
+**Atividade 2: Abrir Feed de Entregas e Encomendas (Morador)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -51,7 +51,7 @@ O processo de Entregas e Encomendas gerencia a chegada e retirada de encomendas 
 | ---                  | ---                            | ---               |
 |[Cancelar]       | Cancelamento do registro             |Cancel      |
 
-**Atividade 3: Registro de Retirada da Encomenda**
+**Atividade 3: Registrar a Retirada da Encomenda**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
