@@ -107,7 +107,7 @@ Este processo de cadastro é fundamental para configurar o condomínio no sistem
 | ---                  | ---                            | ---               |
 | [Próximo] |Processo de Cadastro do Síndico  | default |
 
-**Atividade 3: Processo de Cadastro do Síndico**
+**Atividade 3: Cadastro do Síndico**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
