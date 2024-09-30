@@ -52,7 +52,7 @@ O processo de Ouvidoria é uma ferramenta para que os moradores registrem sugest
 | ---                  | ---                            | ---               |
 | [Enviar Resposta]          |Envio da resposta ao morador         |Default      |
 
-**Atividade 3: Validação do Ticket**
+**Atividade 3: Validação do Ticket (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
 | ---             | ---              | ---                   | ---               |
