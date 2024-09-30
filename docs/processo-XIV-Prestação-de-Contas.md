@@ -30,7 +30,7 @@ O processo de Prestação de Contas organiza as informações financeiras do con
 #### Detalhamento das atividades
 
 
-**Atividade 1: Preenchimento da Prestação de Contas (Administrador)**
+**Atividade 1: Preencher Formulário (Administrador)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -42,7 +42,7 @@ O processo de Prestação de Contas organiza as informações financeiras do con
 | [Salvar Prestação de Contas]     | Salvar prestação de contas               |Default    |
 |[Cancelar]   | Cancelar o preenchimento            |Cancel  |
 
-**Atividade 2: Visualização de Prestação de Contas (Moradores)**
+**Atividade 2: Acessar Prestação de Contas (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
