@@ -27,7 +27,7 @@ O processo de Ouvidoria é uma ferramenta para que os moradores registrem sugest
 
 #### Detalhamento das atividades
 
-**Atividade 1: Abertura de Chamados na Ouvidoria (Moradores)**
+**Atividade 1: Acessar Ouvidoria e Abrir um Ticket (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições**                | **Valor default** |
 | ---             | ---              | ---                           | ---               |
@@ -41,7 +41,7 @@ O processo de Ouvidoria é uma ferramenta para que os moradores registrem sugest
 | [Cancelar]            | Cancelamento da abertura       | Cancel         |
 
 
-**Atividade 2: Resposta aos Chamados na Ouvidoria (Administração)**
+**Atividade 2: Responder Ticket (Administração)**
 
 | **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
 | ---             | ---              | ---                   | ---               |
@@ -52,7 +52,7 @@ O processo de Ouvidoria é uma ferramenta para que os moradores registrem sugest
 | ---                  | ---                            | ---               |
 | [Enviar Resposta]          |Envio da resposta ao morador         |Default      |
 
-**Atividade 3: Validação do Ticket (Moradores)**
+**Atividade 3: Validar Resposta (Moradores)**
 
 | **Campo**       | **Tipo**         | **Restrições**        | **Valor default** |
 | ---             | ---              | ---                   | ---               |
