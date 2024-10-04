@@ -5,6 +5,8 @@ services:
     environment:
       MYSQL_DATABASE: cit
       MYSQL_ALLOW_EMPTY_PASSWORD: true
+    networks:
+      - backend
   backend:
     container_name: cit-back
     build: ./src/back
@@ -12,3 +14,25 @@ services:
       - "8080:8080"
     depends_on:
       - database
+    networks:
+      - backend
+      - frontend
+  frontend:
+    container_name: cit-front
+    build: ./src/front
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src/front/src:/app/src
+      - ./src/front/public:/app/public
+      - ./src/front/tailwind.config.js:/app/tailwind.config.js
+    depends_on:
+      - backend
+    networks:
+      - frontend
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
