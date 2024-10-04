@@ -1,0 +1,14 @@
+services:
+  database:
+    container_name: cit-database
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: cit
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+  backend:
+    container_name: cit-back
+    build: ./src/back
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
