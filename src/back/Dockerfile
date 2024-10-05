@@ -1,19 +1,9 @@
-FROM maven:3.9.9 AS builder
-
-ENV HOME=/build
-
-WORKDIR $HOME
-COPY .mvn ./.mvn
-COPY pom.xml ./
-COPY src ./src
-
-RUN mvn clean install spring-boot:repackage
-
-FROM openjdk:21-jdk
+FROM eclipse-temurin:21-jdk
 
 ENV HOME=/app
 
 WORKDIR $HOME
-COPY --from=builder /build/target/*.jar .
+RUN apt-get update && \
+	apt-get install -y inotify-tools
 
-ENTRYPOINT [ "java", "-jar", "backend-0.0.1-SNAPSHOT.jar" ]
+ENTRYPOINT [ "sh", "run.sh" ]
