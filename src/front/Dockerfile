@@ -10,8 +10,8 @@ WORKDIR $HOME
 # Copia os arquivos package.json e package-lock.json para o diretório de trabalho
 COPY package*.json ./
 
-# Instala as dependências do projeto usando npm ci
-RUN npm ci
+# Instala as dependências do projeto usando npm i
+RUN npm i
 
 # Define o comando de entrada padrão para iniciar o aplicativo no modo de desenvolvimento
-ENTRYPOINT [ "npm", "start.dev" ]
+ENTRYPOINT [ "npm", "run", "start.dev" ]
