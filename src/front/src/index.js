@@ -11,7 +11,6 @@ import Contacts from "./pages/Contacts";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import PageError from "./pages/PageError";
-import CondominiumRegister from "./pages/CondominiumRegister";
 
 const router = createBrowserRouter([
 	{
@@ -45,12 +44,7 @@ const router = createBrowserRouter([
 		path: "/register",
 		element: <Register />,
 		errorElement: <PageError />,
-		children: [
-			{
-				path: "/register/condominium",
-				element: <CondominiumRegister />,
-			},
-		],
+		children: [],
 	},
 ]);
 
