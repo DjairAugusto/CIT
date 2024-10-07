@@ -19,7 +19,7 @@ export default function DropMenu({ text, children }) {
 				{text}
 				<ChevronDown />
 			</label>
-			<div className={isChecked ? "p-4" : ""}>
+			<div className={isChecked ? "p-4" : "hidden"}>
 				{isChecked ? children : ""}
 			</div>
 		</div>

@@ -2,10 +2,7 @@ import { EyeOff } from "lucide-react";
 import React, { forwardRef, useState } from "react";
 
 const Input = forwardRef(
-	(
-		{ LeftIcon, RightIcon, type, required, placeholder, id, ...rest },
-		ref
-	) => {
+	({ LeftIcon, RightIcon, type, required, placeholder, ...rest }, ref) => {
 		const [useType, setUseType] = useState(type);
 
 		function seePassword() {
@@ -22,7 +19,7 @@ const Input = forwardRef(
 			);
 
 		return (
-			<label className="flex items-center gap-4 px-4 py-2 border-sm border-medium bg-zinc-50 border-b-2 border-transparent has-[:focus]:border-primary-1000 transition-colors duration-300">
+			<label className="flex items-center gap-4 px-4 py-2 border-sm border-medium bg-zinc-50 border-b-2 border-transparent rounded-md has-[:focus]:border-primary-1000 has-[:focus]:rounded-none transition-all duration-300 w-full">
 				{LeftIcon ? LeftIcon : ""}
 				<div className="relative w-full">
 					<input
@@ -31,9 +28,9 @@ const Input = forwardRef(
 						{...rest}
 						ref={ref}
 					/>
-					<label className="text-zinc-600 absolute cursor-text left-0 top-1/4 peer-focus:top-0 peer-focus:text-xs [&:not(peer-empty:bg-black)] transition-colors duration-300">
+					<label className="text-zinc-600 absolute cursor-text left-0 top-1/4 peer-hover:top-0 hover:top-0 peer-focus:top-0 peer-focus:text-xs transition-all duration-300 truncate w-full overflow-hidden">
 						{required ? (
-							<span className="text-red-500">*</span>
+							<span className="text-red-500">* </span>
 						) : (
 							""
 						)}
