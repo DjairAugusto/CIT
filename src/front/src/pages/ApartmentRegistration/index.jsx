@@ -13,13 +13,12 @@ export default function ApartmentRegistration() {
 
 	return (
 		<main className="flex justify-between h-svh bg-zinc-100">
-			<div className="absolute left-5">
+			<div className="absolute left-5 z-10">
 				{isFist ? (
 					""
 				) : (
 					<Forms.Button
-						className="w-24 flex items-center gap-1
-						justify-center"
+						className="w-24 flex items-center gap-1 justify-center"
 						type="button"
 						onClick={() => changeSteps(currentStep - 1)}
 					>
