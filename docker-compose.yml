@@ -1,43 +1,46 @@
 services:
-    database:
-        container_name: cit-database
-        image: mysql:latest
-        environment:
-            MYSQL_DATABASE: cit
-            MYSQL_ALLOW_EMPTY_PASSWORD: true
-
-        networks:
-            - backend
-    backend:
-        container_name: cit-back
-        build: ./src/back
-        environment:
-            JAVA_OPTS: "-Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n"
-        volumes:
-            - ./src/back:/app
-        ports:
-            - "8080:8080"
-        depends_on:
-            - database
-        networks:
-            - backend
-            - frontend
-    frontend:
-        container_name: cit-front
-        build: ./src/front
-        ports:
-            - "3000:3000"
-        environment:
-            - WATCHPACK_POLLING=trues
-        volumes:
-            - ./src/front/src:/app/src
-            - ./src/front/public:/app/public
-            - ./src/front/tailwind.config.js:/app/tailwind.config.js
-        depends_on:
-            - backend
-        networks:
-            - frontend
-
+  database:
+    container_name: cit-database
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: cit
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+    networks:
+      - backend
+  backend:
+    container_name: cit-back
+    build: ./src/back
+    volumes:
+      - ./src/back/.m2:/app/.m2
+      - ./src/back/.mvn:/app/.mvn
+      - ./src/back/src:/app/src
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    networks:
+      - backend
+      - frontend
+    develop:
+      watch:
+        - action: sync
+          path: ./src/back/src
+          target: /app/src
+  frontend:
+    container_name: cit-front
+    build: ./src/front
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src/front/src:/app/src
+      - ./src/front/public:/app/public
+      - ./src/front/tailwind.config.js:/app/tailwind.config.js
+    depends_on:
+      - backend
+    networks:
+      - frontend
+    environment:
+      - WATCHPACK_POLLING=trues
 networks:
     backend:
         driver: bridge

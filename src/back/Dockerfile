@@ -9,8 +9,10 @@ WORKDIR $HOME
 
 # Atualiza a lista de pacotes e instala o inotify-tools
 RUN apt-get update && \
-	apt-get install -y inotify-tools dos2unix
-RUN rm -rf /var/lib/apt/lists/*
+	apt-get install -y dos2unix inotify-tools && \
+	rm -rf /var/lib/apt/lists/*
+
+COPY pom.xml mvnw run.sh ./
 
 # Define o comando de entrada padrão para iniciar o script run.sh
-ENTRYPOINT [ "bash", "-c", "dos2unix run.sh; sh ./run.sh" ]
+ENTRYPOINT [ "bash", "-c", "dos2unix run.sh mvnw; bash ./run.sh" ]
