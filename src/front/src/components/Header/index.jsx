@@ -12,9 +12,9 @@ export default function Header() {
 			<nav className="flex gap-4">
 				<Link to="/">Home</Link>
 				<Link to="/signup">Login</Link>
-				<Link to="/about">Sobre Nos</Link>
+				<Link to="/about">Sobre Nós</Link>
 				<Link to="/projects">Projetos</Link>
-				<Link to="/services">Sevições</Link>
+				<Link to="/services">Seviços</Link>
 				<Link to="/contacts">Contatos</Link>
 			</nav>
 		</header>
