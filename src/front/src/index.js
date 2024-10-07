@@ -18,6 +18,7 @@ import PageError from "./pages/PageError";
 import Demo from "./pages/Demo";
 import CondominiumRegistration from "./pages/CondominiumRegistration";
 import ApartmentRegistration from "./pages/ApartmentRegistration";
+import FunctionaryRegistration from "./pages/FunctionaryRegistration";
 
 const router = createBrowserRouter([
 	{
@@ -59,12 +60,16 @@ const router = createBrowserRouter([
 			{
 				path: "/register/apartment",
 				element: <ApartmentRegistration />,
+			},
+			{
+				path: "/register/functionary",
+				element: <FunctionaryRegistration />,
 			}
 		],
 	},
 	{
 		path: "/demo",
-		element: <Demo />,
+		element: <FunctionaryRegistration />,
 		children: [],
 	},
 ]);
