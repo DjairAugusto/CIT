@@ -3,6 +3,20 @@ import DropMenu from "../../components/DropMenu";
 import { Forms } from "../../components/Forms";
 
 let nextId = 0;
+const vehicleOptions = [
+	{
+		value: "car",
+		text: "CARRO"
+	},
+	{
+		value: "motocycle",
+		text: "MOTO"
+	},
+	{
+		value: "other",
+		text: "OUTRO"
+	}
+];
 
 export default function VehicleForm() {
 	const [vehicles, setVehicles] = useState([]);
@@ -62,10 +76,11 @@ export default function VehicleForm() {
 								removeCallback={() => removeVehicle(vehicle.id)}
 							>
 								<div className="flex gap-4 flex-col">
-									<Forms.InputText
+									<Forms.Select
 										placeholder="TIPO"
 										onChange={e => modifyVehicle(vehicle.id, ["type", e.nativeEvent.srcElement.value])}
-										required
+										options={vehicleOptions}
+										required={true}
 									/>
 									<Forms.InputText
 										placeholder="MODELO"
