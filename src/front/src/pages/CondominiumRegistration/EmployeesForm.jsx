@@ -19,14 +19,7 @@ export default function EmployeesForm() {
 			</div>
 			<DropMenu text="Nome do Condomínio">
 				<div className="flex gap-4 flex-col">
-					<Forms.InputText
-						placeholder="NOME DO CONDOMÍNIO"
-						required
-					/>
-					<Forms.InputText
-						placeholder="CNPJ"
-						required
-					/>
+					<Forms.CheckBox />
 				</div>
 			</DropMenu>
 		</div>

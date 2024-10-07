@@ -49,6 +49,7 @@ export default function CondominiumRegistration() {
 							Próximo
 						</Forms.Button>
 					)}
+					<Forms.CheckBox />
 				</div>
 			</div>
 			<img
