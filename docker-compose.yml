@@ -23,7 +23,7 @@ services:
       - frontend
     develop:
       watch:
-        - action: sync
+        - action: sync+restart
           path: ./src/back/src
           target: /app/src
   frontend:
