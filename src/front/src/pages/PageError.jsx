@@ -7,7 +7,7 @@ export default function PageError() {
 	return (
 		<>
 			<h1>Oops!</h1>
-			<p>desnculpa, ocorreu um erro inesperado</p>
+			<p>desculpe, ocorreu um erro inesperado</p>
 			<p>
 				<i>{error.statusText || error.message}</i>
 			</p>
