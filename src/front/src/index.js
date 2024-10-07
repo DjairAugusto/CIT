@@ -17,6 +17,7 @@ import Services from "./pages/Services";
 import PageError from "./pages/PageError";
 import Demo from "./pages/Demo";
 import CondominiumRegistration from "./pages/CondominiumRegistration";
+import ApartmentRegistration from "./pages/ApartmentRegistration";
 
 const router = createBrowserRouter([
 	{
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
 				path: "/register/condominium",
 				element: <CondominiumRegistration />,
 			},
+			{
+				path: "/register/apartment",
+				element: <ApartmentRegistration />,
+			}
 		],
 	},
 	{
