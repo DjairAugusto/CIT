@@ -5,6 +5,7 @@ import FormsPage from "./FormsPage";
 import FormsPageStep from "./FormsPageStep";
 import FormsRoot from "./FormsRoot";
 import FormsSelect from "./FormsSelect";
+import FormsInputCheckBox from "./FormsInputCheckBox";
 import FormsInputMask from "./FormsInputMask";
 
 export const Forms = {
@@ -12,6 +13,7 @@ export const Forms = {
 	InputText: FormsInputText,
 	InputMask: FormsInputMask,
 	Button: FormsButton,
+	Select: FormsSelect
 	CheckBox: FormsInputCheckBox,
 	Select: FormsSelect,
 	Page: FormsPage,
