@@ -1,10 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Main from "./routers/RootMain";
-import Register from "./routers/RootRegister";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+//rotes
+import Main from "./routers/RootMain";
+import Register from "./routers/RootRegister";
+
+// pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
@@ -12,6 +16,7 @@ import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import PageError from "./pages/PageError";
 import Demo from "./pages/Demo";
+import CondominiumRegistration from "./pages/CondominiumRegistration";
 
 const router = createBrowserRouter([
 	{
@@ -45,7 +50,12 @@ const router = createBrowserRouter([
 		path: "/register",
 		element: <Register />,
 		errorElement: <PageError />,
-		children: [],
+		children: [
+			{
+				path: "/register/condominium",
+				element: <CondominiumRegistration />,
+			},
+		],
 	},
 	{
 		path: "/demo",
