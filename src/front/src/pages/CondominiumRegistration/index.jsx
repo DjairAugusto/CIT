@@ -28,7 +28,7 @@ export default function CondominiumRegistration() {
 			</div>
 			<div
 				onSubmit={(e) => changeSteps(currentStep + 1, e)}
-				className="w-full flex flex-col justify-between items-center pb-24 m-auto px-4 h-full relative lg:px-20 lg:py-12 sm:w-[600px]"
+				className="w-full flex flex-col justify-between items-center pb-24 m-auto px-4 h-full relative overflow-y-scroll lg:px-20 lg:py-12 sm:w-[600px]"
 			>
 				{currentComponent}
 				<div className="flex justify-evenly w-full">
@@ -48,7 +48,6 @@ export default function CondominiumRegistration() {
 							Próximo
 						</Forms.Button>
 					)}
-					<Forms.CheckBox />
 				</div>
 			</div>
 			<img

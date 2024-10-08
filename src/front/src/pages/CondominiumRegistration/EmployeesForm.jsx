@@ -19,7 +19,21 @@ export default function EmployeesForm() {
 			</div>
 			<DropMenu text="Nome do Condomínio">
 				<div className="flex gap-4 flex-col">
-					<Forms.CheckBox />
+					<Forms.InputText
+						placeholder="kjasdiajsdn"
+						re
+					/>
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
+					<Forms.CheckBox placeholder="kjasdiajsdn" />
 				</div>
 			</DropMenu>
 		</div>
