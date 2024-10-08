@@ -1,21 +1,22 @@
-import { EyeOff } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import React, { forwardRef, useState } from "react";
 
 const Input = forwardRef(
 	({ LeftIcon, RightIcon, type, required, placeholder, ...rest }, ref) => {
-		const [useType, setUseType] = useState(type);
+		const [seePassword, setSeePassoword] = useState(false);
 
-		function seePassword() {
-			if (useType === "password") setUseType("text");
-			else setUseType("password");
+		function togglePassword() {
+			setSeePassoword(!seePassword);
 		}
 
 		if (type === "password")
 			RightIcon = (
-				<EyeOff
-					onClick={seePassword}
+				<div
+					onClick={togglePassword}
 					className="text-medium cursor-pointer text-zinc-700"
-				/>
+				>
+					{seePassword ? <Eye /> : <EyeOff/>}
+				</div>
 			);
 
 		return (
@@ -24,7 +25,7 @@ const Input = forwardRef(
 				<div className="relative w-full">
 					<input
 						className="bg-transparent h-12 w-full outline-none text-dark placeholder:text-dark text-zinc-700 placeholder:text-zinc-700 peer transition-colors pl-4"
-						type={useType}
+						type={type === "password" && seePassword ? "text" : type}
 						{...rest}
 						ref={ref}
 					/>

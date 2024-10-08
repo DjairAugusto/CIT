@@ -12,13 +12,12 @@ export default function CondominiumRegistration() {
 
 	return (
 		<main className="flex justify-between h-svh bg-zinc-100">
-			<div className="absolute left-5">
+			<div className="z-10 absolute left-5">
 				{isFist ? (
 					""
 				) : (
 					<Forms.Button
-						className="w-24 flex items-center gap-1
-						justify-center"
+						className="w-24 flex items-center gap-1 justify-center"
 						type="button"
 						onClick={() => changeSteps(currentStep - 1)}
 					>
@@ -49,6 +48,7 @@ export default function CondominiumRegistration() {
 							Próximo
 						</Forms.Button>
 					)}
+					<Forms.CheckBox />
 				</div>
 			</div>
 			<img
