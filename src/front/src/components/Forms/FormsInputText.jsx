@@ -4,6 +4,7 @@ import React, { forwardRef, useState } from "react";
 const Input = forwardRef(
 	({ LeftIcon, RightIcon, type, required, placeholder, ...rest }, ref) => {
 		const [seePassword, setSeePassoword] = useState(false);
+		const [isActive, setActive] = useState(false);
 
 		function togglePassword() {
 			setSeePassoword(!seePassword);
@@ -30,11 +31,14 @@ const Input = forwardRef(
 						}
 						{...rest}
 						ref={ref}
+						onChange={(e) =>
+							setActive(e.nativeEvent.srcElement.value.length > 0)
+						}
 					/>
 					<label
-						className="text-zinc-600 absolute cursor-text left-0 top-1/4 peer-hover:top-0 hover:top-0 
+						className={`text-zinc-600 absolute cursor-text left-0 top-1/4 peer-hover:top-0 hover:top-0 
 					peer-hover:text-xs  peer-focus:top-0 peer-focus:text-xs transition-all duration-300 truncate w-full overflow-hidden 
-					$:not(peer-empty:top-0) $:not(peer-empty:text-xs)"
+					${isActive}`}
 					>
 						{required ? (
 							<span className="text-red-500">* </span>
