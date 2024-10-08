@@ -32,13 +32,13 @@ const Input = forwardRef(
 						{...rest}
 						ref={ref}
 						onChange={(e) =>
-							setActive(e.nativeEvent.srcElement.value.length > 0)
+							setActive(e.nativeEvent.target.value.length > 0)
 						}
 					/>
 					<label
 						className={`text-zinc-600 absolute cursor-text left-0 top-1/4 peer-hover:top-0 hover:top-0 
 					peer-hover:text-xs  peer-focus:top-0 peer-focus:text-xs transition-all duration-300 truncate w-full overflow-hidden 
-					${isActive}`}
+					${isActive ? "text-xs top-0" : ""}`}
 					>
 						{required ? (
 							<span className="text-red-500">* </span>
