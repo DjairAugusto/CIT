@@ -16,16 +16,12 @@ services:
       - ./src/back/src:/app/src
     ports:
       - "8080:8080"
+      - "8081:8081"
     depends_on:
       - database
     networks:
       - backend
       - frontend
-    develop:
-      watch:
-        - action: sync+restart
-          path: ./src/back/src
-          target: /app/src
   frontend:
     container_name: cit-front
     build: ./src/front
