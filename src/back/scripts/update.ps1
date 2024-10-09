@@ -1,4 +1,4 @@
-$Path = "$PWD/src"
+$Path = "$PWD/src/back/src"
 $FileFilter = "*.java"
 $Timeout = 1000
 $IncludeSubfolders = $true
@@ -23,7 +23,7 @@ try {
 		$Writer = New-Object System.IO.StreamWriter($TCPConnection.GetStream())
 
 		Write-Host "Change detected, updating source"
-		$Writer.WriteLine("update")
+		$Writer.Write("update")
 
 		$Writer.Close()
 		$TCPConnection.CLose()
