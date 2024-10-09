@@ -1,12 +1,17 @@
+version: "3.8"
 services:
   database:
     container_name: cit-database
     image: mysql:latest
+    restart: always
     environment:
       MYSQL_DATABASE: cit
-      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
     networks:
       - backend
+      - database
   backend:
     container_name: cit-back
     build: ./src/back
@@ -37,8 +42,23 @@ services:
       - frontend
     environment:
       - WATCHPACK_POLLING=trues
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: cit-phpmyadmin
+    restart: always
+    depends_on:
+      - database
+    environment:
+      PMA_HOST: cit-database
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3001:80"
+    networks:
+      - database
 networks:
-    backend:
-        driver: bridge
-    frontend:
-        driver: bridge
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
+  database:
+    driver: bridge
