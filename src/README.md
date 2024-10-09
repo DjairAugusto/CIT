@@ -106,3 +106,11 @@ Pronto! Agora você tem o Docker Desktop instalado e funcionando no seu sistema.
     - Abra o navegador e acesse `http://localhost:3000` para verificar se a aplicação está rodando corretamente.
 
 Pronto! Agora você sabe como executar a aplicação utilizando Docker com a extensão do VS Code.
+
+# Ativar o auto-reload do spring boot
+
+Abra o seu terminal na pasta raiz e cole esse comando e manteinha aberto enquanto editar o spring boot
+
+```bash
+    .\src\back\scripts\update.ps1
+```
