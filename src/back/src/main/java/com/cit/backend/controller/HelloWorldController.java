@@ -15,9 +15,9 @@ public class HelloWorldController {
     @Autowired
     private HelloWorldService helloWorldService;
 
-    @GetMapping("/")
+    @GetMapping("/{name}")
     public String helloWorld(@PathVariable("name") String name) {
         // pegar os parametros da requisição
-        return "helloWorldService.helloWorld(name)";
+        return helloWorldService.helloWorld(name);
     }
 }
