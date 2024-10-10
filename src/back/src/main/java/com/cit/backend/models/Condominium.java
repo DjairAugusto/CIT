@@ -24,11 +24,11 @@ public class Condominium {
     @Column(length = 14, unique = true)
     private String cnpj;
 
-    @JoinColumn(name = "address_id")
-    @OneToOne
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private Address address;
 
-    @JoinColumn(name = "manager_id")
+    @JoinColumn(name = "manager_id",referencedColumnName = "id")
     @OneToOne
     private People manager;
 }

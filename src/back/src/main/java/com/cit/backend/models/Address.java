@@ -5,9 +5,13 @@ import jdk.jfr.Unsigned;
 
 @Entity(name = "addresses")
 public class Address {
-
+    
     @Id
+    @Column(name = "condominium_id")
+    private Long id;
+
     @OneToOne
+    @MapsId
     @JoinColumn(name = "condominium_id")
     private Condominium condominium;
 
