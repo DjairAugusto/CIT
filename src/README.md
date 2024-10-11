@@ -111,6 +111,12 @@ Pronto! Agora você sabe como executar a aplicação utilizando Docker com a ext
 
 Abra o seu terminal na pasta raiz e cole esse comando e manteinha aberto enquanto editar o spring boot
 
+* Para Windows:
 ```bash
-    .\src\back\scripts\update.ps1
+$ ./src/back/scripts/update.ps1
+```
+
+* Para Linux/MacOS:
+```bash
+$ ./src/back/scripts/update.sh
 ```
