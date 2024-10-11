@@ -8,7 +8,7 @@ public class Address {
     
     @Id
     @Column(name = "condominium_id")
-    private Long id;
+    private int id;
 
     @OneToOne
     @MapsId

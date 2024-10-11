@@ -7,9 +7,10 @@ import jdk.jfr.Unsigned;
 public class Condominium {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
-    @Column(length = 80)
+    @Column(length = 80, nullable = false)
     private String name;
 
     @Unsigned
@@ -21,14 +22,14 @@ public class Condominium {
     @Unsigned
     private int apartments;
 
-    @Column(length = 14, unique = true)
+    @Column(length = 14, unique = true, nullable = false)
     private String cnpj;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "condominium", cascade = CascadeType.ALL, optional = false)
     @PrimaryKeyJoinColumn
     private Address address;
 
-    @JoinColumn(name = "manager_id",referencedColumnName = "id")
+    @JoinColumn(name = "manager_id",referencedColumnName = "id", nullable = false)
     @OneToOne
     private People manager;
 }
