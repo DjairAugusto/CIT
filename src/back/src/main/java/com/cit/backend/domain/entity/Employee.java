@@ -1,8 +1,8 @@
-package com.cit.backend.models;
+package com.cit.backend.domain.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import com.cit.backend.models.enums.PermissionEmployee;
+import com.cit.backend.domain.entity.enums.PermissionEmployee;
 
 
 @Entity(name = "employees")

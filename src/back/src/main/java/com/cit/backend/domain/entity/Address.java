@@ -1,4 +1,4 @@
-package com.cit.backend.models;
+package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
 import jdk.jfr.Unsigned;
@@ -8,7 +8,7 @@ public class Address {
     
     @Id
     @Column(name = "condominium_id")
-    private int id;
+    private Long id;
 
     @OneToOne
     @MapsId

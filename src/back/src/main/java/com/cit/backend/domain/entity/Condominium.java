@@ -1,14 +1,15 @@
-package com.cit.backend.models;
+package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
 import jdk.jfr.Unsigned;
+import java.util.Set;
 
 @Entity(name = "condominiums")
 public class Condominium {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(length = 80, nullable = false)
     private String name;
@@ -32,4 +33,19 @@ public class Condominium {
     @JoinColumn(name = "manager_id",referencedColumnName = "id", nullable = false)
     @OneToOne
     private People manager;
+
+    @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
+    private Set<Block> items;
+
+    @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Set<Warning> warning;
+
+    @ManyToMany
+    @JoinTable(
+            name = "condominium_warning",
+            joinColumns = @JoinColumn(name = "condominium_id"),
+            inverseJoinColumns = @JoinColumn(name = "warning_id"))
+    private Set<Warning> warnings;
+
 }

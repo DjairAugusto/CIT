@@ -1,4 +1,4 @@
-package com.cit.backend.models.enums;
+package com.cit.backend.domain.entity.enums;
 
 public enum PermissionEmployee {
     ADMIN,
