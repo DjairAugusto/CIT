@@ -14,7 +14,7 @@ export default function useForm(steps) {
 		currentStep,
 		currentComponent: steps[currentStep],
 		isLast: currentStep + 1 === steps.length ? true : false,
-		isFist: currentStep === 0 ? true : false,
+		isFirst: currentStep === 0 ? true : false,
 		changeSteps,
 	};
 }
