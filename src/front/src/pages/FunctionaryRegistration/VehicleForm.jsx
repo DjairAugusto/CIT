@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import DropMenu from "../../components/DropMenu";
 import { Forms } from "../../components/Forms";
+import useObjectArray from "../../hooks/useObjectArray";
 
-let nextId = 0;
 const vehicleOptions = [
 	{
 		value: "car",
@@ -19,33 +19,19 @@ const vehicleOptions = [
 ];
 
 export default function VehicleForm() {
-	const [vehicles, setVehicles] = useState([]);
-
-	function addVehicle() {
-		setVehicles([
-			...vehicles,
-			{
-				id: nextId++,
-				type: "",
-				model: "",
-				color: "",
-				plate: "",
-			}
-		]);
-	}
-
-	function removeVehicle(target) {
-		setVehicles(vehicles.filter(value => value.id !== target));
-	}
-
-	function modifyVehicle(target, [key, value]) {
-		const newVehicles = [];
-		Object.assign(newVehicles, vehicles);
-		const vehicle = newVehicles.find(value => value.id === target);
-		vehicle[key] = value;
-
-		setVehicles(newVehicles);
-	}
+	const {
+		array: vehicles,
+		addOne: addVehicle,
+		removeOne: removeVehicle,
+		modifyOne: modifyVehicle
+	} = useObjectArray({
+		entries: [
+			"type",
+			"model",
+			"color",
+			"plate",
+		]
+	});
 
 	return (
 		<Forms.PageStep

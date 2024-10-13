@@ -1,41 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import DropMenu from "../../components/DropMenu";
 import { Forms } from "../../components/Forms";
-
-let nextId = 0;
+import useObjectArray from "../../hooks/useObjectArray";
 
 export default function ProfileForm() {
-	const [profiles, setProfiles] = useState([
-		{
-			id: nextId++,
-			email: "",
-			password: "",
-		}
-	]);
-
-	function addProfile() {
-		setProfiles([
-			...profiles,
-			{
-				id: nextId++,
-				email: "",
-				password: "",
-			}
-		]);
-	}
-
-	function removeProfile(target) {
-		setProfiles(profiles.filter(value => value.id !== target));
-	}
-
-	function modifyProfile(target, [key, value]) {
-		const newProfiles = [];
-		Object.assign(newProfiles, profiles);
-		const profile = newProfiles.find(value => value.id === target);
-		profile[key] = value;
-
-		setProfiles(newProfiles);
-	}
+	const {
+		array: profiles,
+		addOne: addProfile,
+		removeOne: removeProfile,
+		modifyOne: modifyProfile
+	} = useObjectArray({
+		entries: [
+			"email",
+			"password",
+		],
+		oneNeeded: true,
+	});
 
 	return (
 		<Forms.PageStep
