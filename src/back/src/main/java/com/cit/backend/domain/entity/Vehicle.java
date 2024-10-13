@@ -25,4 +25,23 @@ public class Vehicle {
     @Column(nullable = false)
     private TypeVehicle type;
 
+    @ManyToOne
+    @JoinColumn(name="apartment_id", nullable=true)
+    private Apartment apartment;
+
+    @ManyToOne
+    @JoinColumn(name="visitant_id", nullable=true)
+    private Visitant visitant;
+
+    @PrePersist
+    @PreUpdate
+    private void validateAssociations() {
+        if (this.apartment == null && this.visitant == null) {
+            throw new IllegalStateException("Vehicle must be associated with either an apartment or a visitant.");
+        }
+        if (this.apartment != null && this.visitant != null) {
+            throw new IllegalStateException("Vehicle cannot be associated with both an apartment and a visitant.");
+        }
+    }
+
 }

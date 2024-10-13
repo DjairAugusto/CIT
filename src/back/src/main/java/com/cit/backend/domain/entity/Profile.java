@@ -2,26 +2,21 @@ package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Set;
-
-@Entity(name = "visitants")
-public class Visitant {
+@Entity(name = "profiles")
+public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 80, nullable = false)
-    private String name;
+    private String email;
 
-    @Column(length = 11, unique = true, nullable = false)
-    private String cpf;
+    @Column(length = 30, nullable = false)
+    private String password;
 
     @ManyToOne
+    @MapsId("id")
     @JoinColumn(name="apartment_id", nullable=false)
     private Apartment apartment;
-
-    @OneToMany(mappedBy = "visitant")
-    private Set<Vehicle> vehicle;
-
 }
