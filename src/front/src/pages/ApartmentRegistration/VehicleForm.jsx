@@ -3,6 +3,7 @@ import DropMenu from "../../components/DropMenu";
 import { Forms } from "../../components/Forms";
 import useObjectArray from "../../hooks/useObjectArray";
 
+let nextId = 0;
 const vehicleOptions = [
 	{
 		value: "car",
