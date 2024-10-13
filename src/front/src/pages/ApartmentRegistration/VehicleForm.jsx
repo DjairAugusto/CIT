@@ -48,7 +48,10 @@ export default function VehicleForm() {
 	}
 
 	return (
-		<Forms.PageStep>
+		<Forms.PageStep
+			title="Cadastro de Veículos"
+			subtitle="Apartamento XXX"
+		>
 			<button
 				className="text-primary-1000 block mb-2"
 				onClick={addVehicle}
