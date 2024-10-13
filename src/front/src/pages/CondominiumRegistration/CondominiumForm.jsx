@@ -4,20 +4,10 @@ import { Forms } from "../../components/Forms";
 
 export default function CondominiumForm() {
 	return (
-		<div className="flex flex-col gap-6 justify-between items-center w-full">
-			<div className="w-full">
-				<h1 className="text-center text-4xl mb-4">
-					Formulário de Cadastro
-				</h1>
-				<div className="w-full flex items-center justify-center">
-					<div className="bg-zinc-400 h-[1px] w-full"></div>
-					<h6 className="px-4 whitespace-nowrap m-auto">
-						Nome do Condomínio
-					</h6>
-					<div className="bg-zinc-400 h-[1px] w-full"></div>
-				</div>
-			</div>
-
+		<Forms.PageStep
+			title="Formulário de Cadastro"
+			subtitle="Nome do Condomínio"
+		>
 			<div className="w-full flex flex-col gap-6">
 				<DropMenu text="Nome do Condomínio">
 					<div className="flex gap-4 flex-col">
@@ -44,6 +34,6 @@ export default function CondominiumForm() {
 					</div>
 				</DropMenu>
 			</div>
-		</div>
+		</Forms.PageStep>
 	);
 }

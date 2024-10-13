@@ -1,11 +1,11 @@
 import React from "react";
-import InhabitantForm from "./InhabitantForm";
+import EmployeeForm from "./EmployeeForm";
 import VehicleForm from "./VehicleForm";
 import ProfileForm from "./ProfileForm";
 import { Forms } from "../../components/Forms";
 
 export default function ApartmentRegistration() {
-	const steps = [<InhabitantForm />, <VehicleForm />, <ProfileForm />];
+	const steps = [<EmployeeForm />, <VehicleForm />, <ProfileForm />];
 
 	return (
 		<Forms.Page

@@ -1,57 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import DropMenu from "../../components/DropMenu";
 import { Forms } from "../../components/Forms";
-
-let nextId = 0;
+import useObjectArray from "../../hooks/useObjectArray";
 
 export default function ProfileForm() {
-	const [profiles, setProfiles] = useState([
-		{
-			id: nextId++,
-			email: "",
-			password: "",
-		}
-	]);
-
-	function addProfile() {
-		setProfiles([
-			...profiles,
-			{
-				id: nextId++,
-				email: "",
-				password: "",
-			}
-		]);
-	}
-
-	function removeProfile(target) {
-		setProfiles(profiles.filter(value => value.id !== target));
-	}
-
-	function modifyProfile(target, [key, value]) {
-		const newProfiles = [];
-		Object.assign(newProfiles, profiles);
-		const profile = newProfiles.find(value => value.id === target);
-		profile[key] = value;
-		
-		setProfiles(newProfiles);
-	}
+	const {
+		array: profiles,
+		addOne: addProfile,
+		removeOne: removeProfile,
+		modifyOne: modifyProfile
+	} = useObjectArray({
+		entries: [
+			"email",
+			"password",
+		],
+		oneNeeded: true,
+	});
 
 	return (
-		<div className="flex flex-col gap-6 justify-between items-center w-full h-fit">
-			<div className="w-full">
-				<h1 className="text-center text-4xl mb-4">
-					Cadastro de Funcionário
-				</h1>
-				<div className="w-full flex items-center justify-center">
-					<div className="bg-zinc-400 h-[1px] w-full"></div>
-					<h6 className="px-4 whitespace-nowrap m-auto">
-						Funcionário XXXX
-					</h6>
-					<div className="bg-zinc-400 h-[1px] w-full"></div>
-				</div>
-			</div>
-
+		<Forms.PageStep
+			title="Cadastro de Funcionário"
+			subtitle="Funcionário XXX"
+		>
 			<div className="w-full h-fit">
 				<button
 					className="text-primary-1000 block mb-2"
@@ -83,6 +53,6 @@ export default function ProfileForm() {
 					}
 				</div>
 			</div>
-		</div>
+		</Forms.PageStep>
 	);
 }

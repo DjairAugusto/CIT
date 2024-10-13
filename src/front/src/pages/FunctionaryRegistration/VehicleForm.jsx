@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import DropMenu from "../../components/DropMenu";
 import { Forms } from "../../components/Forms";
+import useObjectArray from "../../hooks/useObjectArray";
 
-let nextId = 0;
 const vehicleOptions = [
 	{
 		value: "car",
@@ -19,49 +19,25 @@ const vehicleOptions = [
 ];
 
 export default function VehicleForm() {
-	const [vehicles, setVehicles] = useState([]);
-
-	function addVehicle() {
-		setVehicles([
-			...vehicles,
-			{
-				id: nextId++,
-				type: "",
-				model: "",
-				color: "",
-				plate: "",
-			}
-		]);
-	}
-
-	function removeVehicle(target) {
-		setVehicles(vehicles.filter(value => value.id !== target));
-	}
-
-	function modifyVehicle(target, [key, value]) {
-		const newVehicles = [];
-		Object.assign(newVehicles, vehicles);
-		const vehicle = newVehicles.find(value => value.id === target);
-		vehicle[key] = value;
-		
-		setVehicles(newVehicles);
-	}
+	const {
+		array: vehicles,
+		addOne: addVehicle,
+		removeOne: removeVehicle,
+		modifyOne: modifyVehicle
+	} = useObjectArray({
+		entries: [
+			"type",
+			"model",
+			"color",
+			"plate",
+		]
+	});
 
 	return (
-		<div className="flex flex-col gap-6 justify-between items-center w-full h-fit">
-			<div className="w-full">
-				<h1 className="text-center text-4xl mb-4">
-					Cadastro de Veículos
-				</h1>
-				<div className="w-full flex items-center justify-center">
-					<div className="bg-zinc-400 h-[1px] w-full"></div>
-					<h6 className="px-4 whitespace-nowrap m-auto">
-						Funcionário XXXX
-					</h6>
-					<div className="bg-zinc-400 h-[1px] w-full"></div>
-				</div>
-			</div>
-
+		<Forms.PageStep
+			title="Cadastro de Veículos"
+			subtitle="Funcionário XXX"
+		>
 			<div className="w-full h-fit">
 				<button
 					className="text-primary-1000 block mb-2"
@@ -105,6 +81,6 @@ export default function VehicleForm() {
 					}
 				</div>
 			</div>
-		</div>
+		</Forms.PageStep>
 	);
 }
