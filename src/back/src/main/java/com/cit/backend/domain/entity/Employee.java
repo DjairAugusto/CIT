@@ -7,6 +7,7 @@ import java.util.List;
 
 
 @Entity(name = "employees")
+@PrimaryKeyJoinColumn(name = "people_id")
 public class Employee extends People {
 
     @Column(length = 80)

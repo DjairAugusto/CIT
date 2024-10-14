@@ -2,7 +2,8 @@ package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
 
-@Entity(name = "people")
+@Entity(name = "peoples")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class People {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -17,6 +17,11 @@ public class CommonAreas {
     @Unsigned
     private float tax;
 
+    @ManyToOne
+    @JoinColumn(name="condominium_id", nullable=false)
+    private Condominium condominium;
+
+
     @OneToMany(mappedBy = "commonAreas")
     private Set<CommonAreasHorary> commonAreasHorary;
 

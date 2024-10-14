@@ -30,13 +30,12 @@ public class Condominium {
     @PrimaryKeyJoinColumn
     private Address address;
 
-    @JoinColumn(name = "manager_id",referencedColumnName = "id", nullable = false)
     @OneToOne
+    @JoinColumn(name = "manager_id", nullable = false)
     private Employee manager;
 
     @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
     private Set<Employee> Employees;
-
 
     @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
     private Set<Block> items;
@@ -67,4 +66,7 @@ public class Condominium {
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
     private Set<Income> income;
 
+    @OneToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 }
