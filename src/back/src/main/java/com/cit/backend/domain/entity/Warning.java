@@ -2,6 +2,8 @@
 package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,6 +15,7 @@ public class Warning {
     private Long id;
 
     @ManyToOne
+    @MapsId("id")
     @JoinColumn(name = "condominium_id", nullable = false)
     private Condominium condominium;
 
@@ -23,7 +26,7 @@ public class Warning {
     private String body;
 
     @Column(name = "created_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date createdDate;
+    private LocalDateTime createdDate;
 
     @ManyToMany(mappedBy = "warnings")
     private Set<Condominium> condominiums;

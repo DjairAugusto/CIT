@@ -32,7 +32,11 @@ public class Condominium {
 
     @JoinColumn(name = "manager_id",referencedColumnName = "id", nullable = false)
     @OneToOne
-    private People manager;
+    private Employee manager;
+
+    @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
+    private Set<Employee> Employees;
+
 
     @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
     private Set<Block> items;
@@ -47,5 +51,20 @@ public class Condominium {
             joinColumns = @JoinColumn(name = "condominium_id"),
             inverseJoinColumns = @JoinColumn(name = "warning_id"))
     private Set<Warning> warnings;
+
+    @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
+    private Set<CommonAreas> commonAreas;
+
+    @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
+    private Set<LostAndFound> lostAndFound;
+
+    @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
+    private Set<Meeting> meeting;
+
+    @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
+    private Set<Rules> rules;
+
+    @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
+    private Set<Income> income;
 
 }

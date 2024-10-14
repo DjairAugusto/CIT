@@ -37,4 +37,10 @@ public class Apartment {
     @OneToMany(mappedBy = "apartment")
     private Set<Vehicle> vehicles;
 
+    @OneToMany(mappedBy = "apartment")
+    private Set<Billet> billets;
+
+    @OneToMany(mappedBy = "apartment")
+    private Set<Ticket> tickets;
+
 }
