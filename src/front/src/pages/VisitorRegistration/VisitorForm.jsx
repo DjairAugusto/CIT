@@ -13,7 +13,7 @@ const VisitorForm = () => {
 	} = useObjectArray({
 		entries: [
 			"name",
-			"id",
+			"CPF",
 		],
 		oneNeeded: true
 	});
@@ -44,7 +44,7 @@ const VisitorForm = () => {
 									/>
 									<Forms.InputText
 										placeholder="CPF"
-										onChange={e => modifyVisitor(visitor.id, ["id", e.nativeEvent.srcElement.value])}
+										onChange={e => modifyVisitor(visitor.id, ["CPF", e.nativeEvent.srcElement.value])}
 										required={true}
 									/>
 								</div>
