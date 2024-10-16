@@ -8,7 +8,7 @@ export default function VisitorRegistration() {
 	return (
 		<Forms.Page
 			steps={steps}
-			imageSource="/condominium-registration.png"
+			imageSource="/imgVisitors.jpg"
 		/>
 	);
 }
