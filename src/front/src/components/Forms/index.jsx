@@ -5,6 +5,7 @@ import FormsPage from "./FormsPage";
 import FormsPageStep from "./FormsPageStep";
 import FormsRoot from "./FormsRoot";
 import FormsSelect from "./FormsSelect";
+import FormsInputMask from "./FormsInputMask";
 import FormsInputCheckBox from "./FormsInputCheckBox";
 import FormsInputMask from "./FormsInputMask";
 
