@@ -15,8 +15,9 @@ export default function CondominiumForm() {
 							placeholder="NOME DO CONDOMÍNIO"
 							required
 						/>
-						<Forms.InputText
+						<Forms.InputMask
 							placeholder="CNPJ"
+							mask="99.999.999/9999-99"
 							required
 						/>
 					</div>
