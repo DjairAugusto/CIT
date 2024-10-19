@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-
 public class CondominiumService {
     @Autowired
     private CondominiumRepository condominiumRepository;
