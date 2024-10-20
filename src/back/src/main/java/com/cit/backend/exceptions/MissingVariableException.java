@@ -1,7 +1,12 @@
 package com.cit.backend.exceptions;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
+@Setter
 public class MissingVariableException extends RuntimeException {
     public List<String> missingVariables;
 
@@ -23,7 +28,4 @@ public class MissingVariableException extends RuntimeException {
         this.missingVariables = missingVariables;
     }
 
-    public List<String> getMissingVariables() {
-        return missingVariables;
-    }
 }
