@@ -21,13 +21,8 @@ public class ApartmentService {
         return apartmentRepository.findById(id).orElse(null);
     }
 
-    public void deleteById(Long id) {
-        apartmentRepository.deleteById(id)
-    }
+    public void deleteById(Long id) { apartmentRepository.deleteById(id); }
 
-    public Apartment update(Apartment apartment) {
-        return apartmentRepository.save(apartment);
-    }
-
+    public Apartment update(Apartment apartment) { return apartmentRepository.save(apartment); }
 }
 
