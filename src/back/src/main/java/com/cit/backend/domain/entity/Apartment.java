@@ -1,5 +1,6 @@
 package com.cit.backend.domain.entity;
 
+import com.cit.backend.api.validator.JWT;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,8 @@ public class Apartment {
     private Long id;
 
     private int number;
+
+    @JWT
     private String token;
 
     @ManyToOne
