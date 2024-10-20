@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 public class ApartmentService {
     @Autowired
-    private ApartmentService apartmentService;
+    private ApartmentRepository apartmentRepository;
 
     public Apartment save(Apartment apartment){
         return apartmentRepository.save(apartment);
