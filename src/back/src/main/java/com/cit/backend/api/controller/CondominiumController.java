@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/condominium")
-public class CondominiumCotroller {
+public class CondominiumController {
 
     @Autowired
     private CondominiumService condominiumService;
@@ -21,19 +21,11 @@ public class CondominiumCotroller {
     @Autowired
     private CondominiumMapper condominiumMapper;
 
-    // @GetMapping("/condominium")
-    // public String helloWorld() {
-    //     return "Ola seja bem vindo ao sistema do <b>C.I.T</b><br>Condomínio<br>Inteligente<br>";
-    // }
-
     @PostMapping
     public ResponseEntity<CondominiumResponse> createCondominium(@Valid @RequestBody CondominiumRequest request) {
         Condominium condominium = condominiumMapper.toCondominium(request);
-        System.out.println(condominium);
-        System.out.println(condominium.getName());
-        condominium.setId(1L);
         Condominium condominiumSaved = condominiumService.save(condominium);
-        CondominiumResponse response = condominiumMapper.toCondominiumResponse(condominium);
+        CondominiumResponse response = condominiumMapper.toCondominiumResponse(condominiumSaved);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
