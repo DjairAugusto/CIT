@@ -14,11 +14,14 @@ public class ApartmentMapper {
     private ModelMapper modelMapper;
 
     public Apartment toApartment(@Valid ApartmentRequest request) {
+        return modelMapper.map(request, Apartment.class);
     }
 
-    public ApartmentResponse toApartmentResponse(Apartment apartmentSaved) {
+    public ApartmentResponse toApartmentResponse(Apartment apartment) {
+        return modelMapper.map(apartment, ApartmentResponse.class);
     }
 
     public ApartmentRequest toApartmentRequest(Apartment apartment) {
+        return modelMapper.map(apartment, ApartmentRequest.class);
     }
 }
