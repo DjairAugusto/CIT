@@ -1,4 +1,4 @@
-package com.cit.backend.domain.entity.service;
+package com.cit.backend.domain.service;
 
 import org.springframework.stereotype.Service;
 

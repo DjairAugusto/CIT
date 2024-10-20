@@ -4,7 +4,7 @@ import com.cit.backend.exceptions.MissingVariableException;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import com.cit.backend.domain.entity.service.HelloWorldService;
+import com.cit.backend.domain.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 
