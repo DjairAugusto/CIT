@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 
 @AllArgsConstructor
 @Getter
@@ -11,4 +12,9 @@ import org.springframework.http.HttpStatus;
 public class RestErroMessage {
     private HttpStatus status;
     private String message;
+
+    public RestErroMessage(HttpStatusCode status, String message) {
+        this.status = HttpStatus.valueOf(status.value());
+        this.message = message;
+    }
 }
