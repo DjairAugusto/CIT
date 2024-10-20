@@ -16,4 +16,5 @@ public class CondominiumResponse {
     private int blocks;
     private int units;
     private int apartments;
+    private AddressResponse address;
 }

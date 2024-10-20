@@ -2,6 +2,7 @@ package com.cit.backend.api.mapper;
 
 import com.cit.backend.api.request.CondominiumRequest;
 import com.cit.backend.api.response.CondominiumResponse;
+import com.cit.backend.domain.entity.Address;
 import com.cit.backend.domain.entity.Condominium;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,11 @@ public class CondominiumMapper {
     private ModelMapper modelMapper;
 
     public Condominium toCondominium(CondominiumRequest condominium) {
-        return modelMapper.map(condominium, Condominium.class);
+        Address address = modelMapper.map(condominium.getAddress(), Address.class);
+        Condominium condominiumEntity = modelMapper.map(condominium, Condominium.class);
+        address.setCondominium(condominiumEntity);
+        condominiumEntity.setAddress(address);
+        return condominiumEntity;
     }
 
     public CondominiumResponse toCondominiumResponse(Condominium condominium) {
