@@ -14,7 +14,6 @@ export default function InhabitantForm() {
 			"name",
 			"role",
 			"phone",
-			"email",
 		],
 		oneNeeded: true
 	});
@@ -54,10 +53,6 @@ export default function InhabitantForm() {
 										onChange={e => modifyEmployee(employee.id, ["phone", e.nativeEvent.srcElement.value])}
 									/>
 
-									<Forms.InputText
-										placeholder="E-MAIL"
-										onChange={e => modifyEmployee(employee.id, ["email", e.nativeEvent.srcElement.value])}
-									/>
 								</div>
 							</DropMenu>
 						))
