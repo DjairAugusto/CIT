@@ -2,6 +2,7 @@ package com.cit.backend.api.request;
 
 import com.cit.backend.api.validator.JWT;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class ApartmentRequest {
-    @NotBlank(message = "Number is mandatory")
+    @NotNull(message = "Number is mandatory")
     @PositiveOrZero(message = "Number must be equals or greater than zero")
     private int number;
 
@@ -19,6 +20,7 @@ public class ApartmentRequest {
     @JWT()
     private String token;
 
-    @NotBlank(message = "Unit id is mandatory")
+    @NotNull(message = "Unit id is mandatory")
+    @PositiveOrZero(message = "Unit id is mandatory")
     private Long unitId;
 }
