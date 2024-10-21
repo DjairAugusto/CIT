@@ -20,6 +20,7 @@ public class Apartment {
 
     private int number;
 
+    @Column(unique = true)
     @JWT
     private String token;
 
