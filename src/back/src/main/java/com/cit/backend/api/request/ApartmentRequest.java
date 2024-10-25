@@ -23,6 +23,6 @@ public class ApartmentRequest {
     private String token;
 
     @NotNull(message = "Unit id is mandatory")
-    @PositiveOrZero(message = "Unit id is mandatory")
+    @PositiveOrZero(message = "Unit id must be equals or greater than zero")
     private Long unitId;
 }
