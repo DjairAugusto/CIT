@@ -12,6 +12,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class ApartmentRequest {
+    private Long id;
+
     @NotNull(message = "Number is mandatory")
     @PositiveOrZero(message = "Number must be equals or greater than zero")
     private int number;
