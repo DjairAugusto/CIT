@@ -8,6 +8,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class ApartmentMapper {
     @Autowired
@@ -21,7 +24,19 @@ public class ApartmentMapper {
         return modelMapper.map(apartment, ApartmentResponse.class);
     }
 
+    public List<ApartmentResponse> toApartmentResponseList(List<Apartment> apartments) {
+        return apartments.stream()
+                .map(this::toApartmentResponse)
+                .collect(Collectors.toList());
+    }
+
     public ApartmentRequest toApartmentRequest(Apartment apartment) {
         return modelMapper.map(apartment, ApartmentRequest.class);
+    }
+
+    public List<ApartmentRequest> toApartmentRequestList(List<Apartment> apartments) {
+        return apartments.stream()
+                .map(this::toApartmentRequest)
+                .collect(Collectors.toList());
     }
 }
