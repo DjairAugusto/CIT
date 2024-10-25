@@ -17,8 +17,6 @@ services:
     container_name: cit-back
     build: ./src/back
     volumes:
-      - ./src/back/.m2:/app/.m2
-      - ./src/back/.mvn:/app/.mvn
       - ./src/back/src:/app/src
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/cit
