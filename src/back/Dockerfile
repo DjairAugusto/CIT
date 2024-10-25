@@ -13,8 +13,12 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/*
 
 COPY ./scripts ./scripts
+COPY .mvn ./.mvn
 COPY pom.xml mvnw ./
-RUN chmod +x ./scripts/*
+RUN chmod +x ./scripts/* && \
+    dos2unix ./scripts/* && \
+    dos2unix mvnw
+RUN ./mvnw dependency:go-offline
 
 # Define o comando de entrada padrão para iniciar o script run.sh
 ENTRYPOINT [ "bash", "-c", "dos2unix ./scripts/* mvnw; ./scripts/run.sh" ]
