@@ -30,6 +30,9 @@ public class Condominium {
     private int units;
 
     @Unsigned
+    private int floors;
+
+    @Unsigned
     private int apartments;
 
     @Column(length = 18, unique = true)
