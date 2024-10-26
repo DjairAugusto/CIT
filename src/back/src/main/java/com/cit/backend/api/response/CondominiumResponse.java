@@ -16,5 +16,6 @@ public class CondominiumResponse {
     private int blocks;
     private int units;
     private int apartments;
+    private long managerId;
     private AddressResponse address;
 }

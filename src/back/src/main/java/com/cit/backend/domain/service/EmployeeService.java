@@ -1,6 +1,7 @@
 package com.cit.backend.domain.service;
 
 import com.cit.backend.domain.entity.Employee;
+import com.cit.backend.domain.entity.enums.PermissionEmployee;
 import com.cit.backend.domain.repository.CondominiumRepository;
 import com.cit.backend.domain.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,12 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     public Employee save(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+    public Employee saveAdmin(Employee employee) {
+        employee.setRole("Admin");
+        employee.setPermission(PermissionEmployee.ADMIN);
         return employeeRepository.save(employee);
     }
 

@@ -11,15 +11,7 @@ import javax.swing.*;
 @Getter
 public class AdminRequest extends PeopleRequest{
 
-    @NotBlank(message = "Role is mandatory")
-    private String role;
-
-    @NotBlank(message = "Permission is mandatory")
-    private Spring permission;
-
-    public AdminRequest(String name, String cpf, ContactRequest contact, String role, Spring permission) {
+    public AdminRequest(String name, String cpf, ContactRequest contact) {
         super(name, cpf, contact);
-        this.role = role;
-        this.permission = permission;
     }
 }
