@@ -2,6 +2,7 @@ import React from "react";
 import CondominiumForm from "./CondominiumForm";
 import EmployeesForm from "./EmployeesForm";
 import { Forms } from "../../components/Forms";
+import AdminForm from "./AdminForm";
 
 const formsTemplete = {
 	condominium: {
@@ -10,17 +11,26 @@ const formsTemplete = {
 		blocks: "",
 		floors: "",
 	},
-	employees: [],
+	admin: {
+		name: "",
+		cpf: "",
+	},
 }
 
 export default function CondominiumRegistration() {
 	const [data, setData] = React.useState(formsTemplete);
 
-	const updateFieldHandler = (field, value) => {
-		setData((prevData) => ({ ...prevData, [field]: value }));
-	}
+    const updateFieldHandler = (section, field, value) => {
+        setData((prevData) => ({
+            ...prevData,
+            [section]: {
+                ...prevData[section],
+                [field]: value,
+            },
+        }));
+    }
 	
-	const steps = [<CondominiumForm data={data} updateFieldHandler={updateFieldHandler} />, <EmployeesForm data={data} updateFieldHandler={updateFieldHandler}/>];
+	const steps = [<CondominiumForm data={data.condominium} updateFieldHandler={updateFieldHandler} />, <AdminForm data={data.admin} updateFieldHandler={updateFieldHandler}/>];
 
 	return (
 		<Forms.Page
