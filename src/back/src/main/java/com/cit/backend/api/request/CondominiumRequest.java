@@ -30,9 +30,17 @@ public class CondominiumRequest {
     @PositiveOrZero(message = "Units must be greater than zero")
     private int units;
 
+    @NotNull(message = "Floors is mandatory")
+    @PositiveOrZero(message = "Floors must be greater than zero")
+    private int floors;
+
     @NotNull(message = "Apartments is mandatory")
     @PositiveOrZero(message = "Apartments must be greater than zero")
     private int apartments;
+
+    @NotNull(message = "Manager ID is mandatory")
+    @PositiveOrZero(message = "Manager ID must be greater than zero")
+    private long managerId;
     
     private AddressRequest address;
 }
