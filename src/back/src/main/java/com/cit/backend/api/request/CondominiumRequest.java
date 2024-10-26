@@ -7,11 +7,13 @@ import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 @Setter
 @Getter
+@NoArgsConstructor
 @AllArgsConstructor
 public class CondominiumRequest {
     @NotBlank(message = "Name is mandatory")

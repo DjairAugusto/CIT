@@ -22,6 +22,10 @@ public class EmployeeMapper {
         return modelMapper.map(employee, AdminResponse.class);
     }
 
+    public EmployeeResponse toEmployeeResponse(Employee employee) {
+        return modelMapper.map(employee, EmployeeResponse.class);
+    }
+
     public AdminRequest toAdminRequest(Employee employee) {
         return modelMapper.map(employee, AdminRequest.class);
     }

@@ -30,11 +30,11 @@ public class EmployeeController {
 
 
     @PostMapping(value = "/admin", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AdminResponse> createEmployee(@Valid @RequestBody AdminRequest request) {
+    public ResponseEntity<EmployeeResponse> createEmployee(@Valid @RequestBody AdminRequest request) {
 
         Employee employee = employeeMapper.toEmployee(request);
         Employee employeeSaved = employeeService.saveAdmin(employee);
-        AdminResponse response = employeeMapper.toAdminResponse(employeeSaved);
+        EmployeeResponse response = employeeMapper.toEmployeeResponse(employeeSaved);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

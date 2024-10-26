@@ -14,7 +14,7 @@ import java.util.Set;
 public class Apartment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @SequenceGenerator(name = "apartment_seq", sequenceName = "apartment_id_seq", allocationSize = 1)
     private Long id;
 
     private int number;

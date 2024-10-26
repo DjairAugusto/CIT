@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "blocks")
@@ -25,8 +26,8 @@ public class Block {
     @JoinColumn(name="condominium_id", nullable=false)
     private Condominium condominium;
 
-    @OneToMany(mappedBy="block")
-    private Set<Unit> units;
+    @OneToMany(mappedBy="block", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Unit> units = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
