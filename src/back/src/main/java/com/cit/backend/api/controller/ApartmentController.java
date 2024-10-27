@@ -3,7 +3,7 @@ package com.cit.backend.api.controller;
 import com.cit.backend.api.mapper.ApartmentMapper;
 import com.cit.backend.api.request.ApartmentRequest;
 import com.cit.backend.api.response.ApartmentResponse;
-import com.cit.backend.api.validator.JWT;
+import com.cit.backend.api.validator.JWTToken;
 import com.cit.backend.domain.entity.Apartment;
 import com.cit.backend.domain.service.ApartmentService;
 import jakarta.validation.Valid;
@@ -35,7 +35,7 @@ public class ApartmentController {
     }
 
     @GetMapping("/{token:^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}}")
-    public ResponseEntity<ApartmentResponse> getApartment(@PathVariable("token") @Valid @JWT String token) {
+    public ResponseEntity<ApartmentResponse> getApartment(@PathVariable("token") @Valid @JWTToken String token) {
         Apartment apartment = apartmentService.findByToken(token);
         if (apartment == null) {
             return ResponseEntity.notFound().build();
