@@ -1,6 +1,6 @@
 package com.cit.backend.domain.entity;
 
-import com.cit.backend.api.validator.JWT;
+import com.cit.backend.api.validator.JWTToken;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +21,7 @@ public class Apartment {
     private int number;
 
     @Column(unique = true)
-    @JWT
+    @JWTToken
     private String token;
 
     @ManyToOne
