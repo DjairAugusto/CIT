@@ -6,6 +6,7 @@ import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.cit.backend.api.validator.JWTToken;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
@@ -62,10 +63,15 @@ public abstract class JWTService {
         }
     }
 
+    private DecodedJWT decode(String token) {
+        return JWT.decode(token);
+    }
+
     public Boolean isTokenExpired(@Valid @JWTToken String token) {
-        return JWT
-                .decode(token)
-                .getExpiresAt()
-                .before(new Date());
+        return decode(token).getExpiresAt().before(new Date());
+    }
+
+    public String getSubject(@Valid @JWTToken String token) {
+        return decode(token).getSubject();
     }
 }
