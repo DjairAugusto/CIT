@@ -1,8 +1,12 @@
 package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity(name = "profiles")
+@Getter
+@Setter
 public class Profile {
 
     @Id
