@@ -20,6 +20,30 @@ export default function CommonAreaDetails({ commonArea, clearFocused }) {
 					{commonArea.name}
 				</h2>
 			</div>
+			<div className="mt-2 ml-3">
+				<h2 className="text-3xl font-semibold">Detalhes</h2>
+				<span>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, laudantium voluptatem maiores perferendis, labore veritatis velit aperiam nostrum fuga quaerat consectetur unde enim excepturi debitis cupiditate dolor molestias hic nisi? Ipsa, doloribus! Similique non, sed laudantium molestias culpa, eius velit corrupti maiores cupiditate nemo est vitae? Veniam quam velit quod?
+				</span>
+				<div className="w-full h-px bg-black"></div>
+				<div className="flex">
+					<div className="w-1/2 flex-auto">
+						<h2 className="text-3xl font-semibold">Horário de Funcionamento</h2>
+						<span>
+							Segunda à Sexta: XX:XX - XX:XX <br />
+							Sabado e Domingo: XX:XX - XX:XX
+						</span>
+					</div>
+					<div className="w-px h-full bg-black"></div>
+					<div className="w-1/2 flex-auto">
+						<h2 className="text-3xl font-semibold">Taxa de Reserva</h2>
+						<span>
+							Segunda à Sexta: R$XX,XX <br />
+							Sabado e Domingo: R$XX,XX
+						</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }
