@@ -14,10 +14,10 @@ import org.springframework.beans.factory.annotation.Value;
 import java.util.Date;
 
 public abstract class JWTService {
-    @Value("api.security.jwt.secret")
+    @Value("${api.security.jwt.secret}")
     private String SECRET;
 
-    @Value("api.security.jwt.expiration")
+    @Value("${api.security.jwt.expiration}")
     private Long EXPIRATION;
 
     private static final String ISSUER = "CIT-APPLICATION-API";
