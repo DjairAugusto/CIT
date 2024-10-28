@@ -20,6 +20,7 @@ import CondominiumRegistration from "./pages/CondominiumRegistration";
 import ApartmentRegistration from "./pages/ApartmentRegistration";
 import FunctionaryRegistration from "./pages/FunctionaryRegistration";
 import VisitorRegistration from "./pages/VisitorRegistration";
+import CommonAreaBanner from "./components/Forms/FormsCommonAreaBanner";
 
 const router = createBrowserRouter([
 	{
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
 			{
 				path: "/register/visitor",
 				element: <VisitorRegistration />,
+			},
+			{
+				path: "/register/banner",
+				element: <CommonAreaBanner />,
 			}
 		],
 	},
