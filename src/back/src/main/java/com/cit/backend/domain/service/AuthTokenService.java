@@ -3,8 +3,10 @@ package com.cit.backend.domain.service;
 import com.cit.backend.api.validator.JWTToken;
 import com.cit.backend.domain.entity.Profile;
 import jakarta.validation.Valid;
+import org.springframework.stereotype.Service;
 
-public class AuthService extends JWTService {
+@Service
+public class AuthTokenService extends JWTService {
     public String generateToken(Profile profile) {
         return buildToken(profile.getEmail());
     }
