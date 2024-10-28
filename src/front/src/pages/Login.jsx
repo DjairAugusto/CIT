@@ -32,7 +32,7 @@ export default function Login() {
                     <Forms.InputText 
                         placeholder="E-mail"
                         required
-                        style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+                        style={{ width: '100%', padding: '10px', borderRadius: '4px' }}
                     />
                 </div>
                 
@@ -42,7 +42,7 @@ export default function Login() {
                         type="password"
                         placeholder="Senha"
                         required
-                        style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+                        style={{ width: '100%', padding: '10px', borderRadius: '4px'}}
                     />
                 </div>
 
