@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CommonAreaList from "./List";
+import CommonAreaDetails from "./Details";
 
 export default function CommonAreaPage() {
 	const [commonAreas, _] = useState(
@@ -11,10 +12,17 @@ export default function CommonAreaPage() {
 
 	const [focusedOn, setFocusedOn] = useState(null);
 
+	function clearFocused() {
+		setFocusedOn(null);
+	}
+
 	return (
 		<div className="flex w-svw h-svh">
 			{focusedOn !== null ? (
-				<></>
+				<CommonAreaDetails
+					commonArea={focusedOn}
+					clearFocused={clearFocused}
+				/>
 			) : (
 				<CommonAreaList
 					commonAreas={commonAreas}
