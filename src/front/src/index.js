@@ -21,6 +21,7 @@ import ApartmentRegistration from "./pages/ApartmentRegistration";
 import FunctionaryRegistration from "./pages/FunctionaryRegistration";
 import VisitorRegistration from "./pages/VisitorRegistration";
 import Accountability from "./pages/Accountability";
+import AccountabilityAdmin from "./pages/AccountabilityAdmin";
 
 const router = createBrowserRouter([
 	{
@@ -79,8 +80,8 @@ const router = createBrowserRouter([
 		children: [],
 	},
 	{
-		path: "/accountability",
-		element: <Accountability />,
+		path: "/accountabilityAdmin",
+		element: <AccountabilityAdmin />,
 	},
 ]);
 
