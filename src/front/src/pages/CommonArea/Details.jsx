@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 	return (
-		<div className="w-full m-6 rounded-3xl overflow-hidden bg-white">
+		<div className="flex flex-col w-full m-6 rounded-3xl overflow-hidden bg-white">
 			<div className="relative w-full h-full max-h-96 overflow-hidden">
 				<div className="absolute w-full h-full bg-gradient-to-b from-black to-transparent to-20% opacity-60"></div>
 				<div className="absolute w-full h-full bg-gradient-to-b from-transparent from-70% to-black to-87% opacity-80"></div>
@@ -20,13 +20,13 @@ export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 					{commonArea.name}
 				</h2>
 			</div>
-			<div className="mt-2 ml-3">
+			<div className="my-2 mx-3 h-full flex flex-col">
 				<h2 className="text-3xl font-semibold">Detalhes</h2>
 				<span>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, laudantium voluptatem maiores perferendis, labore veritatis velit aperiam nostrum fuga quaerat consectetur unde enim excepturi debitis cupiditate dolor molestias hic nisi? Ipsa, doloribus! Similique non, sed laudantium molestias culpa, eius velit corrupti maiores cupiditate nemo est vitae? Veniam quam velit quod?
 				</span>
-				<div className="w-full h-px bg-black"></div>
-				<div className="flex">
+				<div className="w-full h-px my-2 bg-black"></div>
+				<div className="flex h-full">
 					<div className="w-1/2 flex-auto">
 						<h2 className="text-3xl font-semibold">Horário de Funcionamento</h2>
 						<span>
@@ -34,12 +34,12 @@ export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 							Sabado e Domingo: XX:XX - XX:XX
 						</span>
 					</div>
-					<div className="w-px h-full bg-black"></div>
+					<div className="w-px h-full mx-4 bg-black"></div>
 					<div className="w-1/2 flex-auto">
 						<h2 className="text-3xl font-semibold">Taxa de Reserva</h2>
 						<span>
-							Segunda à Sexta: R$XX,XX <br />
-							Sabado e Domingo: R$XX,XX
+							Segunda à Sexta: R$ XX,XX <br />
+							Sabado e Domingo: R$ XX,XX
 						</span>
 					</div>
 				</div>
