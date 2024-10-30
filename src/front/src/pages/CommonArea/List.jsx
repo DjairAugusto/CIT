@@ -10,7 +10,7 @@ export default function CommonAreaList({ commonAreas, setFocused, role }) {
 					<h1 className="text-center text-4xl mb-2">Áreas Comuns</h1>
 					<div className="bg-zinc-400 h-[1px] w-1/4"></div>
 				</div>
-				<SearchBar />
+				<SearchBar role={role} />
 
 				<div className="grid grid-cols-3 auto-rows-min mt-4 gap-4 max-h-full overflow-auto">
 					{commonAreas.map((commonArea) => (
