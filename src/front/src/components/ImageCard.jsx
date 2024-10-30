@@ -4,7 +4,7 @@ export default function ImageCard({ imgSrc, title, className, buttonText, button
 	return (
 		<div
 			className={
-				"relative min-w-xs max-w-lg w-full max-h-72 rounded-lg overflow-hidden " + className
+				"relative rounded-lg overflow-hidden " + className
 			}
 		>
 			<div className="relative">
