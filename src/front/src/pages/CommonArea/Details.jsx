@@ -3,8 +3,8 @@ import { ArrowLeft, Pencil, Trash } from "lucide-react";
 
 export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 	return (
-		<div className="flex flex-col w-full m-6 rounded-3xl overflow-hidden bg-gray-mid">
-			<div className="relative w-full h-full max-h-96 overflow-hidden">
+		<div className="flex flex-col w-full m-6 rounded-3xl overflow-hidden bg-white">
+			<div className="flex-initial relative w-full max-h96 overflow-hidden">
 				<div className="absolute w-full h-full bg-gradient-to-b from-black to-transparent to-20% opacity-60"></div>
 				<div className="absolute w-full h-full bg-gradient-to-b from-transparent from-70% to-black to-87% opacity-80"></div>
 				<button onClick={() => clearFocused()} className="top-3 left-3 text-white flex text-2xl items-center absolute bg-transparent border-none">
@@ -12,7 +12,7 @@ export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 					Voltar
 				</button>
 				<img
-					className="w-full object-cover object-bottom"
+					className="w-full h-full object-cover"
 					src={commonArea.img}
 					alt=""
 				/>
