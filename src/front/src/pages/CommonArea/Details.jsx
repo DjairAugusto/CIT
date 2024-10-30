@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 
-export default function CommonAreaDetails({ commonArea, clearFocused }) {
+export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 	return (
 		<div className="w-full m-6 rounded-3xl overflow-hidden bg-white">
 			<div className="relative w-full h-full max-h-96 overflow-hidden">

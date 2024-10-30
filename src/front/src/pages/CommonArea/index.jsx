@@ -10,6 +10,8 @@ export default function CommonAreaPage() {
 		})
 	);
 
+	const [role, setRole] = useState("ADMIN");
+
 	const [focusedOn, setFocusedOn] = useState(null);
 
 	function clearFocused() {
@@ -26,6 +28,7 @@ export default function CommonAreaPage() {
 				<CommonAreaDetails
 					commonArea={commonAreas[focusedOn]}
 					clearFocused={clearFocused}
+					role={role}
 				/>
 			) : (
 				<CommonAreaList

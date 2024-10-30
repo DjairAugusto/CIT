@@ -3,7 +3,7 @@ import SearchBar from "../../components/Search/SearchBar";
 import SideBar from "../../components/Sidebar";
 import ImageCard from "../../components/ImageCard";
 
-export default function CommonAreaList({ commonAreas, setFocused }) {
+export default function CommonAreaList({ commonAreas, setFocused, role }) {
 	return (
 		<>
 			<SideBar />
