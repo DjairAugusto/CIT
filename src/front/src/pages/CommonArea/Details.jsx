@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Pencil, Trash } from "lucide-react";
 
 export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 	return (
@@ -43,6 +43,23 @@ export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 						</span>
 					</div>
 				</div>
+			</div>
+			<div className="flex gap-1">
+				<button className="text-white bg-primary-1000 w-full px-8 py-6 text-3xl">
+					Fazer Reserva
+				</button>
+				{
+					role === "ADMIN" && (
+						<>
+							<button className="text-white bg-blue-500 aspect-square px-8 py-6 text-3xl">
+								<Pencil />
+							</button>
+							<button className="text-white bg-red-500 aspect-square px-8 py-6 text-3xl">
+								<Trash />
+							</button>
+						</>
+					)
+				}
 			</div>
 		</div>
 	);
