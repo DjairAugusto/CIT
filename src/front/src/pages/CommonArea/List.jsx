@@ -7,7 +7,7 @@ export default function CommonAreaList({ commonAreas, setFocused }) {
 	return (
 		<>
 			<SideBar />
-			<main className="w-full h-full p-4 flex flex-col">
+			<main className="w-full h-full p-4 flex flex-col bg-white">
 				<div className="flex items-center flex-col mb-4">
 					<h1 className="text-center text-4xl mb-2">Áreas Comuns</h1>
 					<div className="bg-zinc-400 h-[1px] w-1/4"></div>
