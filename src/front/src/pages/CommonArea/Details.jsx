@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowLeft, Pencil, Trash } from "lucide-react";
 
-export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
+export default function CommonAreaDetails({ commonArea, deleteFocused, clearFocused, role }) {
 	return (
 		<div className="flex flex-col w-full m-6 rounded-3xl overflow-hidden bg-white">
 			<div className="flex-initial relative w-full max-h96 overflow-hidden">
@@ -54,7 +54,7 @@ export default function CommonAreaDetails({ commonArea, clearFocused, role }) {
 							<button className="text-white bg-blue-500 aspect-square px-8 py-6 text-3xl">
 								<Pencil />
 							</button>
-							<button className="text-white bg-red-500 aspect-square px-8 py-6 text-3xl">
+							<button onClick={deleteFocused} className="text-white bg-red-500 aspect-square px-8 py-6 text-3xl">
 								<Trash />
 							</button>
 						</>

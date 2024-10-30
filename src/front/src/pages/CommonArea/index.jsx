@@ -6,8 +6,8 @@ export default function CommonAreaPage() {
 	const [commonAreas, setCommonAreas] = useState(
 		Array.from({ length: 30 }, () => {
 			return {
-			name: "Nome da Área Comum",
-			img: "/common-area-placeholder.jpg",
+				name: "Nome da Área Comum",
+				img: "/common-area-placeholder.jpg",
 			};
 		})
 	);
@@ -20,11 +20,17 @@ export default function CommonAreaPage() {
 		setFocusedOn(null);
 	}
 
+	function removeCommonArea(commonArea) {
+		if (commonArea === focusedOn) clearFocused();
+		setCommonAreas(commonAreas.filter((each) => each !== commonArea));
+	}
+
 	return (
 		<div className="flex w-svw h-svh bg-[#d9d9d9]">
 			{focusedOn !== null ? (
 				<CommonAreaDetails
 					commonArea={focusedOn}
+					deleteFocused={() => removeCommonArea(focusedOn)}
 					clearFocused={clearFocused}
 					role={role}
 				/>
