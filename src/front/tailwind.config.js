@@ -9,6 +9,9 @@ module.exports = {
 					1000: "#42D0B3",
 				},
 				secondary: "#F6F8F7",
+				gray: {
+					mid: "#D9D9D9"
+				}
 			},
 			fontFamily: {
 				sans: ["Work Sans", "sans-serif"],
