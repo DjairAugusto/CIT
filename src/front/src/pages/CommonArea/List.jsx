@@ -12,12 +12,12 @@ export default function CommonAreaList({ commonAreas, setFocused, role }) {
 				</div>
 				<SearchBar role={role} />
 
-				<div className="grid grid-cols-3 auto-rows-min mt-4 gap-4 max-h-full overflow-auto">
+				<div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 place-content-stretch w-full mt-4 gap-4 max-h-full overflow-auto">
 					{commonAreas.map((commonArea) => (
 						<ImageCard
 							imgSrc={commonArea.img}
 							title={commonArea.name}
-							className="flex-initial"
+							className="w-full h-full min-h-60"
 							buttonText="Ver Detalhes"
 							buttonAction={() => setFocused(commonArea)}
 						/>
