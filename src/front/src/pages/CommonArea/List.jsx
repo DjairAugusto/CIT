@@ -1,12 +1,10 @@
 import React from "react";
 import SearchBar from "../../components/Search/SearchBar";
-import SideBar from "../../components/Sidebar";
 import ImageCard from "../../components/ImageCard";
 
 export default function CommonAreaList({ commonAreas, setFocused, role }) {
 	return (
 		<>
-			<SideBar />
 			<main className="w-full h-full p-4 flex flex-col bg-white">
 				<div className="flex items-center flex-col mb-4">
 					<h1 className="text-center text-4xl mb-2">Áreas Comuns</h1>
