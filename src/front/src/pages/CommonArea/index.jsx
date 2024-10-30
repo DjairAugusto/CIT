@@ -3,10 +3,12 @@ import CommonAreaList from "./List";
 import CommonAreaDetails from "./Details";
 
 export default function CommonAreaPage() {
-	const [commonAreas, _] = useState(
-		new Array(30).fill({
+	const [commonAreas, setCommonAreas] = useState(
+		Array.from({ length: 30 }, () => {
+			return {
 			name: "Nome da Área Comum",
 			img: "/common-area-placeholder.jpg",
+			};
 		})
 	);
 
