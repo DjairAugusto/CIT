@@ -18,23 +18,18 @@ export default function CommonAreaPage() {
 		setFocusedOn(null);
 	}
 
-	function setFocused(commonArea) {
-		setFocusedOn(commonAreas.indexOf(commonArea));
-	}
-
 	return (
 		<div className="flex w-svw h-svh bg-[#d9d9d9]">
 			{focusedOn !== null ? (
 				<CommonAreaDetails
-					commonArea={commonAreas[focusedOn]}
+					commonArea={focusedOn}
 					clearFocused={clearFocused}
 					role={role}
 				/>
 			) : (
 				<CommonAreaList
 					commonAreas={commonAreas}
-					setFocused={setFocused}
-					role={role}
+					setFocused={setFocusedOn}
 				/>
 			)}
 		</div>
