@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import CondominiumForm from "./CondominiumForm";
 import { Forms } from "../../components/Forms";
 import AdminForm from "./AdminForm";
@@ -28,8 +28,26 @@ const formsTemplete = {
 
 export default function CondominiumRegistration() {
 	const [data, setData] = React.useState(formsTemplete);
+	const emptyFieldsCondominium = []
+	const emptyFieldsAdmin = []
+	// const [emptyFieldsCondominium, setEmptyFieldsCondominium] = React.useState({});
+	// const [emptyFieldsAdmin, setEmptyFieldsAdmin] = React.useState({});
 
-    usePageTitle("Cadastro de Condomínio");
+	usePageTitle("Cadastro de Condomínio");
+
+	useEffect(() => {
+		console.log(formsTemplete);
+	},[data])
+	
+	function validateCondominiumForm()  {
+		const emptyFields = Object.keys(data.condominium).filter(key => !data.condominium[key]);
+		return emptyFields.length === 0;
+	}
+
+	function validateAdminForm() {
+		const emptyFields = Object.keys(data.condominium).filter(key => !data.admin[key]);
+		return emptyFields.length === 0;
+	}
 
     const updateFieldHandler = (section, field, value) => {
         setData((prevData) => ({
@@ -42,14 +60,16 @@ export default function CondominiumRegistration() {
     }
 	
 	const steps = [
-		<CondominiumForm data={data.condominium} updateFieldHandler={updateFieldHandler}  subtitle={data.condominium.name || "Nome do condominio"}/>,
-		<AdminForm data={data.admin} updateFieldHandler={updateFieldHandler} subtitle={data.condominium.name || "Nome do condominio"} />];
+		<CondominiumForm data={data.condominium} updateFieldHandler={updateFieldHandler} subtitle={data.condominium.name || "Nome do condominio"} />,
+		<AdminForm data={data.admin} updateFieldHandler={updateFieldHandler} subtitle={data.condominium.name || "Nome do condominio"}/>
+	];
 
 	return (
 		<Forms.Page
 			steps={steps}
 			imageSource="/condominium-registration.png"
-			data={data}
+			validations={[validateCondominiumForm(), validateAdminForm()]}
+			callbak={() => console.log(data)}
 		/>
 	);
 }
