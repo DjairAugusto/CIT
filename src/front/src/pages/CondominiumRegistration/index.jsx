@@ -14,6 +14,9 @@ const formsTemplete = {
 	admin: {
 		name: "",
 		cpf: "",
+		email: "",
+		password: "",
+		confirm: "",
 	},
 }
 
@@ -30,7 +33,9 @@ export default function CondominiumRegistration() {
         }));
     }
 	
-	const steps = [<CondominiumForm data={data.condominium} updateFieldHandler={updateFieldHandler} />, <AdminForm data={data.admin} updateFieldHandler={updateFieldHandler}/>];
+	const steps = [
+		<CondominiumForm data={data.condominium} updateFieldHandler={updateFieldHandler}  subtitle={data.condominium.name || "Nome do condominio"}/>,
+		<AdminForm data={data.admin} updateFieldHandler={updateFieldHandler} subtitle={data.condominium.name || "Nome do condominio"} />];
 
 	return (
 		<Forms.Page
