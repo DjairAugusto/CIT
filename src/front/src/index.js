@@ -47,7 +47,7 @@ const router = createBrowserRouter([
 			{
 				path: "/contacts",
 				element: <Contacts />,
-			},
+			}
 		],
 	},
 	{
@@ -70,7 +70,8 @@ const router = createBrowserRouter([
 			{
 				path: "/register/visitor",
 				element: <VisitorRegistration />,
-			}
+			},
+	
 		],
 	},
 	{
