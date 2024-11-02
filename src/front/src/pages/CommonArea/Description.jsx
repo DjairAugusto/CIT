@@ -3,7 +3,6 @@ import React, { useState } from "react";
 export default function Description({ text: initialText }) {
 	const [text, setText] = useState(initialText);
 	const [length, setLength] = useState(initialText.length);
-	const [row, setRow] = useState(1);
 	const [value, setValue] = useState("0");
 
 	const inputValue = (e) => {
@@ -15,17 +14,6 @@ export default function Description({ text: initialText }) {
 		const newText = e.target.value;
 		setText(newText);
 		setLength(newText.length);
-		rowChange(newText.length);
-	};
-
-	const rowChange = (textLength) => {
-		const newRow = Math.ceil(textLength / 100) || 1;
-		if (newRow > 10) {
-			const constRow = 10;
-			setRow(constRow);
-		} else {
-			setRow(newRow);
-		}
 	};
 
 	return (
@@ -33,8 +21,8 @@ export default function Description({ text: initialText }) {
 			<h1 className="text-4xl mb-8">Detalhes</h1>
 			<div className="flex items-start">
 				<textarea
-					cols="100"
-					rows={row}
+					cols="200"
+					rows="6"
 					className="outline-none border-none"
 					value={text}
 					onChange={inputChange}

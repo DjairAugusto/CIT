@@ -21,6 +21,7 @@ import ApartmentRegistration from "./pages/ApartmentRegistration";
 import FunctionaryRegistration from "./pages/FunctionaryRegistration";
 import VisitorRegistration from "./pages/VisitorRegistration";
 import CommonArea from "./pages/CommonArea";
+import CommonAreaRegistration from "./pages/CommonArea/Registration";
 
 const router = createBrowserRouter([
 	{
