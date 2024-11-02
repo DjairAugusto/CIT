@@ -26,7 +26,7 @@ export default function CommonAreaPage() {
 	}
 
 	return (
-		<div className="flex w-svw h-svh bg-[#d9d9d9]">
+		<div className="flex w-svw h-svh bg-gray-mid">
 			{focusedOn !== null ? (
 				<CommonAreaDetails
 					commonArea={focusedOn}
