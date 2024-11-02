@@ -3,6 +3,7 @@ package com.cit.backend.api.mapper;
 import com.cit.backend.api.request.CommonAreaRequest;
 import com.cit.backend.api.response.CommonAreaResponse;
 import com.cit.backend.domain.entity.CommonArea;
+import com.cit.backend.domain.service.CondominiumService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,14 +14,11 @@ public class CommonAreaMapper {
     private ModelMapper modelMapper;
 
     @Autowired
-    private ReserveMapper reserveMapper;
+    private CondominiumService condominiumService;
 
-        ReserveRequest reserve = commonArea.getReserve();
-        if(reserve != null) {
-            commonAreaEntity.getReserve().add(reserveMapper.toReserve(reserve));
-        }
     public CommonArea toCommonArea(CommonAreaRequest commonArea) {
         CommonArea commonAreaEntity = modelMapper.map(commonArea, CommonArea.class);
+        commonAreaEntity.setCondominium(condominiumService.findById(commonArea.getCondominiumId()));
         return commonAreaEntity;
     }
 
