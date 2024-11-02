@@ -20,7 +20,6 @@ const formsTemplete = {
 	},
 }
 
-// TODO Não permitir avançar se os campos não estiverem preenchidos
 // TODO Adicionar validação de CPF e CNPJ
 // TODO Adicionar validação de email
 // TODO Adicionar validação de senha
@@ -39,14 +38,24 @@ export default function CondominiumRegistration() {
 		console.log(formsTemplete);
 	},[data])
 	
+	function fieldsEmpty(fieldsData) {
+		const fields = Object.keys(fieldsData)
+		.filter(key => !fieldsData[key])
+		.map(key => ({ [key]: 'Campo obrigatório' }));
+		return fields;
+
+	}
 	function validateCondominiumForm()  {
-		const emptyFields = Object.keys(data.condominium).filter(key => !data.condominium[key]);
-		return emptyFields.length === 0;
+		let fieldsErro;
+		
+		fieldsErro += fieldsEmpty(data.condominium);
+		return fieldsErro.length === 0;
 	}
 
 	function validateAdminForm() {
-		const emptyFields = Object.keys(data.condominium).filter(key => !data.admin[key]);
-		return emptyFields.length === 0;
+		let fieldsErro;
+		fieldsErro = fieldsEmpty(data.admin);
+		return fieldsErro.length === 0;
 	}
 
     const updateFieldHandler = (section, field, value) => {
