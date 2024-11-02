@@ -8,6 +8,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class CommonAreaMapper {
     @Autowired
@@ -24,5 +26,11 @@ public class CommonAreaMapper {
 
     public CommonAreaResponse toCommonAreaResponse(CommonArea commonArea) {
         return modelMapper.map(commonArea, CommonAreaResponse.class);
+    }
+
+    public List<CommonAreaResponse> toCommonAreaResponse(List<CommonArea> commonAreas) {
+        return commonAreas.stream()
+                .map(this::toCommonAreaResponse)
+                .toList();
     }
 }
