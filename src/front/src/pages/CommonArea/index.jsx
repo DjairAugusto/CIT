@@ -8,6 +8,15 @@ export default function CommonAreaPage() {
 			return {
 				name: "Nome da Área Comum",
 				img: "/common-area-placeholder.jpg",
+				description:
+					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus ad perferendis. Totam vero a, illum accusantium reiciendis reprehenderit architecto?",
+				disponibility: [
+					{
+						days: ["Seg", "Sex"],
+						hours: ["00:00", "24:00"],
+						price: 100,
+					},
+				],
 			};
 		})
 	);
