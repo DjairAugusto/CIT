@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { ArrowLeft, Pencil, Trash } from "lucide-react";
 
+function formatPrice(price) {
+	return new Intl.NumberFormat("pt-br", {
+		style: "currency",
+		currency: "BRL",
+	}).format(price);
+}
+
 export default function CommonAreaDetails({
 	commonArea,
 	deleteFocused,
@@ -32,15 +39,7 @@ export default function CommonAreaDetails({
 			</div>
 			<div className="my-2 mx-3 h-full flex flex-col">
 				<h2 className="text-3xl font-semibold">Detalhes</h2>
-				<span>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-					Vel, laudantium voluptatem maiores perferendis, labore
-					veritatis velit aperiam nostrum fuga quaerat consectetur
-					unde enim excepturi debitis cupiditate dolor molestias hic
-					nisi? Ipsa, doloribus! Similique non, sed laudantium
-					molestias culpa, eius velit corrupti maiores cupiditate nemo
-					est vitae? Veniam quam velit quod?
-				</span>
+				<span>{commonArea.description}</span>
 				<div className="w-full h-px my-2 bg-black"></div>
 				<div className="flex flex-col md:flex-row h-full">
 					<div className="md:w-1/2 md:flex-auto">
@@ -48,8 +47,16 @@ export default function CommonAreaDetails({
 							Horário de Funcionamento
 						</h2>
 						<span>
-							Segunda à Sexta: XX:XX - XX:XX <br />
-							Sabado e Domingo: XX:XX - XX:XX
+							{commonArea.disponibility.map((each) => {
+								const [first, last] = each.days;
+								return (
+									(first === last
+										? first
+										: `${first}-${last}`) +
+									": " +
+									each.hours.join(" - ")
+								);
+							})}
 						</span>
 					</div>
 					<div className="w-full h-px my-4 md:my-0 md:w-px md:h-full md:mx-4 bg-black"></div>
@@ -58,8 +65,16 @@ export default function CommonAreaDetails({
 							Taxa de Reserva
 						</h2>
 						<span>
-							Segunda à Sexta: R$ XX,XX <br />
-							Sabado e Domingo: R$ XX,XX
+							{commonArea.disponibility.map((each) => {
+								const [first, last] = each.days;
+								return (
+									(first === last
+										? first
+										: `${first}-${last}`) +
+									": " +
+									formatPrice(each.price)
+								);
+							})}
 						</span>
 					</div>
 				</div>
