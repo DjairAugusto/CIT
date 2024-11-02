@@ -8,10 +8,10 @@ import java.util.List;
 
 @Getter
 @Setter
-public class RestErroMissingVariableMessage extends RestErroMessage {
+public class RestErrorMissingVariableMessage extends RestErrorMessage {
     private List<String> missingVariables;
 
-    public RestErroMissingVariableMessage(HttpStatus status, String message, List<String> missingVariables) {
+    public RestErrorMissingVariableMessage(HttpStatus status, String message, List<String> missingVariables) {
         super(status, message);
         this.missingVariables = missingVariables;
     }
