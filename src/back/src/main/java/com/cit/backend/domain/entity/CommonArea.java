@@ -19,6 +19,9 @@ public class CommonAreas {
     @Column(length = 80)
     private String name;
 
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
     @Unsigned
     private float tax;
 
