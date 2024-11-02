@@ -1,9 +1,7 @@
 package com.cit.backend.api.mapper;
 
 import com.cit.backend.api.request.CommonAreaRequest;
-import com.cit.backend.api.request.ReserveRequest;
-import com.cit.backend.domain.entity.Apartment;
-import com.cit.backend.domain.entity.Reserve;
+import com.cit.backend.api.response.CommonAreaResponse;
 import com.cit.backend.domain.entity.CommonArea;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +22,9 @@ public class CommonAreaMapper {
     public CommonArea toCommonArea(CommonAreaRequest commonArea) {
         CommonArea commonAreaEntity = modelMapper.map(commonArea, CommonArea.class);
         return commonAreaEntity;
+    }
+
+    public CommonAreaResponse toCommonAreaResponse(CommonArea commonArea) {
+        return modelMapper.map(commonArea, CommonAreaResponse.class);
     }
 }
