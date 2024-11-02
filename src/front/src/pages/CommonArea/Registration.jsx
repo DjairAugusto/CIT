@@ -1,5 +1,5 @@
 import React from "react";
-import CommonAreaBanner from "./CommonAreaBanner";
+import CommonAreaBanner from "./Banner";
 import Description from "./Description";
 import Buttons from "./Buttons";
 
