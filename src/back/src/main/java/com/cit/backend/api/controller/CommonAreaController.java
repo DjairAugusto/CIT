@@ -28,6 +28,12 @@ public class CommonAreaController {
 
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/by-condominium/{id:\\d+}")
+    public ResponseEntity<List<CommonAreaResponse>> getCommonArea(@PathVariable("id") Long condominiumId) {
+        List<CommonArea> commonAreas = commonAreaService.getCommonAreasByCondominiumId(condominiumId);
+        List<CommonAreaResponse> response = commonAreaMapper.toCommonAreaResponse(commonAreas);
+
         return ResponseEntity.ok(response);
     }
 }
