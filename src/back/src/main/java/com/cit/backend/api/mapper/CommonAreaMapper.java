@@ -3,8 +3,8 @@ package com.cit.backend.api.mapper;
 import com.cit.backend.api.request.CommonAreaRequest;
 import com.cit.backend.api.request.ReserveRequest;
 import com.cit.backend.domain.entity.Apartment;
-import com.cit.backend.domain.entity.CommonAreas;
 import com.cit.backend.domain.entity.Reserve;
+import com.cit.backend.domain.entity.CommonArea;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,12 +17,12 @@ public class CommonAreaMapper {
     @Autowired
     private ReserveMapper reserveMapper;
 
-    public CommonAreas toCommonArea(CommonAreaRequest commonArea) {
-        CommonAreas commonAreaEntity = modelMapper.map(commonArea, CommonAreas.class);
         ReserveRequest reserve = commonArea.getReserve();
         if(reserve != null) {
             commonAreaEntity.getReserve().add(reserveMapper.toReserve(reserve));
         }
+    public CommonArea toCommonArea(CommonAreaRequest commonArea) {
+        CommonArea commonAreaEntity = modelMapper.map(commonArea, CommonArea.class);
         return commonAreaEntity;
     }
 }
