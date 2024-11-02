@@ -12,9 +12,6 @@ import lombok.Setter;
 public class CommonAreaRequest {
     private Long id;
     private String name;
-    private String description;
-    private int capacity;
-    private boolean available;
     private float tax;
-    private ReserveRequest reserve;
+    private Long condominiumId;
 }
