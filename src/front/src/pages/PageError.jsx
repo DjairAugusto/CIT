@@ -1,17 +1,31 @@
-import React from "react";
-import { Link, useRouteError } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function PageError() {
-	const error = useRouteError();
-	console.error(error);
+const ErrorPage = ({errorMessage = 'Oops Page Not Found.' }) => {
+	const navigate = useNavigate();
+
+	const handleGoHome = () => {
+		navigate('/'); // redireciona para a página inicial
+	};
+
 	return (
-		<>
-			<h1>Oops!</h1>
-			<p>desculpe, ocorreu um erro inesperado</p>
-			<p>
-				<i>{error.statusText || error.message}</i>
-			</p>
-			<Link to="/">Voltar para a página inicial</Link>
-		</>
+		<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
+			<h1 className="text-6xl font-bold">
+				<span className="text-black">4</span>
+				<span className="text-[#42D0B3]">0</span>
+				<span className="text-black">4</span>
+			</h1>
+			<p className="mt-4 text-lg">{errorMessage}</p>
+			<div className="mt-6">
+				<button
+					onClick={handleGoHome}
+					className="px-6 py-2 bg-[#42D0B3] text-white rounded-md transition"
+				>
+					Home
+				</button>
+			</div>
+		</div>
 	);
-}
+};
+
+export default ErrorPage;

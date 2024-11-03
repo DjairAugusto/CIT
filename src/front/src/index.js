@@ -19,6 +19,9 @@ import Demo from "./pages/Demo";
 import CondominiumRegistration from "./pages/CondominiumRegistration";
 import ApartmentRegistration from "./pages/ApartmentRegistration";
 import FunctionaryRegistration from "./pages/FunctionaryRegistration";
+import VisitorRegistration from "./pages/VisitorRegistration";
+import Login from "./pages/Login";
+import ContactResident from "./pages/ContactResident";
 
 const router = createBrowserRouter([
 	{
@@ -64,8 +67,20 @@ const router = createBrowserRouter([
 			{
 				path: "/register/functionary",
 				element: <FunctionaryRegistration />,
+			},
+			{
+				path: "/register/visitor",
+				element: <VisitorRegistration />,
 			}
 		],
+	},
+	{
+		path: "/condominium/contacts",
+		element: <ContactResident />,
+	},
+	{
+		path: "/login",
+		element: <Login />,
 	},
 	{
 		path: "/demo",

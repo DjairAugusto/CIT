@@ -1,5 +1,6 @@
 package com.cit.backend.api.response;
 
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,11 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdminResponse {
-    private Long id;
-    private String role;
-    private String cpf;
-    private String permission;
-    private String name;
-
+public class ContactResponse {
+    private String phone;
+    private String email;
 }
