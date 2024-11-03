@@ -14,6 +14,7 @@ export default function CommonAreaList({ commonAreas, setFocused, role }) {
 			<div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 place-content-stretch w-full mt-4 gap-4 max-h-full overflow-auto">
 				{commonAreas.map((commonArea) => (
 					<ImageCard
+						key={commonArea.id}
 						imgSrc={commonArea.img}
 						title={commonArea.name}
 						className="w-full h-full min-h-60"
