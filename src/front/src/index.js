@@ -22,6 +22,10 @@ import FunctionaryRegistration from "./pages/FunctionaryRegistration";
 import VisitorRegistration from "./pages/VisitorRegistration";
 import CommonArea from "./pages/CommonArea";
 import CommonAreaRegistration from "./pages/CommonArea/Registration";
+import Accountability from "./pages/Accountability";
+import AccountabilityAdmin from "./pages/AccountabilityAdmin";
+import Login from "./pages/Login";
+import ContactResident from "./pages/ContactResident";
 
 const router = createBrowserRouter([
 	{
@@ -48,7 +52,7 @@ const router = createBrowserRouter([
 			{
 				path: "/contacts",
 				element: <Contacts />,
-			}
+			},
 		],
 	},
 	{
@@ -72,17 +76,28 @@ const router = createBrowserRouter([
 				path: "/register/visitor",
 				element: <VisitorRegistration />,
 			},
-	
 		],
 	},
 	{
+		path: "/condominium/contacts",
+		element: <ContactResident />,
+	},
+	{
+		path: "/login",
+		element: <Login />,
+	},
+	{
 		path: "/demo",
-		element: <FunctionaryRegistration />,
+		element: <Demo />,
 		children: [],
 	},
 	{
 		path: "/commonArea",
 		element: <CommonArea />,
+	},
+	{
+		path: "/accountabilityAdmin",
+		element: <AccountabilityAdmin />,
 	},
 ]);
 
