@@ -2,11 +2,11 @@ import React from "react";
 import DropMenu from "../../components/DropMenu";
 import { Forms } from "../../components/Forms";
 
-export default function CondominiumForm({ data, updateFieldHandler }) {
+export default function CondominiumForm({ data, updateFieldHandler, subtitle}) {
 	return (
 		<Forms.PageStep
 			title="Formulário de Cadastro"
-			subtitle="Nome do Condomínio"
+			subtitle={subtitle}
 		>
 			<div className="w-full flex flex-col gap-6">
 				<DropMenu text="Nome do Condomínio">

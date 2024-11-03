@@ -3,11 +3,11 @@ import { Forms } from ".";
 import { ArrowLeft } from "lucide-react";
 import useForm from "../../hooks/useForm";
 
-export default function FormsPage({steps, imageSource}) {
+export default function FormsPage({steps, imageSource, validations, callbak}) {
 	const { currentStep, currentComponent, changeSteps, isLast, isFirst } = useForm(steps);
 	
 	return (
-		<main className="flex justify-between h-svh bg-zinc-100">
+		<main className="flex justify-between h-svh overflow-hidden bg-zinc-100">
 			<div className="absolute left-5 z-10">
 				{!isFirst && (
 					<Forms.Button
@@ -31,6 +31,8 @@ export default function FormsPage({steps, imageSource}) {
 							<Forms.Button
 								className="w-2/5"
 								type="submit"
+								onClick={callbak}
+								disabled={!validations[validations.length - 1]}
 							>
 								Cadastrar
 							</Forms.Button>
@@ -39,6 +41,7 @@ export default function FormsPage({steps, imageSource}) {
 								className="w-2/5"
 								type="button"
 								onClick={(e) => changeSteps(currentStep + 1, e)}
+								disabled={!validations[currentStep]}	
 							>
 								Próximo
 							</Forms.Button>
@@ -49,7 +52,7 @@ export default function FormsPage({steps, imageSource}) {
 			<img
 				className="hidden lg:block w-1/2 object-cover"
 				src={imageSource}
-				alt=""
+				alt="Imagem de fundo"
 			/>
 		</main>
 	);
