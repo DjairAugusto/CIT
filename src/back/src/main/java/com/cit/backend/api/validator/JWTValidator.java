@@ -2,11 +2,10 @@ package com.cit.backend.api.validator;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import org.springframework.beans.factory.annotation.Autowired;
 
-public class JWTValidator implements ConstraintValidator<JWT, String> {
+public class JWTValidator implements ConstraintValidator<JWTToken, String> {
     @Override
-    public void initialize(JWT constraintAnnotation) {
+    public void initialize(JWTToken constraintAnnotation) {
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.cit.backend.domain.entity.enums;
 
-public enum PermissionEmployee {
+public enum ProfilePermissions {
     ADMIN,
     RESIDENT,
 }

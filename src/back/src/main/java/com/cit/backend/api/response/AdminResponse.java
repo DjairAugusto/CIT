@@ -15,5 +15,4 @@ public class AdminResponse {
     private String cpf;
     private String permission;
     private String name;
-
 }

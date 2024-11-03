@@ -19,13 +19,13 @@ public class People {
     @Column(length = 80)
     private String name;
 
-    @Column(length = 11, unique = true)
+    @Column(length = 14, unique = true)
     private String cpf;
 
-    @ManyToOne
-    @JoinColumn(name="apartment_id", nullable=true)
-    private Apartment apartment;
-
-    @OneToOne(mappedBy = "people")
+    @OneToOne(mappedBy = "people", optional = true)
     private Contact contact;
+
+    @OneToOne
+    @JoinColumn(name = "profile_id", nullable = false)
+    private Profile profile;
 }

@@ -1,6 +1,6 @@
 package com.cit.backend.domain.entity;
 
-import com.cit.backend.api.validator.JWT;
+import com.cit.backend.api.validator.JWTToken;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,13 +15,13 @@ import java.util.Set;
 public class Apartment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @SequenceGenerator(name = "apartment_seq", sequenceName = "apartment_id_seq", allocationSize = 1)
     private Long id;
 
     private int number;
 
     @Column(unique = true)
-    @JWT
+    @JWTToken
     private String token;
 
     @ManyToOne
@@ -38,7 +38,7 @@ public class Apartment {
     @OneToMany(mappedBy = "apartment")
     private Set<Visitant> visits;
 
-    @OneToMany(mappedBy = "apartment")
+    @OneToMany
     private Set<People> residents;
 
     @OneToMany(mappedBy = "apartment")

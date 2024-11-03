@@ -1,9 +1,8 @@
 package com.cit.backend.domain.service;
 
-import com.cit.backend.api.validator.JWT;
+import com.cit.backend.api.validator.JWTToken;
 import com.cit.backend.domain.entity.Apartment;
 import com.cit.backend.domain.repository.ApartmentRepository;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +23,7 @@ public class ApartmentService {
         return apartmentRepository.findById(id).orElse(null);
     }
 
-    public Apartment findByToken(@JWT String token) {
+    public Apartment findByToken(@JWTToken String token) {
         return apartmentRepository.findByToken(token).orElse(null);
     }
 

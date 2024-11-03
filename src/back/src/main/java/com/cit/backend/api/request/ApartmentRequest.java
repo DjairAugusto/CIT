@@ -1,6 +1,6 @@
 package com.cit.backend.api.request;
 
-import com.cit.backend.api.validator.JWT;
+import com.cit.backend.api.validator.JWTToken;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
@@ -19,7 +19,7 @@ public class ApartmentRequest {
     private int number;
 
     @NotBlank(message = "Token is mandatory")
-    @JWT()
+    @JWTToken()
     private String token;
 
     @NotNull(message = "Unit id is mandatory")

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CNPJ;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "condominiums")
@@ -30,6 +31,9 @@ public class Condominium {
     private int units;
 
     @Unsigned
+    private int floors;
+
+    @Unsigned
     private int apartments;
 
     @Column(length = 18, unique = true)
@@ -47,7 +51,7 @@ public class Condominium {
     private Set<Employee> Employees;
 
     @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
-    private Set<Block> items;
+    private Set<Block> blockList = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
