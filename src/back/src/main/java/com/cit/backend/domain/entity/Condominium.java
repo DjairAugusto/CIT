@@ -74,7 +74,7 @@ public class Condominium {
     private Set<Warning> warnings;
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
-    private Set<CommonAreas> commonAreas;
+    private Set<CommonArea> commonAreas;
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
     private Set<LostAndFound> lostAndFound;
