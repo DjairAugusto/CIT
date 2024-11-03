@@ -1,18 +1,21 @@
 package com.cit.backend.api.response;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
 @AllArgsConstructor
-public class EmployeeResponse {
+@NoArgsConstructor
+public class EmployeeResponse extends PeopleResponse{
     private int id;
-    private String name;
-    private String email;
-    private String phone;
     private String role;
 
+    public EmployeeResponse(String name, String cpf, String role, int id) {
+        super(name, cpf);
+        this.role = role;
+        this.id = id;
+    }
 }

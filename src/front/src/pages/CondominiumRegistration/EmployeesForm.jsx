@@ -2,7 +2,7 @@ import React from "react";
 import DropMenu from "../../components/DropMenu";
 import { Forms } from "../../components/Forms";
 
-export default function EmployeesForm() {
+export default function EmployeesForm({ data, updateFieldHandler }) {
 	return (
 		<Forms.PageStep
 			title="Definir Funcionarios"

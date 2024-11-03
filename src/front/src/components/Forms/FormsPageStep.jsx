@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FormsPageStep({children, title, subtitle}) {
 	return (
-		<div className="flex flex-col gap-6 justify-between items-center w-full h-fit">
+		<div className="flex flex-col gap-6 justify-start items-center w-full h-full px-4 overflow-auto">
 			<div className="w-full">
 				<h1 className="text-center text-4xl mb-4">
 					{title}

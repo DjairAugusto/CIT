@@ -1,10 +1,29 @@
 package com.cit.backend.domain.entity;
 
-import jakarta.persistence.*;
-import jdk.jfr.Unsigned;
+import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jdk.jfr.Unsigned;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity(name = "condominiums")
+@Setter
+@Getter
+@NoArgsConstructor
 public class Condominium {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +40,12 @@ public class Condominium {
     private int units;
 
     @Unsigned
+    private int floors;
+
+    @Unsigned
     private int apartments;
 
-    @Column(length = 14, unique = true, nullable = false)
+    @Column(length = 18, unique = true)
     private String cnpj;
 
     @OneToOne(mappedBy = "condominium", cascade = CascadeType.ALL, optional = false)
@@ -31,14 +53,14 @@ public class Condominium {
     private Address address;
 
     @OneToOne
-    @JoinColumn(name = "manager_id", nullable = false)
+    @JoinColumn(name = "manager_id", nullable = true)
     private Employee manager;
 
     @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
     private Set<Employee> Employees;
 
     @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
-    private Set<Block> items;
+    private Set<Block> blockList = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
@@ -67,6 +89,6 @@ public class Condominium {
     private Set<Income> income;
 
     @OneToOne
-    @JoinColumn(name = "employee_id")
+    @JoinColumn(name = "employee_id", nullable = true)
     private Employee employee;
 }

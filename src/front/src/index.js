@@ -20,6 +20,10 @@ import CondominiumRegistration from "./pages/CondominiumRegistration";
 import ApartmentRegistration from "./pages/ApartmentRegistration";
 import FunctionaryRegistration from "./pages/FunctionaryRegistration";
 import VisitorRegistration from "./pages/VisitorRegistration";
+import Accountability from "./pages/Accountability";
+import AccountabilityAdmin from "./pages/AccountabilityAdmin";
+import Login from "./pages/Login";
+import ContactResident from "./pages/ContactResident";
 
 const router = createBrowserRouter([
 	{
@@ -69,13 +73,25 @@ const router = createBrowserRouter([
 			{
 				path: "/register/visitor",
 				element: <VisitorRegistration />,
-			}
+			},
 		],
 	},
 	{
+		path: "/condominium/contacts",
+		element: <ContactResident />,
+	},
+	{
+		path: "/login",
+		element: <Login />,
+	},
+	{
 		path: "/demo",
-		element: <FunctionaryRegistration />,
+		element: <Demo />,
 		children: [],
+	},
+	{
+		path: "/accountabilityAdmin",
+		element: <AccountabilityAdmin />,
 	},
 ]);
 
