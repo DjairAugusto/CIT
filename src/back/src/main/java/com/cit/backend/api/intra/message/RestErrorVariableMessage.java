@@ -9,15 +9,15 @@ import java.util.List;
 
 @Getter
 @Setter
-public class RestErroVariableMessage extends RestErrorMessage {
+public class RestErrorVariableMessage extends RestErrorMessage {
     private List<String> variables;
 
-    public RestErroVariableMessage(HttpStatus status, String message, List<String> missingVariables) {
+    public RestErrorVariableMessage(HttpStatus status, String message, List<String> missingVariables) {
         super(status, message);
         this.variables = missingVariables;
     }
 
-    public RestErroVariableMessage(HttpStatusCode status, String message, List<String> missingVariables) {
+    public RestErrorVariableMessage(HttpStatusCode status, String message, List<String> missingVariables) {
         super(status, message);
         this.variables = missingVariables;
     }

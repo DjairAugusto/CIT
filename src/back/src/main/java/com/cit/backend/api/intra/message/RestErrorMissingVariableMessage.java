@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RestErrorMissingVariableMessage extends RestErroMessage  {
+public class RestErrorMissingVariableMessage extends RestErrorMessage  {
     private List<String> variables;
 
     public RestErrorMissingVariableMessage(HttpStatus status, String message, List<String> missingVariables) {
