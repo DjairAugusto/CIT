@@ -1,8 +1,6 @@
 package com.cit.backend.domain.service;
 
 import com.cit.backend.domain.entity.Employee;
-import com.cit.backend.domain.entity.enums.PermissionEmployee;
-import com.cit.backend.domain.repository.CondominiumRepository;
 import com.cit.backend.domain.repository.EmployeeRepository;
 import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +23,7 @@ public class EmployeeService {
         }
 
         employee.setRole("Admin");
-        employee.setPermission(PermissionEmployee.ADMIN);
+        // TODO gerar perfil do admin
         return employeeRepository.save(employee);
     }
 

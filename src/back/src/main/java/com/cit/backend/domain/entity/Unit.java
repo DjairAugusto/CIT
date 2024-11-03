@@ -16,7 +16,7 @@ public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int Long;
+    private Long id;
 
     @Column(nullable = false)
     private int number;
