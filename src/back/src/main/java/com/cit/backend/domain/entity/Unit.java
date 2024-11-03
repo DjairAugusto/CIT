@@ -1,15 +1,22 @@
 package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "units")
+@Setter
+@Getter
+@NoArgsConstructor
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int Long;
+    private Long id;
 
     @Column(nullable = false)
     private int number;
@@ -18,8 +25,8 @@ public class Unit {
     @JoinColumn(name="block_id", nullable=false)
     private Block block;
 
-    @OneToMany(mappedBy="unit")
-    private Set<Apartment> apartments;
+    @OneToMany(mappedBy="unit", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Apartment> apartments = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
