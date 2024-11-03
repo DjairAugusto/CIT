@@ -17,4 +17,5 @@ public class CommonAreaResponse {
     private String description;
     private float tax;
     private List<ReserveResponse> reserves;
+    private List<CommonAreaScheduleResponse> commonAreaSchedules;
 }
