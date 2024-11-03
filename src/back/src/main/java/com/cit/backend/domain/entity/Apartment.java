@@ -1,14 +1,20 @@
 package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Set;
 
 @Entity(name = "apartments")
+@Setter
+@Getter
+@NoArgsConstructor
 public class Apartment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @SequenceGenerator(name = "apartment_seq", sequenceName = "apartment_id_seq", allocationSize = 1)
     private Long id;
 
     private int number;

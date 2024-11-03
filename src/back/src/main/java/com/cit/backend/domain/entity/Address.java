@@ -2,7 +2,13 @@ package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
 import jdk.jfr.Unsigned;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Setter
+@Getter
+@NoArgsConstructor
 @Entity(name = "addresses")
 public class Address {
     
