@@ -52,5 +52,5 @@ export default function AdminForm({ data, updateFieldHandler, subtitle}) {
 				</DropMenu>
 			</div>
 		</Forms.PageStep>
-	);
+	)
 }

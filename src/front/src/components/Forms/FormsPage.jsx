@@ -7,7 +7,7 @@ export default function FormsPage({steps, imageSource, validations, callbak}) {
 	const { currentStep, currentComponent, changeSteps, isLast, isFirst } = useForm(steps);
 	
 	return (
-		<main className="flex justify-between h-svh bg-zinc-100">
+		<main className="flex justify-between h-svh overflow-hidden bg-zinc-100">
 			<div className="absolute left-5 z-10">
 				{!isFirst && (
 					<Forms.Button
@@ -32,6 +32,7 @@ export default function FormsPage({steps, imageSource, validations, callbak}) {
 								className="w-2/5"
 								type="submit"
 								onClick={callbak}
+								disabled={!validations[validations.length - 1]}
 							>
 								Cadastrar
 							</Forms.Button>
