@@ -28,7 +28,7 @@ public class CommonArea {
     @JoinColumn(name="condominium_id", nullable=false)
     private Condominium condominium;
 
-    @OneToMany(mappedBy = "commonArea")
+    @OneToMany(mappedBy = "commonArea", fetch = FetchType.EAGER)
     private Set<CommonAreaSchedule> commonAreaSchedule;
 
     @OneToMany(mappedBy = "commonArea")
