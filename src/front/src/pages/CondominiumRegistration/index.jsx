@@ -25,10 +25,17 @@ const formsTemplate = {
 // TODO Adicionar validação de senha
 // TODO Adicionar a connexão com a API para enviar os dados
 
+// TODO Não permitir avançar se os campos não estiverem preenchidos
+// TODO Adicionar validação de CPF e CNPJ
+// TODO Adicionar validação de email
+// TODO Adicionar validação de senha
+// TODO Adicionar a connexão com a API para enviar os dados
+
 export default function CondominiumRegistration() {
 	const [data, setData] = React.useState(formsTemplate);
 	const emptyFieldsCondominium = [];
 	const emptyFieldsAdmin = [];
+  
 	// const [emptyFieldsCondominium, setEmptyFieldsCondominium] = React.useState({});
 	// const [emptyFieldsAdmin, setEmptyFieldsAdmin] = React.useState({});
 

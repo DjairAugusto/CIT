@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class RestErroVariableMessage extends RestErroMessage  {
+public class RestErroVariableMessage extends RestErrorMessage {
     private List<String> variables;
 
     public RestErroVariableMessage(HttpStatus status, String message, List<String> missingVariables) {

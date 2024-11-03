@@ -42,7 +42,13 @@ const Input = forwardRef(
 						{(inputProps) => (
                             <input
                                 className="bg-transparent h-12 w-full outline-none text-dark placeholder:text-dark text-zinc-700 placeholder:text-zinc-700 peer transition-colors pl-4"
+                                type={
+                                    type === "password" && seePassword ? "text" : type
+                                }
                                 {...inputProps}
+                                {...rest}
+                                ref={ref}
+
                             />
                         )}
 					</InputMask>

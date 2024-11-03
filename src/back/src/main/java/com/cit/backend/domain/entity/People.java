@@ -19,7 +19,7 @@ public class People {
     @Column(length = 80)
     private String name;
 
-    @Column(length = 14, unique = true)
+    @Column(length = 11, unique = true)
     private String cpf;
 
     @OneToOne(mappedBy = "people", optional = true)

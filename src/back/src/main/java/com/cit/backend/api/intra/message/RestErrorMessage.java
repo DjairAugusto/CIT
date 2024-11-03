@@ -9,11 +9,11 @@ import org.springframework.http.HttpStatusCode;
 @AllArgsConstructor
 @Getter
 @Setter
-public class RestErroMessage {
+public class RestErrorMessage {
     private HttpStatus status;
     private String message;
 
-    public RestErroMessage(HttpStatusCode status, String message) {
+    public RestErrorMessage(HttpStatusCode status, String message) {
         this.status = HttpStatus.valueOf(status.value());
         this.message = message;
     }
