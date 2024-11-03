@@ -92,7 +92,7 @@ const router = createBrowserRouter([
 		children: [],
 	},
 	{
-		path: "/commonArea",
+		path: "/common-area",
 		element: <CommonArea />,
 	},
 	{
