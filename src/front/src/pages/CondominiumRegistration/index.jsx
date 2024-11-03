@@ -25,6 +25,16 @@ const formsTemplete = {
 // TODO Adicionar validação de senha
 // TODO Adicionar a connexão com a API para enviar os dados
 
+const formsTemplete = {
+	condominium: {
+		name: "",
+		cnpj: "",
+		blocks: "",
+		floors: "",
+	},
+	employees: [],
+}
+
 export default function CondominiumRegistration() {
 	const [data, setData] = React.useState(formsTemplete);
 	const emptyFieldsCondominium = []
