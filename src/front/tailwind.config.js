@@ -16,6 +16,9 @@ module.exports = {
 			fontFamily: {
 				sans: ["Work Sans", "sans-serif"],
 			},
+			animation: {
+				loading: "spin 1s ease-in-out infinite"
+			}
 		},
 	},
 	plugins: [],
