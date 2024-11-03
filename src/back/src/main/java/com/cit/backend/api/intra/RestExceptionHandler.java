@@ -15,7 +15,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
-import com.cit.backend.api.intra.message.RestErroMessage;
+import com.cit.backend.api.intra.message.RestErrorMessage;
 import com.cit.backend.api.intra.message.RestErrorMissingVariableMessage;
 import com.cit.backend.exceptions.MissingVariableException;
 import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
