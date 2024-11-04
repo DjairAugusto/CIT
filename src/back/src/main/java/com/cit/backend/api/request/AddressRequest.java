@@ -21,10 +21,6 @@ public class AddressRequest {
     @PositiveOrZero(message = "Number must be greater than zero")
     private int number;
 
-    @NotBlank(message = "Complement is mandatory")
-    @Size(min = 3, max = 40, message = "Complement must have between 3 and 40 characters")
-    private String complement;
-
     @NotBlank(message = "Neighborhood is mandatory")
     @Size(min = 3, max = 20, message = "Neighborhood must have between 3 and 20 characters")
     private String neighborhood;
@@ -38,7 +34,7 @@ public class AddressRequest {
     private String state;
 
     @NotBlank(message = "ZipCode is mandatory")
-    @Size(min = 8, max = 8, message = "ZipCode must have 8 characters")
+    @Size(min = 9, max = 9, message = "ZipCode must have 8 characters")
     @ZipCode(message = "Invalid zip code")
     private String zipCode;
 }

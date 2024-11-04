@@ -27,9 +27,6 @@ public class Address {
     @Unsigned
     private int number;
 
-    @Column(length = 40)
-    private String complement;
-
     @Column(length = 20)
     private String neighborhood;
 
@@ -39,6 +36,6 @@ public class Address {
     @Column(length = 2)
     private String state;
 
-    @Column(length = 8)
+    @Column(length = 9)
     private String zipCode;
 }
