@@ -6,7 +6,7 @@ import FormsInputText from "../../components/Forms/FormsInputText";
 import { AccountabilityContext } from "../contexts/AccountabilityContext"; // Usa o AccountabilityContext
 
 export default function AdminForm() {
-    const { files, addAccount, deleteAccount, updateAccount } = useContext(AccountabilityContext);
+    const { files, addAccount, deleteAccount, editAccount } = useContext(AccountabilityContext); // Renomeie updateAccount para editAccount
 
     const [editId, setEditId] = useState(null);
     const [editFileName, setEditFileName] = useState("");
@@ -23,7 +23,7 @@ export default function AdminForm() {
     };
 
     const saveEdit = (id) => {
-        updateAccount(id, editFileName);
+        editAccount(id, { fileName: editFileName, date: newAccountData.date }); // Use editAccount em vez de updateAccount
         setEditId(null);
         setEditFileName("");
     };
@@ -83,7 +83,7 @@ export default function AdminForm() {
                                             <FormsInputText
                                                 type="date"
                                                 value={file.date}
-                                                onChange={(e) => updateAccount(file.id, e.target.value)}
+                                                onChange={(e) => editAccount(file.id, { date: e.target.value, fileName: editFileName })} // Atualiza a data e o nome
                                             />
                                             <div className="flex gap-2 mt-2">
                                                 <FormsButton
