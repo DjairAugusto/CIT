@@ -1,50 +1,47 @@
 package com.cit.backend.api.intra;
 
-import com.cit.backend.api.intra.message.RestErroVariableMessage;
-import com.cit.backend.exceptions.MissingVariableException;
-import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import org.springframework.http.*;
-import org.springframework.http.converter.HttpMessageNotReadableException;
-import org.springframework.lang.Nullable;
-import com.cit.backend.exceptions.MissingVariableException;
-import com.cit.backend.api.intra.message.RestErroMissingVariableMessage;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.FieldError;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import com.cit.backend.api.intra.message.RestErroMessage;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.HashMap;
-import java.util.Map;
+import com.cit.backend.api.intra.message.RestErrorMessage;
+import com.cit.backend.api.intra.message.RestErrorMissingVariableMessage;
+import com.cit.backend.exceptions.MissingVariableException;
+import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(MissingVariableException.class)
-    public ResponseEntity<RestErroVariableMessage> handlerMissingVariable(MissingVariableException exception) {
+    public ResponseEntity<RestErrorMissingVariableMessage> handlerMissingVariable(MissingVariableException exception) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
-        RestErroVariableMessage message = new RestErroVariableMessage(status, exception.getMessage(), exception.getMissingVariables());
+        RestErrorMissingVariableMessage message = new RestErrorMissingVariableMessage(status, exception.getMessage(), exception.getMissingVariables());
         return ResponseEntity.status(status).body(message);
     }
 
     @ExceptionHandler(UniqueColumnAlreadyExistsException.class)
-    public ResponseEntity<RestErroMessage> handlerUniqueColumnAlreadyExists(UniqueColumnAlreadyExistsException exception) {
+    public ResponseEntity<RestErrorMessage> handlerUniqueColumnAlreadyExists(UniqueColumnAlreadyExistsException exception) {
         HttpStatus status = HttpStatus.CONFLICT;
-        RestErroMessage message = new RestErroMessage(status, exception.getMessage());
+        RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
         return ResponseEntity.status(status).body(message);
     }
 
     @Override
     protected ResponseEntity<Object> handleNoResourceFoundException(NoResourceFoundException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         String errorText = "Api path not found";
-        RestErroMessage message = new RestErroMessage(status, errorText);
+        RestErrorMessage message = new RestErrorMessage(status, errorText);
         return ResponseEntity.status(status).body(message);
     }
 
@@ -53,14 +50,14 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         String errorText = "Invalid request message";
         List<String> variables = null;
         Throwable cause = exception.getCause();
-        RestErroMessage message;
+        RestErrorMessage message;
 
-        message = new RestErroMessage(status, errorText);
+        message = new RestErrorMessage(status, errorText);
         if (cause instanceof com.fasterxml.jackson.databind.JsonMappingException jsonMappingException) {
             variables = jsonMappingException.getPath().stream()
                     .map(JsonMappingException.Reference::getFieldName)
                     .collect(Collectors.toList());
-            message = new RestErroVariableMessage(status, errorText, variables);
+            message = new RestErrorMissingVariableMessage(status, errorText, variables);
 
         }
 
@@ -75,13 +72,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
                 .map(fieldError -> fieldError.getField() +": " + fieldError.getDefaultMessage())
                 .collect(Collectors.toList());
 
-        RestErroVariableMessage message = new RestErroVariableMessage(status, errorText, errors);
+        RestErrorMissingVariableMessage message = new RestErrorMissingVariableMessage(status, errorText, errors);
         return ResponseEntity.status(status).body(message);
     }
 
-    public ResponseEntity<RestErroMissingVariableMessage> missingVariableHandler(MissingVariableException exception) {
-        RestErroMissingVariableMessage erroMessage = new RestErroMissingVariableMessage(HttpStatus.BAD_REQUEST, exception.getMessage(), exception.getMissingVariables());
+    public ResponseEntity<RestErrorMissingVariableMessage> missingVariableHandler(MissingVariableException exception) {
+        RestErrorMissingVariableMessage erroMessage = new RestErrorMissingVariableMessage(HttpStatus.BAD_REQUEST, exception.getMessage(), exception.getMissingVariables());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(erroMessage);
     }
-
 }

@@ -26,6 +26,6 @@ public class Reserve {
     private Apartment apartment;
 
     @ManyToOne
-    @JoinColumn(name="common_areas_id", nullable=false)
-    private CommonAreas commonAreas;
+    @JoinColumn(name="common_area_id", nullable=false)
+    private CommonArea commonArea;
 }

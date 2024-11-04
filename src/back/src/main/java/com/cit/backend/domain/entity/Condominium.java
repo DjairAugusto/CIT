@@ -1,15 +1,24 @@
 package com.cit.backend.domain.entity;
 
-import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jdk.jfr.Unsigned;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.br.CNPJ;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity(name = "condominiums")
 @Setter
@@ -65,7 +74,7 @@ public class Condominium {
     private Set<Warning> warnings;
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
-    private Set<CommonAreas> commonAreas;
+    private Set<CommonArea> commonAreas;
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
     private Set<LostAndFound> lostAndFound;
