@@ -2,7 +2,7 @@ import { Eye, EyeOff } from "lucide-react";
 import React, {forwardRef, useState} from "react";
 
 const Input = forwardRef(
-	({ LeftIcon, RightIcon, type, required, placeholder, onChange, onBlur, onFocus, error, ...rest }, ref) => {
+	({ LeftIcon, RightIcon, type, required, placeholder, onChange, onBlur, onFocus, error,value="", ...rest }, ref) => {
 		const [seePassword, setSeePassoword] = useState(false);
 		const [isActive, setActive] = useState(false);
 		const [isFocus, setFocus] = useState(false);
@@ -46,7 +46,8 @@ const Input = forwardRef(
 						className="bg-transparent h-12 w-full outline-none text-dark placeholder:text-dark text-zinc-700 placeholder:text-zinc-700 peer transition-colors pl-4"
                         onChange={handleChange}
                         onFocus={handleFocus}
-                        onBlur={handleBlur}
+						onBlur={handleBlur}
+						value={value}
 						{...rest}
 						ref={ref}
 						type={type === "password" && seePassword ? "text" : type}
@@ -54,7 +55,7 @@ const Input = forwardRef(
 					<label
 						className={`
 							text-zinc-600 absolute cursor-text left-0
-							${(isActive || rest.value.length > 0) ? "text-xs top-0" : "top-1/4"}
+							${(isActive || value.length > 0) ? "text-xs top-0" : "top-1/4"}
 							group-hover:top-0 group-hover:text-xs
 							peer-focus:top-0 peer-focus:text-xs
 							transition-all duration-300 truncate w-full overflow-hidden
