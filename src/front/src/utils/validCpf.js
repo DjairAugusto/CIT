@@ -12,14 +12,14 @@ function validateCPF(cpf) {
         soma += parseInt(cpf.charAt(i)) * (10 - i);
     }
     let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-    if (resultado != parseInt(cpf.charAt(9))) return false;
+    if (resultado !== parseInt(cpf.charAt(9))) return false;
 
     soma = 0;
     for (let i = 0; i < 10; i++) {
         soma += parseInt(cpf.charAt(i)) * (11 - i);
     }
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-    if (resultado != parseInt(cpf.charAt(10))) return false;
+    if (resultado !== parseInt(cpf.charAt(10))) return false;
 
     return true;
 }

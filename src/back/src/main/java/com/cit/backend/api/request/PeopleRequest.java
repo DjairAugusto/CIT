@@ -20,4 +20,6 @@ public class PeopleRequest {
     private String cpf;
 
     private ContactRequest contact;
+
+    private ProfileRequest profile;
 }
