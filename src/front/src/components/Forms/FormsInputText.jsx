@@ -1,5 +1,5 @@
-import React, {forwardRef, useState} from "react";
 import { Eye, EyeOff } from "lucide-react";
+import React, {forwardRef, useState} from "react";
 
 const Input = forwardRef(
 	({ LeftIcon, RightIcon, type, required, placeholder, mask, onChange, ...rest }, ref) => {
@@ -41,7 +41,7 @@ const Input = forwardRef(
 					<label
 						className={`
 							text-zinc-600 absolute cursor-text left-0
-							${(isActive) ? "text-xs top-0" : "top-1/4"} // TODO check why there was "rest.value.length > 0" here
+							${(isActive || rest.value.length > 0) ? "text-xs top-0" : "top-1/4"}
 							group-hover:top-0 group-hover:text-xs
 							peer-focus:top-0 peer-focus:text-xs
 							transition-all duration-300 truncate w-full overflow-hidden

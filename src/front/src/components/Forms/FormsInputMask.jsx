@@ -1,5 +1,5 @@
 import { Eye, EyeOff } from "lucide-react";
-import React, {forwardRef, useRef, useState} from "react";
+import React, {forwardRef, useState} from "react";
 import InputMask from 'react-input-mask';
 
 const Input = forwardRef(
