@@ -92,6 +92,12 @@ const router = createBrowserRouter([
 	{
 		path: "/accountabilityAdmin",
 		element: <AccountabilityAdmin />,
+		children: [],
+	},
+	{
+		path: "/accountability",
+		element: <Accountability />,
+		children: [],
 	},
 ]);
 
