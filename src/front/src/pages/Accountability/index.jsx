@@ -1,12 +1,13 @@
 import React from "react";
+import { AccountabilityProvider } from "../contexts/AccountabilityContext";
 import AccountForm from "./AccountForm";
 
 export default function Accountability() {
     return (
-        <div className="p-6">
-           <AccountForm />
-
-		
-        </div>
+        <AccountabilityProvider>
+            <div className="p-6">
+                <AccountForm />
+            </div>
+        </AccountabilityProvider>
     );
 }
