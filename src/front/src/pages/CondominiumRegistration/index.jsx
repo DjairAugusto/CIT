@@ -2,7 +2,7 @@ import {useState } from "react";
 import CondominiumForm from "./CondominiumForm";
 import { Forms } from "../../components/Forms";
 import AdminForm from "./AdminForm";
-import usePageTitle from "../../utils/usePageTitle";
+import updateMetaTags from "../../utils/updateMetaTags";
 import validCnpj from "../../utils/validCnpj";
 import validCpf from "../../utils/validCpf";
 import validateEmail from "../../utils/validateEmail";
@@ -42,7 +42,16 @@ export default function CondominiumRegistration() {
 	const [data, setData] = useState(formsTemplate);
 	const navigate = useNavigate();
 
-	usePageTitle("Cadastro de Condomínio");
+	updateMetaTags({
+		title: "Cadastro de condomínio",
+		meta: {
+			"description": {attribute: "name", content: "Página de cadastro de condomínio"},
+			"og:title": {attribute: "property", content: "Cadastro de condomínio"},
+			"og:description": {
+				attribute: "property", content: "Página de cadastro de condomín"
+			},
+		}
+	});
 
 	function register(data) {
 		let admin = {}
