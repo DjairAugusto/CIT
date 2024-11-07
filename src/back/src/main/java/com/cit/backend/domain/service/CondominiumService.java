@@ -57,7 +57,7 @@ public class CondominiumService {
                 for (int k = 0; k < condominium.getFloors(); k++) {
                     int floor = k + 1;
                     for (int l = 0; l < condominium.getApartments(); l++) {
-                        // TODO Melora a geração de token
+                        // TODO Melhora a geração de token
                         Apartment apartment = new Apartment();
                         apartment.setUnit(unit);
                         apartment.setNumber((floor * 100) + l + 1);
