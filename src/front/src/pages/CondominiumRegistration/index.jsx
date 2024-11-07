@@ -56,15 +56,12 @@ export default function CondominiumRegistration() {
 	function register(data) {
 		let admin = {}
 		let condominium = {}
-		console.log('Dados enviados:', data);
 		axios.post("/employee/admin", data.admin).then(response => {
 			admin = response.data;
-
 			data.condominium.managerId = admin.id;
 
 			axios.post("/condominium", data.condominium).then(response => {
 				condominium = response.data;
-
 				navigate(`/login`);
 
 			}).catch(error => {
@@ -175,9 +172,6 @@ export default function CondominiumRegistration() {
 			fieldsErrors={validateAdminForm()}
 		/>,
 	];
-
-	console.log(validateCondominiumForm());
-	console.log(data);
 
     return (
         <Forms.Page
