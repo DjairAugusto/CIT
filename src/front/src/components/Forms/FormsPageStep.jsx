@@ -9,7 +9,7 @@ export default function FormsPageStep({children, title, subtitle, center=false})
 						<h1 className="text-center text-4xl mb-4">
 							{title}
 						</h1>
-						(subtitle) && (
+						{(subtitle) && (
 							<div className="w-full flex items-center justify-center">
 								<div className="bg-zinc-400 h-[1px] w-full"></div>
 								<h6 className="px-4 whitespace-nowrap m-auto">
@@ -17,7 +17,7 @@ export default function FormsPageStep({children, title, subtitle, center=false})
 								</h6>
 								<div className="bg-zinc-400 h-[1px] w-full"></div>
 							</div>
-						)
+						)}
 					</div>
 				)
 			}
