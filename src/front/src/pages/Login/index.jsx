@@ -3,8 +3,9 @@ import { Forms } from "../../components/Forms";
 import {useState} from "react";
 import LoginFormes from './LoginFormes';
 import {useNavigate} from 'react-router-dom';
-import axios from "../../utils/requesition/citRequesition"
+import axios from "../../utils/requisition/citRequisition"
 import validateEmail from "../../utils/validateEmail";
+import { Cookies } from '../../utils/cookies';
 
 const formsTemplate = {
     email: "",
@@ -15,15 +16,17 @@ export default function Login() {
 	const [data, setData] = useState(formsTemplate);
 	const navigate = useNavigate();
 
-	console.log(data)
-
+	if(Cookies.get('AuthorizationToken')) {
+		navigate('/home');
+	}
 
 	function register(data) {
 		axios.post("/auth/login", data).then(response => {
-			console.log(response.data);
+			Cookies.set("AuthorizationToken", response.data.token);
 			navigate(`/home`);
 		}).catch(error => {
 			console.log(error);
+			// TODO Exbir mensagem de erro // consertar isso joao
 		});
 	}
 

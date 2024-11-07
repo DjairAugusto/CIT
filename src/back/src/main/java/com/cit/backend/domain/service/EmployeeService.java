@@ -4,6 +4,7 @@ import com.cit.backend.domain.entity.Employee;
 import com.cit.backend.domain.repository.EmployeeRepository;
 import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public Employee save(Employee employee) {
         return employeeRepository.save(employee);
@@ -22,8 +26,9 @@ public class EmployeeService {
             throw new UniqueColumnAlreadyExistsException("CPF has already been registered");
         }
 
+        employee.getProfile().setPassword(passwordEncoder.encode(employee.getProfile().getPassword()));
+
         employee.setRole("Admin");
-        // TODO gerar perfil do admin
         return employeeRepository.save(employee);
     }
 
