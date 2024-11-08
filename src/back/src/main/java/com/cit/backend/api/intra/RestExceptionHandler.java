@@ -70,6 +70,14 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(status).body(message);
     }
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<RestErrorMessage> handlerException(Exception exception) {
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        // TODO send exception message to response if in debug mode
+        RestErrorMessage message = new RestErrorMessage(status, "Internal server error");
+        return ResponseEntity.status(status).body(message);
+    }
+
     @Override
     protected ResponseEntity<Object> handleNoResourceFoundException(NoResourceFoundException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         String errorText = "Api path not found";
