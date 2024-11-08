@@ -7,8 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
-public class webConfig implements WebMvcConfigurer{
-
+public class WebConfig implements WebMvcConfigurer{
     public void addCorsMappings(CorsRegistry registry) {
         //TODO restringir origens
         //TODO refatora
