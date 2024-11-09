@@ -3,8 +3,7 @@ package com.cit.backend.api.intra;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.security.SignatureException;
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -56,15 +55,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(status).body(message);
     }
 
-    @ExceptionHandler(SignatureException.class)
-    public ResponseEntity<RestErrorMessage> handlerSignatureException(SignatureException exception) {
-        HttpStatus status = HttpStatus.UNAUTHORIZED;
-        RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
-        return ResponseEntity.status(status).body(message);
-    }
-
-    @ExceptionHandler(ExpiredJwtException.class)
-    public ResponseEntity<RestErrorMessage> handlerExpiredJwtException(ExpiredJwtException exception) {
+    @ExceptionHandler(JWTVerificationException.class)
+    public ResponseEntity<RestErrorMessage> handlerSignatureException(JWTVerificationException exception) {
         HttpStatus status = HttpStatus.UNAUTHORIZED;
         RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
         return ResponseEntity.status(status).body(message);
