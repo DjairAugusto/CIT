@@ -14,4 +14,4 @@ COPY package*.json ./
 RUN npm i
 
 # Define o comando de entrada padrão para iniciar o aplicativo no modo de desenvolvimento
-ENTRYPOINT [ "npm", "run", "start.dev" ]
+ENTRYPOINT [ "npm", "run", "start" ]
