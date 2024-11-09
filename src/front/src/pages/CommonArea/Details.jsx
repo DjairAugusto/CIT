@@ -17,88 +17,72 @@ export default function CommonAreaDetails({
 	const [reserving, setReservig] = useState(false);
 
 	return !reserving ? (
-		<div className="flex flex-col w-full m-6 rounded-3xl overflow-hidden bg-white">
-			<div className="flex-initial relative w-full max-h96 overflow-hidden">
-				<div className="absolute w-full h-full bg-gradient-to-b from-black to-transparent to-20% opacity-60"></div>
-				<div className="absolute w-full h-full bg-gradient-to-b from-transparent from-70% to-black to-87% opacity-80"></div>
-				<button
-					onClick={() => clearFocused()}
-					className="top-3 left-3 text-white flex text-2xl items-center absolute bg-transparent border-none"
-				>
-					<ArrowLeft className="mr-2" />
-					Voltar
-				</button>
+		<div className="relative w-full h-full bg-white xl:w-9/12 flex flex-col items-center">
+			<button onClick={clearFocused} className="absolute left-2 top-2 p-4 rounded-full overflow-hidden">
+				<div className="bg-black opacity-20 absolute w-full h-full left-0 top-0"></div>
+				<ArrowLeft className="relative z-10 text-xl text-white"/>
+			</button>
+			<div className="w-full h-2/5">
 				<img
 					className="w-full h-full object-cover"
 					src={commonArea.img}
 					alt=""
 				/>
-				<h2 className="absolute bottom-3 left-3 text-white text-3xl">
-					{commonArea.name}
-				</h2>
 			</div>
-			<div className="my-2 mx-3 h-full flex flex-col">
-				<h2 className="text-3xl font-semibold">Detalhes</h2>
-				<span>{commonArea.description}</span>
-				<div className="w-full h-px my-2 bg-black"></div>
-				<div className="flex flex-col md:flex-row h-full">
-					<div className="md:w-1/2 md:flex-auto">
-						<h2 className="text-3xl font-semibold">
+			<div className="flex flex-col lg:flex-row w-full h-3/5 p-6">
+				<div className="lg:w-8/12 h-2/5 lg:h-full p-6 flex flex-col">
+					<h2 className="text-3xl font-semibold">Detalhes</h2>
+					<span className="overflow-y-auto">{commonArea.description}</span>
+				</div>
+				<div className="h-full lg:w-4/12 p-6 gap-4 bg-gray-low flex flex-col justify-between">
+					<div>
+						<h2 className="text-2xl font-semibold">
 							Horário de Funcionamento
 						</h2>
 						<span>
 							{commonArea.disponibility.map((each) => {
 								const [first, last] = each.days;
 								return (
-									(first === last
-										? first
-										: `${first}-${last}`) +
+									(first === last ? first : `${first}-${last}`) +
 									": " +
 									each.hours.join(" - ")
 								);
 							})}
 						</span>
-					</div>
-					<div className="w-full h-px my-4 md:my-0 md:w-px md:h-full md:mx-4 bg-black"></div>
-					<div className="md:w-1/2 md:flex-auto">
-						<h2 className="text-3xl font-semibold">
-							Taxa de Reserva
-						</h2>
+						<h2 className="text-2xl font-semibold">Taxa de Reserva</h2>
 						<span>
 							{commonArea.disponibility.map((each) => {
 								const [first, last] = each.days;
 								return (
-									(first === last
-										? first
-										: `${first}-${last}`) +
+									(first === last ? first : `${first}-${last}`) +
 									": " +
 									formatPrice(each.price)
 								);
 							})}
 						</span>
 					</div>
-				</div>
-			</div>
-			<div className="flex gap-1">
-				<button
-					onClick={() => setReservig(true)}
-					className="text-white bg-primary-1000 w-full px-8 py-6 text-3xl"
-				>
-					Fazer Reserva
-				</button>
-				{role === "ADMIN" && (
-					<>
-						<button className="text-white bg-blue-500 aspect-square px-8 py-6 text-3xl">
-							<Pencil />
-						</button>
+					<div className="flex gap-1">
 						<button
-							onClick={deleteFocused}
-							className="text-white bg-red-500 aspect-square px-8 py-6 text-3xl"
+							onClick={() => setReservig(true)}
+							className="text-white bg-primary-1000 w-full px-4 py-2 text-xl"
 						>
-							<Trash />
+							Fazer Reserva
 						</button>
-					</>
-				)}
+						{role === "ADMIN" && (
+							<>
+								<button className="text-white bg-blue-500 aspect-square px-4 py-2 text-xl">
+									<Pencil />
+								</button>
+								<button
+									onClick={deleteFocused}
+									className="text-white bg-red-500 aspect-square px-4 py-2 text-xl"
+								>
+									<Trash />
+								</button>
+							</>
+						)}
+					</div>
+				</div>
 			</div>
 		</div>
 	) : (
