@@ -12,7 +12,6 @@ import lombok.Setter;
 public class AddressResponse {
     private String street;
     private int number;
-    private String complement;
     private String neighborhood;
     private String city;
     private String state;

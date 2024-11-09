@@ -6,7 +6,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class AdminRequest extends PeopleRequest{
-    public AdminRequest(String name, String cpf, ContactRequest contact) {
-        super(name, cpf, contact);
+    public AdminRequest(String name, String cpf, ContactRequest contact, ProfileRequest profile) {
+        super(name, cpf, contact, profile);
     }
 }

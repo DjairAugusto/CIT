@@ -1,6 +1,7 @@
 package com.cit.backend.api.controller;
 
 import com.cit.backend.exceptions.MissingVariableException;
+import jakarta.annotation.security.RolesAllowed;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,5 +46,11 @@ public class HelloWorldController {
             "country"
         );
         throw new MissingVariableException(formVariables);
+    }
+
+    @GetMapping("/permission")
+    @RolesAllowed("ADMIN")
+    public String permission() {
+        return "You have permission to access this page";
     }
 }
