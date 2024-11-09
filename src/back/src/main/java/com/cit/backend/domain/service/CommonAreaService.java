@@ -1,6 +1,6 @@
 package com.cit.backend.domain.service;
 
-import com.cit.backend.domain.entity.CommonArea;
+import com.cit.backend.domain.entity.*;
 import com.cit.backend.domain.repository.CommonAreaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +25,14 @@ public class CommonAreaService {
 
     public List<CommonArea> getCommonAreasByCondominiumId(long condominiumId) {
         return commonAreaRepository.findAllByCondominiumId(condominiumId);
+    }
+
+    public List<CommonArea> getCommonAreas(Resident resident) {
+        Condominium condominium = resident.getApartment().getUnit().getBlock().getCondominium();
+        return getCommonAreasByCondominiumId(condominium.getId());
+    }
+
+    public CommonArea findById(Long id) {
+        return commonAreaRepository.findById(id).orElse(null);
     }
 }
