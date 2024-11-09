@@ -28,7 +28,7 @@ public class CommonAreaSchedule {
     private LocalTime timeEnd;
 
     @ElementCollection
-    @CollectionTable(name = "common_area_schedule_day_of_week", joinColumns = @JoinColumn(name = "common_areas_horary_id"))
+    @CollectionTable(name = "common_area_schedule_day_of_week", joinColumns = @JoinColumn(name = "common_areas_schedule_id"))
     private Set<DayOfWeek> dayOfWeek;
 
     @ManyToOne
