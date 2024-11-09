@@ -29,8 +29,8 @@ public class CommonArea {
     private Condominium condominium;
 
     @OneToMany(mappedBy = "commonArea", fetch = FetchType.EAGER)
-    private Set<CommonAreaSchedule> commonAreaSchedule;
+    private Set<CommonAreaSchedule> schedule;
 
     @OneToMany(mappedBy = "commonArea")
-    private Set<Reserve> Reserve;
+    private Set<Reserve> reserves;
 }
