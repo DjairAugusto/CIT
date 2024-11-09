@@ -14,8 +14,13 @@ public class CommonAreaService {
     @Autowired
     private CommonAreaRepository commonAreaRepository;
 
+    @Autowired
+    private CommonAreaScheduleService commonAreaScheduleService;
+
     public CommonArea save(CommonArea commonArea) {
-        return commonAreaRepository.save(commonArea);
+        CommonArea result = commonAreaRepository.save(commonArea);
+        commonAreaScheduleService.saveAll(commonArea.getSchedule().stream().toList(), commonArea);
+        return result;
     }
 
     public List<CommonArea> getCommonAreasByCondominiumId(long condominiumId) {
