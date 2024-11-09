@@ -18,10 +18,10 @@ public class CommonAreaMapper {
     @Autowired
     private CondominiumService condominiumService;
 
-    public CommonArea toCommonArea(CommonAreaRequest commonArea) {
-        CommonArea commonAreaEntity = modelMapper.map(commonArea, CommonArea.class);
-        commonAreaEntity.setCondominium(condominiumService.findById(commonArea.getCondominiumId()));
-        return commonAreaEntity;
+    public CommonArea toCommonArea(CommonAreaRequest request) {
+        CommonArea commonArea = modelMapper.map(request, CommonArea.class);
+        commonArea.setCondominium(condominiumService.findById(request.getCondominiumId()));
+        return commonArea;
     }
 
     public CommonAreaResponse toCommonAreaResponse(CommonArea commonArea) {
