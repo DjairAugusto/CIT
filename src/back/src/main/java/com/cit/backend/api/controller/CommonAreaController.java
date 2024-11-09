@@ -36,4 +36,12 @@ public class CommonAreaController {
 
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/{id:\\d+}")
+    public ResponseEntity<CommonAreaResponse> getCommonAreaById(@PathVariable("id") Long id) {
+        CommonArea commonArea = commonAreaService.findById(id);
+        CommonAreaResponse response = commonAreaMapper.toCommonAreaResponse(commonArea);
+
+        return ResponseEntity.ok(response);
+    }
 }
