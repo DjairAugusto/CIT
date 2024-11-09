@@ -1,10 +1,20 @@
 package com.cit.backend.api.request;
 
-import java.time.DayOfWeek;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.time.DayOfWeek;
+import java.time.LocalTime;
+import java.util.Set;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CommonAreaScheduleRequest {
-    private Long id;
-    private String startTime;
-    private String endTime;
-    private DayOfWeek dayOfWeek;
+    private LocalTime timeStart;
+    private LocalTime timeEnd;
+    private Set<DayOfWeek> dayOfWeek;
 }

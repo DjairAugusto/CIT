@@ -1,12 +1,21 @@
 package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.Set;
 
-@Entity(name = "common_area_schedule")
+@Entity
+@Table(name = "common_area_schedule")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CommonAreaSchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
