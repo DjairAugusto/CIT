@@ -2,6 +2,7 @@ package com.cit.backend.domain.service;
 
 import com.cit.backend.api.validator.JWTToken;
 import com.cit.backend.domain.entity.Apartment;
+import com.cit.backend.domain.entity.Resident;
 import com.cit.backend.domain.repository.ApartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,9 @@ public class ApartmentService {
     public void deleteById(Long id) { apartmentRepository.deleteById(id); }
 
     public Apartment update(Apartment apartment) { return apartmentRepository.save(apartment); }
+
+    public Apartment findByResident(Resident resident) {
+        return apartmentRepository.findByResidentsId(resident.getId()).orElse(null);
+    }
 }
 
