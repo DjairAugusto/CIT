@@ -12,9 +12,9 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CommonAreaRequest {
-    private Long id;
     private String name;
+    private String description;
     private float tax;
     private Long condominiumId;
-    private Set<CommonAreaScheduleRequest> commonAreaSchedules;
+    private Set<CommonAreaScheduleRequest> schedule;
 }

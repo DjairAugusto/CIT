@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -16,6 +16,6 @@ public class CommonAreaResponse {
     private String name;
     private String description;
     private float tax;
-    private List<ReserveResponse> reserves;
-    private List<CommonAreaScheduleResponse> commonAreaSchedules;
+    private Set<ReserveResponse> reserves;
+    private Set<CommonAreaScheduleResponse> schedule;
 }
