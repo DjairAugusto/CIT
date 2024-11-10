@@ -3,7 +3,8 @@ import EmployeeForm from "./EmployeeForm";
 import VehicleForm from "./VehicleForm";
 import { Forms } from "../../components/Forms";
 
-export default function ApartmentRegistration() {
+// TODO integração do registro de funcionário com o backs
+export default function FunctionaryRegistration() {
 	const steps = [<EmployeeForm />, <VehicleForm />];
 
 	return (

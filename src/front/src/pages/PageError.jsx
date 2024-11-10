@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// TODO modularizar a página de error para exibir qualquer código
 const ErrorPage = ({errorMessage = 'Oops Page Not Found.' }) => {
 	const navigate = useNavigate();
 

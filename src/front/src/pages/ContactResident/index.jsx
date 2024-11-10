@@ -3,6 +3,7 @@ import {Forms} from "../../components/Forms";
 import {PhoneCall} from "lucide-react";
 import ConteinerOptions from "./ConteinerOptions";
 
+// TODO integração dos contatos com o back
 export default function ContactResident() {
 	const options = [
 		{
