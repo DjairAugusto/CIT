@@ -20,12 +20,13 @@ import CondominiumRegistration from "./pages/CondominiumRegistration";
 import ApartmentRegistration from "./pages/ApartmentRegistration";
 import FunctionaryRegistration from "./pages/FunctionaryRegistration";
 import VisitorRegistration from "./pages/VisitorRegistration";
-import CommonArea from "./pages/CommonArea";
-import CommonAreaRegistration from "./pages/CommonArea/Registration";
 import Accountability from "./pages/Accountability";
 import AccountabilityAdmin from "./pages/AccountabilityAdmin";
 import Login from "./pages/Login";
 import ContactResident from "./pages/ContactResident";
+import CommonAreaList from "./pages/CommonArea/List";
+import CommonAreaDetails from "./pages/CommonArea/Details";
+import CommonAreaEdit from "./pages/CommonArea/Edit";
 
 const router = createBrowserRouter([
 	{
@@ -93,7 +94,20 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/common-area",
-		element: <CommonArea />,
+		children: [
+			{
+				index: true,
+				element: <CommonAreaList />
+			},
+			{
+				path: "/common-area/details",
+				element: <CommonAreaDetails />,
+			},
+			{
+				path: "/common-area/edit",
+				element: <CommonAreaEdit />,
+			},
+		],
 	},
 	{
 		path: "/accountabilityAdmin",
