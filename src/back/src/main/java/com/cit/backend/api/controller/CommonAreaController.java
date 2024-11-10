@@ -8,6 +8,7 @@ import com.cit.backend.domain.entity.Profile;
 import com.cit.backend.domain.entity.Resident;
 import com.cit.backend.domain.service.CommonAreaService;
 import com.cit.backend.domain.service.ResidentService;
+import jakarta.annotation.security.RolesAllowed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,6 +29,7 @@ public class CommonAreaController {
     private CommonAreaMapper commonAreaMapper;
 
     @PostMapping
+    @RolesAllowed("ADMIN")
     public ResponseEntity<CommonAreaResponse> createCommonArea(@RequestBody CommonAreaRequest request) {
         CommonArea commonArea = commonAreaMapper.toCommonArea(request);
         commonArea = commonAreaService.save(commonArea);
