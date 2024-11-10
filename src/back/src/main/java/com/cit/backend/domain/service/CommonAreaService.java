@@ -39,4 +39,8 @@ public class CommonAreaService {
     public CommonArea findById(Long id) {
         return commonAreaRepository.findById(id).orElse(null);
     }
+
+    public void deleteById(Long id) {
+        commonAreaRepository.deleteById(id);
+    }
 }

@@ -65,4 +65,11 @@ public class CommonAreaController {
 
         return ResponseEntity.ok(response);
     }
+
+    @DeleteMapping("/{id:\\d+}")
+    @RolesAllowed("ADMIN")
+    public ResponseEntity<Void> deleteCommonArea(@PathVariable("id") Long id) {
+        commonAreaService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
