@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -59,6 +60,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<RestErrorMessage> handlerSignatureException(JWTVerificationException exception) {
         HttpStatus status = HttpStatus.UNAUTHORIZED;
         RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
+        return ResponseEntity.status(status).body(message);
+    }
+
+    @ExceptionHandler(InternalAuthenticationServiceException.class)
+    public ResponseEntity<RestErrorMessage> handlerInternalAuthenticationServiceException(InternalAuthenticationServiceException exception) {
+        HttpStatus status = HttpStatus.UNAUTHORIZED;
+        RestErrorMessage message = new RestErrorMessage(status, "Invalid credentials");
         return ResponseEntity.status(status).body(message);
     }
 
