@@ -41,12 +41,10 @@ public class CommonAreaController {
         Profile profile = (Profile) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Resident resident = residentService.getFromProfile(profile);
 
-        if(resident == null) {
-            // TODO create a custom exception
-            throw new RuntimeException("The logged profile is not from a resident");
-        }
+        List<CommonArea> commonAreas;
+        if (resident != null) commonAreas = commonAreaService.getCommonAreas(resident);
+        else commonAreas = commonAreaService.getCommonAreas();
 
-        List<CommonArea> commonAreas = commonAreaService.getCommonAreas(resident);
         List<CommonAreaResponse> response = commonAreaMapper.toCommonAreaResponse(commonAreas);
 
         return ResponseEntity.ok(response);

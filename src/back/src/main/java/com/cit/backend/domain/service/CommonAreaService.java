@@ -32,6 +32,10 @@ public class CommonAreaService {
         return getCommonAreasByCondominiumId(condominium.getId());
     }
 
+    public List<CommonArea> getCommonAreas() {
+        return commonAreaRepository.findAll();
+    }
+
     public CommonArea findById(Long id) {
         return commonAreaRepository.findById(id).orElse(null);
     }
