@@ -74,6 +74,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<RestErrorMessage> handlerException(Exception exception) {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
         // TODO send exception message to response if in debug mode
+        exception.printStackTrace();
         RestErrorMessage message = new RestErrorMessage(status, "Internal server error");
         return ResponseEntity.status(status).body(message);
     }
