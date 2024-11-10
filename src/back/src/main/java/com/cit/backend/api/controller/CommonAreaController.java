@@ -8,6 +8,7 @@ import com.cit.backend.domain.entity.Profile;
 import com.cit.backend.domain.entity.Resident;
 import com.cit.backend.domain.service.CommonAreaService;
 import com.cit.backend.domain.service.ResidentService;
+import com.cit.backend.exceptions.MissingVariableException;
 import jakarta.annotation.security.RolesAllowed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -63,6 +64,21 @@ public class CommonAreaController {
     @GetMapping("/{id:\\d+}")
     public ResponseEntity<CommonAreaResponse> getCommonAreaById(@PathVariable("id") Long id) {
         CommonArea commonArea = commonAreaService.findById(id);
+        if (commonArea == null) return ResponseEntity.notFound().build();
+
+        CommonAreaResponse response = commonAreaMapper.toCommonAreaResponse(commonArea);
+        return ResponseEntity.ok(response);
+    }
+
+    @PatchMapping
+    @RolesAllowed("ADMIN")
+    public ResponseEntity<CommonAreaResponse> updateCommonArea(@RequestBody CommonAreaRequest request) {
+        if (request.getId() == null)
+            throw new MissingVariableException("The id of the Common Area is needed", List.of("id"));
+
+        CommonArea commonArea = commonAreaMapper.toCommonArea(request);
+        commonArea = commonAreaMapper.fillNullFields(commonArea, commonAreaService.findById(request.getId()));
+        commonArea = commonAreaService.save(commonArea);
         CommonAreaResponse response = commonAreaMapper.toCommonAreaResponse(commonArea);
 
         return ResponseEntity.ok(response);

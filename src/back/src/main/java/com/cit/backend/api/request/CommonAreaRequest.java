@@ -12,6 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CommonAreaRequest {
+    private Long id;
     private String name;
     private String description;
     private float tax;
