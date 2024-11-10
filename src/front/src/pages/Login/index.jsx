@@ -26,7 +26,7 @@ export default function Login() {
 			navigate(`/home`);
 		}).catch(error => {
 			console.log(error);
-			// TODO Exbir mensagem de erro // consertar isso joao
+			// TODO Exbir mensagem de erro do login // back pronto em outra branch
 		});
 	}
 

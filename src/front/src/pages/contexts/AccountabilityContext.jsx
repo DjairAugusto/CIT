@@ -3,6 +3,7 @@ import React, { createContext, useState, useEffect } from "react";
 // Crie o AccountabilityContext
 export const AccountabilityContext = createContext();
 
+// TODO fazer a integração do AccountabilityContext com o back
 export const AccountabilityProvider = ({ children }) => {
     const [files, setFiles] = useState([]);
 

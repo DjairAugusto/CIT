@@ -6,6 +6,9 @@ import useForm from "../../hooks/useForm";
 import { Forms } from "../../components/Forms";
 import { ArrowLeft } from "lucide-react";
 
+// TODO solicitar o token no registro de apartamento
+// TODO utilizar o token para carregar os dados do Apartamento durante o registro
+// TODO fazer integraçao do registro de Apartamento com o back
 export default function ApartmentRegistration() {
 	const steps = [<InhabitantForm />, <VehicleForm />, <ProfileForm />];
 	const { currentStep, currentComponent, changeSteps, isLast, isFist } =

@@ -1,5 +1,6 @@
 import React from "react";
 
+// TODO migrar o css da Home pro css do tailwind
 export default function Home() {
 	return (
 		<>
