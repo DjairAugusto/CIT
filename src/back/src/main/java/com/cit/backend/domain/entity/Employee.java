@@ -14,10 +14,6 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 public class Employee extends People {
-
-    @Column(length = 80)
-    private String role;
-
     @OneToOne(mappedBy = "employee")
     private Condominium management;
 
