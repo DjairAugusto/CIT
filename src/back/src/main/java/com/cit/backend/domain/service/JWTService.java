@@ -10,6 +10,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Date;
+import java.util.Map;
 
 public abstract class JWTService {
     @Value("${api.security.jwt.secret}")
@@ -25,12 +26,21 @@ public abstract class JWTService {
     }
 
     protected String buildToken(String subject) {
-        return buildToken(subject, true);
+        return buildToken(subject, true, null);
+    }
+
+    protected String buildToken(String subject, boolean expires) {
+        return buildToken(subject, expires, null);
+    }
+
+    protected String buildToken(String subject, Map<String, ?> payload) {
+        return buildToken(subject, true, payload);
     }
 
     protected String buildToken(
             String subject,
-            boolean expires
+            boolean expires,
+            Map<String, ?> payload
     ) {
         JWTCreator.Builder builder = JWT
                 .create()
@@ -38,6 +48,7 @@ public abstract class JWTService {
                 .withIssuedAt(new Date())
                 .withSubject(subject);
         if (expires) builder.withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION));
+        if (payload != null) builder.withPayload(payload);
         return builder.sign(getSignKey());
     }
 
