@@ -44,7 +44,7 @@ services:
     networks:
       - frontend
     environment:
-      - WATCHPACK_POLLING=trues
+      - WATCHPACK_POLLING=true
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: cit-phpmyadmin

@@ -1,12 +1,21 @@
 package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.Set;
 
-@Entity(name = "common_area_schedule")
+@Entity
+@Table(name = "common_area_schedule")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CommonAreaSchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +28,7 @@ public class CommonAreaSchedule {
     private LocalTime timeEnd;
 
     @ElementCollection
-    @CollectionTable(name = "common_area_schedule_day_of_week", joinColumns = @JoinColumn(name = "common_areas_horary_id"))
+    @CollectionTable(name = "common_area_schedule_day_of_week", joinColumns = @JoinColumn(name = "common_areas_schedule_id"))
     private Set<DayOfWeek> dayOfWeek;
 
     @ManyToOne

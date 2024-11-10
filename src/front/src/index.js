@@ -24,6 +24,9 @@ import Accountability from "./pages/Accountability";
 import AccountabilityAdmin from "./pages/AccountabilityAdmin";
 import Login from "./pages/Login";
 import ContactResident from "./pages/ContactResident";
+import CommonAreaList from "./pages/CommonArea/List";
+import CommonAreaDetails from "./pages/CommonArea/Details";
+import CommonAreaEdit from "./pages/CommonArea/Edit";
 
 const router = createBrowserRouter([
 	{
@@ -88,6 +91,23 @@ const router = createBrowserRouter([
 		path: "/demo",
 		element: <Demo />,
 		children: [],
+	},
+	{
+		path: "/common-area",
+		children: [
+			{
+				index: true,
+				element: <CommonAreaList />
+			},
+			{
+				path: "/common-area/details",
+				element: <CommonAreaDetails />,
+			},
+			{
+				path: "/common-area/edit",
+				element: <CommonAreaEdit />,
+			},
+		],
 	},
 	{
 		path: "/accountabilityAdmin",

@@ -12,5 +12,6 @@ import java.util.Optional;
 @Repository
 public interface ApartmentRepository extends JpaRepository<Apartment, Long> {
     Optional<Apartment> findByToken(@Valid @JWTToken String token);
+    Optional<Apartment> findByResidentsId(Long residentId);
     List<Apartment> findAllByUnitId(Long unitId);
 }

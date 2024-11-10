@@ -39,7 +39,7 @@ public class Apartment {
     private Set<Visitant> visits;
 
     @OneToMany
-    private Set<People> residents;
+    private Set<Resident> residents;
 
     @OneToMany(mappedBy = "apartment")
     private Set<Deliveries> deliveries;

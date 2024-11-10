@@ -3,7 +3,7 @@ import { Forms } from "../../components/Forms";
 import {useState} from "react";
 import LoginFormes from './LoginFormes';
 import {useNavigate} from 'react-router-dom';
-import axios from "../../utils/requisition/citRequisition"
+import {nonAuthorizedInstance as axios} from "../../utils/requisition/citRequisition"
 import validateEmail from "../../utils/validateEmail";
 import { Cookies } from '../../utils/cookies';
 

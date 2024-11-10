@@ -28,9 +28,9 @@ public class CommonArea {
     @JoinColumn(name="condominium_id", nullable=false)
     private Condominium condominium;
 
-    @OneToMany(mappedBy = "commonArea")
-    private Set<CommonAreaSchedule> commonAreaSchedule;
+    @OneToMany(mappedBy = "commonArea", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private Set<CommonAreaSchedule> schedule;
 
     @OneToMany(mappedBy = "commonArea")
-    private Set<Reserve> Reserve;
+    private Set<Reserve> reserves;
 }

@@ -27,8 +27,6 @@ public class EmployeeService {
         }
 
         employee.getProfile().setPassword(passwordEncoder.encode(employee.getProfile().getPassword()));
-
-        employee.setRole("Admin");
         return employeeRepository.save(employee);
     }
 

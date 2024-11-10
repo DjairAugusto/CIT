@@ -3,8 +3,7 @@ package com.cit.backend.api.intra;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.security.SignatureException;
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,6 +11,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -56,17 +56,17 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(status).body(message);
     }
 
-    @ExceptionHandler(SignatureException.class)
-    public ResponseEntity<RestErrorMessage> handlerSignatureException(SignatureException exception) {
+    @ExceptionHandler(JWTVerificationException.class)
+    public ResponseEntity<RestErrorMessage> handlerSignatureException(JWTVerificationException exception) {
         HttpStatus status = HttpStatus.UNAUTHORIZED;
         RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
         return ResponseEntity.status(status).body(message);
     }
 
-    @ExceptionHandler(ExpiredJwtException.class)
-    public ResponseEntity<RestErrorMessage> handlerExpiredJwtException(ExpiredJwtException exception) {
+    @ExceptionHandler(InternalAuthenticationServiceException.class)
+    public ResponseEntity<RestErrorMessage> handlerInternalAuthenticationServiceException(InternalAuthenticationServiceException exception) {
         HttpStatus status = HttpStatus.UNAUTHORIZED;
-        RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
+        RestErrorMessage message = new RestErrorMessage(status, "Invalid credentials");
         return ResponseEntity.status(status).body(message);
     }
 
@@ -74,6 +74,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<RestErrorMessage> handlerException(Exception exception) {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
         // TODO send exception message to response if in debug mode
+        exception.printStackTrace();
         RestErrorMessage message = new RestErrorMessage(status, "Internal server error");
         return ResponseEntity.status(status).body(message);
     }

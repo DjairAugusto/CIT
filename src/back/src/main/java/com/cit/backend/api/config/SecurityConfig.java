@@ -1,6 +1,7 @@
 package com.cit.backend.api.config;
 
 import com.cit.backend.api.filter.AuthJWTFilter;
+import com.cit.backend.api.filter.ExceptionHandlerFilter;
 import com.cit.backend.domain.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +30,9 @@ public class SecurityConfig {
     private AuthJWTFilter authJWTFilter;
 
     @Autowired
+    private ExceptionHandlerFilter exceptionHandlerFilter;
+
+    @Autowired
     private ProfileService profileService;
 
     @Bean
@@ -43,7 +47,9 @@ public class SecurityConfig {
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
+                .addFilterBefore(exceptionHandlerFilter, UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(authJWTFilter, UsernamePasswordAuthenticationFilter.class)
+                .formLogin(AbstractHttpConfigurer::disable)
                 .build();
     }
 
