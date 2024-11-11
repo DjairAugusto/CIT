@@ -34,7 +34,7 @@ public class ApartmentController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/{token:^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}}")
+    @GetMapping("/by-token/{token:^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}}")
     public ResponseEntity<ApartmentResponse> getApartment(@PathVariable("token") @Valid @JWTToken String token) {
         Apartment apartment = apartmentService.findByToken(token);
         if (apartment == null) {
