@@ -44,6 +44,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST,"/auth/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/employee/admin").permitAll()
                         .requestMatchers(HttpMethod.POST,"/condominium").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/apartment/by-token/*").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
