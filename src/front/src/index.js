@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-//rotes
+// routers
 import Main from "./routers/RootMain";
 import Register from "./routers/RootRegister";
 
@@ -28,6 +28,8 @@ import CommonAreaList from "./pages/CommonArea/List";
 import CommonAreaDetails from "./pages/CommonArea/Details";
 import CommonAreaEdit from "./pages/CommonArea/Edit";
 import ShipsOrders from "./pages/ShipsOrders";
+import LostFound from "./pages/LostFound/LostFound";
+import LostFoundList from "./pages/LostFound/Details";
 
 const router = createBrowserRouter([
 	{
@@ -91,14 +93,13 @@ const router = createBrowserRouter([
 	{
 		path: "/demo",
 		element: <Demo />,
-		children: [],
 	},
 	{
 		path: "/common-area",
 		children: [
 			{
 				index: true,
-				element: <CommonAreaList />
+				element: <CommonAreaList />,
 			},
 			{
 				path: "/common-area/details",
@@ -113,12 +114,23 @@ const router = createBrowserRouter([
 	{
 		path: "/accountabilityAdmin",
 		element: <AccountabilityAdmin />,
-		children: [],
 	},
 	{
 		path: "/accountability",
 		element: <Accountability />,
-		children: [],
+	},
+	{
+		path: "/lost-found",
+		children: [
+			{
+				element: <LostFound />,
+				index: true
+			},
+			{
+				path: "/lost-found/Details",
+				element: <LostFoundList />,
+			},
+		],
 	},
 	{
 		path: "/ships",
@@ -126,6 +138,7 @@ const router = createBrowserRouter([
 	},
 ]);
 
+// Renderizando a aplicação
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
@@ -133,7 +146,5 @@ root.render(
 	</React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Medição de performance
 reportWebVitals();
