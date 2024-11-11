@@ -1,12 +1,12 @@
 import React from "react";
 import { DeliveryProvider } from "../contexts/DeliveryContext"; 
-import DeliveriesPage from "./Deliveries"; 
+import Deliveries from "./Deliveries"; 
 
 function Index() {
     return (
         <DeliveryProvider>
             <div className="p-6">
-                <DeliveriesPage />
+                <Deliveries />
             </div>
         </DeliveryProvider>
     );
