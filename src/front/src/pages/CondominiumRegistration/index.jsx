@@ -38,6 +38,7 @@ const formsTemplate = {
     },
 };
 
+// TODO separar as funções de validação do Forms.Page pra um uso mais geral 
 export default function CondominiumRegistration() {
 	const [data, setData] = useState(formsTemplate);
 	const navigate = useNavigate();
