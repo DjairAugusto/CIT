@@ -20,8 +20,7 @@ Através desses indicadores, a administração do condomínio poderá acompanhar
 |  Índice de Satisfação dos Moradores com os Funcionários | Avaliar a satisfação dos moradores com o atendimento e serviços prestados pelos funcionários do condomínio. | Média da avaliação de satisfação dos moradores em relação aos funcionários. | Tabelas Funcionários e Feedbacks (com notas de avaliação dos moradores). | soma das notas de satisfação/número total de avaliações |
 | Percentual de Visitantes Registrados | Monitorar o controle de entrada de visitantes no condomínio para garantir a segurança dos moradores. | Percentual de visitantes registrados em relação ao número total de visitantes esperados. | Tabelas Visitantes e Apartamentos. | (número de visitantes registrados/número total de visitantes esperados)∗1 |
 | Tempo Médio de Resolução de Chamados na Ouvidoria | Medir a rapidez na resolução dos chamados, identificando possíveis gargalos. | Média de dias para resolução de chamados de ouvidoria. | Tabela Ouvidoria (com data de abertura e data de fechamento dos chamados). | (soma do tempo de resolução de todos os chamados/número total de chamados) |
-| Índice de Conformidade com Procedimentos de Prestação de Contas |  Avaliar se os procedimentos financeiros estão sendo realizados corretamente, garantindo transparência para os moradores.
- | Percentual de processos de prestação de contas que seguem os procedimentos estabelecidos. | Tabela Prestação de Contas | (número de procedimentos corretos/número total de procedimentos)∗100 |
+| Índice de Conformidade com Procedimentos de Prestação de Contas |  Avaliar se os procedimentos financeiros estão sendo realizados corretamente, garantindo transparência para os moradores.| Percentual de processos de prestação de contas que seguem os procedimentos estabelecidos. | Tabela Prestação de Contas | (número de procedimentos corretos/número total de procedimentos)∗100 |
 |  |  |  |  |  |
 
 
