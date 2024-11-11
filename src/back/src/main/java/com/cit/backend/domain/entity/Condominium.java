@@ -88,7 +88,6 @@ public class Condominium {
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
     private Set<Income> income;
 
-    @OneToOne
-    @JoinColumn(name = "employee_id", nullable = true)
-    private Employee employee;
+    @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
+    private Set<ContactsCondominium> contactsCondominium;
 }
