@@ -10,7 +10,7 @@ export default function Buttons() {
 			</a>
 			<a
 				href="#"
-				className="w-full bg-primary-1000git  text-white p-4 rounded text-center"
+				className="w-full bg-primary-1000 text-white p-4 rounded text-center"
 			>
 				SALVAR
 			</a>
