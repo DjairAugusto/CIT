@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Forms } from "../../components/Forms";
 
-export default function TokenForm() {
-	const [token, setToken] = useState("");
-
-	function onChange(e) {
-		setToken(e.target.value);
-	}
-
+export default function TokenForm({ data, updateFieldHandler }) {
 	return (
 		<Forms.PageStep
 			title="Cadastro de Apartamento"
@@ -15,8 +9,8 @@ export default function TokenForm() {
 		>
 			<Forms.InputText
 				placeholder="TOKEN"
-				onChange={(e) => onChange(e)}
-				value={token}
+				onChange={(e) => updateFieldHandler("token", e.target.value)}
+				value={data}
 				required
 			/>
 		</Forms.PageStep>
