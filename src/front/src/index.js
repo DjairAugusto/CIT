@@ -27,6 +27,7 @@ import ContactResident from "./pages/ContactResident";
 import CommonAreaList from "./pages/CommonArea/List";
 import CommonAreaDetails from "./pages/CommonArea/Details";
 import CommonAreaEdit from "./pages/CommonArea/Edit";
+import ShipsOrders from "./pages/ShipsOrders";
 
 const router = createBrowserRouter([
 	{
@@ -118,6 +119,10 @@ const router = createBrowserRouter([
 		path: "/accountability",
 		element: <Accountability />,
 		children: [],
+	},
+	{
+		path: "/ships",
+		element: <ShipsOrders />,
 	},
 ]);
 
