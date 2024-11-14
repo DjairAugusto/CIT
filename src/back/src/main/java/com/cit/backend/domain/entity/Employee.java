@@ -17,6 +17,9 @@ public class Employee extends People {
     @OneToOne(mappedBy = "employee")
     private Condominium management;
 
+    @Column
+    private String role;
+
     @ManyToOne
     @JoinColumn(name="condominium_id", nullable=true)
     private Condominium condominium;
