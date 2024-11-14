@@ -20,10 +20,10 @@ public class Profile implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 80, nullable = false)
+    @Column(length = 80, nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(length = 72, nullable = false)
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
