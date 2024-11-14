@@ -1,12 +1,16 @@
 package com.cit.backend.domain.service;
 
 import com.cit.backend.domain.entity.Employee;
+import com.cit.backend.domain.entity.Profile;
+import com.cit.backend.domain.entity.enums.ProfilePermissions;
 import com.cit.backend.domain.repository.EmployeeRepository;
 import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Set;
 
 @Service
 @Transactional
@@ -26,7 +30,9 @@ public class EmployeeService {
             throw new UniqueColumnAlreadyExistsException("CPF has already been registered");
         }
 
-        employee.getProfile().setPassword(passwordEncoder.encode(employee.getProfile().getPassword()));
+        Profile profile = employee.getProfile();
+        profile.setPassword(passwordEncoder.encode(employee.getProfile().getPassword()));
+        profile.setPermissions(Set.of(ProfilePermissions.ROLE_ADMIN));
         return employeeRepository.save(employee);
     }
 
