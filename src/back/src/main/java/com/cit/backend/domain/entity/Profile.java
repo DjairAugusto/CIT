@@ -1,5 +1,6 @@
 package com.cit.backend.domain.entity;
 
+import com.cit.backend.domain.entity.enums.ProfilePermissions;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,14 +26,16 @@ public class Profile implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    Set<ProfilePermission> permissions;
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "profile_permissions", joinColumns = @JoinColumn(name = "profile_id"))
+    @Enumerated(EnumType.STRING)
+    Set<ProfilePermissions> permissions;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return permissions
                 .stream()
-                .map(permission -> new SimpleGrantedAuthority(permission.getPermission().name()))
+                .map(permission -> new SimpleGrantedAuthority(permission.name()))
                 .collect(Collectors.toList());
     }
 
