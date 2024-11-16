@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeResponse extends PeopleResponse{
+public class EmployeeResponse extends PeopleResponse {
     private int id;
     private String role;
 
