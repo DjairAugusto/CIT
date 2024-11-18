@@ -8,7 +8,6 @@ export default function FormsPage({
 	steps,
 	imageSource,
 	validations,
-	stepsCallback,
 	callbak,
 }) {
 	const { currentStep, currentComponent, changeSteps, isLast, isFirst } =
@@ -48,18 +47,7 @@ export default function FormsPage({
 						<Forms.Button
 							className="w-2/5"
 							type="button"
-							onClick={async (e) => {
-								setIsLoading(true);
-								if (
-									!stepsCallback[currentComponent] ||
-									(await stepsCallback[currentComponent](
-										currentStep,
-										currentStep + 1
-									))
-								)
-									changeSteps(currentStep + 1, e);
-								setIsLoading(false);
-							}}
+							onClick={(e) => changeSteps(currentStep + 1, e)}
 							disabled={!validations[currentStep]}
 						>
 							{isLoading ? <Loading /> : "Próximo"}
