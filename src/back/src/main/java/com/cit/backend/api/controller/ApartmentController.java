@@ -53,6 +53,13 @@ public class ApartmentController {
         return ResponseEntity.ok(response);
     }
 
+    // TODO finish this method
+    @PostMapping("/register/{token:^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}}")
+    public ResponseEntity<ApartmentResponse> register(@PathVariable("token") @Valid @JWTToken String token, @RequestBody ApartmentRequest request) {
+        Apartment apartment = apartmentService.findByToken(token);
+        if (apartment == null) return ResponseEntity.notFound().build();
+    }
+
     @PostMapping
     public ResponseEntity<ApartmentResponse> createApartment(@Valid @RequestBody ApartmentRequest request) {
         Apartment apartment = apartmentMapper.toApartment(request);
