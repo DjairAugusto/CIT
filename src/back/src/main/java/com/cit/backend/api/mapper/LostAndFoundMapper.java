@@ -6,9 +6,11 @@ import com.cit.backend.domain.entity.LostAndFound;
 import com.cit.backend.domain.service.LostAndFoundService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class LostAndFoundMapper {
 
     @Autowired
