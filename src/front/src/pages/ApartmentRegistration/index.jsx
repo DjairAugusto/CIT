@@ -14,7 +14,8 @@ const formsTemplate = {
 	profiles: null,
 };
 
-// TODO solicitar o token no registro de apartamento
+// TODO tratar os erros corretamente
+// TODO mudar o fetchApartment para o TokenForm
 // TODO utilizar o token para carregar os dados do Apartamento durante o registro
 // TODO fazer integraçao do registro de Apartamento com o back
 // TODO fazer as validações do Forms.Page
