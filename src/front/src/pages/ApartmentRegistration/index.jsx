@@ -9,6 +9,7 @@ import { nonAuthorizedInstance as axios } from "../../utils/requisition/citRequi
 
 const formsTemplate = {
 	token: "",
+	apartment: null,
 	inhabitants: null,
 	vehicles: null,
 	profiles: null,
@@ -21,7 +22,6 @@ const formsTemplate = {
 // TODO fazer as validações do Forms.Page
 export default function ApartmentRegistration() {
 	const [data, setData] = useState(formsTemplate);
-	const [apartment, setApartment] = useState(null);
 
 	const inhabitants = useObjectArray({
 		entries: ["name", "cpf", "phone", "email"],
@@ -73,7 +73,7 @@ export default function ApartmentRegistration() {
 			updateFieldHandler={updateFieldHandler}
 		/>,
 		<InhabitantForm
-			apartmentNumber={apartment?.number}
+			apartmentNumber={data.apartment?.number}
 			objectArray={inhabitants}
 		/>,
 		<VehicleForm />,
