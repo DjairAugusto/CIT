@@ -3,7 +3,7 @@ package com.cit.backend.api.controller;
 import com.cit.backend.api.request.AuthRequest;
 import com.cit.backend.api.response.AuthResponse;
 import com.cit.backend.domain.entity.Profile;
-import com.cit.backend.domain.service.AuthTokenService;d
+import com.cit.backend.domain.service.AuthTokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
