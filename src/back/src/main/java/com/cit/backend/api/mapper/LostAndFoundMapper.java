@@ -7,6 +7,8 @@ import com.cit.backend.domain.service.LostAndFoundService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class LostAndFoundMapper {
 
     @Autowired
@@ -20,5 +22,10 @@ public class LostAndFoundMapper {
 
     public LostAndFoundResponse toLostAndFoundResponse(LostAndFound lostObject) {
         return modelMapper.map(lostObject, LostAndFoundResponse.class);
+    }
+
+    public List<LostAndFoundResponse> toLostAndFoundResponse(List <LostAndFound> lostObjects) {
+        return lostObjects.stream().map(this::toLostAndFoundResponse)
+                .toList();
     }
 }
