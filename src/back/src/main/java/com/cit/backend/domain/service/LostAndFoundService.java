@@ -16,4 +16,8 @@ public class LostAndFoundService {
     public LostAndFound save(LostAndFound lostObject) {
         return lostAndFoundRepository.save(lostObject);
     }
+
+    public void deleteById(Long id) {
+        lostAndFoundRepository.deleteById(id);
+    }
 }

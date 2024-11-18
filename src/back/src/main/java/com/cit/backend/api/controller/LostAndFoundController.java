@@ -31,8 +31,15 @@ public class LostAndFoundController {
     }
 
     @GetMapping("/{id:\\d+}")
-    public ResponseEntity<LostAndFoundResponse> getLostObject(@PathVariable("/{id:\\d+}") String id){
+    public ResponseEntity<LostAndFoundResponse> getLostObject(@PathVariable("id") String id){
         return null;
+    }
+
+    @DeleteMapping("/{id:\\d+}")
+    @RolesAllowed("Employee")
+    public ResponseEntity<Void> lostObjectDelete(@PathVariable("id") Long id){
+        lostObjectService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
