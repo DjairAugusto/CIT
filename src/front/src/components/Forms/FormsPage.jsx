@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Forms } from ".";
 import { ArrowLeft } from "lucide-react";
 import useForm from "../../hooks/useForm";
@@ -12,7 +12,6 @@ export default function FormsPage({
 }) {
 	const { currentStep, currentComponent, changeSteps, isLast, isFirst } =
 		useForm(steps);
-	const [isLoading, setIsLoading] = useState(false);
 
 	return (
 		<main className="flex justify-between h-svh overflow-hidden bg-zinc-100">
@@ -50,7 +49,7 @@ export default function FormsPage({
 							onClick={(e) => changeSteps(currentStep + 1, e)}
 							disabled={!validations[currentStep]}
 						>
-							{isLoading ? <Loading /> : "Próximo"}
+							Próximo
 						</Forms.Button>
 					)}
 				</div>
