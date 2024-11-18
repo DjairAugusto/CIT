@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -25,4 +27,8 @@ public class ApartmentRequest {
     @NotNull(message = "Unit id is mandatory")
     @PositiveOrZero(message = "Unit id must be equals or greater than zero")
     private Long unitId;
+
+    private Set<ResidentRequest> residents;
+    private Set<VehicleRequest> vehicles;
+    private Set<ProfileRequest> profiles;
 }
