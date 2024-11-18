@@ -50,15 +50,6 @@ export default function ApartmentRegistration() {
 		);
 	}, [setData, inhabitants.array, vehicles.array, profiles.array]);
 
-	async function fetchApartment() {
-		if (!data.token.match("^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}")) throw new Error("Invalid token");
-
-		const res = await axios.get(`/apartment/by-token/${data.token}`);
-		if (res.data === undefined) throw new Error("Failed to fetch Apartment with that token");
-
-		setApartment(res.data);
-	}
-
 	function updateFieldHandler(path, value) {
 		setData((prevData) => {
 			const dataCopy = { ...prevData };
@@ -76,7 +67,11 @@ export default function ApartmentRegistration() {
 	}
 
 	const steps = [
-		<TokenForm data={data.token} updateFieldHandler={updateFieldHandler} />,
+		<TokenForm
+			setData={setData}
+			token={data.token}
+			updateFieldHandler={updateFieldHandler}
+		/>,
 		<InhabitantForm
 			apartmentNumber={apartment?.number}
 			objectArray={inhabitants}
@@ -84,15 +79,6 @@ export default function ApartmentRegistration() {
 		<VehicleForm />,
 		<ProfileForm />,
 	];
-	const stepsCallback = {};
-	stepsCallback[steps[0]] = async (current, next) => {
-		try {
-			await fetchApartment();
-			return true;
-		} catch (_) {
-			return false;
-		}
-	};
 
 	return (
 		<Forms.Page
