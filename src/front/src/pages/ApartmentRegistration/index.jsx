@@ -68,6 +68,11 @@ export default function ApartmentRegistration() {
 		});
 	}
 
+	// TODO finish this method
+	function register(data) {
+		
+	}
+
 	const steps = [
 		<TokenForm
 			setData={setData}
@@ -113,6 +118,7 @@ export default function ApartmentRegistration() {
 				),
 			]}
 			imageSource={"/condominium-registration.png"}
+			callbak={() => register(data)}
 		/>
 	);
 }
