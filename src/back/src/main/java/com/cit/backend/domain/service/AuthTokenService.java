@@ -14,7 +14,7 @@ public class AuthTokenService extends JWTService {
     public String generateToken(Profile profile) {
         HashMap<String, Object> payload = new HashMap<>();
         List<String> permissions = profile.getPermissions().stream().map(permission ->
-                permission.getPermission().toString()
+                permission.name().replace("ROLE_", "")
         ).toList();
         payload.put("permissions", permissions);
         return buildToken(profile.getEmail(), true, payload);
