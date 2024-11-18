@@ -63,7 +63,7 @@ export default function ApartmentRegistration() {
 				current = dataCopy;
 
 			while (current[pathParts[i]] instanceof Object)
-				current = dataCopy[pathParts[++i]];
+				current = current[pathParts[i++]];
 
 			current[pathParts[i]] = value;
 
