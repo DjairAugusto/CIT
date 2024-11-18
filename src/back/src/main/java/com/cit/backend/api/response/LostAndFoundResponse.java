@@ -16,6 +16,7 @@ import java.time.LocalDate;
 @Getter
 @AllArgsConstructor
 public class LostAndFoundResponse {
+    private Long id;
     private String name;
     private LocalDate arrival;
     private LocalDate departure;
