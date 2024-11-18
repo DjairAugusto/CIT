@@ -48,7 +48,8 @@ export default function InhabitantForm({ apartmentNumber, objectArray }) {
 								value={inhabitant.name}
 								required
 							/>
-							<Forms.InputText
+							<Forms.InputMask
+								mask="999.999.999-99"
 								placeholder="CPF"
 								onChange={(e) =>
 									modifyInhabitant(inhabitant.id, [

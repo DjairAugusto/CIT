@@ -76,8 +76,14 @@ export default function ApartmentRegistration() {
 			apartmentNumber={data.apartment?.number}
 			objectArray={inhabitants}
 		/>,
-		<VehicleForm />,
-		<ProfileForm />,
+		<VehicleForm
+			apartmentNumber={data.apartment?.number}
+			objectArray={vehicles}
+		/>,
+		<ProfileForm
+			apartmentNumber={data.apartment?.number}
+			objectArray={profiles}
+		/>,
 	];
 
 	return (
