@@ -50,9 +50,12 @@ export default function ApartmentRegistration() {
 	}, [setData, inhabitants.array, vehicles.array, profiles.array]);
 
 	async function fetchApartment() {
-		if (!data.token.match("^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}")) return false;
+		if (!data.token.match("^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}")) throw new Error("Invalid token");
 
-		return await axios.get(`/apartment/by-token/${data.token}`);
+		const res = await axios.get(`/apartment/by-token/${data.token}`);
+		if (res.data === undefined) throw new Error("Failed to fetch Apartment with that token");
+
+		setApartment(res.data);
 	}
 
 	function updateFieldHandler(path, value) {
@@ -83,10 +86,7 @@ export default function ApartmentRegistration() {
 	const stepsCallback = {};
 	stepsCallback[steps[0]] = async (current, next) => {
 		try {
-			const res = await fetchApartment();
-			if (res.data === undefined) return false;
-
-			setApartment(res.data);
+			await fetchApartment();
 			return true;
 		} catch (_) {
 			return false;
