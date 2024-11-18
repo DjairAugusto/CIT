@@ -5,7 +5,9 @@ import ProfileForm from "./ProfileForm";
 import { Forms } from "../../components/Forms";
 import TokenForm from "./TokenForm";
 import useObjectArray from "../../hooks/useObjectArray";
-import { nonAuthorizedInstance as axios } from "../../utils/requisition/citRequisition";
+import validateCPF from "../../utils/validCpf";
+import validateCarPlate from "../../utils/validateCarPlate";
+import validateEmail from "../../utils/validateEmail";
 
 const formsTemplate = {
 	token: "",
@@ -89,8 +91,27 @@ export default function ApartmentRegistration() {
 	return (
 		<Forms.Page
 			steps={steps}
-			stepsCallback={stepsCallback}
-			validations={[true]}
+			validations={[
+				data.apartment,
+				data.inhabitants?.every(
+					(inhabitant) =>
+						validateCPF(inhabitant.cpf) &&
+						inhabitant.name.length >= 3
+				),
+				!data.vehicles ||
+					data.vehicles.every(
+						(vehicle) =>
+							vehicle.type !== "" &&
+							vehicle.model.length >= 3 &&
+							vehicle.color.length >= 3 &&
+							validateCarPlate(vehicle.plate)
+					),
+				data.profiles?.every(
+					(profile) =>
+						validateEmail(profile.email) &&
+						profile.password.length >= 8
+				),
+			]}
 			imageSource={"/condominium-registration.png"}
 		/>
 	);
