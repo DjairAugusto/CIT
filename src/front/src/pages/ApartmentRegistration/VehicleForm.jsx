@@ -4,15 +4,15 @@ import { Forms } from "../../components/Forms";
 
 const vehicleOptions = [
 	{
-		value: "car",
+		value: "CAR",
 		text: "CARRO",
 	},
 	{
-		value: "motocycle",
+		value: "MOTOCYCLE",
 		text: "MOTO",
 	},
 	{
-		value: "other",
+		value: "OTHER",
 		text: "OUTRO",
 	},
 ];
