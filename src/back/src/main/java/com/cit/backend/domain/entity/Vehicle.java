@@ -31,6 +31,7 @@ public class Vehicle {
     private String brand;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private TypeVehicle type;
 
     @ManyToOne
