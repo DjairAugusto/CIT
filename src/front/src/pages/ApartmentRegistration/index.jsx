@@ -40,6 +40,7 @@ export default function ApartmentRegistration() {
 
 	const profiles = useObjectArray({
 		entries: ["email", "password"],
+		oneNeeded: true,
 	});
 
 	useEffect(() => {
