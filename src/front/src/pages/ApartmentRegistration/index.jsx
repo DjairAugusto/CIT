@@ -3,14 +3,12 @@ import InhabitantForm from "./InhabitantForm";
 import VehicleForm from "./VehicleForm";
 import ProfileForm from "./ProfileForm";
 import { Forms } from "../../components/Forms";
-import TokenForm from "./TokenForm";
 import useObjectArray from "../../hooks/useObjectArray";
 import validateCPF from "../../utils/validCpf";
 import validateCarPlate from "../../utils/validateCarPlate";
 import validateEmail from "../../utils/validateEmail";
 
 const formsTemplate = {
-	token: "",
 	apartment: null,
 	inhabitants: null,
 	vehicles: null,
@@ -74,11 +72,6 @@ export default function ApartmentRegistration() {
 	}
 
 	const steps = [
-		<TokenForm
-			setData={setData}
-			token={data.token}
-			updateFieldHandler={updateFieldHandler}
-		/>,
 		<InhabitantForm
 			apartmentNumber={data.apartment?.number}
 			objectArray={inhabitants}
