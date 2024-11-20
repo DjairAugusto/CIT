@@ -38,7 +38,7 @@ public class Apartment {
     @OneToMany(mappedBy = "apartment")
     private Set<Visitant> visits;
 
-    @OneToMany
+    @OneToMany(mappedBy = "apartment")
     private Set<Resident> residents;
 
     @OneToMany(mappedBy = "apartment")
