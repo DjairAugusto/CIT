@@ -8,6 +8,7 @@ import useObjectArray from "../../hooks/useObjectArray";
 import validateCPF from "../../utils/validCpf";
 import validateCarPlate from "../../utils/validateCarPlate";
 import validateEmail from "../../utils/validateEmail";
+import { nonAuthorizedInstance as axios } from "../../utils/requisition/citRequisition";
 import Loading from "../../components/Loading";
 
 const formsTemplate = {
@@ -89,9 +90,15 @@ export default function ApartmentRegistration() {
 
 	if (isLoading) return <Loading />;
 
-	// TODO finish this method
+	// TODO make this method catch erros and display to the user
 	function register(data) {
-		
+		axios
+			.post(`/apartment/register/${token}`, {
+				residents: data.inhabitants,
+				vehicles: data.vehicles,
+			})
+			.then((res) => navigate("/login"))
+			.catch((err) => {});
 	}
 
 	const steps = [
