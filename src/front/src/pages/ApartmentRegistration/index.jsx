@@ -45,6 +45,11 @@ export default function ApartmentRegistration() {
 
 	useEffect(() => {
 		profiles.setMaxLength(inhabitants.array.length);
+		inhabitants.array.forEach((inhabitant) => {
+			if (inhabitant.profile === "") {
+				inhabitants.modifyOne(inhabitant.id, ["profile", undefined]);
+			}
+		});
 	}, [profiles, inhabitants]);
 
 	useEffect(() => {
