@@ -30,7 +30,7 @@ export default function ApartmentRegistration() {
 	const navigate = useNavigate();
 
 	const inhabitants = useObjectArray({
-		entries: ["name", "cpf", "phone", "email"],
+		entries: ["name", "cpf", "phone", "email", "profile"],
 		oneNeeded: true,
 	});
 
@@ -113,6 +113,7 @@ export default function ApartmentRegistration() {
 		<ProfileForm
 			apartmentNumber={data.apartment?.number}
 			objectArray={profiles}
+			inhabitantsObjectArray={inhabitants}
 		/>,
 	];
 
@@ -120,12 +121,18 @@ export default function ApartmentRegistration() {
 		<Forms.Page
 			steps={steps}
 			validations={[
-				data.apartment,
-				data.inhabitants?.every(
-					(inhabitant) =>
-						validateCPF(inhabitant.cpf) &&
-						inhabitant.name.length >= 3
-				),
+				(() => {
+					const allCPFs = data.inhabitants.map(
+						(inhabitant) => inhabitant.cpf
+					);
+					return (
+						data.inhabitants?.every(
+							(inhabitant) =>
+								validateCPF(inhabitant.cpf) &&
+								inhabitant.name.length >= 3
+						) && new Set(allCPFs).size === allCPFs.length
+					);
+				})(),
 				!data.vehicles ||
 					data.vehicles.every(
 						(vehicle) =>
@@ -137,7 +144,10 @@ export default function ApartmentRegistration() {
 				data.profiles?.every(
 					(profile) =>
 						validateEmail(profile.email) &&
-						profile.password.length >= 8
+						profile.password.length >= 8 &&
+						inhabitants.array.find(
+							(inhabitant) => inhabitant.profile === profile
+						)
 				),
 			]}
 			imageSource={"/condominium-registration.png"}
