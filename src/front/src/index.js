@@ -69,7 +69,7 @@ const router = createBrowserRouter([
 				element: <CondominiumRegistration />,
 			},
 			{
-				path: "/register/apartment",
+				path: "/register/apartment/:token",
 				element: <ApartmentRegistration />,
 			},
 			{

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import InhabitantForm from "./InhabitantForm";
 import VehicleForm from "./VehicleForm";
 import ProfileForm from "./ProfileForm";
@@ -7,6 +8,7 @@ import useObjectArray from "../../hooks/useObjectArray";
 import validateCPF from "../../utils/validCpf";
 import validateCarPlate from "../../utils/validateCarPlate";
 import validateEmail from "../../utils/validateEmail";
+import Loading from "../../components/Loading";
 
 const formsTemplate = {
 	apartment: null,
@@ -22,6 +24,9 @@ const formsTemplate = {
 // TODO fazer as validações do Forms.Page
 export default function ApartmentRegistration() {
 	const [data, setData] = useState(formsTemplate);
+	const [isLoading, setIsLoading] = useState(true);
+	const { token } = useParams();
+	const navigate = useNavigate();
 
 	const inhabitants = useObjectArray({
 		entries: ["name", "cpf", "phone", "email"],
@@ -65,6 +70,24 @@ export default function ApartmentRegistration() {
 			return dataCopy;
 		});
 	}
+
+	useEffect(() => {
+		if (token === undefined) navigate("/home");
+		else
+			axios
+				.get(`/apartment/by-token/${token}`)
+				.then((res) => {
+					if (res.data) {
+						updateFieldHandler("apartment", res.data);
+						setIsLoading(false);
+					}
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+	}, [token, navigate, setData]);
+
+	if (isLoading) return <Loading />;
 
 	// TODO finish this method
 	function register(data) {
