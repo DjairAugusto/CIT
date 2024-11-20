@@ -58,6 +58,17 @@ export default function VehicleForm({ apartmentNumber, objectArray }) {
 								required={true}
 							/>
 							<Forms.InputText
+								placeholder="MARCA"
+								onChange={(e) =>
+									modifyVehicle(vehicle.id, [
+										"brand",
+										e.target.value,
+									])
+								}
+								value={vehicle.brand}
+								required
+							/>
+							<Forms.InputText
 								placeholder="MODELO"
 								onChange={(e) =>
 									modifyVehicle(vehicle.id, [

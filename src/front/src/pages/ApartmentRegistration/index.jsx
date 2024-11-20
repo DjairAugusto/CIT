@@ -29,7 +29,7 @@ export default function ApartmentRegistration() {
 	});
 
 	const vehicles = useObjectArray({
-		entries: ["type", "model", "color", "plate"],
+		entries: ["type", "brand", "model", "color", "plate"],
 	});
 
 	const profiles = useObjectArray({
