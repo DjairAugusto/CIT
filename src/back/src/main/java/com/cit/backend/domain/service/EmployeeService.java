@@ -47,4 +47,8 @@ public class EmployeeService {
     public Employee update(Employee employee) {
         return employeeRepository.save(employee);
     }
+
+    public Employee findByProfile(Profile profile) {
+        return employeeRepository.findByProfile(profile).orElse(null);
+    }
 }

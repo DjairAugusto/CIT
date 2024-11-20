@@ -4,15 +4,14 @@ export const DeliveryContext = createContext();
 
 export const DeliveryProvider = ({ children }) => {
   const [deliveries, setDeliveries] = useState(() => {
-    // Carregar as entregas do localStorage ou um array vazio se não houver dados
     const storedDeliveries = localStorage.getItem("deliveries");
     return storedDeliveries ? JSON.parse(storedDeliveries) : [];
   });
 
   useEffect(() => {
-    // Sempre que 'deliveries' mudar, atualizar o localStorage
+    // Sempre que 'deliveries' mudar, vamos salvar no localStorage
     localStorage.setItem("deliveries", JSON.stringify(deliveries));
-  }, [deliveries]); // Depende de 'deliveries', ou seja, sempre que mudar, salva no localStorage
+  }, [deliveries]);
 
   return (
     <DeliveryContext.Provider value={{ deliveries, setDeliveries }}>
