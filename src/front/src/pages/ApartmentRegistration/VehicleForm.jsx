@@ -45,6 +45,7 @@ export default function VehicleForm({ apartmentNumber, objectArray }) {
 					>
 						<div className="flex gap-4 flex-col">
 							<Forms.Select
+								defaultOption="Escolha o tipo do Veículo"
 								placeholder="TIPO"
 								onChange={(e) =>
 									modifyVehicle(vehicle.id, [
