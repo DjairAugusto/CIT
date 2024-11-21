@@ -3,6 +3,7 @@ package com.cit.backend.domain.service;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.cit.backend.api.validator.JWTToken;
 import com.cit.backend.domain.entity.Profile;
+import com.cit.backend.exceptions.UserDoesNotExistsException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -38,5 +39,11 @@ public class AuthTokenService extends JWTService {
 
     public boolean doesUserExists(@Valid @JWTToken String token) {
         return profileService.loadUserByUsername(getSubject(token)) != null;
+    }
+
+    public Set<String> getRoles(@Valid @JWTToken String token) {
+        Profile profile = (Profile) profileService.loadUserByUsername(getSubject(token));
+        if (profile == null) throw new UserDoesNotExistsException("The user for this token does not exists");
+        return new HashSet<>(parseAuthorities(profile));
     }
 }
