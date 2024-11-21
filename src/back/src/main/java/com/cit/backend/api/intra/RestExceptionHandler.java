@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.cit.backend.exceptions.InvalidTokenException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -67,6 +68,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<RestErrorMessage> handlerInternalAuthenticationServiceException(InternalAuthenticationServiceException exception) {
         HttpStatus status = HttpStatus.UNAUTHORIZED;
         RestErrorMessage message = new RestErrorMessage(status, "Invalid credentials");
+        return ResponseEntity.status(status).body(message);
+    }
+
+    @ExceptionHandler(InvalidTokenException.class)
+    public ResponseEntity<RestErrorMessage> handlerInvalidTokenException(InvalidTokenException exception) {
+        HttpStatus status = HttpStatus.UNAUTHORIZED;
+        RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
         return ResponseEntity.status(status).body(message);
     }
 
