@@ -42,7 +42,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/auth/**", "/employee/admin", "/condominium", "/apartment/register/*").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/generator", "/apartment/by-token/*").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/auth/**", "/generator", "/apartment/by-token/*").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
