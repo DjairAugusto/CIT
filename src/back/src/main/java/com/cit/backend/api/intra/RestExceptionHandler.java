@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.cit.backend.exceptions.InvalidTokenException;
 import com.cit.backend.exceptions.UserDoesNotExistsException;
+import com.cit.backend.exceptions.InvalidApartmentTokenException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -82,6 +83,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(InvalidTokenException.class)
     public ResponseEntity<RestErrorMessage> handlerInvalidTokenException(InvalidTokenException exception) {
         HttpStatus status = HttpStatus.UNAUTHORIZED;
+        RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
+        return ResponseEntity.status(status).body(message);
+    }
+
+    @ExceptionHandler(InvalidApartmentTokenException.class)
+    public ResponseEntity<RestErrorMessage> handlerInvalidRequestException(InvalidApartmentTokenException exception) {
+        HttpStatus status = HttpStatus.BAD_REQUEST;
         RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
         return ResponseEntity.status(status).body(message);
     }

@@ -1,5 +1,6 @@
 package com.cit.backend.api.request;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +12,8 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class ProfileRequest {
-    @NotBlank(message = "Name is mandatory")
+    @NotBlank(message = "Email is mandatory")
+    @Email
     private String email;
 
     @NotBlank(message = "Password is mandatory")

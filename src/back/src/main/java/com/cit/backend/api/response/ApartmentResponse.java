@@ -19,9 +19,9 @@ public class ApartmentResponse {
     private Long unitId;
     private Set<Warning> warnings;
     private Set<Visitant> visitants;
-    private Set<People> residents;
+    private Set<ResidentResponse> residents;
     private Set<Deliveries> deliveries;
-    private Set<Vehicle> vehicles;
+    private Set<VehicleResponse> vehicles;
     private Set<Billet> billets;
     private Set<Ticket> tickets;
 }

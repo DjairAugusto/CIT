@@ -3,45 +3,19 @@ import React, { createContext, useState, useEffect } from "react";
 export const DeliveryContext = createContext();
 
 export const DeliveryProvider = ({ children }) => {
-  const [deliveries, setDeliveries] = useState([]);
+  const [deliveries, setDeliveries] = useState(() => {
+    // Carregar as entregas do localStorage ou um array vazio se não houver dados
+    const storedDeliveries = localStorage.getItem("deliveries");
+    return storedDeliveries ? JSON.parse(storedDeliveries) : [];
+  });
 
   useEffect(() => {
-    const fetchDeliveries = async () => {
-      const mockDeliveries = [
-        {
-          date: "10/11/2024",
-          time: "12:30",
-          recipient: "João Silva",
-        },
-        {
-          date: "09/11/2024",
-          time: "15:45",
-          recipient: "Maria Oliveira",
-        },
-        {
-          date: "08/11/2024",
-          time: "09:20",
-          recipient: "Ana Santos",
-        },
-        {
-          date: "07/11/2024",
-          time: "17:10",
-          recipient: "Carlos Souza",
-        },
-        {
-          date: "06/11/2024",
-          time: "11:05",
-          recipient: "Luiza Costa",
-        },
-      ];
-      setDeliveries(mockDeliveries);
-    };
-
-    fetchDeliveries();
-  }, []);
+    // Sempre que 'deliveries' mudar, atualizar o localStorage
+    localStorage.setItem("deliveries", JSON.stringify(deliveries));
+  }, [deliveries]); // Depende de 'deliveries', ou seja, sempre que mudar, salva no localStorage
 
   return (
-    <DeliveryContext.Provider value={{ deliveries }}>
+    <DeliveryContext.Provider value={{ deliveries, setDeliveries }}>
       {children}
     </DeliveryContext.Provider>
   );

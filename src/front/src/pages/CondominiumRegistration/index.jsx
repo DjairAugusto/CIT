@@ -7,9 +7,10 @@ import validCnpj from "../../utils/validCnpj";
 import validCpf from "../../utils/validCpf";
 import validateEmail from "../../utils/validateEmail";
 import validateZipCode from "../../utils/validateZipCode";
-import axios from "../../utils/requisition/citRequisition"
+import {nonAuthorizedInstance as axios} from "../../utils/requisition/citRequisition"
 import { useNavigate } from 'react-router-dom';
 
+// TODO avaliar forma de utilizar vetores de dados, tipo vários carros ou perfis
 const formsTemplate = {
     condominium: {
         name: "",

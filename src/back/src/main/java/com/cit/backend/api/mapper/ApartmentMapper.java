@@ -16,12 +16,25 @@ public class ApartmentMapper {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private VehicleMapper vehicleMapper;
+
+    @Autowired
+    private ResidentMapper residentMapper;
+
     public Apartment toApartment(@Valid ApartmentRequest request) {
-        return modelMapper.map(request, Apartment.class);
+        Apartment apartment = modelMapper.map(request, Apartment.class);
+        apartment.setResidents(residentMapper.toResident(request.getResidents()));
+        apartment.setVehicles(vehicleMapper.toVehicle(request.getVehicles()));
+        System.out.println(apartment.getVehicles().size());
+        return apartment;
     }
 
     public ApartmentResponse toApartmentResponse(Apartment apartment) {
-        return modelMapper.map(apartment, ApartmentResponse.class);
+        ApartmentResponse response = modelMapper.map(apartment, ApartmentResponse.class);
+        response.setResidents(residentMapper.toResidentResponse(apartment.getResidents()));
+        response.setVehicles(vehicleMapper.toVehicleResponse(apartment.getVehicles()));
+        return response;
     }
 
     public List<ApartmentResponse> toApartmentResponseList(List<Apartment> apartments) {

@@ -19,7 +19,7 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    private ProfileService profileService;
 
     public Employee save(Employee employee) {
         return employeeRepository.save(employee);
@@ -31,8 +31,8 @@ public class EmployeeService {
         }
 
         Profile profile = employee.getProfile();
-        profile.setPassword(passwordEncoder.encode(employee.getProfile().getPassword()));
         profile.setPermissions(Set.of(ProfilePermissions.ROLE_ADMIN));
+        profileService.save(profile);
         return employeeRepository.save(employee);
     }
 
@@ -46,5 +46,9 @@ public class EmployeeService {
 
     public Employee update(Employee employee) {
         return employeeRepository.save(employee);
+    }
+
+    public Employee findByProfile(Profile profile) {
+        return employeeRepository.findByProfile(profile).orElse(null);
     }
 }

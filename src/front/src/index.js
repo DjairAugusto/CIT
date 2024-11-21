@@ -28,6 +28,7 @@ import CommonAreaList from "./pages/CommonArea/List";
 import CommonAreaDetails from "./pages/CommonArea/Details";
 import CommonAreaEdit from "./pages/CommonArea/Edit";
 import ShipsOrders from "./pages/ShipsOrders";
+import ShipsOrdersAdm from "./pages/ShipsOrdersAdm";
 import LostFound from "./pages/LostFound/LostFound";
 import LostFoundList from "./pages/LostFound/Details";
 
@@ -69,7 +70,7 @@ const router = createBrowserRouter([
 				element: <CondominiumRegistration />,
 			},
 			{
-				path: "/register/apartment",
+				path: "/register/apartment/:token",
 				element: <ApartmentRegistration />,
 			},
 			{
@@ -87,7 +88,7 @@ const router = createBrowserRouter([
 		element: <ContactResident />,
 	},
 	{
-		path: "/login",
+		path: "/signup",
 		element: <Login />,
 	},
 	{
@@ -135,6 +136,10 @@ const router = createBrowserRouter([
 	{
 		path: "/ships",
 		element: <ShipsOrders />,
+	},
+	{
+		path: "/shipsadm",
+		element: <ShipsOrdersAdm />,
 	},
 ]);
 
