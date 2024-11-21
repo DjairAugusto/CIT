@@ -4,6 +4,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.cit.backend.api.validator.JWTToken;
 import com.cit.backend.domain.entity.Profile;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,9 @@ import java.util.*;
 
 @Service
 public class AuthTokenService extends JWTService {
+    @Autowired
+    private ProfileService profileService;
+
     private List<String> parseAuthorities(Profile profile) {
         return profile.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList();
     }
@@ -30,5 +34,9 @@ public class AuthTokenService extends JWTService {
 
     public boolean isTokenValid(@Valid @JWTToken String token, Profile profile) {
         return isTokenValid(token, profile.getEmail());
+    }
+
+    public boolean doesUserExists(@Valid @JWTToken String token) {
+        return profileService.loadUserByUsername(getSubject(token)) != null;
     }
 }
