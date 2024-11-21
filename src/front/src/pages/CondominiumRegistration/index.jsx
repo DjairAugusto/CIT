@@ -10,6 +10,7 @@ import validateZipCode from "../../utils/validateZipCode";
 import {nonAuthorizedInstance as axios} from "../../utils/requisition/citRequisition"
 import { useNavigate } from 'react-router-dom';
 
+// TODO avaliar forma de utilizar vetores de dados, tipo vários carros ou perfis
 const formsTemplate = {
     condominium: {
         name: "",

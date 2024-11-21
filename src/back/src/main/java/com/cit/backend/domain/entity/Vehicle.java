@@ -2,15 +2,23 @@ package com.cit.backend.domain.entity;
 
 import com.cit.backend.domain.entity.enums.TypeVehicle;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name = "vehicles")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 7, nullable = false)
+    @Column(length = 7, nullable = false, unique = true)
     private String plate;
 
     @Column(length = 80, nullable = false)
@@ -23,6 +31,7 @@ public class Vehicle {
     private String brand;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private TypeVehicle type;
 
     @ManyToOne

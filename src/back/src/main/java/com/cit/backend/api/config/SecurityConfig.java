@@ -41,10 +41,8 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST,"/auth/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/employee/admin").permitAll()
-                        .requestMatchers(HttpMethod.POST,"/condominium").permitAll()
-                        .requestMatchers(HttpMethod.GET,"/generator").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/auth/**", "/employee/admin", "/condominium", "/apartment/register/*").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/generator", "/apartment/by-token/*").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())

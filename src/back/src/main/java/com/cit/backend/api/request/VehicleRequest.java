@@ -1,5 +1,8 @@
 package com.cit.backend.api.request;
 
+import com.cit.backend.domain.entity.enums.TypeVehicle;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -13,10 +16,14 @@ import lombok.Setter;
 @AllArgsConstructor
 public class VehicleRequest {
     @NotBlank(message = "Type is mandatory")
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TypeVehicle type;
 
     @NotBlank(message = "Model is mandatory")
     private String model;
+
+    @NotBlank(message = "Brand is mandatory")
+    private String brand;
 
     @NotBlank(message = "Color is mandatory")
     private String color;
