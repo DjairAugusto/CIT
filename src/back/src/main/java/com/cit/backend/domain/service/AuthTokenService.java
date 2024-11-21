@@ -4,18 +4,20 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.cit.backend.api.validator.JWTToken;
 import com.cit.backend.domain.entity.Profile;
 import jakarta.validation.Valid;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class AuthTokenService extends JWTService {
+    private List<String> parseAuthorities(Profile profile) {
+        return profile.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList();
+    }
+
     public String generateToken(Profile profile) {
         HashMap<String, Object> payload = new HashMap<>();
-        List<String> permissions = profile.getPermissions().stream().map(permission ->
-                permission.name().replace("ROLE_", "")
-        ).toList();
+        List<String> permissions = parseAuthorities(profile);
         payload.put("permissions", permissions);
         return buildToken(profile.getEmail(), true, payload);
     }
