@@ -99,7 +99,7 @@ export default function Login() {
 	return (
 		<Forms.Page
 			steps={steps}
-			imageSource="/condominium-registration.png"
+			imageSource="/prediologin.png"
 			validations={[[true]]}
 			callbak={() => register(data)}
 		/>

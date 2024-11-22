@@ -31,6 +31,7 @@ import ShipsOrders from "./pages/ShipsOrders";
 import ShipsOrdersAdm from "./pages/ShipsOrdersAdm";
 import LostFound from "./pages/LostFound/LostFound";
 import LostFoundList from "./pages/LostFound/Details";
+import HowWeWork from "./pages/HowWeWork";
 
 const router = createBrowserRouter([
 	{
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
 			{
 				path: "/contacts",
 				element: <Contacts />,
+			},
+			{
+				path: "/howwework",
+				element: <HowWeWork />,
 			},
 		],
 	},
