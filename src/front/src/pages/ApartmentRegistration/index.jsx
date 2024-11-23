@@ -10,6 +10,7 @@ import validateCarPlate from "../../utils/validateCarPlate";
 import validateEmail from "../../utils/validateEmail";
 import { nonAuthorizedInstance as axios } from "../../utils/requisition/citRequisition";
 import Loading from "../../components/Loading";
+import PopUP from "../../components/PopUP";
 
 const formsTemplate = {
 	apartment: null,
@@ -18,14 +19,16 @@ const formsTemplate = {
 	profiles: null,
 };
 
-// TODO tratar os erros corretamente
-// TODO mudar o fetchApartment para o TokenForm
-// TODO utilizar o token para carregar os dados do Apartamento durante o registro
-// TODO fazer integraçao do registro de Apartamento com o back
 // TODO fazer as validações do Forms.Page
 export default function ApartmentRegistration() {
 	const [data, setData] = useState(formsTemplate);
 	const [isLoading, setIsLoading] = useState(true);
+	// use closeCallback as undefined to hide close button
+	const [popUP, setPopUP] = useState({
+		title: null,
+		message: null,
+		closeCallback: () => {},
+	});
 	const { token } = useParams();
 	const navigate = useNavigate();
 
@@ -62,6 +65,14 @@ export default function ApartmentRegistration() {
 		);
 	}, [setData, inhabitants.array, vehicles.array, profiles.array]);
 
+	function updatePopUP(title, message, closeCallback) {
+		setPopUP({
+			title,
+			message,
+			closeCallback,
+		});
+	}
+
 	function updateFieldHandler(path, value) {
 		setData((prevData) => {
 			const dataCopy = { ...prevData };
@@ -90,11 +101,37 @@ export default function ApartmentRegistration() {
 					}
 				})
 				.catch((err) => {
-					console.log(err);
+					switch (err.response.status) {
+						case 404:
+							updatePopUP(
+								"Apartamento não encontrado",
+								"O link providenciado não encontrou nenhum apartamento, verifique com o sindico o token do apartamento"
+							);
+							break;
+						default:
+							updatePopUP(
+								"Erro inesperado",
+								"contate o Sindico para obter suporte."
+							);
+							break;
+					}
 				});
 	}, [token, navigate, setData]);
 
-	if (isLoading) return <Loading />;
+	if (isLoading) {
+		if (popUP.message)
+			return (
+				<PopUP
+					title={popUP.title}
+					message={popUP.message}
+					closeCallback={() => {
+						if (popUP.closeCallback) popUP.closeCallback();
+						else navigate("/");
+					}}
+				/>
+			);
+		return <Loading />;
+	}
 
 	// TODO make this method catch erros and display to the user
 	function register(data) {
@@ -103,8 +140,34 @@ export default function ApartmentRegistration() {
 				residents: data.inhabitants,
 				vehicles: data.vehicles,
 			})
-			.then((res) => navigate("/login"))
-			.catch((err) => {});
+			.then((res) => {
+				updatePopUP(
+					"Cadastro Realizado com Sucesso",
+					"Redirecionando em 5 segundos",
+					null
+				);
+				setTimeout(() => navigate("/signin"), 5000);
+			})
+			.catch((err) => {
+				console.log(err);
+				switch (err.response.status) {
+					case 409:
+						updatePopUP(
+							"Cadastro Já Feito",
+							"Conflito de valores duplicados: " +
+								err.response.data.message,
+							() => {
+								updatePopUP();
+							}
+						);
+						break;
+					default:
+						updatePopUP(
+							"Erro desconhecido, contate o Sindico para assistência"
+						);
+						break;
+				}
+			});
 	}
 
 	const steps = [
@@ -124,40 +187,53 @@ export default function ApartmentRegistration() {
 	];
 
 	return (
-		<Forms.Page
-			steps={steps}
-			validations={[
-				(() => {
-					const allCPFs = data.inhabitants.map(
-						(inhabitant) => inhabitant.cpf
-					);
-					return (
-						data.inhabitants?.every(
-							(inhabitant) =>
-								validateCPF(inhabitant.cpf) &&
-								inhabitant.name.length >= 3
-						) && new Set(allCPFs).size === allCPFs.length
-					);
-				})(),
-				!data.vehicles ||
-					data.vehicles.every(
-						(vehicle) =>
-							vehicle.type !== "" &&
-							vehicle.model.length >= 3 &&
-							vehicle.color.length >= 3 &&
-							validateCarPlate(vehicle.plate)
+		<>
+			{popUP.message && (
+				<PopUP
+					title={popUP.title}
+					message={popUP.message}
+					closeCallback={
+						popUP.closeCallback === undefined
+							? () => navigate("/")
+							: popUP.closeCallback
+					}
+				/>
+			)}
+			<Forms.Page
+				steps={steps}
+				validations={[
+					(() => {
+						const allCPFs = data.inhabitants.map(
+							(inhabitant) => inhabitant.cpf
+						);
+						return (
+							data.inhabitants?.every(
+								(inhabitant) =>
+									validateCPF(inhabitant.cpf) &&
+									inhabitant.name.length >= 3
+							) && new Set(allCPFs).size === allCPFs.length
+						);
+					})(),
+					!data.vehicles ||
+						data.vehicles.every(
+							(vehicle) =>
+								vehicle.type !== "" &&
+								vehicle.model.length >= 3 &&
+								vehicle.color.length >= 3 &&
+								validateCarPlate(vehicle.plate)
+						),
+					data.profiles?.every(
+						(profile) =>
+							validateEmail(profile.email) &&
+							profile.password.length >= 8 &&
+							inhabitants.array.find(
+								(inhabitant) => inhabitant.profile === profile
+							)
 					),
-				data.profiles?.every(
-					(profile) =>
-						validateEmail(profile.email) &&
-						profile.password.length >= 8 &&
-						inhabitants.array.find(
-							(inhabitant) => inhabitant.profile === profile
-						)
-				),
-			]}
-			imageSource={"/condominium-registration.png"}
-			callbak={() => register(data)}
-		/>
+				]}
+				imageSource={"/condominium-registration.png"}
+				callbak={() => register(data)}
+			/>
+		</>
 	);
 }
