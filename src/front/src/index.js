@@ -93,7 +93,7 @@ const router = createBrowserRouter([
 		element: <ContactResident />,
 	},
 	{
-		path: "/signup",
+		path: "/signin",
 		element: <Login />,
 	},
 	{

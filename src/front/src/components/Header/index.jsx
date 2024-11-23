@@ -12,7 +12,7 @@ export default function Header() {
 			/>
 			<nav className="flex gap-4">
 				<Link to="/">Home</Link>
-				<Link to="/signup">Login</Link>
+				<Link to="/signin">Login</Link>
 				<Link to="/register/condominium">Cadastre-se</Link>
 				<Ancor href="/#about">Sobre Nós</Ancor>
 				<Link to="/howwework">Como Funciona</Link>
