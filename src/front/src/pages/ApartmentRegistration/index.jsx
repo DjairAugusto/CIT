@@ -232,7 +232,7 @@ export default function ApartmentRegistration() {
 					),
 				]}
 				imageSource={"/condominium-registration.png"}
-				callbak={() => register(data)}
+				callback={() => register(data)}
 			/>
 		</>
 	);

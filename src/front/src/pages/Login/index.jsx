@@ -101,7 +101,7 @@ export default function Login() {
 			steps={steps}
 			imageSource="/prediologin.png"
 			validations={[[true]]}
-			callbak={() => register(data)}
+			callback={() => register(data)}
 		/>
 	);
 }

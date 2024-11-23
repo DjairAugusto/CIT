@@ -183,7 +183,7 @@ export default function CondominiumRegistration() {
                 Object.keys(validateCondominiumForm()).length === 0,
                 Object.keys(validateAdminForm()).length === 0,
             ]}
-            callbak={() => register(data)}
+            callback={() => register(data)}
         />
     );
 }
