@@ -3,7 +3,7 @@ import isAdmin from "../../utils/roles/isAdmin";
 import FormsInputText from "../../components/Forms/FormsInputText"
 
 export default function Details() {
-	const admin = true;
+	const admin = false;
 	const [status, setStatus] = useState("");
   	const [resposta, setResposta] = useState("");
 
@@ -13,10 +13,10 @@ export default function Details() {
 			<h1 className="text-xl font-semibold mb-2 text-center">Detalhes</h1>
 			<hr className="mb-4" />
 			
-			<h2 className="font-semibold">Ticket - TÍTULO</h2>
-			<p>Tipo: TYPE</p>
-			<p>Situação: STATUS</p>
-			<p>Descrição: Lorem ipsum</p>
+			<h2 className="flex justify-between items-center mb-2 font-semibold">Ticket - TÍTULO</h2>
+			<p className="flex justify-between items-center mb-4">Tipo: TYPE</p>
+			<p className="flex justify-between items-center mb-4">Situação: STATUS</p>
+			<p className="flex justify-between items-center mb-4">Descrição: Lorem ipsum</p>
 			
 			<strong>*Arquivo*:</strong> <a href="#" className="text-[#42D0B3] hover:underline">Baixar</a>
 	
