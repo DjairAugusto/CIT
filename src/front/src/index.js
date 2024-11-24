@@ -32,7 +32,6 @@ import ShipsOrdersAdm from "./pages/ShipsOrdersAdm";
 import LostFound from "./pages/LostFound/LostFound";
 import LostFoundList from "./pages/LostFound/Details";
 import HowWeWork from "./pages/HowWeWork";
-import OmbudsmanPage from "./pages/Ombudsman";
 import OmbudsmanList from "./pages/Ombudsman/List";
 import OmbudsmanDetails from "./pages/Ombudsman/Details";
 
