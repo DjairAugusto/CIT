@@ -1,7 +1,7 @@
 import React from "react";
 import { X } from "lucide-react";
 
-export default function PopUP({ title, message, closeCallback }) {
+export default function PopUP({ title, message, closeCallback, children }) {
 	return (
 		<div className="z-10 absolute top-0 left-0 w-dvw h-dvh flex items-center justify-center px-4 md:px-0">
 			<div className="absolute top-0 left-0 bg-black opacity-20 w-full h-full"></div>
@@ -18,6 +18,7 @@ export default function PopUP({ title, message, closeCallback }) {
 					)}
 				</div>
 				<div className="pt-4 pb-2">{message}</div>
+				{children}
 			</div>
 		</div>
 	);
