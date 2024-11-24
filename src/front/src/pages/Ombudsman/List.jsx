@@ -31,7 +31,7 @@ export default function OmbudsmanList() {
 					</div>
 					<button
 						onClick={() => setIsCreating(true)}
-						className="rounded-lg bg-primary-1000 w-full gap-1 py-6 items-center justify-center text-white text-2xl flex"
+						className="rounded-lg bg-primary-1000 w-full gap-1 py-4 items-center justify-center text-white text-xl flex"
 					>
 						<Plus size={24} />
 						Novo Ticket
