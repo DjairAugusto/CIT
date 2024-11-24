@@ -32,6 +32,9 @@ import ShipsOrdersAdm from "./pages/ShipsOrdersAdm";
 import LostFound from "./pages/LostFound/LostFound";
 import LostFoundList from "./pages/LostFound/Details";
 import HowWeWork from "./pages/HowWeWork";
+import OmbudsmanPage from "./pages/Ombudsman";
+import OmbudsmanList from "./pages/Ombudsman/List";
+import OmbudsmanDetails from "./pages/Ombudsman/Details";
 
 const router = createBrowserRouter([
 	{
@@ -130,7 +133,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				element: <LostFound />,
-				index: true
+				index: true,
 			},
 			{
 				path: "/lost-found/Details",
@@ -145,6 +148,19 @@ const router = createBrowserRouter([
 	{
 		path: "/shipsadm",
 		element: <ShipsOrdersAdm />,
+	},
+	{
+		path: "/ombudsman",
+		children: [
+			{
+				element: <OmbudsmanList />,
+				index: true,
+			},
+			{
+				element: <OmbudsmanDetails />,
+				path: "/ombudsman/:id",
+			},
+		],
 	},
 ]);
 
