@@ -1,10 +1,7 @@
 package com.cit.backend.domain.service;
 
 import com.cit.backend.domain.entity.*;
-import com.cit.backend.domain.repository.ApartmentRepository;
-import com.cit.backend.domain.repository.BlockRepository;
-import com.cit.backend.domain.repository.CondominiumRepository;
-import com.cit.backend.domain.repository.UnitRepository;
+import com.cit.backend.domain.repository.*;
 import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +15,8 @@ import java.util.List;
 public class CondominiumService {
     @Autowired
     private CondominiumRepository condominiumRepository;
+    @Autowired
+    private EmployeeRepository employeeRepository;
     @Autowired
     private BlockRepository blockRepository;
     @Autowired
@@ -37,6 +36,11 @@ public class CondominiumService {
         }
 
         Condominium condominiumSaved = condominiumRepository.save(condominium);
+
+        Employee manager = condominium.getManager();
+        manager.setCondominium(condominiumSaved);
+        employeeRepository.save(manager);
+
         int UNIT = 1;
 
         List<Apartment> apartments = new ArrayList<>();
@@ -80,9 +84,5 @@ public class CondominiumService {
 
     public Condominium update(Condominium condominium) {
         return condominiumRepository.save(condominium);
-    }
-
-    public ContactsCondominium saveContact(ContactsCondominium contact) {
-
     }
 }

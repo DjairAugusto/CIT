@@ -18,7 +18,7 @@ public class ContactCondominium {
     private Long id;
 
     @Column
-    private String name;
+    private String value;
 
     @Column
     private TypeContactCondominium type;

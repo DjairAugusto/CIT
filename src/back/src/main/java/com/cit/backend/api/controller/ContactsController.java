@@ -19,15 +19,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("/condominium/contacts")
 public class ContactsController {
 
     @Autowired
-    private ContactsCondominiumMapper contactsCondominiumService;
+    private ContactsCondominiumMapper contactsCondominiumMapper;
 
     @Autowired
     private CondominiumService condominiumService;
@@ -63,16 +62,28 @@ public class ContactsController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createContact(@Valid @RequestBody ContactsCondominiumRequest request) {
+    public ResponseEntity<ContactsCondominiumResponse> createContact(@Valid @RequestBody ContactsCondominiumRequest request) {
         Profile profile = (Profile) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Employee employee = employeeService.findByProfile(profile);
         Condominium condominium = employee.getCondominium();
 
-        ContactsCondominium contact = contactsCondominiumService.toContactsCondominium(request);
+        //TODO: fazer direito
+        if (employee == null || employee.getCondominium() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+
+        ContactsCondominium contact = contactsCondominiumMapper.toContactsCondominium(request);
+        contact.getContacts().forEach(contactItem -> System.out.println(contactItem.getType() + " " + contactItem.getValue()));
         contact.setCondominium(condominium);
-        ContactsCondominium contactSaved = condominiumService.saveContact(contact);
-        //ContactsCondominiumResponse response = contactsCondominiumService.toContactsCondominiumResponse(contact);
-        return ResponseEntity.status(HttpStatus.CREATED).body("response");
+
+        if (condominium.getContactsCondominium() == null) {
+            condominium.setContactsCondominium(new HashSet<>());
+        }
+        condominium.getContactsCondominium().add(contact);
+
+        Condominium condominiumSaved = condominiumService.update(condominium);
+        ContactsCondominiumResponse response = contactsCondominiumMapper.toContactsCondominiumResponse(condominiumSaved.getContactsCondominium());
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
 }

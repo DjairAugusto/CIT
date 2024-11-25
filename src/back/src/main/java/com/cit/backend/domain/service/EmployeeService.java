@@ -34,6 +34,8 @@ public class EmployeeService {
         Profile profile = employee.getProfile();
         profile.setPermissions(Set.of(ProfilePermissions.ROLE_ADMIN));
         profileService.save(profile);
+
+        employee.setProfile(profile);
         return employeeRepository.save(employee);
     }
 

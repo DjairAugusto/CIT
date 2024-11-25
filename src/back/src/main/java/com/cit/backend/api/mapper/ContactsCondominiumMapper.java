@@ -1,11 +1,16 @@
 package com.cit.backend.api.mapper;
 
 import com.cit.backend.api.request.ContactsCondominiumRequest;
+import com.cit.backend.api.response.ContactsCondominiumResponse;
+import com.cit.backend.domain.entity.ContactCondominium;
 import com.cit.backend.domain.entity.ContactsCondominium;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.Set;
 
 @Component
 public class ContactsCondominiumMapper {
@@ -14,6 +19,16 @@ public class ContactsCondominiumMapper {
 
 
     public ContactsCondominium toContactsCondominium(ContactsCondominiumRequest request) {
-        return modelMapper.map(request, ContactsCondominium.class);
+        ContactsCondominium contacts = modelMapper.map(request, ContactsCondominium.class);
+
+        Arrays.stream(request.getContacts()).forEach(contact -> {
+            ContactCondominium contactCondominium = modelMapper.map(contact, ContactCondominium.class);
+            contactCondominium.setContactsCondominium(contacts);
+        });
+        return contacts;
+    }
+
+    public ContactsCondominiumResponse toContactsCondominiumResponse(Set<ContactsCondominium> contactsCondominium) {
+        return modelMapper.map(contactsCondominium, ContactsCondominiumResponse.class);
     }
 }
