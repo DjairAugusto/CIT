@@ -35,6 +35,8 @@ import HowWeWork from "./pages/HowWeWork";
 import OmbudsmanList from "./pages/Ombudsman/List";
 import OmbudsmanDetails from "./pages/Ombudsman/Details";
 import Rules from "./pages/Rules";
+import FinancialADM from "./pages/FinancialADM";
+import Financial from "./pages/Financial";
 
 const router = createBrowserRouter([
 	{
@@ -129,6 +131,14 @@ const router = createBrowserRouter([
 		element: <Accountability />,
 	},
 	{
+		path: "/financialadm",
+		element: <FinancialADM />,
+	},
+	{
+		path: "/financial",
+		element: <Financial />,
+	},
+	{
 		path: "/lost-found",
 		children: [
 			{
@@ -150,6 +160,10 @@ const router = createBrowserRouter([
 		element: <ShipsOrdersAdm />,
 	},
 	{
+		path: "/rules",
+		element: <Rules />,
+	},
+	{
 		path: "/ombudsman",
 		children: [
 			{
@@ -161,9 +175,6 @@ const router = createBrowserRouter([
 				path: "/ombudsman/:id",
 			},
 		],
-	},
-		path: "/condominium/rules",
-		element: <Rules />,
 	},
 ]);
 
