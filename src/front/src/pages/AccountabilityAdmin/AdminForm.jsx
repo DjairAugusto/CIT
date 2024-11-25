@@ -1,8 +1,6 @@
 import React, { useState, useContext } from "react";
 import MenuAccount from "./MenuAccount";
-import FileInput from "../../components/Forms/FileInput";
-import FormsButton from "../../components/Forms/FormsButton";
-import FormsInputText from "../../components/Forms/FormsInputText";
+import { Forms } from "../../components/Forms";
 import { AccountabilityContext } from "../contexts/AccountabilityContext"; // Usa o AccountabilityContext
 
 export default function AdminForm() {
@@ -46,26 +44,26 @@ export default function AdminForm() {
                     <p className="text-gray-500">Relatórios</p>
                 </div>
                 <div className="flex flex-col gap-4 bg-[#F3F3F3] rounded-[30px] p-6 mt-6">
-                    <FormsButton className="mt-4" onClick={handleAddNewAccount}>Adicionar Nova Conta</FormsButton>
+                    <Forms.Button className="mt-4" onClick={handleAddNewAccount}>Adicionar Nova Conta</Forms.Button>
 
                     {isAddingNew && (
                         <div className="flex flex-col gap-2 mt-4 bg-white p-4 rounded-lg shadow">
-                            <FileInput
+                            <Forms.File
                                 label="Arquivo PDF"
                                 onChange={(file) => setNewAccountData({ ...newAccountData, file })}
                             />
-                            <FormsInputText
+                            <Forms.InputText
                                 value={newAccountData.fileName}
                                 onChange={(e) => setNewAccountData({ ...newAccountData, fileName: e.target.value })}
                                 placeholder="Nome da Conta"
                             />
-                            <FormsInputText
+                            <Forms.InputText
                                 type="date"
                                 value={newAccountData.date}
                                 onChange={(e) => setNewAccountData({ ...newAccountData, date: e.target.value })}
                                 placeholder="Data"
                             />
-                            <FormsButton className="mt-2 py-2 px-4 bg-green-500" onClick={handleSaveNewAccount}>Salvar</FormsButton>
+                            <Forms.Button className="mt-2 py-2 px-4 bg-green-500" onClick={handleSaveNewAccount}>Salvar</Forms.Button>
                         </div>
                     )}
 
@@ -75,23 +73,23 @@ export default function AdminForm() {
                                 <div className="flex flex-col gap-2">
                                     {file.id === editId ? (
                                         <>
-                                            <FormsInputText
+                                            <Forms.InputText
                                                 value={editFileName}
                                                 onChange={(e) => setEditFileName(e.target.value)}
                                                 placeholder="Nome da Conta"
                                             />
-                                            <FormsInputText
+                                            <Forms.InputText
                                                 type="date"
                                                 value={file.date}
                                                 onChange={(e) => editAccount(file.id, { date: e.target.value, fileName: editFileName })} // Atualiza a data e o nome
                                             />
                                             <div className="flex gap-2 mt-2">
-                                                <FormsButton
+                                                <Forms.Button
                                                     className="bg-green-500 py-2 px-4"
                                                     onClick={() => saveEdit(file.id)}
                                                 >
                                                     Salvar
-                                                </FormsButton>
+                                                </Forms.Button>
                                             </div>
                                         </>
                                     ) : (
@@ -113,18 +111,18 @@ export default function AdminForm() {
                                                 </div>
                                             </div>
                                             <div className="flex gap-2 mt-2">
-                                                <FormsButton
+                                                <Forms.Button
                                                     className="bg-green-500 py-2 px-4"
                                                     onClick={() => handleEditClick(file.id, file.fileName)}
                                                 >
                                                     Editar
-                                                </FormsButton>
-                                                <FormsButton
+                                                </Forms.Button>
+                                                <Forms.Button
                                                     className="bg-green-500 py-2 px-4"
                                                     onClick={() => deleteAccount(file.id)}
                                                 >
                                                     Apagar
-                                                </FormsButton>
+                                                </Forms.Button>
                                             </div>
                                         </>
                                     )}

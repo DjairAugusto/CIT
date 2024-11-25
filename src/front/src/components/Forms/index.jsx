@@ -6,6 +6,8 @@ import FormsPageStep from "./FormsPageStep";
 import FormsRoot from "./FormsRoot";
 import FormsSelect from "./FormsSelect";
 import FormsInputMask from "./FormsInputMask";
+import FormsTextArea from "./FormsTextArea";
+import FileInput from "./FileInput";
 
 export const Forms = {
 	Root: FormsRoot,
@@ -16,4 +18,6 @@ export const Forms = {
 	Select: FormsSelect,
 	Page: FormsPage,
 	PageStep: FormsPageStep,
+	TextArea: FormsTextArea,
+	File: FileInput,
 };

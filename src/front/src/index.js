@@ -32,6 +32,8 @@ import ShipsOrdersAdm from "./pages/ShipsOrdersAdm";
 import LostFound from "./pages/LostFound/LostFound";
 import LostFoundList from "./pages/LostFound/Details";
 import HowWeWork from "./pages/HowWeWork";
+import OmbudsmanList from "./pages/Ombudsman/List";
+import OmbudsmanDetails from "./pages/Ombudsman/Details";
 import Rules from "./pages/Rules";
 
 const router = createBrowserRouter([
@@ -94,7 +96,7 @@ const router = createBrowserRouter([
 		element: <ContactResident />,
 	},
 	{
-		path: "/signup",
+		path: "/signin",
 		element: <Login />,
 	},
 	{
@@ -131,7 +133,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				element: <LostFound />,
-				index: true
+				index: true,
 			},
 			{
 				path: "/lost-found/Details",
@@ -148,9 +150,21 @@ const router = createBrowserRouter([
 		element: <ShipsOrdersAdm />,
 	},
 	{
+		path: "/ombudsman",
+		children: [
+			{
+				element: <OmbudsmanList />,
+				index: true,
+			},
+			{
+				element: <OmbudsmanDetails />,
+				path: "/ombudsman/:id",
+			},
+		],
+	},
 		path: "/condominium/rules",
 		element: <Rules />,
-	}
+	},
 ]);
 
 // Renderizando a aplicação
