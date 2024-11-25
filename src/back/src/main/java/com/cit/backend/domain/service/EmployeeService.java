@@ -1,5 +1,6 @@
 package com.cit.backend.domain.service;
 
+import com.cit.backend.domain.entity.Condominium;
 import com.cit.backend.domain.entity.Employee;
 import com.cit.backend.domain.entity.Profile;
 import com.cit.backend.domain.entity.enums.ProfilePermissions;
