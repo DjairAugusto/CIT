@@ -28,7 +28,7 @@ public class LostAndFoundController {
     private LostAndFoundMapper lostObjectMapper;
 
     @PostMapping
-    @RolesAllowed("EMPLOYEE")
+    @RolesAllowed("ADMIN")
     public ResponseEntity<LostAndFoundResponse> lostObjectCreate(@RequestBody LostAndFoundRequest lostObject) {
         LostAndFound lostAndFound = lostObjectMapper.toLostAndFound(lostObject);
         lostAndFound = lostObjectService.save(lostAndFound);
@@ -45,13 +45,16 @@ public class LostAndFoundController {
     }
 
     @PatchMapping
-    @RolesAllowed("EMPLOYEE")
+    @RolesAllowed("ADMIN")
     public ResponseEntity<LostAndFoundResponse> updateCommonArea(@RequestBody LostAndFoundRequest request) {
-        return null;
+        LostAndFound lostObject = lostObjectMapper.toLostAndFound(request);
+        lostObject = lostObjectService.save(lostObject);
+        LostAndFoundResponse response = lostObjectMapper.toLostAndFoundResponse(lostObject);
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/{id:\\d+}")
-    @RolesAllowed("EMPLOYEE")
+    @RolesAllowed("ADMIN")
     public ResponseEntity<Void> lostObjectDelete(@PathVariable("id") Long id){
         lostObjectService.deleteById(id);
         return ResponseEntity.noContent().build();
