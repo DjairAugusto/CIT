@@ -1,6 +1,6 @@
 package com.cit.backend.api.controller;
 
-import com.cit.backend.domain.service.UploadFilesService;
+//import com.cit.backend.domain.service.UploadFilesService;
 import com.cit.backend.exceptions.MissingVariableException;
 import jakarta.annotation.security.RolesAllowed;
 import org.springframework.web.bind.annotation.*;
@@ -53,10 +53,10 @@ public class HelloWorldController {
         return "You have permission to access this page";
     }
 
-    @PostMapping("/upload")
-    public String upload(@RequestParam("file") MultipartFile file) {
-        UploadFilesService uploadFilesService = new UploadFilesService("teste");
-        uploadFilesService.store(file);
-        return "Upload realizado com sucesso";
-    }
+//    @PostMapping("/upload")
+//    public String upload(@RequestParam("file") MultipartFile file) {
+//        uploadFilesService.store(file);
+//        UploadFilesService uploadFilesService = new UploadFilesService("teste");
+//        return "Upload realizado com sucesso";
+//    }
 }

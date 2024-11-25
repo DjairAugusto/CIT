@@ -1,9 +1,6 @@
 package com.cit.backend.domain.service;
 
-import com.cit.backend.domain.entity.Apartment;
-import com.cit.backend.domain.entity.Block;
-import com.cit.backend.domain.entity.Condominium;
-import com.cit.backend.domain.entity.Unit;
+import com.cit.backend.domain.entity.*;
 import com.cit.backend.domain.repository.ApartmentRepository;
 import com.cit.backend.domain.repository.BlockRepository;
 import com.cit.backend.domain.repository.CondominiumRepository;
@@ -83,5 +80,9 @@ public class CondominiumService {
 
     public Condominium update(Condominium condominium) {
         return condominiumRepository.save(condominium);
+    }
+
+    public ContactsCondominium saveContact(ContactsCondominium contact) {
+
     }
 }

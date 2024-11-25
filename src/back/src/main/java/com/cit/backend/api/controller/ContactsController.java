@@ -63,7 +63,7 @@ public class ContactsController {
     }
 
     @PostMapping
-    public ResponseEntity<ContactsCondominiumResponse> createContact(@Valid @RequestBody ContactsCondominiumRequest request) {
+    public ResponseEntity<String> createContact(@Valid @RequestBody ContactsCondominiumRequest request) {
         Profile profile = (Profile) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Employee employee = employeeService.findByProfile(profile);
         Condominium condominium = employee.getCondominium();
@@ -71,8 +71,8 @@ public class ContactsController {
         ContactsCondominium contact = contactsCondominiumService.toContactsCondominium(request);
         contact.setCondominium(condominium);
         ContactsCondominium contactSaved = condominiumService.saveContact(contact);
-        ContactsCondominiumResponse response = contactsCondominiumService.toContactsCondominiumResponse(contact);
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        //ContactsCondominiumResponse response = contactsCondominiumService.toContactsCondominiumResponse(contact);
+        return ResponseEntity.status(HttpStatus.CREATED).body("response");
     }
 
 }
