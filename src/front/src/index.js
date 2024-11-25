@@ -32,6 +32,7 @@ import ShipsOrdersAdm from "./pages/ShipsOrdersAdm";
 import LostFound from "./pages/LostFound/LostFound";
 import LostFoundList from "./pages/LostFound/Details";
 import HowWeWork from "./pages/HowWeWork";
+import Rules from "./pages/Rules";
 
 const router = createBrowserRouter([
 	{
@@ -146,6 +147,10 @@ const router = createBrowserRouter([
 		path: "/shipsadm",
 		element: <ShipsOrdersAdm />,
 	},
+	{
+		path: "/condominium/rules",
+		element: <Rules />,
+	}
 ]);
 
 // Renderizando a aplicação
