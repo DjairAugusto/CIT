@@ -15,6 +15,7 @@ import java.time.LocalDate;
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class LostAndFoundResponse {
     private Long id;
     private String name;

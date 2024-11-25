@@ -40,6 +40,10 @@ public class EmployeeService {
         return employeeRepository.findById(id).orElse(null);
     }
 
+    public Employee findByProfile(Profile profile){
+        return employeeRepository.findByProfile(profile);
+    }
+
     public void deleteById(Long id) {
         employeeRepository.deleteById(id);
     }
