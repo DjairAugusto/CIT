@@ -34,6 +34,7 @@ import LostFoundList from "./pages/LostFound/Details";
 import HowWeWork from "./pages/HowWeWork";
 import OmbudsmanList from "./pages/Ombudsman/List";
 import OmbudsmanDetails from "./pages/Ombudsman/Details";
+import Rules from "./pages/Rules";
 
 const router = createBrowserRouter([
 	{
@@ -160,6 +161,9 @@ const router = createBrowserRouter([
 				path: "/ombudsman/:id",
 			},
 		],
+	},
+		path: "/condominium/rules",
+		element: <Rules />,
 	},
 ]);
 
