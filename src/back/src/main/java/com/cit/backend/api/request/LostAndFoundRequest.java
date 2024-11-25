@@ -15,7 +15,10 @@ import java.time.LocalDate;
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class LostAndFoundRequest {
+
+    private Long id;
 
     @NotBlank(message = "name is mandatory")
     private String name;

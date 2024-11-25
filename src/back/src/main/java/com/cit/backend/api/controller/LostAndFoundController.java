@@ -60,7 +60,11 @@ public class LostAndFoundController {
     @PatchMapping
     @RolesAllowed("ADMIN")
     public ResponseEntity<LostAndFoundResponse> updateCommonArea(@RequestBody LostAndFoundRequest request) {
+        if(request.getId() == null){
+            throw new RuntimeException("An ID is necessary.");
+        }
         LostAndFound lostObject = lostObjectMapper.toLostAndFound(request);
+        lostObject = lostObjectMapper.fillNullFields(lostObject, lostObjectService.findById(request.getId()));
         lostObject = lostObjectService.save(lostObject);
         LostAndFoundResponse response = lostObjectMapper.toLostAndFoundResponse(lostObject);
         return ResponseEntity.ok(response);
