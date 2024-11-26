@@ -1,13 +1,15 @@
 import React from "react";
-import { UserProvider } from "./UserContext";
-import UserView from "./UserView";
+import { FinancialProvider } from "../contexts/FinancialContext";
+import UserViewFinancial from "./UserFinancialView";
 
-export default function index() {
-    return (
-        <UserProvider>
-            <div className="p-6">
-                <UserView />
-            </div>
-        </UserProvider>
-    );
-}
+const Index = () => {
+  return (
+    <FinancialProvider>
+      <div className="min-h-screen bg-gray-100">
+        <UserViewFinancial />
+      </div>
+    </FinancialProvider>
+  );
+};
+
+export default Index;

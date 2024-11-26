@@ -1,13 +1,13 @@
 import React from "react";
 import { FinancialProvider } from "../contexts/FinancialContext";
-import FinancialForm from "./FinancialForm";
+import FinancialManagement from "./FinancialManagement";
 
-export default function index() {
-    return (
-        <FinancialProvider>
-            <div className="p-6">
-                <FinancialForm />
-            </div>
-        </FinancialProvider>
-    );
-}
+const Index = () => {
+  return (
+    <FinancialProvider>
+      <FinancialManagement />
+    </FinancialProvider>
+  );
+};
+
+export default Index;
