@@ -37,6 +37,7 @@ import OmbudsmanDetails from "./pages/Ombudsman/Details";
 import Rules from "./pages/Rules";
 import FinancialADM from "./pages/FinancialADM";
 import Financial from "./pages/Financial";
+import AssemblyAdm from "./pages/Assembly/AssemblyAdm";
 
 const router = createBrowserRouter([
 	{
@@ -174,6 +175,15 @@ const router = createBrowserRouter([
 			{
 				element: <OmbudsmanDetails />,
 				path: "/ombudsman/:id",
+			},
+		],
+	},
+	{
+		path: "/assembly",
+		children: [
+			{
+				element: <AssemblyAdm/>,
+				index: true,
 			},
 		],
 	},
