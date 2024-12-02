@@ -8,7 +8,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "residents")
-@PrimaryKeyJoinColumn(name = "people_id")
 @Getter
 @Setter
 @NoArgsConstructor

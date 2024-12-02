@@ -11,6 +11,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.lang.module.ResolutionException;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -22,12 +25,10 @@ public class EmployeeService {
     @Autowired
     private ProfileService profileService;
 
-    public Employee save(Employee employee) {
-        return employeeRepository.save(employee);
-    }
+    public Employee save(Employee employee) { return employeeRepository.save(employee); }
 
     public Employee saveAdmin(Employee employee) {
-        if (employeeRepository.findByCpf(employee.getCpf()) != null) {
+        if (employeeRepository.findByCpf(employee.getCpf()).isPresent()) {
             throw new UniqueColumnAlreadyExistsException("CPF has already been registered");
         }
 
@@ -36,12 +37,15 @@ public class EmployeeService {
         profileService.save(profile);
 
         employee.setProfile(profile);
+        employee.setRole(ProfilePermissions.ROLE_ADMIN.toString());
         return employeeRepository.save(employee);
     }
 
     public Employee findById(Long id) {
-        return employeeRepository.findById(id).orElse(null);
+        return employeeRepository.findById(id).orElseThrow(() -> new ResolutionException("User not found with id :" + id));
     }
+
+    public List<Employee> findAll() { return employeeRepository.findAll(); }
 
     public void deleteById(Long id) {
         employeeRepository.deleteById(id);

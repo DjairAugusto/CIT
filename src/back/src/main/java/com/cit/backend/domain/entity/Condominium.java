@@ -1,6 +1,8 @@
 package com.cit.backend.domain.entity;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
@@ -53,45 +55,41 @@ public class Condominium {
     private Address address;
 
     @OneToOne
-    @JoinColumn(name = "manager_id", nullable = true)
+    @JoinColumn(name = "manager_id")
     private Employee manager;
 
     @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
-    private Set<Employee> Employees;
+    private List<Employee> employees = new ArrayList<>();
 
     @OneToMany(mappedBy="condominium", cascade = CascadeType.ALL)
     private Set<Block> blockList = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private Set<Warning> warning;
+    private Set<Warning> warning = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
             name = "condominium_warning",
             joinColumns = @JoinColumn(name = "condominium_id"),
             inverseJoinColumns = @JoinColumn(name = "warning_id"))
-    private Set<Warning> warnings;
+    private Set<Warning> warnings = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
-    private Set<CommonArea> commonAreas;
+    private Set<CommonArea> commonAreas = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
-    private Set<LostAndFound> lostAndFound;
+    private Set<LostAndFound> lostAndFound = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
-    private Set<Meeting> meeting;
+    private Set<Meeting> meeting = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
-    private Set<Rules> rules;
+    private Set<Rules> rules = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
-    private Set<Income> income;
+    private Set<Income> income = new HashSet<>();
 
     @OneToMany(mappedBy = "condominium", cascade = CascadeType.ALL)
-    private Set<ContactsCondominium> contactsCondominium;
-
-    @OneToOne
-    @JoinColumn(name = "employee_id", nullable = true)
-    private Employee employee;
+    private Set<ContactsCondominium> contactsCondominium = new HashSet<>();
 }

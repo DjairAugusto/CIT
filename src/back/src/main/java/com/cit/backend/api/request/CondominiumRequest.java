@@ -1,11 +1,8 @@
 package com.cit.backend.api.request;
 
+import jakarta.validation.constraints.*;
 import org.hibernate.validator.constraints.br.CNPJ;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,23 +22,23 @@ public class CondominiumRequest {
     private String cnpj;
 
     @NotNull(message = "Blocks is mandatory")
-    @PositiveOrZero(message = "Blocks must be greater than zero")
+    @Positive(message = "Blocks must be greater than zero")
     private int blocks;
 
     @NotNull(message = "Units is mandatory")
-    @PositiveOrZero(message = "Units must be greater than zero")
+    @Positive(message = "Units must be greater than zero")
     private int units;
 
     @NotNull(message = "Floors is mandatory")
-    @PositiveOrZero(message = "Floors must be greater than zero")
+    @Positive(message = "Floors must be greater than zero")
     private int floors;
 
     @NotNull(message = "Apartments is mandatory")
-    @PositiveOrZero(message = "Apartments must be greater than zero")
+    @Positive(message = "Apartments must be greater than zero")
     private int apartments;
 
     @NotNull(message = "Manager ID is mandatory")
-    @PositiveOrZero(message = "Manager ID must be greater than zero")
+    @Positive(message = "Manager ID must be greater than zero")
     private long managerId;
     
     private AddressRequest address;

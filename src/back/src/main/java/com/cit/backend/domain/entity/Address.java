@@ -11,12 +11,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity(name = "addresses")
 public class Address {
-    
+
     @Id
     @Column(name = "condominium_id")
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @MapsId
     @JoinColumn(name = "condominium_id")
     private Condominium condominium;
