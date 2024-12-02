@@ -38,6 +38,7 @@ import Rules from "./pages/Rules";
 import FinancialADM from "./pages/FinancialADM";
 import Financial from "./pages/Financial";
 import AssemblyAdm from "./pages/Assembly/AssemblyAdm";
+import AssemblyList from "./pages/Assembly/AssemblyList";
 
 const router = createBrowserRouter([
 	{
@@ -182,9 +183,13 @@ const router = createBrowserRouter([
 		path: "/assembly",
 		children: [
 			{
-				element: <AssemblyAdm/>,
+				element: <AssemblyList />,
 				index: true,
 			},
+			{
+				element: <AssemblyAdm />,
+				path: "/assembly/publish",
+			}
 		],
 	},
 ]);
