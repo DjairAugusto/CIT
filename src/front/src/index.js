@@ -37,6 +37,8 @@ import OmbudsmanDetails from "./pages/Ombudsman/Details";
 import Rules from "./pages/Rules";
 import FinancialADM from "./pages/FinancialADM";
 import Financial from "./pages/Financial";
+import HomeResident from "./pages/HomeResident";
+
 
 const router = createBrowserRouter([
 	{
@@ -68,6 +70,10 @@ const router = createBrowserRouter([
 				path: "/howwework",
 				element: <HowWeWork />,
 			},
+			{
+				element: <HomeResident />,
+				path: "/HomeResident",
+			}
 		],
 	},
 	{
@@ -176,7 +182,7 @@ const router = createBrowserRouter([
 				path: "/ombudsman/:id",
 			},
 		],
-	},
+	}
 ]);
 
 // Renderizando a aplicação
