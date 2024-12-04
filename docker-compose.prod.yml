@@ -1,0 +1,47 @@
+services:
+  database:
+    container_name: cit-database
+    image: mysql:latest
+    restart: always
+    env_file:
+      - ./database.prod.env
+    networks:
+      - backend
+      - database
+  backend:
+    container_name: cit-back
+    restart: always
+    build:
+      context: ./src/back
+      dockerfile: Dockerfile.prod
+    volumes:
+      - ./src/back/src:/app/src
+    env_file:
+      - ./src/back/.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    networks:
+      - backend
+      - frontend
+  frontend:
+    container_name: cit-front
+    restart: always
+    build:
+      context: ./src/front
+      dockerfile: Dockerfile.prod
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./src/front/.env
+    volumes:
+      - ./src/front:/app
+    depends_on:
+      - backend
+    networks:
+      - frontend
+networks:
+  backend:
+  database:
+  frontend:
