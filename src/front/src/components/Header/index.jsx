@@ -4,7 +4,7 @@ import Ancor from "./Ancor";
 
 export default function Header() {
 	return (
-		<header className="bg-primary-1 flex justify-between items-center px-10 py-5">
+		<header className="bg-white border-b-[0px] shadow-zinc-300 shadow-md border-zinc-300 flex justify-between items-center px-10 py-3 sticky z-10 top-0 w-full">
 			<img
 				className="h-24"
 				src="/logo.png"

@@ -38,6 +38,7 @@ import Rules from "./pages/Rules";
 import FinancialADM from "./pages/FinancialADM";
 import Financial from "./pages/Financial";
 import Indicator from "./pages/indicator";
+import HomeResident from "./pages/HomeResident";
 
 const router = createBrowserRouter([
 	{
@@ -73,10 +74,17 @@ const router = createBrowserRouter([
 				path: "/indicator",
 				element: <Indicator />,
 			},
+			{
+				path: "/indicator",
+				element: <Indicator />,
+			},
+			{
+				path: "/HomeResident",
+				element: <HomeResident />,
+			}
 		],
 	},
 	{
-		path: "/register",
 		element: <Register />,
 		errorElement: <PageError />,
 		children: [
@@ -181,7 +189,7 @@ const router = createBrowserRouter([
 				path: "/ombudsman/:id",
 			},
 		],
-	},
+	}
 ]);
 
 // Renderizando a aplicação

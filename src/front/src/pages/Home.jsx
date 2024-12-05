@@ -69,7 +69,7 @@ export default function Home() {
         <div className="items-center justify-items-center" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
             {/* 6 Quadrados com as imagens */}
             <img src="/iconefinanceiro.png" alt="Serviço 1" style={{ width: '60%', height: 'auto', borderRadius: '8px' }} />
-            <img src="/iconeassembleia.png" alt="Serviço 2" style={{ width: '60%', height: 'auto', borderRadius: '8px' }} />
+            <img src="/iconeareacomum.png" alt="Serviço 2" style={{ width: '60%', height: 'auto', borderRadius: '8px' }} />
             <img src="/iconeentregaseencomendas.png" alt="Serviço 3" style={{ width: '60%', height: 'auto', borderRadius: '8px' }} />
             <img src="/iconeachadoseperdidos.png" alt="Serviço 4" style={{ width: '60%', height: 'auto', borderRadius: '8px' }} />
             <img src="/iconeouvidoria.png" alt="Serviço 5" style={{ width: '60%', height: 'auto', borderRadius: '8px' }} />
