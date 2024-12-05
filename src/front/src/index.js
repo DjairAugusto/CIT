@@ -37,6 +37,7 @@ import OmbudsmanDetails from "./pages/Ombudsman/Details";
 import Rules from "./pages/Rules";
 import FinancialADM from "./pages/FinancialADM";
 import Financial from "./pages/Financial";
+import Indicator from "./pages/indicator";
 
 const router = createBrowserRouter([
 	{
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
 			{
 				path: "/howwework",
 				element: <HowWeWork />,
+			},
+			{
+				path: "/indicator",
+				element: <Indicator />,
 			},
 		],
 	},
