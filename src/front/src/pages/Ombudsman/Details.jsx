@@ -1,29 +1,25 @@
-import React, { useState } from "react";
-import { Check, X } from "lucide-react";
-import { Forms } from "../../components/Forms";
+import React, {useState} from "react";
+import {Check, X} from "lucide-react";
+import {Forms} from "../../components/Forms";
+import isAdmin from "../../utils/roles/isAdmin";
 
 const statusOptions = [
-	{ value: "aberto", text: "Aberto" },
-	{ value: "em_analise", text: "Em Análise" },
-	{ value: "analisado", text: "Analisado" },
-	{ value: "resolvido", text: "Resolvido" },
+	{value: "aberto", text: "Aberto"},
+	{value: "em_analise", text: "Em Análise"},
+	{value: "analisado", text: "Analisado"},
+	{value: "resolvido", text: "Resolvido"},
 ];
-
-// TODO change to utils/roles/isAdmin
-function isAdmin() {
-	return true;
-}
 
 export default function Details() {
 	const [status, setStatus] = useState("");
 	const [resposta, setResposta] = useState("");
 
 	const handleSelectChange = (e) => {
-		if (!statusOptions.find((option) => option.value === e.target.value)) {
+		if(!statusOptions.find((option) => option.value === e.target.value)) {
 			throw new Error("Invalid Status Option");
 		}
 
-		setStatus(e.target.value); // Atualiza o estado com o valor selecionado
+		setStatus(e.target.value);
 	};
 
 	return (
