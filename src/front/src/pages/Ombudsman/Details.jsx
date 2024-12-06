@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Check, X} from "lucide-react";
 import {Forms} from "../../components/Forms";
 import isAdmin from "../../utils/roles/isAdmin";
+import Loading from "../../components/Loading";
+import axios from "../../utils/requisition/citRequisition";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const statusOptions = [
 	{value: "aberto", text: "Aberto"},
@@ -11,8 +14,36 @@ const statusOptions = [
 ];
 
 export default function Details() {
-	const [status, setStatus] = useState("");
-	const [resposta, setResposta] = useState("");
+	const [ticket, setTicket] = useState(null);
+	const navigate = useNavigate();
+	const {state} = useLocation();
+
+	useEffect(() => {
+		if(!state?.commonAreaId) navigate("/common-area");
+		else
+			axios
+				.get(`/common-area/${state.commonAreaId}`)
+				.then((res) => {
+					setTicket(res.data);
+				})
+				.catch((err) => {
+					navigate("../");
+				});
+	}, [state, navigate]);
+
+	function setStatus(status) {
+		setTicket({
+			...ticket,
+			status
+		});
+	}
+
+	function setResponse(response) {
+		setTicket({
+			...ticket,
+			response
+		});
+	}
 
 	const handleSelectChange = (e) => {
 		if(!statusOptions.find((option) => option.value === e.target.value)) {
@@ -22,6 +53,19 @@ export default function Details() {
 		setStatus(e.target.value);
 	};
 
+	useEffect(() => {
+		axios
+			.get(`/ticket/${state.ticketId}`)
+			.then((res) => {
+				setTicket(res.data);
+			})
+			.catch((err) => {
+				navigate("../");
+			});
+	});
+
+	if(!ticket) return <Loading />;
+
 	return (
 		<div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
 			<div className="w-full max-w-2xl bg-white p-6 rounded-md shadow-lg">
@@ -29,17 +73,17 @@ export default function Details() {
 					Detalhes
 				</h1>
 				<hr className="mb-4" />
-				<h2 className= "flex justify-between items-center mb-2 font-bold">
-					Ticket - TÍTULO
+				<h2 className="flex justify-between items-center mb-2 font-semibold">
+					Ticket - {ticket.title}
 				</h2>
 				<p className="flex justify-between items-center mb-4">
-					Tipo: TYPE
+					Tipo: {ticket.type}
 				</p>
 				<p className="flex justify-between items-center mb-4">
-					Situação: STATUS
+					Situação: {ticket.status}
 				</p>
 				<p className="flex justify-between items-center mb-4">
-					Descrição: Lorem ipsum
+					Descrição: {ticket.description}
 				</p>
 				<strong>*Arquivo*:</strong>{" "}
 				<a href="#" className="text-primary-1000 hover:underline">
@@ -51,14 +95,14 @@ export default function Details() {
 							className="w-full mb-4"
 							required={true}
 							defaultOption="Selecione o status"
-							value={status}
+							value={ticket.status}
 							onChange={handleSelectChange}
 							options={statusOptions}
 						/>
 
 						<Forms.InputText
-							value={resposta}
-							onChange={(e) => setResposta(e.target.value)}
+							value={ticket.response}
+							onChange={(e) => setResponse(e.target.value)}
 							placeholder="Digite a resposta"
 							required
 						/>
