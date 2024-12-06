@@ -1,12 +1,27 @@
-import React, { useState } from "react";
-import OmbudsmanTicket from "./Ticket";
+import React, { useEffect, useState } from "react";
+import OmbudsmanCreate from "./Ticket";
 import { Plus } from "lucide-react";
 import OmbudsmanListTicket from "./ListTicket";
-
-const tickets = [];
+import isResident from "../../utils/roles/isResident";
+import Loading from "../../components/Loading";
+import axios from "../../utils/requisition/citRequisition";
 
 export default function OmbudsmanList() {
+	const [tickets, setTickets] = useState(null);
 	const [isCreating, setIsCreating] = useState(false);
+
+	useEffect(() => {
+		axios
+			.get(`/ombudsmen`)
+			.then((res) => {
+				setTickets(res.data);
+			})
+			.catch((err) => {
+				// TOOD tratar os erros
+			});
+	});
+
+	if (tickets === null) return <Loading />;
 
 	return (
 		<main className="w-dvw h-dvh overflow-hidden">
@@ -25,22 +40,27 @@ export default function OmbudsmanList() {
 							</div>
 						) : (
 							tickets.map((ticket) => (
-								<OmbudsmanListTicket ticket={ticket} />
+								<OmbudsmanListTicket
+									key={ticket.id}
+									ticket={ticket}
+								/>
 							))
 						)}
 					</div>
-					<button
-						onClick={() => setIsCreating(true)}
-						className="rounded-lg bg-primary-1000 w-full gap-1 py-4 items-center justify-center text-white text-xl flex"
-					>
-						<Plus size={24} />
-						Novo Ticket
-					</button>
+					{isResident() && (
+						<button
+							onClick={() => setIsCreating(true)}
+							className="rounded-lg bg-primary-1000 w-full gap-1 py-4 items-center justify-center text-white text-xl flex"
+						>
+							<Plus size={24} />
+							Novo Ticket
+						</button>
+					)}
 				</div>
 			</div>
 
 			{isCreating && (
-				<OmbudsmanTicket closeCallback={() => setIsCreating(false)} />
+				<OmbudsmanCreate closeCallback={() => setIsCreating(false)} />
 			)}
 		</main>
 	);
