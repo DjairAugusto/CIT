@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import InfoBase from "./InfoBase";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "../../utils/requisition/citRequisition";
 import formatPrice from "../../utils/formatPrice";
