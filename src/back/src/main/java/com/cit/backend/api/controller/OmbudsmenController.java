@@ -8,6 +8,7 @@ import com.cit.backend.domain.entity.enums.StatusTicket;
 import com.cit.backend.domain.service.EmployeeService;
 import com.cit.backend.domain.service.OmbudsmanService;
 import com.cit.backend.domain.service.ResidentService;
+import com.cit.backend.domain.service.UploadFilesService;
 import com.cit.backend.exceptions.EmployeeNotRegisteredInACondominiumException;
 import com.cit.backend.exceptions.InvalidResidentException;
 import com.cit.backend.exceptions.MissingVariableException;
@@ -16,8 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.nio.file.Path;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.IntStream;
 
 @RestController
 @RequestMapping("/ombudsmen")
@@ -33,6 +38,8 @@ public class OmbudsmenController {
 
     @Autowired
     private EmployeeService employeeService;
+
+    private final UploadFilesService uploadFilesService = new UploadFilesService("/ombudsmen");
 
     @GetMapping
     public ResponseEntity<List<OmbudsmenResponse>> getAll() {
@@ -58,6 +65,7 @@ public class OmbudsmenController {
         return ResponseEntity.ok(response);
     }
 
+    // TODO retornar os arquivos
     @GetMapping("/{id}")
     public ResponseEntity<OmbudsmenResponse> findById(@PathVariable Long id) {
         Ticket ticket = ombudsmanService.findById(id);
@@ -80,6 +88,19 @@ public class OmbudsmenController {
         Ticket saved = ombudsmanService.create(ticket);
         OmbudsmenResponse response = ombudsmanMapper.toOmbudsmenResponse(saved);
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/upload/{id}")
+    @RolesAllowed("RESIDENT")
+    public ResponseEntity<Void> uploadFiles(@PathVariable("id") Long id, @RequestParam("files") List<MultipartFile> files) {
+        Ticket ticket = ombudsmanService.findById(id);
+        IntStream.range(0, files.size()).forEach(index -> {
+            MultipartFile file = files.get(index);
+            String[] parts = Objects.requireNonNull(file.getOriginalFilename()).split("\\.");
+            String filename = ticket.getId() + "-" + index + "." + parts[parts.length - 1];
+            uploadFilesService.store(file, filename);
+        });
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping
