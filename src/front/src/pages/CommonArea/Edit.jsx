@@ -6,14 +6,26 @@ import { Upload } from "lucide-react";
 import { daysOfWeek } from "../../utils/days/allDays";
 import formatPrice from "../../utils/formatPrice";
 import Loading from "../../components/Loading";
+import CommonAreaBase from "./Base";
+import { Forms } from "../../components/Forms";
 
 export default function CommonAreaEdit() {
 	const [commonArea, setCommonArea] = useState(null);
+	const [image, setImage] = useState(null);
 	const [selectDay, setSelectDay] = useState("sunday");
 	const [currentTimeStart, setCurrentTimeStart] = useState(0);
 	const [currentTimeEnd, setCurrentTimeEnd] = useState(0);
 	const navigate = useNavigate();
 	const { state } = useLocation();
+
+	function selectHandler(e) {
+		setSelectDay(e.target.value);
+		const schedule = commonArea.schedule.find((each) =>
+			each.dayOfWeek.includes(e.target.value.toUpperCase())
+		);
+		setCurrentTimeStart(schedule.timeStart);
+		setCurrentTimeEnd(schedule.timeEnd);
+	}
 
 	useEffect(() => {
 		if (state === null || state.commonAreaId === undefined)
@@ -21,116 +33,92 @@ export default function CommonAreaEdit() {
 		else
 			axios.get(`/common-area/${state.commonAreaId}`).then((res) => {
 				setCommonArea(res.data);
+				// TOOD fetch image
 			});
 	});
 
 	if (!commonArea) return <Loading />;
 
 	return (
-		<InfoBase
-			banner={
-				// TOOD carregar a imagem pro back
-				// TOOD pegar a imagem carregada no back e mostrar
-				<>
-					<img
-						className="w-full h-full object-cover"
-						src={commonArea.img}
-						alt=""
-					/>
-					<div className="absolute bg-black opacity-40 w-full h-full top-0 left-0"></div>
-					<label className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white flex gap-2 text-3xl items-center">
+		<CommonAreaBase>
+			<div className="max-w-[1600px] w-full h-full bg-white">
+				<div className="overflow-hidden w-full h-2/5 relative">
+					<div className="absolute bg-black bg-opacity-40 top-0 left-0 w-full h-full"></div>
+					<label className="z-10 gap-5 text-4xl text-white flex justify-center items-center w-full h-full absolute top-0 left-0">
 						<Upload size={32} />
 						Carregar Nova Imagem
 						<input
-							type="file"
-							name="image"
-							id="image"
 							className="hidden"
-							accept="image/*"
-							multiple={false}
+							type="file"
+							value={image?.filename}
+							onChange={(e) => setImage(e.target.files[0])}
+							accept="image/png, image/jpeg"
 						/>
 					</label>
-				</>
-			}
-			description={
-				<textarea
-					className="resize-none bg-gray-low h-full px-3 py-2"
-					name="description"
-					id="description"
-					defaultValue={commonArea.description}
-				/>
-			}
-			schedule={
-				<div className="flex flex-wrap">
-					<select
-						className="w-full py-2 px-3"
-						value={selectDay}
-						onChange={(e) => {
-							// TODO removere esse placeholder e implementar a lógica
-							setSelectDay(e.target.value);
-							const schedule = commonArea.schedule.find((each) =>
-								each.dayOfWeek.includes(
-									e.target.value.toUpperCase()
-								)
-							);
-							setCurrentTimeStart(schedule.timeStart);
-							setCurrentTimeEnd(schedule.timeEnd);
-						}}
-						name="day"
-						id="day"
-					>
-						{Object.entries(daysOfWeek).map(([day, values]) => (
-							<option key={day} value={day}>
-								{values[0]}
-							</option>
-						))}
-					</select>
-					<input
-						className="w-full text-lg py-2 px-3"
-						value={currentTimeStart}
-						onChange={(e) => {
-							setCurrentTimeStart(e.target.value);
-						}}
-					/>
-					<input
-						className="w-full text-lg py-2 px-3"
-						value={currentTimeEnd}
-						onChange={(e) => {
-							setCurrentTimeEnd(e.target.value);
-						}}
+					<img
+						className="h-full w-full object-cover object-center"
+						src={image ? URL.createObjectURL(image) : ""}
+						alt=""
 					/>
 				</div>
-			}
-			tax={
-				<div>
-					<input
-						className="w-full text-lg py-2 px-3"
-						name="tax"
-						id="tax"
-						defaultValue={formatPrice(commonArea.tax, false)}
-					/>
+				<div className="grid grid-cols-12 grid-rows-6 w-full h-3/5 gap-4 p-6">
+					<div className="flex-auto row-span-5 col-start-1 col-end-8 h-full p-4">
+						<h2 className="text-3xl font-semibold">Detalhes</h2>
+						<p>{commonArea.description}</p>
+					</div>
+					<div className="flex flex-col gap-2 row-span-5 flex-auto col-start-8 col-end-13 bg-gray-low h-full p-4">
+						<h2 className="text-2xl font-semibold">
+							Horário de Funcionamento
+						</h2>
+						<Forms.Select
+							value={selectDay}
+							onChange={selectHandler}
+							options={Object.entries(daysOfWeek).map(
+								([key, value]) => {
+									return { value: key, text: value[0] };
+								}
+							)}
+						/>
+						<input
+							className="w-full text-lg py-2 px-3"
+							value={currentTimeStart}
+							onChange={(e) => {
+								setCurrentTimeStart(e.target.value);
+							}}
+						/>
+						<input
+							className="w-full text-lg py-2 px-3"
+							value={currentTimeEnd}
+							onChange={(e) => {
+								setCurrentTimeEnd(e.target.value);
+							}}
+						/>
+						<h2 className="text-2xl font-semibold">Taxa</h2>
+						<div>
+							<input
+								className="w-full text-lg py-2 px-3"
+								name="tax"
+								id="tax"
+								defaultValue={formatPrice(
+									commonArea.tax,
+									false
+								)}
+							/>
+						</div>
+					</div>
+					<div className="flex col-start-1 col-end-13 gap-2">
+						<button
+							onClick={() => navigate("../")}
+							className="flex-1 text-white text-3xl bg-red-500"
+						>
+							Cancelar
+						</button>
+						<button className="flex-1 text-white text-3xl bg-primary-1000">
+							Salvar
+						</button>
+					</div>
 				</div>
-			}
-			bottomActions={
-				<div className="w-full flex gap-4 px-6 pb-6">
-					<button
-						onClick={() =>
-							navigate("../details", {
-								state: state,
-							})
-						}
-						className="bg-red-500 hover:bg-red-600 transition-colors duration-300 py-4 text-3xl text-white h-full w-full"
-					>
-						Cancelar
-					</button>
-					<button
-						onClick={() => {}}
-						className="bg-blue-500 hover:bg-primary-1000 transition-colors duration-300 py-4 text-3xl text-white h-full w-full"
-					>
-						Salvar
-					</button>
-				</div>
-			}
-		/>
+			</div>
+		</CommonAreaBase>
 	);
 }
