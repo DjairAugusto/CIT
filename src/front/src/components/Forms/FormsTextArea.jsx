@@ -12,7 +12,6 @@ const TextArea = forwardRef(
 			onBlur,
 			onFocus,
 			error,
-			value = "",
 			...rest
 		},
 		ref
@@ -58,10 +57,9 @@ const TextArea = forwardRef(
 					</label>
 					<span
 						className="cursor-text block bg-transparent max-w-xl max-h-96 overflow-y-auto h-max resize-none w-full outline-none text-dark placeholder:text-dark text-zinc-700 placeholder:text-zinc-700 peer transition-colors pl-4"
-						onChange={handleChange}
+						onInput={handleChange}
 						onFocus={handleFocus}
 						onBlur={handleBlur}
-						value={value}
 						{...rest}
 						ref={ref}
 						type={type ? type : "text"}
