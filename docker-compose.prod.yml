@@ -36,7 +36,9 @@ services:
     env_file:
       - ./src/front/.env
     volumes:
-      - ./src/front:/app
+      - ./src/front/src:/app/src
+      - ./src/front/public:/app/public
+      - ./src/front/tailwind.config.js:/app/tailwind.config.js
     depends_on:
       - backend
     networks:
