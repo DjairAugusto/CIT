@@ -29,7 +29,7 @@ export default function Details() {
 					Detalhes
 				</h1>
 				<hr className="mb-4" />
-				<h2 className="flex justify-between items-center mb-2 font-semibold">
+				<h2 className= "flex justify-between items-center mb-2 font-bold">
 					Ticket - TÍTULO
 				</h2>
 				<p className="flex justify-between items-center mb-4">
@@ -72,10 +72,10 @@ export default function Details() {
 						<h3 className="font-semibold mb-2">
 							O Ticket foi resolvido?
 						</h3>
-						<button className="bg-red-500 text-white py-2 px-4 rounded mr-2 hover:bg-red-600">
+						<button className="bg-red-500 text-white py-1 px-3 rounded mr-3 hover:bg-red-600">
 							<X /> Não Resolvido
 						</button>
-						<button className="bg-primary-1000 text-white py-2 px-4 rounded hover:bg-green-300">
+						<button className="bg-primary-1000 text-white py-1 px-7 rounded hover:bg-green-300">
 							<Check /> Resolvido
 						</button>
 					</div>
