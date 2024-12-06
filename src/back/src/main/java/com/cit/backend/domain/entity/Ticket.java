@@ -19,11 +19,16 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private TypeTicket type;
 
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @Column(nullable = false)
+    private String title;
+
+    @Column
     private StatusTicket status;
 
     @Column(columnDefinition = "TEXT")
@@ -34,6 +39,6 @@ public class Ticket {
     private Apartment apartment;
 
     @ManyToOne
-    @JoinColumn(name="employee_id", nullable=false)
+    @JoinColumn(name="employee_id", nullable=true)
     private Employee employee;
 }

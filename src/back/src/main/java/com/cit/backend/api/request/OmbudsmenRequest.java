@@ -14,6 +14,7 @@ import lombok.Setter;
 public class OmbudsmenRequest {
     private Long id;
     private TypeTicket type;
+    private String title;
     private String description;
     private StatusTicket status;
     private String response;
