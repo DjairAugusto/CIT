@@ -4,7 +4,7 @@ import { useState } from "react";
 import LoginFormes from "./LoginFormes";
 import { useNavigate } from "react-router-dom";
 import { nonAuthorizedInstance as axios } from "../../utils/requisition/citRequisition";
-import validateEmail from "../../utils/validateEmail";
+import validateLogin from "../../utils/validateLogin";
 import { Cookies } from "../../utils/cookies";
 
 const formsTemplate = {
@@ -79,7 +79,7 @@ export default function Login() {
 		});
 	};
 
-	function validateLogin() {
+	function validateLoginForms() {
 		let fieldsErrors = {};
 
 		fieldsErrors = { ...fieldsEmpty(data), ...fieldsErrors };
@@ -90,7 +90,7 @@ export default function Login() {
 		<LoginFormes
 			data={data}
 			updateFieldHandler={updateFieldHandler}
-			fieldsErrors={validateLogin()}
+			fieldsErrors={validateLoginForms()}
 		/>,
 	];
 
@@ -98,7 +98,7 @@ export default function Login() {
 		if (validateLogin()) {
 			navigate("/");
 		}
-	}, [navigate, validateLogin]);
+	}, [navigate]);
 
 	return (
 		<Forms.Page
