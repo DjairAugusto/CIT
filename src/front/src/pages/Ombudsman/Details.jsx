@@ -1,28 +1,28 @@
-import React, {useEffect, useState} from "react";
-import {Check, X} from "lucide-react";
-import {Forms} from "../../components/Forms";
+import React, { useEffect, useState } from "react";
+import { Check, X } from "lucide-react";
+import { Forms } from "../../components/Forms";
 import isAdmin from "../../utils/roles/isAdmin";
 import Loading from "../../components/Loading";
 import axios from "../../utils/requisition/citRequisition";
-import {useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const statusOptions = [
-	{value: "aberto", text: "Aberto"},
-	{value: "em_analise", text: "Em Análise"},
-	{value: "analisado", text: "Analisado"},
-	{value: "resolvido", text: "Resolvido"},
+	{ value: "aberto", text: "Aberto" },
+	{ value: "em_analise", text: "Em Análise" },
+	{ value: "analisado", text: "Analisado" },
+	{ value: "resolvido", text: "Resolvido" },
 ];
 
 export default function Details() {
 	const [ticket, setTicket] = useState(null);
 	const navigate = useNavigate();
-	const {state} = useLocation();
+	const { state } = useLocation();
 
 	useEffect(() => {
-		if(!state?.commonAreaId) navigate("/common-area");
+		if (!state?.ticketId) navigate("/ombudsman");
 		else
 			axios
-				.get(`/common-area/${state.commonAreaId}`)
+				.get(`/ombudsmen/${state.ticketId}`)
 				.then((res) => {
 					setTicket(res.data);
 				})
@@ -34,37 +34,26 @@ export default function Details() {
 	function setStatus(status) {
 		setTicket({
 			...ticket,
-			status
+			status,
 		});
 	}
 
 	function setResponse(response) {
 		setTicket({
 			...ticket,
-			response
+			response,
 		});
 	}
 
 	const handleSelectChange = (e) => {
-		if(!statusOptions.find((option) => option.value === e.target.value)) {
+		if (!statusOptions.find((option) => option.value === e.target.value)) {
 			throw new Error("Invalid Status Option");
 		}
 
 		setStatus(e.target.value);
 	};
 
-	useEffect(() => {
-		axios
-			.get(`/ticket/${state.ticketId}`)
-			.then((res) => {
-				setTicket(res.data);
-			})
-			.catch((err) => {
-				navigate("../");
-			});
-	});
-
-	if(!ticket) return <Loading />;
+	if (!ticket) return <Loading />;
 
 	return (
 		<div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
@@ -112,17 +101,19 @@ export default function Details() {
 						</button>
 					</div>
 				) : (
-					<div className="mt-4 text-center">
-						<h3 className="font-semibold mb-2">
-							O Ticket foi resolvido?
-						</h3>
-						<button className="bg-red-500 text-white py-1 px-3 rounded mr-3 hover:bg-red-600">
-							<X /> Não Resolvido
-						</button>
-						<button className="bg-primary-1000 text-white py-1 px-7 rounded hover:bg-green-300">
-							<Check /> Resolvido
-						</button>
-					</div>
+					ticket.status === "ANALYZED" && (
+						<div className="mt-4 text-center">
+							<h3 className="font-semibold mb-2">
+								O Ticket foi resolvido?
+							</h3>
+							<button className="bg-red-500 text-white py-1 px-3 rounded mr-3 hover:bg-red-600">
+								<X /> Não Resolvido
+							</button>
+							<button className="bg-primary-1000 text-white py-1 px-7 rounded hover:bg-green-300">
+								<Check /> Resolvido
+							</button>
+						</div>
+					)
 				)}
 			</div>
 		</div>
