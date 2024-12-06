@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PopUP from "../../components/PopUP";
 import { Forms } from "../../components/Forms";
 import { Plus } from "lucide-react";
+import axios from "../../utils/requisition/citRequisition";
 
 const typeOptions = [
 	{
@@ -18,17 +19,18 @@ const typeOptions = [
 	},
 ];
 
-export default function OmbudsmanTicket({ closeCallback }) {
+export default function OmbudsmanCreate({ closeCallback }) {
 	const [data, setData] = useState({
-		text: "",
+		description: "",
 		title: "",
 		type: "",
 	});
+	const [requestResult, setRequestResult] = useState("");
 
-	function setText(text) {
+	function setDescription(description) {
 		setData({
 			...data,
-			text,
+			description,
 		});
 	}
 
@@ -51,41 +53,61 @@ export default function OmbudsmanTicket({ closeCallback }) {
 	}
 
 	function createTicket(data) {
-		// TODO request to backend
+		// TODO melhorar o feedback para o usuário
+		// 		 - tratemnto de erros
+		//		 - messagem indicando o resultado
+		axios
+			.post(`/ombudsmen`, data)
+			.then((res) => {
+				setRequestResult(res.message);
+			})
+			.catch((err) => {});
 	}
 
 	return (
-		<PopUP title="Novo Ticket" closeCallback={closeCallback}>
-			<div className="flex flex-col gap-2 min-w-[600px]">
-				<Forms.Select
-					value={data.type}
-					onChange={(e) => setType(e.target.value)}
-					defaultOption="Escolha um Tipo"
-					options={typeOptions}
-					required
-				/>
-				<Forms.InputText
-					value={data.title}
-					onChange={(e) => setTitle(e.target.value)}
-					type="text"
-					placeholder="TÍTULO"
-					required
-				/>
-				<Forms.TextArea
-					value={data.text}
-					onChange={(e) => setText(e.target.value)}
-					placeholder="DESCRIÇÃO"
-					required
-				/>
-				<Forms.File />
-				<Forms.Button
-					onClick={() => createTicket(data)}
-					className="flex items-center justify-center rounded-lg"
+		<>
+			<PopUP title="Novo Ticket" closeCallback={closeCallback}>
+				<div className="flex flex-col gap-2 min-w-[600px]">
+					{
+						// TODO validar os inputs
+					}
+					<Forms.Select
+						value={data.type}
+						onChange={(e) => setType(e.target.value)}
+						defaultOption="Escolha um Tipo"
+						options={typeOptions}
+						required
+					/>
+					<Forms.InputText
+						value={data.title}
+						onChange={(e) => setTitle(e.target.value)}
+						type="text"
+						placeholder="TÍTULO"
+						required
+					/>
+					<Forms.TextArea
+						onChange={(e) => setDescription(e.target.textContent)}
+						placeholder="DESCRIÇÃO"
+						required
+					/>
+					<Forms.File />
+					<Forms.Button
+						onClick={() => createTicket(data)}
+						className="flex items-center justify-center rounded-lg"
+					>
+						<Plus />
+						Novo Ticket
+					</Forms.Button>
+				</div>
+			</PopUP>
+			{requestResult && (
+				<PopUP
+					title="Resultado"
+					closeCallback={() => setRequestResult("")}
 				>
-					<Plus />
-					Novo Ticket
-				</Forms.Button>
-			</div>
-		</PopUP>
+					{requestResult}
+				</PopUP>
+			)}
+		</>
 	);
 }
