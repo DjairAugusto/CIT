@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PopUP from "../../components/PopUP";
 import { Forms } from "../../components/Forms";
 import { Plus } from "lucide-react";
-import axios from "../../utils/requisition/citRequisition";
+import axios, { multiPartInstance as axiosFile } from "../../utils/requisition/citRequisition";
 
 const typeOptions = [
 	{
@@ -26,6 +26,7 @@ export default function OmbudsmanCreate({ closeCallback }) {
 		type: "",
 	});
 	const [requestResult, setRequestResult] = useState("");
+	const [files, setFiles] = useState([]);
 
 	function setDescription(description) {
 		setData({
@@ -52,14 +53,21 @@ export default function OmbudsmanCreate({ closeCallback }) {
 		});
 	}
 
+	function postFiles(id) {
+		const formData = new FormData();
+		Array.from(files).forEach((file) => formData.append("files", file));
+		axiosFile.post(`/ombudsmen/upload/${id}`, formData);
+	}
+
 	function createTicket(data) {
 		// TODO melhorar o feedback para o usuário
 		// 		 - tratemnto de erros
 		//		 - messagem indicando o resultado
+		console.log(data);
 		axios
-			.post(`/ombudsmen`, data)
+			.post("/ombudsmen", data)
 			.then((res) => {
-				setRequestResult(res.message);
+				postFiles(res.data.id);
 			})
 			.catch((err) => {});
 	}
@@ -67,7 +75,7 @@ export default function OmbudsmanCreate({ closeCallback }) {
 	return (
 		<>
 			<PopUP title="Novo Ticket" closeCallback={closeCallback}>
-				<div className="flex flex-col gap-2 min-w-[600px]">
+				<div className="flex flex-col gap-2 min-w-[600px] max-w-[800px]">
 					{
 						// TODO validar os inputs
 					}
@@ -90,7 +98,10 @@ export default function OmbudsmanCreate({ closeCallback }) {
 						placeholder="DESCRIÇÃO"
 						required
 					/>
-					<Forms.File />
+					<Forms.Files
+						files={files}
+						onChange={(e) => setFiles(e.target.files)}
+					/>
 					<Forms.Button
 						onClick={() => createTicket(data)}
 						className="flex items-center justify-center rounded-lg"

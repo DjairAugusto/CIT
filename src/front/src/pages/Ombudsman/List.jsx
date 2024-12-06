@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import OmbudsmanCreate from "./Ticket";
+import OmbudsmanCreate from "./Create";
 import { Plus } from "lucide-react";
 import OmbudsmanListTicket from "./ListTicket";
 import isResident from "../../utils/roles/isResident";
