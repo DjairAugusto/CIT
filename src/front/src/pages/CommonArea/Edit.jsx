@@ -11,19 +11,15 @@ import { Forms } from "../../components/Forms";
 export default function CommonAreaEdit() {
 	const [commonArea, setCommonArea] = useState(null);
 	const [image, setImage] = useState(null);
-	const [selectDay, setSelectDay] = useState("sunday");
-	const [currentTimeStart, setCurrentTimeStart] = useState(0);
-	const [currentTimeEnd, setCurrentTimeEnd] = useState(0);
+	const [selectDay, setSelectDay] = useState("");
+	const [currentSchedule, setCurrentSchedule] = useState(null);
+	const [timeStart, setTimeStart] = useState("");
+	const [timeEnd, setTimeEnd] = useState("");
 	const navigate = useNavigate();
 	const { state } = useLocation();
 
 	function selectHandler(e) {
 		setSelectDay(e.target.value);
-		const schedule = commonArea.schedule.find((each) =>
-			each.dayOfWeek.includes(e.target.value.toUpperCase())
-		);
-		setCurrentTimeStart(schedule.timeStart);
-		setCurrentTimeEnd(schedule.timeEnd);
 	}
 
 	useEffect(() => {
@@ -34,9 +30,78 @@ export default function CommonAreaEdit() {
 				setCommonArea(res.data);
 				// TOOD fetch image
 			});
-	});
+	}, []);
+
+	function getScheduleOfDay(commonArea, day) {
+		return commonArea?.schedule?.find((each) =>
+			each.dayOfWeek.includes(day.toUpperCase())
+		);
+	}
+
+	useEffect(() => {
+		if (commonArea)
+			setCurrentSchedule(getScheduleOfDay(commonArea, selectDay));
+	}, [commonArea, selectDay, setCurrentSchedule]);
+
+	useEffect(() => {
+		if (currentSchedule) {
+			setTimeStart(currentSchedule.timeStart.substring(0, 5));
+			setTimeEnd(currentSchedule.timeEnd.substring(0, 5));
+		}
+	}, [
+		currentSchedule?.timeStart,
+		currentSchedule?.timeEnd,
+		setTimeStart,
+		setTimeEnd,
+	]);
 
 	if (!commonArea) return <Loading />;
+
+	function changeStart(start) {
+		if (!currentSchedule) return;
+		const end = currentSchedule.timeEnd;
+		changeTime(start, end);
+	}
+
+	function changeEnd(end) {
+		if (!currentSchedule) return;
+		const start = currentSchedule.timeStart;
+		changeTime(start, end);
+	}
+
+	function changeTime(start, end) {
+		const result = { ...commonArea };
+
+		const sameDay = getScheduleOfDay(result, selectDay);
+		if (sameDay === undefined) return;
+
+		sameDay.dayOfWeek.splice(
+			sameDay.dayOfWeek.indexOf(selectDay.toUpperCase()),
+			1
+		);
+		if (sameDay.dayOfWeek.length === 0)
+			result.schedule.splice(result.schedule.indexOf(sameDay), 1);
+
+		if(start.length === 5) start += ":00";
+		if(end.length === 5) end += ":00";
+		const sameTime = result.schedule.find(
+			(each) => each.timeStart === start && each.timeEnd === end
+		);
+		if (sameTime) sameTime.dayOfWeek.push(selectDay.toUpperCase());
+		else {
+			result.schedule.push({
+				timeStart: start,
+				timeEnd: end,
+				dayOfWeek: [selectDay.toUpperCase()],
+			});
+		}
+		setCommonArea(result);
+	}
+
+	function fetchUpdate() {
+		// TODO implementar validação
+		// TODO implementar requisição
+	}
 
 	return (
 		<CommonAreaBase>
@@ -72,25 +137,30 @@ export default function CommonAreaEdit() {
 						<Forms.Select
 							value={selectDay}
 							onChange={selectHandler}
+							defaultOption="Escolha um Dia da Semana"
 							options={Object.entries(daysOfWeek).map(
 								([key, value]) => {
 									return { value: key, text: value[0] };
 								}
 							)}
 						/>
-						<input
+						<Forms.InputMask
+							mask="99:99"
 							className="w-full text-lg py-2 px-3"
-							value={currentTimeStart}
+							value={timeStart}
 							onChange={(e) => {
-								setCurrentTimeStart(e.target.value);
+								changeStart(e.target.value);
 							}}
+							disabled={!currentSchedule}
 						/>
-						<input
+						<Forms.InputMask
+							mask="99:99"
 							className="w-full text-lg py-2 px-3"
-							value={currentTimeEnd}
+							value={timeEnd}
 							onChange={(e) => {
-								setCurrentTimeEnd(e.target.value);
+								changeEnd(e.target.value);
 							}}
+							disabled={!currentSchedule}
 						/>
 						<h2 className="text-2xl font-semibold">Taxa</h2>
 						<div>
