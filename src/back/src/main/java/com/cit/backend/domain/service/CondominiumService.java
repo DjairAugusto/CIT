@@ -22,6 +22,8 @@ public class CondominiumService {
 
     @Autowired
     private TokenService tokenService;
+    @Autowired
+    private ContactsCondominiumRepository contactsCondominiumRepository;
 
     public Condominium save(Condominium condominium) {
         if (condominiumRepository.findByCnpj(condominium.getCnpj()) != null) {
@@ -78,5 +80,9 @@ public class CondominiumService {
 
     public Condominium update(Condominium condominium) {
         return condominiumRepository.save(condominium);
+    }
+
+    public ContactsCondominium saveContact(ContactsCondominium contactsCondominium) {
+        return contactsCondominiumRepository.save(contactsCondominium);
     }
 }

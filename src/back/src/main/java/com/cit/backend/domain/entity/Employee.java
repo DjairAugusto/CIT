@@ -14,8 +14,11 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 public class Employee extends People {
-    @Column
+    @Column(length = 80)
     private String role;
+
+    @OneToOne(mappedBy = "manager")
+    private Condominium management;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="condominium_id", nullable=true)

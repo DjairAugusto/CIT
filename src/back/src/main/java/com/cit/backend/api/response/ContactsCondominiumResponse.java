@@ -1,5 +1,6 @@
 package com.cit.backend.api.response;
 
+import com.cit.backend.domain.entity.ContactsCondominium;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,4 +15,6 @@ import java.util.List;
 public class ContactsCondominiumResponse {
     private String location;
     private ContactCondominiumResponse[] contacts;
+    public ContactsCondominiumResponse(ContactsCondominium contact) {
+    }
 }

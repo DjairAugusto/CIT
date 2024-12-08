@@ -26,6 +26,9 @@ import java.util.*;
 public class ContactsController {
 
     @Autowired
+    private ContactsCondominiumMapper contactsCondominiumService;
+
+    @Autowired
     private ContactsCondominiumMapper contactsCondominiumMapper;
 
     @Autowired
@@ -33,7 +36,7 @@ public class ContactsController {
 
     @Autowired
     private EmployeeService employeeService;
-
+  
     @GetMapping
     public ResponseEntity<List<ContactsCondominiumResponse>> getContacts() {
         List<ContactsCondominiumResponse> contactsList = new ArrayList<>();
@@ -62,6 +65,7 @@ public class ContactsController {
     }
 
     @PostMapping
+    @RolesAllowed("ADMIN")  
     public ResponseEntity<ContactsCondominiumResponse> createContact(@Valid @RequestBody ContactsCondominiumRequest request) {
         Profile profile = (Profile) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Employee employee = employeeService.findByProfile(profile);
@@ -83,6 +87,7 @@ public class ContactsController {
 
         Condominium condominiumSaved = condominiumService.update(condominium);
         ContactsCondominiumResponse response = contactsCondominiumMapper.toContactsCondominiumResponse(condominiumSaved.getContactsCondominium());
+      
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

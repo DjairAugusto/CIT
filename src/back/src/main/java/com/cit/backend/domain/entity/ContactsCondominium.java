@@ -23,6 +23,9 @@ public class ContactsCondominium {
 
     @OneToMany(mappedBy = "contactsCondominium")
     private Set<ContactCondominium> contacts;
+  
+    @OneToMany(mappedBy="contacts", cascade = CascadeType.ALL)
+    private Set<ContactValue> contacts;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "condominium_id", nullable = false)

@@ -2,98 +2,40 @@ import React from 'react'
 import {Forms} from "../../components/Forms";
 import {PhoneCall} from "lucide-react";
 import ConteinerOptions from "./ConteinerOptions";
+import Axios from "../../utils/requisition/citRequisition"
 
 // TODO integração dos contatos com o back
 export default function ContactResident() {
-	const options = [
-		{
-			value: '1',
-			text: 'Áreas Comuns',
+	const [options, setOptions] = React.useState([])
+	const [contacts, setContacts] = React.useState([])
+
+	const getContacts = async () => {
+		try {
+			let response;
+			response = await Axios.get('contacts')
+			setContacts(response.data);
 		}
-	]
-	const optionConteiner = [
-		{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-				{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-						{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-								{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-		{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-		{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-		{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-		{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-		{
-			title: 'Áreas Comuns',
-			contect: [
-				{
-					type: 'phone',
-					value: '(21) 99999-9999',
-				}
-			]
-		},
-	]
+		catch(error) {
+			console.error(error);
+		}
+	}
+
+	React.useEffect(() => {
+		const options = [
+			{
+				value: 'condominium',
+				text: 'Condomínio'
+			},
+			{
+				value: 'functionary',
+				text: 'Funcionários'
+			},
+		]
+		setOptions(options)
+		getContacts()
+
+	},[])
+	
 	return (
 		<main className='p-10 flex flex-col gap-8'>
 			<h1 className='flex text-2xl items-center'>
@@ -105,9 +47,8 @@ export default function ContactResident() {
 			</div>
 			<div className='flex flex-row flex-wrap justify-around'>
 				{
-					optionConteiner.map(option => (
-						<ConteinerOptions title={option.title} options={option.contect}/>
-					))
+					(contacts.length > 0) &&
+					contacts.map(contact => (<ConteinerOptions title={contact.name} options={contact.contacts}/>))
 				}
 			</div>
 		</main>
