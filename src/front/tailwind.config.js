@@ -5,7 +5,7 @@ export const theme = {
 	extend: {
 		colors: {
 			primary: {
-				1: "AFAFAF",
+				1: "#AFAFAF",
 				50: "#f6f8f7",
 				1000: "#42D0B3",
 			},

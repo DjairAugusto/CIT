@@ -20,5 +20,13 @@ const nonAuthorizedInstance = axios.create({
 	},
 });
 
-export { nonAuthorizedInstance };
+const multiPartInstance = axios.create({
+	baseURL: "http://localhost:8080",
+	headers: {
+		"Content-Type": "multipart/form-data",
+		Authorization: `Bearer ${token}`,
+	},
+});
+
+export { nonAuthorizedInstance, multiPartInstance };
 export default instance;

@@ -31,6 +31,6 @@ public class CommonArea {
     @OneToMany(mappedBy = "commonArea", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Set<CommonAreaSchedule> schedule;
 
-    @OneToMany(mappedBy = "commonArea")
+    @OneToMany(mappedBy = "commonArea", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Reserve> reserves;
 }

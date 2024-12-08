@@ -39,6 +39,9 @@ import FinancialADM from "./pages/FinancialADM";
 import Financial from "./pages/Financial";
 import AssemblyAdm from "./pages/Assembly/AssemblyAdm";
 import AssemblyList from "./pages/Assembly/AssemblyList";
+import Indicator from "./pages/indicator";
+import HomeResident from "./pages/HomeResident";
+import CommonAreaCreate from "./pages/CommonArea/Create";
 
 const router = createBrowserRouter([
 	{
@@ -70,10 +73,21 @@ const router = createBrowserRouter([
 				path: "/howwework",
 				element: <HowWeWork />,
 			},
+			{
+				path: "/indicator",
+				element: <Indicator />,
+			},
+			{
+				path: "/indicator",
+				element: <Indicator />,
+			},
+			{
+				path: "/HomeResident",
+				element: <HomeResident />,
+			}
 		],
 	},
 	{
-		path: "/register",
 		element: <Register />,
 		errorElement: <PageError />,
 		children: [
@@ -122,6 +136,10 @@ const router = createBrowserRouter([
 				path: "/common-area/edit",
 				element: <CommonAreaEdit />,
 			},
+			{
+				path: "/common-area/create",
+				element: <CommonAreaCreate />,
+			}
 		],
 	},
 	{
@@ -175,7 +193,7 @@ const router = createBrowserRouter([
 			},
 			{
 				element: <OmbudsmanDetails />,
-				path: "/ombudsman/:id",
+				path: "/ombudsman/details",
 			},
 		],
 	},
