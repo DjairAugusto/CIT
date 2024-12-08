@@ -70,6 +70,19 @@ public class CommonAreaController {
         return ResponseEntity.ok(response);
     }
 
+    @PutMapping
+    @RolesAllowed("ADMIN")
+    public ResponseEntity<CommonAreaResponse> putCommonArea(@RequestBody CommonAreaRequest request) {
+        if (request.getId() == null)
+            throw new MissingVariableException("The id of the Common Area is needed", List.of("id"));
+
+        CommonArea commonArea = commonAreaMapper.toCommonArea(request);
+        commonArea = commonAreaService.save(commonArea);
+        CommonAreaResponse response = commonAreaMapper.toCommonAreaResponse(commonArea);
+
+        return ResponseEntity.ok(response);
+    }
+
     @PatchMapping
     @RolesAllowed("ADMIN")
     public ResponseEntity<CommonAreaResponse> updateCommonArea(@RequestBody CommonAreaRequest request) {
