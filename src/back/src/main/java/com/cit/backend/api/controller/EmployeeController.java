@@ -46,7 +46,7 @@ public class EmployeeController {
     public ResponseEntity<EmployeeResponse> createEmployee(@Valid @RequestBody EmployeeRequest request) {
         Employee employee = employeeMapper.toEmployee(request);
         Employee employeeSaved = employeeService.save(employee);
-        EmployeeResponse response = employeeMapper.toEmployeeResponse(employeeSaved)
+        EmployeeResponse response = employeeMapper.toEmployeeResponse(employeeSaved);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

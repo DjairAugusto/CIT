@@ -49,10 +49,6 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
-    public Employee findByProfile(Profile profile){
-        return employeeRepository.findByProfile(profile);
-    }
-
     public void deleteById(Long id) {
         employeeRepository.deleteById(id);
     }

@@ -34,7 +34,7 @@ public class CondominiumController {
 
         Condominium condominiumSaved = condominiumService.save(condominium);
       
-        Employee manager = condominiumSaved.getManager();
+        manager = condominiumSaved.getManager();
         manager.setCondominium(condominiumSaved);
         employeeService.save(manager);
 
