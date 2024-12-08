@@ -7,6 +7,7 @@ import FormsRoot from "./FormsRoot";
 import FormsSelect from "./FormsSelect";
 import FormsInputMask from "./FormsInputMask";
 import FormsTextArea from "./FormsTextArea";
+import FormsInputCurrency from "./FormsInputCurrency";
 import FileInput from "./FileInput";
 
 export const Forms = {
@@ -20,4 +21,5 @@ export const Forms = {
 	PageStep: FormsPageStep,
 	TextArea: FormsTextArea,
 	File: FileInput,
+	Currency: FormsInputCurrency,
 };
