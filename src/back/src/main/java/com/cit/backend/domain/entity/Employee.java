@@ -8,19 +8,16 @@ import lombok.Setter;
 import java.util.List;
 
 
-@Entity(name = "employees")
-@PrimaryKeyJoinColumn(name = "people_id")
+@Entity
+@Table(name = "employees")
 @Setter
 @Getter
 @NoArgsConstructor
 public class Employee extends People {
-    @OneToOne(mappedBy = "employee")
-    private Condominium management;
-
     @Column
     private String role;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="condominium_id", nullable=true)
     private Condominium condominium;
 

@@ -1,5 +1,4 @@
 package com.cit.backend.api.controller;
-
 import com.cit.backend.api.mapper.CondominiumMapper;
 import com.cit.backend.domain.entity.Condominium;
 import com.cit.backend.domain.entity.Employee;
@@ -29,10 +28,16 @@ public class CondominiumController {
     @PostMapping
     public ResponseEntity<CondominiumResponse> createCondominium(@Valid @RequestBody CondominiumRequest request) {
         Condominium condominium = condominiumMapper.toCondominium(request);
+
+        Employee manager = employeeService.findById(request.getManagerId());
+        condominium.setManager(manager);
+
         Condominium condominiumSaved = condominiumService.save(condominium);
+      
         Employee manager = condominiumSaved.getManager();
         manager.setCondominium(condominiumSaved);
         employeeService.save(manager);
+
         CondominiumResponse response = condominiumMapper.toCondominiumResponse(condominiumSaved);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

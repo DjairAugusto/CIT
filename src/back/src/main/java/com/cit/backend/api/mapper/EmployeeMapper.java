@@ -11,6 +11,9 @@ import com.cit.backend.api.response.AdminResponse;
 import com.cit.backend.api.response.EmployeeResponse;
 import com.cit.backend.domain.entity.Employee;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class EmployeeMapper {
     @Autowired
@@ -39,6 +42,12 @@ public class EmployeeMapper {
 
     public EmployeeResponse toEmployeeResponse(Employee employee) {
         return modelMapper.map(employee, EmployeeResponse.class);
+    }
+
+    public List<EmployeeResponse> toEmployeeResponseAll(List<Employee> employees) {
+        return employees.stream()
+                .map(this::toEmployeeResponse)
+                .collect(Collectors.toList());
     }
 
     public AdminRequest toAdminRequest(Employee employee) {

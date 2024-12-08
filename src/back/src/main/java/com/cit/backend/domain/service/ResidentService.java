@@ -19,15 +19,12 @@ public class ResidentService {
     @Autowired
     private ProfileService profileService;
 
-    @Autowired
-    private PeopleService peopleService;
-
     public Resident getFromProfile(Profile profile) {
         return residentRepository.findByProfile(profile).orElse(null);
     }
 
     public Resident save(Resident resident) {
-        if(peopleService.findByCPF(resident.getCpf()) != null) {
+        if(residentRepository.findByCpf(resident.getCpf()).isPresent()) {
             throw new UniqueColumnAlreadyExistsException("CPF already registered");
         }
 
