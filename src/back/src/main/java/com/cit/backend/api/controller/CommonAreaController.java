@@ -4,9 +4,11 @@ import com.cit.backend.api.mapper.CommonAreaMapper;
 import com.cit.backend.api.request.CommonAreaRequest;
 import com.cit.backend.api.response.CommonAreaResponse;
 import com.cit.backend.domain.entity.CommonArea;
+import com.cit.backend.domain.entity.Employee;
 import com.cit.backend.domain.entity.Profile;
 import com.cit.backend.domain.entity.Resident;
 import com.cit.backend.domain.service.CommonAreaService;
+import com.cit.backend.domain.service.EmployeeService;
 import com.cit.backend.domain.service.ResidentService;
 import com.cit.backend.exceptions.MissingVariableException;
 import jakarta.annotation.security.RolesAllowed;
@@ -24,6 +26,9 @@ public class CommonAreaController {
     private CommonAreaService commonAreaService;
 
     @Autowired
+    private EmployeeService employeeService;
+
+    @Autowired
     private ResidentService residentService;
 
     @Autowired
@@ -32,7 +37,11 @@ public class CommonAreaController {
     @PostMapping
     @RolesAllowed("ADMIN")
     public ResponseEntity<CommonAreaResponse> createCommonArea(@RequestBody CommonAreaRequest request) {
+        Profile profile = (Profile) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Employee employee = employeeService.findByProfile(profile);
+
         CommonArea commonArea = commonAreaMapper.toCommonArea(request);
+        commonArea.setCondominium(employee.getCondominium());
         commonArea = commonAreaService.save(commonArea);
         CommonAreaResponse response = commonAreaMapper.toCommonAreaResponse(commonArea);
 
