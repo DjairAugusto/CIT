@@ -191,7 +191,7 @@ const router = createBrowserRouter([
 			},
 			{
 				element: <OmbudsmanDetails />,
-				path: "/ombudsman/:id",
+				path: "/ombudsman/details",
 			},
 		],
 	}

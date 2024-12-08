@@ -28,7 +28,11 @@ export default function OmbudsmanListTicket({ ticket }) {
 				<span className="w-full text-xl">{ticket.title}</span>
 				{collapse ? <ChevronUp /> : <ChevronDown />}
 			</div>
-			<div className={`overflow-hidden ${collapse ? "max-h-none mt-4" : "max-h-0"}`}>
+			<div
+				className={`overflow-hidden ${
+					collapse ? "max-h-none mt-4" : "max-h-0"
+				}`}
+			>
 				<div>
 					<strong>Tipo: </strong>
 					{translateType(ticket.type)}
@@ -39,7 +43,13 @@ export default function OmbudsmanListTicket({ ticket }) {
 				</div>
 				<button
 					className="text-left p-0 text-primary-1000 bg-transparent border-none w-auto inline"
-					onClick={() => navigate(`./${ticket.id}`)}
+					onClick={() =>
+						navigate("./details", {
+							state: {
+								ticketId: ticket.id,
+							},
+						})
+					}
 				>
 					Ver Detalhes
 				</button>

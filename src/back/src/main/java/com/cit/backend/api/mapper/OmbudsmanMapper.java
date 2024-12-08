@@ -23,15 +23,19 @@ public class OmbudsmanMapper {
 
     public Ticket toTicket(OmbudsmenRequest ombudsman) {
         Ticket ticket = modelMapper.map(ombudsman, Ticket.class);
-        ticket.setEmployee(employeeService.findById(ombudsman.getEmployeeId()));
+        if (ombudsman.getEmployeeId() != null) ticket.setEmployee(employeeService.findById(ombudsman.getEmployeeId()));
         return ticket;
     }
 
     public OmbudsmenResponse toOmbudsmenResponse(Ticket ticket) {
         OmbudsmenResponse response = modelMapper.map(ticket, OmbudsmenResponse.class);
-        response.setEmployeeId(ticket.getEmployee().getId());
+        if (ticket.getEmployee() != null) response.setEmployeeId(ticket.getEmployee().getId());
         response.setApartmentId(ticket.getApartment().getId());
         return response;
+    }
+
+    public List<OmbudsmenResponse> toOmbudsmenResponse(List<Ticket> tickets) {
+        return tickets.stream().map(this::toOmbudsmenResponse).toList();
     }
 
     // TODO analisar outros meios e se o contexto faz sentido

@@ -20,6 +20,11 @@ export const Forms = {
 	Page: FormsPage,
 	PageStep: FormsPageStep,
 	TextArea: FormsTextArea,
-	File: FileInput,
 	Currency: FormsInputCurrency,
+	File: ({ onChange, file }) => (
+		<FileInput files={[file]} onChange={onChange} multiple={false} />
+	),
+	Files: ({ onChange, files }) => (
+		<FileInput files={files} onChange={onChange} multiple />
+	),
 };
