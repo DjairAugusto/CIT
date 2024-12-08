@@ -13,8 +13,8 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReserveRequest {
-    private LocalDate data;
+    private Long id;
+    private LocalDate date;
     private LocalTime timeStart;
     private LocalTime timeEnd;
-    private ApartmentRequest apartment;
 }

@@ -25,7 +25,7 @@ public class People {
     @OneToOne(mappedBy = "people", optional = true)
     private Contact contact;
 
-    @OneToOne(cascade = CascadeType.REMOVE)
+    @OneToOne
     @JoinColumn(name = "profile_id", nullable = true)
     private Profile profile;
 }

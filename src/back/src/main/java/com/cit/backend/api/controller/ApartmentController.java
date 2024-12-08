@@ -6,9 +6,9 @@ import com.cit.backend.api.response.ApartmentResponse;
 import com.cit.backend.api.validator.JWTToken;
 import com.cit.backend.domain.entity.Apartment;
 import com.cit.backend.domain.service.ApartmentService;
+import com.cit.backend.exceptions.InvalidApartmentTokenException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +34,7 @@ public class ApartmentController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/{token:^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}}")
+    @GetMapping("/by-token/{token:^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}}")
     public ResponseEntity<ApartmentResponse> getApartment(@PathVariable("token") @Valid @JWTToken String token) {
         Apartment apartment = apartmentService.findByToken(token);
         if (apartment == null) {
@@ -53,12 +53,22 @@ public class ApartmentController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping
-    public ResponseEntity<ApartmentResponse> createApartment(@Valid @RequestBody ApartmentRequest request) {
-        Apartment apartment = apartmentMapper.toApartment(request);
-        Apartment apartmentSaved = apartmentService.save(apartment);
+    @PostMapping("/register/{token:^(?:[A-Za-z0-9-_]+(?:\\.|$)){3}}")
+    public ResponseEntity<ApartmentResponse> register(@PathVariable("token") @Valid @JWTToken String token, @RequestBody ApartmentRequest request) {
+        Apartment apartment = apartmentService.findByToken(token);
+        if (apartment == null) {
+            throw new InvalidApartmentTokenException("Apartment not found");
+        }
+
+        Apartment apartmentUpdated = apartmentMapper.toApartment(request);
+        apartmentUpdated.setToken(token);
+        apartmentUpdated.setId(apartment.getId());
+        apartmentUpdated.setUnit(apartment.getUnit());
+        apartmentUpdated.setNumber(apartment.getNumber());
+
+        Apartment apartmentSaved = apartmentService.save(apartmentUpdated);
         ApartmentResponse response = apartmentMapper.toApartmentResponse(apartmentSaved);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        return ResponseEntity.ok(response);
     }
 }
