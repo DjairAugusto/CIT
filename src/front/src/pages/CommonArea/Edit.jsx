@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "../../utils/requisition/citRequisition";
-import { Upload } from "lucide-react";
+import { Check, Upload, X } from "lucide-react";
 import { daysOfWeek } from "../../utils/days/allDays";
-import formatPrice from "../../utils/formatPrice";
 import Loading from "../../components/Loading";
 import CommonAreaBase from "./Base";
 import { Forms } from "../../components/Forms";
@@ -16,6 +15,7 @@ export default function CommonAreaEdit() {
 	const [timeStart, setTimeStart] = useState("");
 	const [timeEnd, setTimeEnd] = useState("");
 	const [errors, setErrors] = useState({});
+	const [saveButtonText, setSaveButtonText] = useState("Salvar");
 	const navigate = useNavigate();
 	const { state } = useLocation();
 
@@ -145,12 +145,19 @@ export default function CommonAreaEdit() {
 	function onChange(callback) {
 		return (...params) => {
 			callback(...params);
+			setSaveButtonText("Salvar");
 			validateCommonArea();
 		};
 	}
 
 	function fetchUpdate() {
-		// TODO implementar requisição
+		setSaveButtonText(<Loading />);
+		axios
+			.put("/common-area", commonArea)
+			.then(() => {
+				setSaveButtonText(<Check />);
+			})
+			.catch(() => setSaveButtonText(<X />));
 	}
 
 	return (
@@ -243,10 +250,10 @@ export default function CommonAreaEdit() {
 						</button>
 						<button
 							onClick={() => fetchUpdate()}
-							className="flex-1 text-white text-3xl bg-primary-1000"
+							className="flex-1 flex items-center justify-center text-white text-3xl bg-primary-1000"
 							disabled={Object.keys(errors).length !== 0}
 						>
-							Salvar
+							{saveButtonText}
 						</button>
 					</div>
 				</div>
