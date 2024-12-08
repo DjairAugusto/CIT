@@ -37,6 +37,8 @@ import OmbudsmanDetails from "./pages/Ombudsman/Details";
 import Rules from "./pages/Rules";
 import FinancialADM from "./pages/FinancialADM";
 import Financial from "./pages/Financial";
+import AssemblyAdm from "./pages/Assembly/AssemblyAdm";
+import AssemblyList from "./pages/Assembly/AssemblyList";
 import Indicator from "./pages/indicator";
 import HomeResident from "./pages/HomeResident";
 import CommonAreaCreate from "./pages/CommonArea/Create";
@@ -194,7 +196,20 @@ const router = createBrowserRouter([
 				path: "/ombudsman/details",
 			},
 		],
-	}
+	},
+	{
+		path: "/assembly",
+		children: [
+			{
+				element: <AssemblyList />,
+				index: true,
+			},
+			{
+				element: <AssemblyAdm />,
+				path: "/assembly/publish",
+			}
+		],
+	},
 ]);
 
 // Renderizando a aplicação
