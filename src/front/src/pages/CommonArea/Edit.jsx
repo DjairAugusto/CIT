@@ -15,11 +15,20 @@ export default function CommonAreaEdit() {
 	const [currentSchedule, setCurrentSchedule] = useState(null);
 	const [timeStart, setTimeStart] = useState("");
 	const [timeEnd, setTimeEnd] = useState("");
+	const [errors, setErrors] = useState({});
 	const navigate = useNavigate();
 	const { state } = useLocation();
 
 	function selectHandler(e) {
 		setSelectDay(e.target.value);
+	}
+
+	function setDescription(description) {
+		setCommonArea({ ...commonArea, description });
+	}
+
+	function setTax(tax) {
+		setCommonArea({ ...commonArea, tax });
 	}
 
 	useEffect(() => {
@@ -49,6 +58,7 @@ export default function CommonAreaEdit() {
 			setTimeEnd(currentSchedule.timeEnd.substring(0, 5));
 		}
 	}, [
+		currentSchedule,
 		currentSchedule?.timeStart,
 		currentSchedule?.timeEnd,
 		setTimeStart,
@@ -82,8 +92,8 @@ export default function CommonAreaEdit() {
 		if (sameDay.dayOfWeek.length === 0)
 			result.schedule.splice(result.schedule.indexOf(sameDay), 1);
 
-		if(start.length === 5) start += ":00";
-		if(end.length === 5) end += ":00";
+		if (start.length === 5) start += ":00";
+		if (end.length === 5) end += ":00";
 		const sameTime = result.schedule.find(
 			(each) => each.timeStart === start && each.timeEnd === end
 		);
@@ -98,8 +108,48 @@ export default function CommonAreaEdit() {
 		setCommonArea(result);
 	}
 
+	function validateSchedule(errors) {
+		const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/;
+		const missingDays = new Set();
+		const invalidTimes = new Set();
+		Object.keys(daysOfWeek).forEach((day) => {
+			const schedule = getScheduleOfDay(commonArea, day);
+			if (!schedule) {
+				missingDays.add(day);
+				return;
+			}
+
+			let start, end;
+			if ((start = !schedule.timeStart.match(timeRegex)))
+				invalidTimes.add(schedule.timeStart);
+			if ((end = !schedule.timeEnd.match(timeRegex)))
+				invalidTimes.add(schedule.timeEnd);
+			if (start || end) missingDays.add(day);
+		});
+		if (missingDays.length > 0) errors.missingDays = missingDays;
+		if (invalidTimes.length > 0) errors.invalidTimes = invalidTimes;
+	}
+
+	function validateCommonArea() {
+		if (!commonArea) return false;
+
+		const errors = {};
+		validateSchedule(errors);
+		if (commonArea.description.length < 20)
+			errors.description = "A descrição deve ter no mínimo 20 caracteres";
+		if (commonArea.tax < 0) errors.tax = "A taxa não pode ser negativa";
+
+		setErrors(errors);
+	}
+
+	function onChange(callback) {
+		return (...params) => {
+			callback(...params);
+			validateCommonArea();
+		};
+	}
+
 	function fetchUpdate() {
-		// TODO implementar validação
 		// TODO implementar requisição
 	}
 
@@ -115,7 +165,9 @@ export default function CommonAreaEdit() {
 							className="hidden"
 							type="file"
 							value={image?.filename}
-							onChange={(e) => setImage(e.target.files[0])}
+							onChange={onChange((e) =>
+								setImage(e.target.files[0])
+							)}
 							accept="image/png, image/jpeg"
 						/>
 					</label>
@@ -128,7 +180,13 @@ export default function CommonAreaEdit() {
 				<div className="grid grid-cols-12 grid-rows-6 w-full h-3/5 gap-4 p-6">
 					<div className="flex-auto row-span-5 col-start-1 col-end-8 h-full p-4">
 						<h2 className="text-3xl font-semibold">Detalhes</h2>
-						<p>{commonArea.description}</p>
+						<Forms.TextArea
+							error={errors.description}
+							onChange={onChange((e) =>
+								setDescription(e.target.textContent)
+							)}
+							value={commonArea.description}
+						/>
 					</div>
 					<div className="flex flex-col gap-2 row-span-5 flex-auto col-start-8 col-end-13 bg-gray-low h-full p-4">
 						<h2 className="text-2xl font-semibold">
@@ -136,7 +194,7 @@ export default function CommonAreaEdit() {
 						</h2>
 						<Forms.Select
 							value={selectDay}
-							onChange={selectHandler}
+							onChange={onChange((e) => selectHandler(e))}
 							defaultOption="Escolha um Dia da Semana"
 							options={Object.entries(daysOfWeek).map(
 								([key, value]) => {
@@ -148,30 +206,31 @@ export default function CommonAreaEdit() {
 							mask="99:99"
 							className="w-full text-lg py-2 px-3"
 							value={timeStart}
-							onChange={(e) => {
-								changeStart(e.target.value);
-							}}
+							onChange={onChange((e) =>
+								changeStart(e.target.value)
+							)}
 							disabled={!currentSchedule}
 						/>
 						<Forms.InputMask
 							mask="99:99"
 							className="w-full text-lg py-2 px-3"
 							value={timeEnd}
-							onChange={(e) => {
-								changeEnd(e.target.value);
-							}}
+							onChange={onChange((e) =>
+								changeEnd(e.target.value)
+							)}
 							disabled={!currentSchedule}
 						/>
 						<h2 className="text-2xl font-semibold">Taxa</h2>
 						<div>
-							<input
+							<Forms.Currency
 								className="w-full text-lg py-2 px-3"
-								name="tax"
 								id="tax"
-								defaultValue={formatPrice(
-									commonArea.tax,
-									false
+								name="tax"
+								value={commonArea.tax}
+								onChange={onChange((_, __, values) =>
+									setTax(values.float)
 								)}
+								allowNegativeValue={false}
 							/>
 						</div>
 					</div>
@@ -182,7 +241,11 @@ export default function CommonAreaEdit() {
 						>
 							Cancelar
 						</button>
-						<button className="flex-1 text-white text-3xl bg-primary-1000">
+						<button
+							onClick={() => fetchUpdate()}
+							className="flex-1 text-white text-3xl bg-primary-1000"
+							disabled={Object.keys(errors).length !== 0}
+						>
 							Salvar
 						</button>
 					</div>
