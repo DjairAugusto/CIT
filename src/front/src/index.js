@@ -39,6 +39,7 @@ import FinancialADM from "./pages/FinancialADM";
 import Financial from "./pages/Financial";
 import Indicator from "./pages/indicator";
 import HomeResident from "./pages/HomeResident";
+import CommonAreaCreate from "./pages/CommonArea/Create";
 
 const router = createBrowserRouter([
 	{
@@ -133,6 +134,10 @@ const router = createBrowserRouter([
 				path: "/common-area/edit",
 				element: <CommonAreaEdit />,
 			},
+			{
+				path: "/common-area/create",
+				element: <CommonAreaCreate />,
+			}
 		],
 	},
 	{

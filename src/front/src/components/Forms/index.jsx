@@ -7,6 +7,7 @@ import FormsRoot from "./FormsRoot";
 import FormsSelect from "./FormsSelect";
 import FormsInputMask from "./FormsInputMask";
 import FormsTextArea from "./FormsTextArea";
+import FormsInputCurrency from "./FormsInputCurrency";
 import FileInput from "./FileInput";
 
 export const Forms = {
@@ -19,6 +20,7 @@ export const Forms = {
 	Page: FormsPage,
 	PageStep: FormsPageStep,
 	TextArea: FormsTextArea,
+	Currency: FormsInputCurrency,
 	File: ({ onChange, file }) => (
 		<FileInput files={[file]} onChange={onChange} multiple={false} />
 	),
