@@ -4,9 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.cit.backend.exceptions.InvalidTokenException;
-import com.cit.backend.exceptions.UserDoesNotExistsException;
-import com.cit.backend.exceptions.InvalidApartmentTokenException;
+import com.cit.backend.exceptions.*;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -24,8 +22,6 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import com.cit.backend.api.intra.message.RestErrorMessage;
 import com.cit.backend.api.intra.message.RestErrorMissingVariableMessage;
-import com.cit.backend.exceptions.MissingVariableException;
-import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 @ControllerAdvice
@@ -90,6 +86,20 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(InvalidApartmentTokenException.class)
     public ResponseEntity<RestErrorMessage> handlerInvalidRequestException(InvalidApartmentTokenException exception) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
+        RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
+        return ResponseEntity.status(status).body(message);
+    }
+
+    @ExceptionHandler(InvalidRangeOfTimeException.class)
+    public ResponseEntity<RestErrorMessage> handlerInvalidRangeOfTimeException(InvalidRangeOfTimeException exception) {
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
+        return ResponseEntity.status(status).body(message);
+    }
+
+    @ExceptionHandler(DateConflictException.class)
+    public ResponseEntity<RestErrorMessage> handlerDateConflictException(DateConflictException exception) {
+        HttpStatus status = HttpStatus.CONFLICT;
         RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
         return ResponseEntity.status(status).body(message);
     }
