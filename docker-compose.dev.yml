@@ -21,6 +21,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/cit
       SPRING_DATASOURCE_USERNAME: dev
       SPRING_DATASOURCE_PASSWORD: dev
+      SPRING_LOG_LEVEL: DEBUG
     ports:
       - "8080:8080"
       - "8081:8081"
