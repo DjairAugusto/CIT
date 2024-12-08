@@ -1,10 +1,19 @@
 package com.cit.backend.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
+
 @Entity(name = "lost_and_found")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class LostAndFound {
 
     @Id

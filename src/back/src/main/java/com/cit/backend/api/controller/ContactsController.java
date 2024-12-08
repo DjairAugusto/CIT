@@ -7,18 +7,19 @@ import com.cit.backend.api.request.ContactsCondominiumRequest;
 import com.cit.backend.api.response.CondominiumResponse;
 import com.cit.backend.api.response.ContactCondominiumResponse;
 import com.cit.backend.api.response.ContactsCondominiumResponse;
-import com.cit.backend.domain.entity.Condominium;
-import com.cit.backend.domain.entity.ContactsCondominium;
+import com.cit.backend.domain.entity.*;
 import com.cit.backend.domain.service.CondominiumService;
+import com.cit.backend.domain.service.EmployeeService;
+import com.cit.backend.domain.service.ResidentService;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("/condominium/contacts")
@@ -28,8 +29,14 @@ public class ContactsController {
     private ContactsCondominiumMapper contactsCondominiumService;
 
     @Autowired
+    private ContactsCondominiumMapper contactsCondominiumMapper;
+
+    @Autowired
     private CondominiumService condominiumService;
 
+    @Autowired
+    private EmployeeService employeeService;
+  
     @GetMapping
     public ResponseEntity<List<ContactsCondominiumResponse>> getContacts() {
         List<ContactsCondominiumResponse> contactsList = new ArrayList<>();
@@ -58,11 +65,29 @@ public class ContactsController {
     }
 
     @PostMapping
-    @RolesAllowed("ADMIN")
+    @RolesAllowed("ADMIN")  
     public ResponseEntity<ContactsCondominiumResponse> createContact(@Valid @RequestBody ContactsCondominiumRequest request) {
-        ContactsCondominium contact = contactsCondominiumService.toContactsCondominium(request);
-        //ContactsCondominium contactSaved = condominiumService.saveContact(contact);
-        ContactsCondominiumResponse response = contactsCondominiumService.toContactsCondominiumResponse(contact);
+        Profile profile = (Profile) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Employee employee = employeeService.findByProfile(profile);
+        Condominium condominium = employee.getCondominium();
+
+        //TODO: fazer direito
+        if (employee == null || employee.getCondominium() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+
+        ContactsCondominium contact = contactsCondominiumMapper.toContactsCondominium(request);
+        contact.getContacts().forEach(contactItem -> System.out.println(contactItem.getType() + " " + contactItem.getValue()));
+        contact.setCondominium(condominium);
+
+        if (condominium.getContactsCondominium() == null) {
+            condominium.setContactsCondominium(new HashSet<>());
+        }
+        condominium.getContactsCondominium().add(contact);
+
+        Condominium condominiumSaved = condominiumService.update(condominium);
+        ContactsCondominiumResponse response = contactsCondominiumMapper.toContactsCondominiumResponse(condominiumSaved.getContactsCondominium());
+      
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

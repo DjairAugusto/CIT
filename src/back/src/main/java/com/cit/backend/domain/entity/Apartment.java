@@ -24,7 +24,7 @@ public class Apartment {
     @JWTToken
     private String token;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="unit_id", nullable=false)
     private Unit unit;
 
@@ -38,7 +38,7 @@ public class Apartment {
     @OneToMany(mappedBy = "apartment")
     private Set<Visitant> visits;
 
-    @OneToMany
+    @OneToMany(mappedBy = "apartment")
     private Set<Resident> residents;
 
     @OneToMany(mappedBy = "apartment")

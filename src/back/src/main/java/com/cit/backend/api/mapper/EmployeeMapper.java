@@ -1,7 +1,7 @@
 package com.cit.backend.api.mapper;
 
+import com.cit.backend.api.request.EmployeeRequest;
 import com.cit.backend.domain.entity.Profile;
-import com.cit.backend.domain.repository.ProfileRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,6 +11,9 @@ import com.cit.backend.api.response.AdminResponse;
 import com.cit.backend.api.response.EmployeeResponse;
 import com.cit.backend.domain.entity.Employee;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class EmployeeMapper {
     @Autowired
@@ -19,16 +22,18 @@ public class EmployeeMapper {
     @Autowired
     private ProfileMapper profileMapper;
 
-    @Autowired
-    private ProfileRepository profileRepository;
+    public Employee toEmployee(EmployeeRequest request) {
+        Employee employee = modelMapper.map(request, Employee.class);
+        Profile profile = profileMapper.toProfile(request.getProfile());
+        employee.setProfile(profile);
+        return employee;
+    }
 
-    public Employee toEmployee(AdminRequest employee) {
-        Profile profileEntity = profileMapper.toProfile(employee.getProfile());
-        profileEntity = profileRepository.save(profileEntity); // Save the Profile entity first
-
-        Employee employeeEntity = modelMapper.map(employee, Employee.class);
-        employeeEntity.setProfile(profileEntity); // Set the saved Profile entity
-        return employeeEntity;
+    public Employee toEmployee(AdminRequest request) {
+        Employee employee = modelMapper.map(request, Employee.class);
+        Profile profile = profileMapper.toProfile(request.getProfile());
+        employee.setProfile(profile);
+        return employee;
     }
 
     public AdminResponse toAdminResponse(Employee employee) {
@@ -37,6 +42,12 @@ public class EmployeeMapper {
 
     public EmployeeResponse toEmployeeResponse(Employee employee) {
         return modelMapper.map(employee, EmployeeResponse.class);
+    }
+
+    public List<EmployeeResponse> toEmployeeResponseAll(List<Employee> employees) {
+        return employees.stream()
+                .map(this::toEmployeeResponse)
+                .collect(Collectors.toList());
     }
 
     public AdminRequest toAdminRequest(Employee employee) {

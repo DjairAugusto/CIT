@@ -7,9 +7,10 @@ import validCnpj from "../../utils/validCnpj";
 import validCpf from "../../utils/validCpf";
 import validateEmail from "../../utils/validateEmail";
 import validateZipCode from "../../utils/validateZipCode";
-import axios from "../../utils/requisition/citRequisition"
+import {nonAuthorizedInstance as axios} from "../../utils/requisition/citRequisition"
 import { useNavigate } from 'react-router-dom';
 
+// TODO avaliar forma de utilizar vetores de dados, tipo vários carros ou perfis
 const formsTemplate = {
     condominium: {
         name: "",
@@ -38,6 +39,7 @@ const formsTemplate = {
     },
 };
 
+// TODO separar as funções de validação do Forms.Page pra um uso mais geral 
 export default function CondominiumRegistration() {
 	const [data, setData] = useState(formsTemplate);
 	const navigate = useNavigate();
@@ -181,7 +183,7 @@ export default function CondominiumRegistration() {
                 Object.keys(validateCondominiumForm()).length === 0,
                 Object.keys(validateAdminForm()).length === 0,
             ]}
-            callbak={() => register(data)}
+            callback={() => register(data)}
         />
     );
 }

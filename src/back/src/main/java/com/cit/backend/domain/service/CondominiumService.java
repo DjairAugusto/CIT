@@ -5,6 +5,7 @@ import com.cit.backend.domain.repository.*;
 import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -15,12 +16,10 @@ import java.util.List;
 public class CondominiumService {
     @Autowired
     private CondominiumRepository condominiumRepository;
+
     @Autowired
-    private BlockRepository blockRepository;
-    @Autowired
-    private ApartmentRepository apartmentRepository;
-    @Autowired
-    private UnitRepository unitRepository;
+    private EmployeeService employeeService;
+
     @Autowired
     private TokenService tokenService;
     @Autowired
@@ -35,19 +34,20 @@ public class CondominiumService {
             throw new UniqueColumnAlreadyExistsException("Syndico is already managing a condominium");
         }
 
-        Condominium condominiumSaved = condominiumRepository.save(condominium);
+        condominium = condominiumRepository.save(condominium);
+        condominium.getManager().setCondominium(condominium);
+
+        System.out.println(condominium.getManager().getId());
+        System.out.println(condominium.getManager().getName());
         int UNIT = 1;
 
-        List<Apartment> apartments = new ArrayList<>();
         for (int i = 0; i < condominium.getBlocks(); i++) {
             Block block = new Block();
-            block.setCondominium(condominiumSaved);
             block.setName("Block " + (i + 1));
 
             for (int j = 0; j < condominium.getUnits(); j++) {
                 UNIT++;
                 Unit unit = new Unit();
-                unit.setBlock(block);
                 unit.setNumber(UNIT);
 
                 for (int k = 0; k < condominium.getFloors(); k++) {
@@ -60,13 +60,14 @@ public class CondominiumService {
                         apartment.setToken(tokenService.generateToken());
                         unit.getApartments().add(apartment);
                     }
+                    unit.setBlock(block);
                 }
                 block.getUnits().add(unit);
             }
-
-            blockRepository.save(block);
+            block.setCondominium(condominium);
+            condominium.getBlockList().add(block);
         }
-        return condominiumSaved;
+        return condominiumRepository.save(condominium);
     }
 
     public Condominium findById(Long id) {

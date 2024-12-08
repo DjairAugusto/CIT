@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,7 +15,6 @@ import lombok.Setter;
 public class ContactsCondominiumResponse {
     private String location;
     private ContactCondominiumResponse[] contacts;
-
     public ContactsCondominiumResponse(ContactsCondominium contact) {
     }
 }

@@ -1,33 +1,32 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import { Forms } from "../../components/Forms";
-import {useState} from "react";
-import LoginFormes from './LoginFormes';
-import {useNavigate} from 'react-router-dom';
-import {nonAuthorizedInstance as axios} from "../../utils/requisition/citRequisition"
-import validateEmail from "../../utils/validateEmail";
-import { Cookies } from '../../utils/cookies';
+import { useState } from "react";
+import LoginFormes from "./LoginFormes";
+import { useNavigate } from "react-router-dom";
+import { nonAuthorizedInstance as axios } from "../../utils/requisition/citRequisition";
+import validateLogin from "../../utils/validateLogin";
+import { Cookies } from "../../utils/cookies";
 
 const formsTemplate = {
-    email: "",
+	email: "",
 	password: "",
-}
+};
 
 export default function Login() {
 	const [data, setData] = useState(formsTemplate);
 	const navigate = useNavigate();
 
-	if(Cookies.get('AuthorizationToken')) {
-		navigate('/home');
-	}
-
 	function register(data) {
-		axios.post("/auth/login", data).then(response => {
-			Cookies.set("AuthorizationToken", response.data.token);
-			navigate(`/home`);
-		}).catch(error => {
-			console.log(error);
-			// TODO Exbir mensagem de erro do login // back pronto em outra branch
-		});
+		axios
+			.post("/auth/login", data)
+			.then((response) => {
+				Cookies.set("AuthorizationToken", response.data.token);
+				navigate(`/home`);
+			})
+			.catch((error) => {
+				console.log(error);
+				// TODO Exbir mensagem de erro do login // back pronto em outra branch
+			});
 	}
 
 	function fieldsEmpty(fieldsData) {
@@ -47,19 +46,18 @@ export default function Login() {
 		checkFields(fieldsData);
 		let fieldsErrors = {};
 		Object.keys(fields).forEach((key) => {
-			if(key.includes('.')) {
-				const keyParts = key.split('.');
+			if (key.includes(".")) {
+				const keyParts = key.split(".");
 				const parentKey = keyParts[0];
-				if(!fieldsErrors[parentKey]) fieldsErrors[parentKey] = {};
+				if (!fieldsErrors[parentKey]) fieldsErrors[parentKey] = {};
 				fieldsErrors[parentKey][keyParts[1]] = fields[key];
-			}
-			else {
+			} else {
 				fieldsErrors[key] = fields[key];
 			}
 		});
 		return fieldsErrors;
 	}
-    
+
 	const updateFieldHandler = (field, value) => {
 		setData((prevData) => {
 			const updatedData = { ...prevData };
@@ -81,27 +79,33 @@ export default function Login() {
 		});
 	};
 
-	function validateLogin() {
-		let fieldsErrors ={};
-		
-		fieldsErrors = {...fieldsEmpty(data), ...fieldsErrors};
+	function validateLoginForms() {
+		let fieldsErrors = {};
+
+		fieldsErrors = { ...fieldsEmpty(data), ...fieldsErrors };
 		return fieldsErrors;
 	}
-	
+
 	const steps = [
 		<LoginFormes
 			data={data}
 			updateFieldHandler={updateFieldHandler}
-			fieldsErrors={validateLogin()}
+			fieldsErrors={validateLoginForms()}
 		/>,
-	]
-    
+	];
+
+	useEffect(() => {
+		if (validateLogin()) {
+			navigate("/");
+		}
+	}, [navigate]);
+
 	return (
 		<Forms.Page
 			steps={steps}
-			imageSource="/condominium-registration.png"
+			imageSource="/prediologin.png"
 			validations={[[true]]}
-			callbak={() => register(data)}
+			callback={() => register(data)}
 		/>
 	);
 }

@@ -11,7 +11,7 @@ public class Meeting {
     private Long id;
 
     @Column(length = 100)
-    private String reason;
+    private String title;
 
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime date;

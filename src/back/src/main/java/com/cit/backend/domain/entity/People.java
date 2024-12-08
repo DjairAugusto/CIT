@@ -5,7 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "peoples")
+@Entity
+@Table(name = "peoples")
 @Inheritance(strategy = InheritanceType.JOINED)
 @Setter
 @Getter
@@ -22,10 +23,10 @@ public class People {
     @Column(length = 14, unique = true)
     private String cpf;
 
-    @OneToOne(mappedBy = "people", optional = true)
+    @OneToOne(mappedBy = "people", optional = true, cascade = CascadeType.ALL)
     private Contact contact;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id", nullable = true)
     private Profile profile;
 }

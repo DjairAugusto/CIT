@@ -21,7 +21,7 @@ public class Unit {
     @Column(nullable = false)
     private int number;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="block_id", nullable=false)
     private Block block;
 

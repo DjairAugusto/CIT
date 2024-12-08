@@ -9,8 +9,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class ContactsCondominiumRequest {
-
-    @NotBlank(message = "Name is mandatory")
+    @NotBlank(message = "Location cannot be blank")
     private String location;
 
     private ContactCondominiumRequest[] contacts;

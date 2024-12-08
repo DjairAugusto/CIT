@@ -22,14 +22,14 @@ public class Block {
     @Column(length = 80)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="condominium_id", nullable=false)
     private Condominium condominium;
 
     @OneToMany(mappedBy="block", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Unit> units = new HashSet<>();
 
-    @ManyToMany
+    @ManyToMany()
     @JoinTable(
             name = "block_warning",
             joinColumns = @JoinColumn(name = "block_id"),

@@ -9,10 +9,9 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class ContactCondominiumRequest {
-
-    @NotBlank(message = "Type is mandatory")
+    @NotBlank(message = "Type cannot be blank")
     private String type;
 
-    @NotBlank(message = "Value is mandatory")
+    @NotBlank(message = "Value cannot be blank")
     private String value;
 }

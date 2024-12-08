@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-//rotes
+// routers
 import Main from "./routers/RootMain";
 import Register from "./routers/RootRegister";
 
@@ -27,6 +27,21 @@ import ContactResident from "./pages/ContactResident";
 import CommonAreaList from "./pages/CommonArea/List";
 import CommonAreaDetails from "./pages/CommonArea/Details";
 import CommonAreaEdit from "./pages/CommonArea/Edit";
+import ShipsOrders from "./pages/ShipsOrders";
+import ShipsOrdersAdm from "./pages/ShipsOrdersAdm";
+import LostFound from "./pages/LostFound/LostFound";
+import LostFoundList from "./pages/LostFound/Details";
+import HowWeWork from "./pages/HowWeWork";
+import OmbudsmanList from "./pages/Ombudsman/List";
+import OmbudsmanDetails from "./pages/Ombudsman/Details";
+import Rules from "./pages/Rules";
+import FinancialADM from "./pages/FinancialADM";
+import Financial from "./pages/Financial";
+import AssemblyAdm from "./pages/Assembly/AssemblyAdm";
+import AssemblyList from "./pages/Assembly/AssemblyList";
+import Indicator from "./pages/indicator";
+import HomeResident from "./pages/HomeResident";
+import CommonAreaCreate from "./pages/CommonArea/Create";
 
 const router = createBrowserRouter([
 	{
@@ -54,10 +69,25 @@ const router = createBrowserRouter([
 				path: "/contacts",
 				element: <Contacts />,
 			},
+			{
+				path: "/howwework",
+				element: <HowWeWork />,
+			},
+			{
+				path: "/indicator",
+				element: <Indicator />,
+			},
+			{
+				path: "/indicator",
+				element: <Indicator />,
+			},
+			{
+				path: "/HomeResident",
+				element: <HomeResident />,
+			}
 		],
 	},
 	{
-		path: "/register",
 		element: <Register />,
 		errorElement: <PageError />,
 		children: [
@@ -66,7 +96,7 @@ const router = createBrowserRouter([
 				element: <CondominiumRegistration />,
 			},
 			{
-				path: "/register/apartment",
+				path: "/register/apartment/:token",
 				element: <ApartmentRegistration />,
 			},
 			{
@@ -84,20 +114,19 @@ const router = createBrowserRouter([
 		element: <ContactResident />,
 	},
 	{
-		path: "/login",
+		path: "/signin",
 		element: <Login />,
 	},
 	{
 		path: "/demo",
 		element: <Demo />,
-		children: [],
 	},
 	{
 		path: "/common-area",
 		children: [
 			{
 				index: true,
-				element: <CommonAreaList />
+				element: <CommonAreaList />,
 			},
 			{
 				path: "/common-area/details",
@@ -107,20 +136,83 @@ const router = createBrowserRouter([
 				path: "/common-area/edit",
 				element: <CommonAreaEdit />,
 			},
+			{
+				path: "/common-area/create",
+				element: <CommonAreaCreate />,
+			}
 		],
 	},
 	{
 		path: "/accountabilityAdmin",
 		element: <AccountabilityAdmin />,
-		children: [],
 	},
 	{
 		path: "/accountability",
 		element: <Accountability />,
-		children: [],
+	},
+	{
+		path: "/financialadm",
+		element: <FinancialADM />,
+	},
+	{
+		path: "/financial",
+		element: <Financial />,
+	},
+	
+	{
+		path: "/lost-found",
+		children: [
+			{
+				element: <LostFound />,
+				index: true,
+			},
+			{
+				path: "/lost-found/Details",
+				element: <LostFoundList />,
+			},
+		],
+	},
+	{
+		path: "/ships",
+		element: <ShipsOrders />,
+	},
+	{
+		path: "/shipsadm",
+		element: <ShipsOrdersAdm />,
+	},
+	{
+		path: "/rules",
+		element: <Rules />,
+	},
+	{
+		path: "/ombudsman",
+		children: [
+			{
+				element: <OmbudsmanList />,
+				index: true,
+			},
+			{
+				element: <OmbudsmanDetails />,
+				path: "/ombudsman/details",
+			},
+		],
+	},
+	{
+		path: "/assembly",
+		children: [
+			{
+				element: <AssemblyList />,
+				index: true,
+			},
+			{
+				element: <AssemblyAdm />,
+				path: "/assembly/publish",
+			}
+		],
 	},
 ]);
 
+// Renderizando a aplicação
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
@@ -128,7 +220,5 @@ root.render(
 	</React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Medição de performance
 reportWebVitals();

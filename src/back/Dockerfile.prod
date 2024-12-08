@@ -1,0 +1,24 @@
+FROM eclipse-temurin:21-jdk AS builder
+
+ENV HOME=/build
+WORKDIR $HOME
+
+COPY . .
+COPY .mvn ./.mvn
+RUN chmod +x ./mvnw && \
+	./mvnw package
+
+FROM eclipse-temurin:21-jre-alpine AS runner
+
+USER java
+
+ENV HOME=/app
+WORKDIR $HOME
+
+ENV NAME="backend"
+ENV VERSION="0.0.1-SNAPSHOT"
+ENV FILE_NAME=${NAME}-${VERSION}.jar
+
+COPY --from=builder "/build/target/${FILE_NAME}" .
+
+ENTRYPOINT java -jar ${FILE_NAME}
