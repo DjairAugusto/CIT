@@ -2,7 +2,7 @@ package com.cit.backend.api.controller;
 
 import com.cit.backend.api.mapper.EmployeeMapper;
 import com.cit.backend.api.request.AdminRequest;
-import com.cit.backend.api.response.AdminResponse;
+import com.cit.backend.api.request.EmployeeRequest;
 import com.cit.backend.api.response.EmployeeResponse;
 import com.cit.backend.domain.entity.Employee;
 import com.cit.backend.domain.entity.Resident;
@@ -41,7 +41,15 @@ public class EmployeeController {
         List<EmployeeResponse> response = employeeMapper.toEmployeeResponseAll(employees);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
+  
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<EmployeeResponse> createEmployee(@Valid @RequestBody EmployeeRequest request) {
+        Employee employee = employeeMapper.toEmployee(request);
+        Employee employeeSaved = employeeService.save(employee);
+        EmployeeResponse response = employeeMapper.toEmployeeResponse(employeeSaved)
 
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
 
     @PostMapping(value = "/admin", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EmployeeResponse> createAdmin(@Valid @RequestBody AdminRequest request) {

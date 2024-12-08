@@ -7,8 +7,8 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class EmployeeResponse extends PeopleResponse {
     private int id;
     private String role;

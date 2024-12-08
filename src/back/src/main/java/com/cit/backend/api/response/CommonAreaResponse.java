@@ -16,6 +16,7 @@ public class CommonAreaResponse {
     private String name;
     private String description;
     private float tax;
+    private Long condominiumId;
     private Set<ReserveResponse> reserves;
     private Set<CommonAreaScheduleResponse> schedule;
 }

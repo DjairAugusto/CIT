@@ -31,6 +31,17 @@ import ShipsOrders from "./pages/ShipsOrders";
 import ShipsOrdersAdm from "./pages/ShipsOrdersAdm";
 import LostFound from "./pages/LostFound/LostFound";
 import LostFoundList from "./pages/LostFound/Details";
+import HowWeWork from "./pages/HowWeWork";
+import OmbudsmanList from "./pages/Ombudsman/List";
+import OmbudsmanDetails from "./pages/Ombudsman/Details";
+import Rules from "./pages/Rules";
+import FinancialADM from "./pages/FinancialADM";
+import Financial from "./pages/Financial";
+import AssemblyAdm from "./pages/Assembly/AssemblyAdm";
+import AssemblyList from "./pages/Assembly/AssemblyList";
+import Indicator from "./pages/indicator";
+import HomeResident from "./pages/HomeResident";
+import CommonAreaCreate from "./pages/CommonArea/Create";
 
 const router = createBrowserRouter([
 	{
@@ -58,10 +69,25 @@ const router = createBrowserRouter([
 				path: "/contacts",
 				element: <Contacts />,
 			},
+			{
+				path: "/howwework",
+				element: <HowWeWork />,
+			},
+			{
+				path: "/indicator",
+				element: <Indicator />,
+			},
+			{
+				path: "/indicator",
+				element: <Indicator />,
+			},
+			{
+				path: "/HomeResident",
+				element: <HomeResident />,
+			}
 		],
 	},
 	{
-		path: "/register",
 		element: <Register />,
 		errorElement: <PageError />,
 		children: [
@@ -88,7 +114,7 @@ const router = createBrowserRouter([
 		element: <ContactResident />,
 	},
 	{
-		path: "/signup",
+		path: "/signin",
 		element: <Login />,
 	},
 	{
@@ -110,6 +136,10 @@ const router = createBrowserRouter([
 				path: "/common-area/edit",
 				element: <CommonAreaEdit />,
 			},
+			{
+				path: "/common-area/create",
+				element: <CommonAreaCreate />,
+			}
 		],
 	},
 	{
@@ -121,11 +151,20 @@ const router = createBrowserRouter([
 		element: <Accountability />,
 	},
 	{
+		path: "/financialadm",
+		element: <FinancialADM />,
+	},
+	{
+		path: "/financial",
+		element: <Financial />,
+	},
+	
+	{
 		path: "/lost-found",
 		children: [
 			{
 				element: <LostFound />,
-				index: true
+				index: true,
 			},
 			{
 				path: "/lost-found/Details",
@@ -140,6 +179,36 @@ const router = createBrowserRouter([
 	{
 		path: "/shipsadm",
 		element: <ShipsOrdersAdm />,
+	},
+	{
+		path: "/rules",
+		element: <Rules />,
+	},
+	{
+		path: "/ombudsman",
+		children: [
+			{
+				element: <OmbudsmanList />,
+				index: true,
+			},
+			{
+				element: <OmbudsmanDetails />,
+				path: "/ombudsman/details",
+			},
+		],
+	},
+	{
+		path: "/assembly",
+		children: [
+			{
+				element: <AssemblyList />,
+				index: true,
+			},
+			{
+				element: <AssemblyAdm />,
+				path: "/assembly/publish",
+			}
+		],
 	},
 ]);
 

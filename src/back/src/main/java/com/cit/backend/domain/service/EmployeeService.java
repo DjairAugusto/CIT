@@ -45,7 +45,13 @@ public class EmployeeService {
         return employeeRepository.findById(id).orElseThrow(() -> new ResolutionException("User not found with id :" + id));
     }
 
-    public List<Employee> findAll() { return employeeRepository.findAll(); }
+    public List<Employee> findAll() {
+        return employeeRepository.findAll();
+    }
+
+    public Employee findByProfile(Profile profile){
+        return employeeRepository.findByProfile(profile);
+    }
 
     public void deleteById(Long id) {
         employeeRepository.deleteById(id);

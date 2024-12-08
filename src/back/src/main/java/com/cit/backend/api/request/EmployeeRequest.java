@@ -1,6 +1,5 @@
 package com.cit.backend.api.request;
 
-import com.cit.backend.api.validator.JWT;
 import com.cit.backend.api.validator.Phone;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -15,13 +14,7 @@ public class EmployeeRequest {
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
-    @NotBlank(message = "Email is mandatory")
-    @Email(message = "Email must be valid")
-    private String email;
-
-    @NotBlank(message = "Password is mandatory")
-    @Size(min = 6, max = 50, message = "Password must be between 6 and 50 characters")
-    private String password;
+    private ProfileRequest profile;
 
     @NotBlank(message = "Phone is mandatory")
     @Phone
@@ -32,8 +25,4 @@ public class EmployeeRequest {
     private String role;
 
     private VehicleRequest vehicle;
-
-    @NotBlank(message = "Token is mandatory")
-    @JWT()
-    private String token;
 }

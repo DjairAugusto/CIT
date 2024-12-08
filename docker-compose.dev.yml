@@ -3,11 +3,8 @@ services:
     container_name: cit-database
     image: mysql:latest
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: cit
-      MYSQL_USER: dev
-      MYSQL_PASSWORD: dev
+    env_file:
+      - ./database.dev.env
     ports:
       - "3306:3306"
     networks:
@@ -15,7 +12,9 @@ services:
       - database
   backend:
     container_name: cit-back
-    build: ./src/back
+    build:
+      context: ./src/back
+      dockerfile: Dockerfile.dev
     volumes:
       - ./src/back/src:/app/src
     environment:
@@ -32,7 +31,9 @@ services:
       - frontend
   frontend:
     container_name: cit-front
-    build: ./src/front
+    build:
+      context: ./src/front
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
     volumes:
@@ -52,7 +53,7 @@ services:
     depends_on:
       - database
     environment:
-      PMA_HOST: cit-database
+      PMA_HOST: database
       MYSQL_ROOT_PASSWORD: root
     ports:
       - "3001:80"

@@ -2,13 +2,12 @@ import React from "react";
 import { Forms } from ".";
 import { ArrowLeft } from "lucide-react";
 import useForm from "../../hooks/useForm";
-import Loading from "../../components/Loading";
 
 export default function FormsPage({
 	steps,
 	imageSource,
 	validations,
-	callbak,
+	callback,
 }) {
 	const { currentStep, currentComponent, changeSteps, isLast, isFirst } =
 		useForm(steps);
@@ -37,7 +36,7 @@ export default function FormsPage({
 						<Forms.Button
 							className="w-2/5"
 							type="submit"
-							onClick={callbak}
+							onClick={callback}
 							disabled={!validations[validations.length - 1]}
 						>
 							Cadastrar

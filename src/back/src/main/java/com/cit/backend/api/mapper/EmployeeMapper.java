@@ -1,7 +1,7 @@
 package com.cit.backend.api.mapper;
 
+import com.cit.backend.api.request.EmployeeRequest;
 import com.cit.backend.domain.entity.Profile;
-import com.cit.backend.domain.service.ProfileService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,6 +21,13 @@ public class EmployeeMapper {
 
     @Autowired
     private ProfileMapper profileMapper;
+
+    public Employee toEmployee(EmployeeRequest request) {
+        Employee employee = modelMapper.map(request, Employee.class);
+        Profile profile = profileMapper.toProfile(request.getProfile());
+        employee.setProfile(profile);
+        return employee;
+    }
 
     public Employee toEmployee(AdminRequest request) {
         Employee employee = modelMapper.map(request, Employee.class);

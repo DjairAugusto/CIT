@@ -33,6 +33,10 @@ public class CondominiumController {
         condominium.setManager(manager);
 
         Condominium condominiumSaved = condominiumService.save(condominium);
+      
+        Employee manager = condominiumSaved.getManager();
+        manager.setCondominium(condominiumSaved);
+        employeeService.save(manager);
 
         CondominiumResponse response = condominiumMapper.toCondominiumResponse(condominiumSaved);
 
