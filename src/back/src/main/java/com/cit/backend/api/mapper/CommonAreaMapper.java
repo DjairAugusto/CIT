@@ -29,7 +29,9 @@ public class CommonAreaMapper {
     }
 
     public CommonAreaResponse toCommonAreaResponse(CommonArea commonArea) {
-        return modelMapper.map(commonArea, CommonAreaResponse.class);
+        CommonAreaResponse response = modelMapper.map(commonArea, CommonAreaResponse.class);
+        response.setCondominiumId(commonArea.getCondominium().getId());
+        return response;
     }
 
     public List<CommonAreaResponse> toCommonAreaResponse(List<CommonArea> commonAreas) {
