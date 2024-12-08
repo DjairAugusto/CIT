@@ -43,6 +43,9 @@ export default function CommonAreaList() {
 				<SearchBar
 					value={filter.name}
 					onChange={(e) => setFilterName(e.target.value)}
+					callbacks={{
+						create: () => navigate("./create"),
+					}}
 				/>
 
 				<div className="pb-12 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 place-content-stretch w-full mt-4 gap-4 max-h-full overflow-auto">
