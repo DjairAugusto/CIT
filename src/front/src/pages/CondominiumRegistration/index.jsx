@@ -64,7 +64,7 @@ export default function CondominiumRegistration() {
 
 			axios.post("/condominium", data.condominium).then(response => {
 				condominium = response.data;
-				navigate(`/login`);
+				navigate(`/auth/signin`);
 
 			}).catch(error => {
 				alert('Erro ao enviar os dados:', error);

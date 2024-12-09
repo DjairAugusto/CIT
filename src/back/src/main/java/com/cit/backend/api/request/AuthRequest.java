@@ -15,6 +15,5 @@ public class AuthRequest {
     @Email
     String email;
 
-    @Length(min = 8)
     String password;
 }
