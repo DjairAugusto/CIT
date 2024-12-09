@@ -42,15 +42,17 @@ import AssemblyList from "./pages/Assembly/AssemblyList";
 import Indicator from "./pages/indicator";
 import HomeResident from "./pages/HomeResident";
 import CommonAreaCreate from "./pages/CommonArea/Create";
+import RootCondominium from "./routers/RootCondominium";
 
 const router = createBrowserRouter([
+	// Paginas iniciais
 	{
 		path: "/",
 		element: <Main />,
 		errorElement: <PageError />,
 		children: [
-			{
-				path: "/",
+		{
+				index: true,
 				element: <Home />,
 			},
 			{
@@ -72,145 +74,145 @@ const router = createBrowserRouter([
 			{
 				path: "/howwework",
 				element: <HowWeWork />,
-			},
-			{
-				path: "/indicator",
-				element: <Indicator />,
-			},
-			{
-				path: "/indicator",
-				element: <Indicator />,
-			},
-			{
-				path: "/HomeResident",
-				element: <HomeResident />,
 			}
-		],
+		]
 	},
+	// Paginas de login
 	{
-		element: <Register />,
-		errorElement: <PageError />,
-		children: [
-			{
-				path: "/register/condominium",
-				element: <CondominiumRegistration />,
-			},
-			{
-				path: "/register/apartment/:token",
-				element: <ApartmentRegistration />,
-			},
-			{
-				path: "/register/functionary",
-				element: <FunctionaryRegistration />,
-			},
-			{
-				path: "/register/visitor",
-				element: <VisitorRegistration />,
-			},
-		],
-	},
-	{
-		path: "/condominium/contacts",
-		element: <ContactResident />,
-	},
-	{
-		path: "/signin",
+		path: "/auth/signin",
 		element: <Login />,
 	},
+	// Registro de condominio
 	{
-		path: "/demo",
-		element: <Demo />,
+		path: "/register/condominium",
+		element: <CondominiumRegistration />,
 	},
+	// Registro de apartamento
 	{
-		path: "/common-area",
+		path: "/register/apartment/:token",
+		element: <ApartmentRegistration />,
+	},
+	// Paginas internas do condiminio
+	{
+		path: "/condominium",
+		element: <RootCondominium />,
+		errorElement: <PageError />,
 		children: [
+			// Paginas Dos residentes
 			{
 				index: true,
-				element: <CommonAreaList />,
+				element: <HomeResident />,
 			},
 			{
-				path: "/common-area/details",
-				element: <CommonAreaDetails />,
+				path: "/condominium/financial",
+				element: <Financial />,
 			},
 			{
-				path: "/common-area/edit",
-				element: <CommonAreaEdit />,
+				path: "/condominium/accountability",
+				element: <Accountability />,
 			},
 			{
-				path: "/common-area/create",
-				element: <CommonAreaCreate />,
-			}
-		],
-	},
-	{
-		path: "/accountabilityAdmin",
-		element: <AccountabilityAdmin />,
-	},
-	{
-		path: "/accountability",
-		element: <Accountability />,
-	},
-	{
-		path: "/financialadm",
-		element: <FinancialADM />,
-	},
-	{
-		path: "/financial",
-		element: <Financial />,
-	},
-	
-	{
-		path: "/lost-found",
-		children: [
-			{
-				element: <LostFound />,
-				index: true,
+				path: "/condominium/financial",
+				element: <Financial />,
 			},
 			{
-				path: "/lost-found/Details",
-				element: <LostFoundList />,
-			},
-		],
-	},
-	{
-		path: "/ships",
-		element: <ShipsOrders />,
-	},
-	{
-		path: "/shipsadm",
-		element: <ShipsOrdersAdm />,
-	},
-	{
-		path: "/rules",
-		element: <Rules />,
-	},
-	{
-		path: "/ombudsman",
-		children: [
-			{
-				element: <OmbudsmanList />,
-				index: true,
+				path: "/condominium/ships",
+				element: <ShipsOrders />,
 			},
 			{
-				element: <OmbudsmanDetails />,
-				path: "/ombudsman/details",
+				path: "/condominium/rules",
+				element: <Rules />,
 			},
-		],
+			{
+				path: "/condominium/lost-found",
+				children: [
+					{
+						element: <LostFound />,
+						index: true,
+					},
+					{
+						path: "/condominium/lost-found/Details",
+						element: <LostFoundList />,
+					},
+				],
+			},
+			{
+				path: "/condominium/common-area",
+				children: [
+					{
+						index: true,
+						element: <CommonAreaList />,
+					},
+					{
+						path: "/condominium/common-area/details",
+						element: <CommonAreaDetails />,
+					},
+					{
+						path: "/condominium/common-area/edit",
+						element: <CommonAreaEdit />,
+					},
+					{
+						path: "/condominium/common-area/create",
+						element: <CommonAreaCreate />,
+					}
+				],
+			},
+			{
+				path: "/condominium/ombudsman",
+				children: [
+					{
+						element: <OmbudsmanList />,
+						index: true,
+					},
+					{
+						element: <OmbudsmanDetails />,
+						path: "/condominium/ombudsman/details",
+					},
+				],
+			},
+			{
+				path: "/condominium/assembly",
+				children: [
+					{
+						element: <AssemblyList />,
+						index: true,
+					},
+					{
+						element: <AssemblyAdm />,
+						path: "/condominium/assembly/publish",
+					}
+				],
+			},
+
+			// Paginas exclusivas para o ADM
+			{
+				path: "/condominium/admin/indicator",
+				element: <Indicator />,
+			},
+			{
+				path: "/condominium/admin/accountability",
+				element: <AccountabilityAdmin />,
+			},
+			{
+				path: "/condominium/admin/financial",
+				element: <FinancialADM />,
+			},
+			{
+				path: "/condominium/admin/indicator",
+				element: <Indicator />,
+			},
+		]
+	},
+	// Paginas de registro
+	{
+		path: "/condominium/register/functionary",
+		element: <FunctionaryRegistration />,
 	},
 	{
-		path: "/assembly",
-		children: [
-			{
-				element: <AssemblyList />,
-				index: true,
-			},
-			{
-				element: <AssemblyAdm />,
-				path: "/assembly/publish",
-			}
-		],
+		path: "/condominium/register/visitor",
+		element: <VisitorRegistration />,
 	},
-]);
+])
 
 // Renderizando a aplicação
 const root = ReactDOM.createRoot(document.getElementById("root"));

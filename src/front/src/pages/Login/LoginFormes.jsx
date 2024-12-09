@@ -1,14 +1,14 @@
 import React from 'react';
-import { Forms } from "../../components/Forms";
+import {Forms} from "../../components/Forms";
 
 export default function LoginFormes({data, updateFieldHandler, fieldsErrors}) {
   return (
     <Forms.PageStep center={true}>
-      <div className="self-start" style={{ position: 'absolute', top: '55px', left: '30px' }}>
+      <div className="self-start" style={{position: 'absolute', top: '55px', left: '30px'}}>
         <img
-          src="componentehorizontal.png"
+          src="/componentehorizontal.png"
           alt="Logo Condomínio Inteligente"
-          style={{ width: '300px', height: 'auto' }}  // Logo maior
+          style={{width: '300px', height: 'auto'}}  // Logo maior
         />
       </div>
       <h2 className="text-left my-10 text-4xl font-light">Login</h2> {/* Alinhado à esquerda e maior */}

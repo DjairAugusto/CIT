@@ -21,7 +21,7 @@ export default function Login() {
 			.post("/auth/login", data)
 			.then((response) => {
 				Cookies.set("AuthorizationToken", response.data.token);
-				navigate(`/home`);
+				navigate(`/condominium`);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -98,7 +98,7 @@ export default function Login() {
 		async function checkLoginStatus() {
 			const isLoggedIn = await validateLogin();
 			if(isLoggedIn) {
-				navigate("/");
+				navigate("/condominium");
 			}
 		}
 		checkLoginStatus();
