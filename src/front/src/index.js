@@ -112,16 +112,16 @@ const router = createBrowserRouter([
 				element: <Accountability />,
 			},
 			{
-				path: "/condominium/financial",
-				element: <Financial />,
-			},
-			{
 				path: "/condominium/ships",
 				element: <ShipsOrders />,
 			},
 			{
 				path: "/condominium/rules",
 				element: <Rules />,
+			},
+			{
+				path: "/condominium/contact",
+				element: <ContactResident />,
 			},
 			{
 				path: "/condominium/lost-found",

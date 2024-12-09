@@ -174,7 +174,7 @@ export default function CommonAreaCreate() {
 			<div className="max-w-[1600px] w-full h-full bg-white">
 				<div className="overflow-hidden w-full h-2/5 relative">
 					<div className="absolute bg-black bg-opacity-40 top-0 left-0 w-full h-full"></div>
-					<label className="z-10 gap-5 text-4xl text-white flex justify-center items-center w-full h-full absolute top-0 left-0">
+					<label className="gap-5 text-4xl text-white flex justify-center items-center w-full h-full absolute top-0 left-0">
 						<Upload size={32} />
 						Carregar Nova Imagem
 						<input
