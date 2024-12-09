@@ -3,6 +3,7 @@ import {Outlet, useNavigate} from 'react-router-dom';
 import {authContext} from '../providers/authContext';
 import AuthProvider from '../providers/AuthProvider';
 import validateLogin from '../utils/validateLogin';
+import HeaderCondominium from '../components/HeaderCondominium';
 
 export default function RootCondominium() {
 	const {role, setRole, user, setUser} = useContext(authContext);
@@ -23,6 +24,7 @@ export default function RootCondominium() {
 
 	return (
 		<AuthProvider>
+			<HeaderCondominium />
 			<Outlet />
 		</AuthProvider>
 	);
