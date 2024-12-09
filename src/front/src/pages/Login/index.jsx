@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import { Forms } from "../../components/Forms";
-import { useState } from "react";
+import React, {useEffect} from "react";
+import {Forms} from "../../components/Forms";
+import {useState} from "react";
 import LoginFormes from "./LoginFormes";
-import { useNavigate } from "react-router-dom";
-import { nonAuthorizedInstance as axios } from "../../utils/requisition/citRequisition";
+import {useNavigate} from "react-router-dom";
+import {nonAuthorizedInstance as axios} from "../../utils/requisition/citRequisition";
 import validateLogin from "../../utils/validateLogin";
-import { Cookies } from "../../utils/cookies";
+import {Cookies} from "../../utils/cookies";
 
 const formsTemplate = {
 	email: "",
@@ -35,9 +35,9 @@ export default function Login() {
 		const checkFields = (data, parentKey = "") => {
 			Object.keys(data).forEach((key) => {
 				const fullKey = parentKey ? `${parentKey}.${key}` : key;
-				if (typeof data[key] === "object" && data[key] !== null) {
+				if(typeof data[key] === "object" && data[key] !== null) {
 					checkFields(data[key], fullKey);
-				} else if (!data[key]) {
+				} else if(!data[key]) {
 					fields[fullKey] = "Campo obrigatório";
 				}
 			});
@@ -46,10 +46,10 @@ export default function Login() {
 		checkFields(fieldsData);
 		let fieldsErrors = {};
 		Object.keys(fields).forEach((key) => {
-			if (key.includes(".")) {
+			if(key.includes(".")) {
 				const keyParts = key.split(".");
 				const parentKey = keyParts[0];
-				if (!fieldsErrors[parentKey]) fieldsErrors[parentKey] = {};
+				if(!fieldsErrors[parentKey]) fieldsErrors[parentKey] = {};
 				fieldsErrors[parentKey][keyParts[1]] = fields[key];
 			} else {
 				fieldsErrors[key] = fields[key];
@@ -60,14 +60,14 @@ export default function Login() {
 
 	const updateFieldHandler = (field, value) => {
 		setData((prevData) => {
-			const updatedData = { ...prevData };
+			const updatedData = {...prevData};
 
 			const fieldParts = field.split(".");
 			let currentField = updatedData;
 
-			for (let i = 0; i < fieldParts.length - 1; i++) {
+			for(let i = 0; i < fieldParts.length - 1; i++) {
 				const part = fieldParts[i];
-				if (!currentField[part]) {
+				if(!currentField[part]) {
 					currentField[part] = {};
 				}
 				currentField = currentField[part];
@@ -82,7 +82,7 @@ export default function Login() {
 	function validateLoginForms() {
 		let fieldsErrors = {};
 
-		fieldsErrors = { ...fieldsEmpty(data), ...fieldsErrors };
+		fieldsErrors = {...fieldsEmpty(data), ...fieldsErrors};
 		return fieldsErrors;
 	}
 
@@ -95,9 +95,13 @@ export default function Login() {
 	];
 
 	useEffect(() => {
-		if (validateLogin()) {
-			navigate("/");
+		async function checkLoginStatus() {
+			const isLoggedIn = await validateLogin();
+			if(isLoggedIn) {
+				navigate("/");
+			}
 		}
+		checkLoginStatus();
 	}, [navigate]);
 
 	return (
