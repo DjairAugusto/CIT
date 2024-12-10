@@ -1,4 +1,4 @@
 build:
   docker:
-    front: ./src/front/Dockerfile.prod
+    web: ./src/front/Dockerfile.prod
     back: ./src/back/Dockerfile.prod
