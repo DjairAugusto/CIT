@@ -1,0 +1,4 @@
+build:
+  docker:
+    front: .\src\front\Dockerfile
+    back: .\src\back\Dockerfile

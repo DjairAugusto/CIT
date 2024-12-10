@@ -4,9 +4,10 @@ import {authContext} from '../providers/authContext';
 import AuthProvider from '../providers/AuthProvider';
 import validateLogin from '../utils/validateLogin';
 import HeaderCondominium from '../components/HeaderCondominium';
+import Roles from '../utils/roles';
 
 export default function RootCondominium() {
-	const {role, setRole, user, setUser} = useContext(authContext);
+	const {setRole} = useContext(authContext);
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -19,7 +20,7 @@ export default function RootCondominium() {
 		checkLoginStatus();
 	}, [navigate]);
 
-	// Set role
+	setRole(Roles.get())
 	// Set user
 
 	return (

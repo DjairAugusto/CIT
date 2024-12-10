@@ -29,14 +29,14 @@ public class EmployeeController {
     private EmployeeMapper employeeMapper;
 
     @GetMapping("/{id}")
-    public ResponseEntity<EmployeeResponse> getResidentById(@PathVariable Long id) {
+    public ResponseEntity<EmployeeResponse> getEmployeeById(@PathVariable Long id) {
         Employee employee = employeeService.findById(id);
         EmployeeResponse response = employeeMapper.toEmployeeResponse(employee);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @GetMapping
-    public ResponseEntity<List<EmployeeResponse>> getAllResidents() {
+    public ResponseEntity<List<EmployeeResponse>> getAllEmployee() {
         List<Employee> employees = employeeService.findAll();
         List<EmployeeResponse> response = employeeMapper.toEmployeeResponseAll(employees);
         return ResponseEntity.status(HttpStatus.OK).body(response);
