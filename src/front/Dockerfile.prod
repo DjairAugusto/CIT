@@ -1,6 +1,6 @@
 FROM node:22-alpine
 
-USER node
+#USER node
 
 ENV HOME=/app
 ENV PORT=3000
@@ -9,8 +9,7 @@ WORKDIR $HOME
 
 COPY . .
 
-RUN npm i -g npm@10.9.2 && \
-	npm i -g serve && \
+RUN npm i -g serve && \
 	npm i && \
 	npm run build
 
