@@ -21,4 +21,4 @@ ENV FILE_NAME=${NAME}-${VERSION}.jar
 
 COPY --from=builder "/build/target/${FILE_NAME}" .
 
-ENTRYPOINT java -jar ${FILE_NAME}
+CMD java -jar ${FILE_NAME}
