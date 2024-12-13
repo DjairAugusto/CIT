@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom'; // Para navegação
-import Header from '../../components/Header'; // Mantendo o Header
 
 export default function HomePage() {
     const navigate = useNavigate();
