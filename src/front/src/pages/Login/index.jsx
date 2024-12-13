@@ -15,17 +15,18 @@ const formsTemplate = {
 export default function Login() {
 	const [data, setData] = useState(formsTemplate);
 	const navigate = useNavigate();
+	const [error, setError] = useState("");
 
 	function register(data) {
 		axios
 			.post("/auth/login", data)
 			.then((response) => {
+				console.log("deu bom");
 				Cookies.set("AuthorizationToken", response.data.token);
 				navigate(`/condominium`);
 			})
 			.catch((error) => {
-				console.log(error);
-				// TODO Exbir mensagem de erro do login // back pronto em outra branch
+				setError(error.response.data.message);
 			});
 	}
 
@@ -58,7 +59,17 @@ export default function Login() {
 		return fieldsErrors;
 	}
 
+	function checkValidadeRequest() {
+		console.log(error);
+		if(error !== "") {
+			const msg = "Credenciais inválidas";
+			return { email: msg, password: msg };
+		}
+		return {}
+	}
+
 	const updateFieldHandler = (field, value) => {
+		setError("");
 		setData((prevData) => {
 			const updatedData = {...prevData};
 
@@ -83,6 +94,8 @@ export default function Login() {
 		let fieldsErrors = {};
 
 		fieldsErrors = {...fieldsEmpty(data), ...fieldsErrors};
+		fieldsErrors = {...checkValidadeRequest(), ...fieldsErrors};	
+
 		return fieldsErrors;
 	}
 
@@ -104,12 +117,14 @@ export default function Login() {
 		checkLoginStatus();
 	}, [navigate]);
 
+
 	return (
 		<Forms.Page
 			steps={steps}
 			imageSource="/prediologin.png"
-			validations={[[true]]}
+			validations={[Object.keys(validateLoginForms()).length === 0]}
 			callback={() => register(data)}
+			buttonFinishText="Entrar"
 		/>
 	);
 }
