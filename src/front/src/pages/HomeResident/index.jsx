@@ -5,7 +5,7 @@ import useAuthContext from '../../hooks/useAuthContext';
 
 export default function HomePage() {
     const navigate = useNavigate();
-    const { role } = useAuthContext()
+    const { role, user } = useAuthContext()
     const icones = getMenuItems(role);
     
     const iconColorZinc = 'bg-zinc-100 text-gray-700'; 
@@ -55,12 +55,16 @@ export default function HomePage() {
                 </div>
 
                 <div className="absolute top-10 left-1/4 text-[#42d0b3] text-3xl font-light font-solway">
-                    VILA PISANI
+                    {user.condominium}
                 </div>
 
                 {/* Textos alinhados na parte inferior direita */}
                 <div className="absolute bottom-5 right-5 text-[#777777] text-sm">
-                    Bloco B, Apartamento 302
+                    {
+                        (role === 'resident') ?
+                        `Bloco {user.block}, Predio {user.unit}, Apartamento {user.apartament}`:
+                        "Administrador"
+                    }
                 </div>
             </div>
 
@@ -89,8 +93,7 @@ export default function HomePage() {
             <div className="grid grid-cols-3 gap-20 p-6 w-fit mx-auto items-center justify-center">
                 {
                     icones.map((icone) => (
-                        <Link to={icone.to} key={icone.id} className={`flex flex-col items-center ${handleGetColor()} w-56 p-10 aspect-square`}>
-                            {console.log(icone)}
+                        <Link to={icone.to} key={icone.name} className={`flex flex-col items-center ${handleGetColor()} w-56 p-10 aspect-square`}>
                             {React.cloneElement(icone.icon, {className: "w-24 h-24", strokeWidth: 1})}
                             <span className="text-sm mt-2 text-center">{icone.name}</span>
                         </Link>

@@ -21,7 +21,6 @@ export default function Login() {
 		axios
 			.post("/auth/login", data)
 			.then((response) => {
-				console.log("deu bom");
 				Cookies.set("AuthorizationToken", response.data.token);
 				navigate(`/condominium`);
 			})
