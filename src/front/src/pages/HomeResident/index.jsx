@@ -1,8 +1,28 @@
 import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom'; // Para navegação
+import {Link, useNavigate} from 'react-router-dom'; // Para navegação
+import getMenuItems from '../../utils/getMenuItems';
+import useAuthContext from '../../hooks/useAuthContext';
 
 export default function HomePage() {
     const navigate = useNavigate();
+    const { role } = useAuthContext()
+    const icones = getMenuItems(role);
+    
+    const iconColorZinc = 'bg-zinc-100 text-gray-700'; 
+    const iconColorPrimary = 'bg-primary-1000 text-white'; 
+
+    let iconColor= iconColorZinc;
+
+
+
+    function handleGetColor() {
+        const color = iconColor;
+        if (color === iconColorZinc)
+            iconColor = iconColorPrimary;
+        else
+            iconColor = iconColorZinc;
+        return color;
+    }
 
     // Estado dos avisos (true = não lido, false = lido)
     const [avisos, setAvisos] = useState([
@@ -66,53 +86,16 @@ export default function HomePage() {
             </div>
 
             {/* Ícones principais */}
-            <div className="grid grid-cols-3 gap-y-8 gap-x-6 p-6">
-                <a href="/financeiro" className="flex flex-col items-center">
-                    <img src="/iconefinanceiro.png" alt="Financeiro" className="w-60 h-60" />
-                </a>
-                <a href="/contatos" className="flex flex-col items-center">
-                    <img src="/iconecontatos.png" alt="Contatos" className="w-60 h-60" />
-                </a>
-                <a href="/assembleias" className="flex flex-col items-center">
-                    <img src="/iconeassembleias.png" alt="Assembleias" className="w-60 h-60" />
-                </a>
-                <a href="/prestacao-de-contas" className="flex flex-col items-center">
-                    <img
-                        src="/iconeprestacaodecontas.png"
-                        alt="Prestação de Contas"
-                        className="w-60 h-60"
-                    />
-                </a>
-                <a href="/visitantes" className="flex flex-col items-center">
-                    <img src="/iconevisitantes.png" alt="Visitantes" className="w-60 h-60" />
-                </a>
-                <a href="/achados-e-perdidos" className="flex flex-col items-center">
-                    <img
-                        src="/iconeachadoseperdidos.png"
-                        alt="Achados e Perdidos"
-                        className="w-60 h-60"
-                    />
-                </a>
-                <a href="/entregas-e-encomendas" className="flex flex-col items-center">
-                    <img
-                        src="/iconeentregaseencomendas.png"
-                        alt="Entregas e Encomendas"
-                        className="w-60 h-60"
-                    />
-                </a>
-                <a href="/area-comum" className="flex flex-col items-center">
-                    <img src="/iconeareacomum.png" alt="Área Comum" className="w-60 h-60" />
-                </a>
-                <a href="/ouvidoria" className="flex flex-col items-center">
-                    <img src="/iconeouvidoria.png" alt="Ouvidoria" className="w-60 h-60" />
-                </a>
-                <a href="/regras-e-normas" className="flex flex-col items-center">
-                    <img
-                        src="/iconeregrasenormas.png"
-                        alt="Regras e Normas"
-                        className="w-60 h-60"
-                    />
-                </a>
+            <div className="grid grid-cols-3 gap-20 p-6 w-fit mx-auto items-center justify-center">
+                {
+                    icones.map((icone) => (
+                        <Link to={icone.to} key={icone.id} className={`flex flex-col items-center ${handleGetColor()} w-56 p-10 aspect-square`}>
+                            {console.log(icone)}
+                            {React.cloneElement(icone.icon, {className: "w-24 h-24", strokeWidth: 1})}
+                            <span className="text-sm mt-2 text-center">{icone.name}</span>
+                        </Link>
+                    ))
+                }
             </div>
         </div>
     );
