@@ -19,7 +19,7 @@ export default function OmbudsmanList() {
 			.catch((err) => {
 				// TOOD tratar os erros
 			});
-	});
+	}, []);
 
 	if (tickets === null) return <Loading />;
 
