@@ -1,0 +1,5 @@
+#root:has(#common-area-base) {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
