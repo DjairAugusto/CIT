@@ -43,6 +43,7 @@ import Indicator from "./pages/indicator";
 import HomeResident from "./pages/HomeResident";
 import CommonAreaCreate from "./pages/CommonArea/Create";
 import RootCondominium from "./routers/RootCondominium";
+import CommonAreaReserve from "./pages/CommonArea/Reserve";
 
 const router = createBrowserRouter([
 	// Paginas iniciais
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
 		element: <Main />,
 		errorElement: <PageError />,
 		children: [
-		{
+			{
 				index: true,
 				element: <Home />,
 			},
@@ -74,8 +75,8 @@ const router = createBrowserRouter([
 			{
 				path: "/howwework",
 				element: <HowWeWork />,
-			}
-		]
+			},
+		],
 	},
 	// Paginas de login
 	{
@@ -154,7 +155,11 @@ const router = createBrowserRouter([
 					{
 						path: "/condominium/common-area/create",
 						element: <CommonAreaCreate />,
-					}
+					},
+					{
+						path: "/condominium/common-area/reserve",
+						element: <CommonAreaReserve />,
+					},
 				],
 			},
 			{
@@ -180,7 +185,7 @@ const router = createBrowserRouter([
 					{
 						element: <AssemblyAdm />,
 						path: "/condominium/assembly/publish",
-					}
+					},
 				],
 			},
 
@@ -201,7 +206,7 @@ const router = createBrowserRouter([
 				path: "/condominium/admin/indicator",
 				element: <Indicator />,
 			},
-		]
+		],
 	},
 	// Paginas de registro
 	{
@@ -212,7 +217,7 @@ const router = createBrowserRouter([
 		path: "/condominium/register/visitor",
 		element: <VisitorRegistration />,
 	},
-])
+]);
 
 // Renderizando a aplicação
 const root = ReactDOM.createRoot(document.getElementById("root"));
