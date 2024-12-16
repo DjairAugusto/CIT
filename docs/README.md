@@ -176,7 +176,9 @@ _A sessão a seguir apresenta a descrição do produto de software desenvolvido.
 
 ## 7. Conclusão
 
-_Apresente aqui a conclusão do seu trabalho. Deve ser apresentada aqui uma discussão dos resultados obtidos no trabalho, local em que se verifica as observações pessoais de cada aluno. Essa seção poderá também apresentar sugestões de novas linhas de estudo._
+O projeto CIT - Condomínio Inteligente tem como objetivo transformar a gestão condominial, trazendo eficiência, transparência e acessibilidade para os moradores e administradores. Através do uso de tecnologias modernas, o sistema permitirá centralizar processos, automatizar tarefas e melhorar a convivência em ambientes compartilhados.
+
+Ao longo do desenvolvimento, priorizou-se a construção de um sistema que fosse intuitivo, robusto e eficaz, garantindo que tanto administradores quanto moradores possam utilizá-lo de forma simples e eficiente. Com base no planejamento e cronograma apresentados, espera-se que o CIT seja implementado com sucesso, trazendo benefícios significativos para todos os envolvidos no processo de gestão condominial.
 
 # REFERÊNCIAS
 
