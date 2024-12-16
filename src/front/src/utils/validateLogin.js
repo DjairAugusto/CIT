@@ -6,5 +6,5 @@ export default async function validateLogin() {
 	if (!token || token.length === 0) return false;
 	
 	const res = await axios.get(`/auth/verify/${token}`);
-	return !res.expired;
+	return !res.data.expired;
 }
