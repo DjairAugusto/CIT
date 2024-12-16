@@ -18,7 +18,7 @@ handle_signal() {
 ./mvnw spring-boot:run &
 SPRING_BOOT_PID=$!
 
-ncat -lkdp 8081 -c ./scripts/handle.sh &
+ncat -lkp 8081 -c ./scripts/handle.sh &
 NCAT_PID=$!
 
 trap_with_arg handle_signal SIGINT SIGTERM SIGKILL
