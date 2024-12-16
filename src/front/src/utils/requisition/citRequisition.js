@@ -26,5 +26,13 @@ const multiPartInstance = axios.create({
 	},
 });
 
-export { AuthorizedInstance, nonAuthorizedInstance, multiPartInstance };
+const blobInstance = axios.create({
+	baseURL: "http://localhost:8080",
+	headers: {
+		Authorization: `Bearer ${token}`,
+	},
+	responseType: "blob",
+});
+
+export { AuthorizedInstance, nonAuthorizedInstance, multiPartInstance, blobInstance };
 export default AuthorizedInstance;
