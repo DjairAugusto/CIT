@@ -39,6 +39,10 @@ public class Profile implements UserDetails {
                 .collect(Collectors.toList());
     }
 
+    public boolean hasPermission(ProfilePermissions permission) {
+        return permissions.contains(permission);
+    }
+
     @Override
     public String getUsername() {
         return email;
