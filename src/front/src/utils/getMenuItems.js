@@ -1,4 +1,4 @@
-import {HandCoins, MessagesSquare, PackageSearch, Phone, PiggyBank, Scale, Settings, TriangleAlert, Truck, Users, Wine} from 'lucide-react';
+import {ChartLine, HandCoins, MessagesSquare, PackageSearch, Phone, PiggyBank, Scale, Settings, TriangleAlert, Truck, Users, Wine} from 'lucide-react';
 
 export default function getMenuItems(role=["RESIDENT"]) {
 	if (!Array.isArray(role))
@@ -16,6 +16,6 @@ export default function getMenuItems(role=["RESIDENT"]) {
 		{to: "/condominium/rules", icon: <TriangleAlert />, name: "Regras e Normas"},
 	];
 	if(role.includes("ADMIN"))
-		items.push({to: "/condominium/admin", icon: <Settings />, name: "Administração"});
+		items.push({to: "/condominium/admin/indicator", icon: <ChartLine />, name: "Indicadores"});
 	return items;
 }

@@ -34,5 +34,4 @@ public class CommonAreaSchedule {
     @ManyToOne
     @JoinColumn(name="common_area_id", nullable=false)
     private CommonArea commonArea;
-
 }
