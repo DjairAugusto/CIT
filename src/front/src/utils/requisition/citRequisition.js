@@ -1,8 +1,6 @@
 import axios from "axios";
 import getCookie from "../cookies/getCookies";
 
-// TODO Pegar cookie de autenticação
-
 const token = getCookie("AuthorizationToken") || "";
 
 const AuthorizedInstance = axios.create({
