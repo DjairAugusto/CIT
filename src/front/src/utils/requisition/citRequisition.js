@@ -1,11 +1,9 @@
 import axios from "axios";
 import getCookie from "../cookies/getCookies";
 
-// TODO Pegar cookie de autenticação
-
 const token = getCookie("AuthorizationToken") || "";
 
-const instance = axios.create({
+const AuthorizedInstance = axios.create({
 	baseURL: "http://localhost:8080/",
 	headers: {
 		"Content-Type": "application/json",
@@ -28,5 +26,13 @@ const multiPartInstance = axios.create({
 	},
 });
 
-export { nonAuthorizedInstance, multiPartInstance };
-export default instance;
+const blobInstance = axios.create({
+	baseURL: "http://localhost:8080",
+	headers: {
+		Authorization: `Bearer ${token}`,
+	},
+	responseType: "blob",
+});
+
+export { AuthorizedInstance, nonAuthorizedInstance, multiPartInstance, blobInstance };
+export default AuthorizedInstance;

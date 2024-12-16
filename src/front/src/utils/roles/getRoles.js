@@ -1,7 +1,11 @@
 import getDecodedToken from "../decodeJWT";
 
 export default function getRoles() {
-	const { permissions } = getDecodedToken();
+	const decodedToken = getDecodedToken();
+
+	if (!decodedToken) return [];
+
+	const { permissions } = decodedToken;
 
 	if (!permissions) throw new Error("Invalid token payload loaded");
 

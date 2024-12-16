@@ -1,10 +1,12 @@
 package com.cit.backend.domain.service;
 
 import com.cit.backend.domain.entity.People;
+import com.cit.backend.domain.entity.Profile;
 import com.cit.backend.domain.repository.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.module.ResolutionException;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,4 +31,6 @@ public class PeopleService {
     public void deleteById(Long id) {
         peopleRepository.deleteById(id);
     }
+
+    public People findByProfile(Profile profile) { return peopleRepository.findByProfile(profile).orElseThrow(() -> new ResolutionException("User not found")); }
 }

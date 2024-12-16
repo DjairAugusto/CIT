@@ -1,0 +1,5 @@
+#root:has(#ombudsman) {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}

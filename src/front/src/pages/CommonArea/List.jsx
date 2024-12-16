@@ -26,10 +26,13 @@ export default function CommonAreaList() {
 	}
 
 	useEffect(() => {
-		axios.get("/common-area").then((res) => {
-			setCommonAreas(res.data);
-		});
-	});
+		axios
+			.get("/common-area")
+			.then((res) => {
+				setCommonAreas(res.data);
+			})
+			.catch(() => {});
+	}, []);
 
 	if (commonAreas === null) return <Loading />;
 

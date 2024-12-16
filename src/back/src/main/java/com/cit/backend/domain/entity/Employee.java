@@ -17,13 +17,13 @@ public class Employee extends People {
     @Column(length = 80)
     private String role;
 
-    @OneToOne(mappedBy = "manager")
+    @OneToOne(mappedBy = "manager", fetch = FetchType.LAZY)
     private Condominium management;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="condominium_id", nullable=true)
     private Condominium condominium;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
     private List<Ticket> tickets;
 }

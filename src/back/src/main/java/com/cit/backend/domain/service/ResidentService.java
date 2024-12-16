@@ -8,6 +8,7 @@ import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.module.ResolutionException;
 import java.util.Collection;
 import java.util.Set;
 
@@ -41,5 +42,13 @@ public class ResidentService {
         return residents.stream()
                 .map(this::save)
                 .collect(java.util.stream.Collectors.toSet());
+    }
+
+    public Resident findByProfile(Profile profile) {
+        return residentRepository.findByProfile(profile).orElseThrow(() -> new ResolutionException("User not found"));
+    }
+
+    public Resident findUserinfoByProfile(Profile profile) {
+        return residentRepository.findByProfile(profile).orElseThrow(() -> new ResolutionException("User not found"));
     }
 }

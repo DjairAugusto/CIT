@@ -76,6 +76,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(status).body(message);
     }
 
+    @ExceptionHandler(FileDoesNotExistsException.class)
+    public ResponseEntity<RestErrorMessage> handlerFileDoesNotExistsException(FileDoesNotExistsException exception) {
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        RestErrorMessage message = new RestErrorMessage(status, exception.getMessage());
+        return ResponseEntity.status(status).body(message);
+    }
+
     @ExceptionHandler(InvalidTokenException.class)
     public ResponseEntity<RestErrorMessage> handlerInvalidTokenException(InvalidTokenException exception) {
         HttpStatus status = HttpStatus.UNAUTHORIZED;

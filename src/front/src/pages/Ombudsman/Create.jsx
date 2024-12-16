@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import PopUP from "../../components/PopUP";
 import { Forms } from "../../components/Forms";
 import { Plus } from "lucide-react";
-import axios, { multiPartInstance as axiosFile } from "../../utils/requisition/citRequisition";
+import axios, {
+	multiPartInstance as axiosFile,
+} from "../../utils/requisition/citRequisition";
 
 const typeOptions = [
 	{
@@ -53,10 +55,12 @@ export default function OmbudsmanCreate({ closeCallback }) {
 		});
 	}
 
-	function postFiles(id) {
-		const formData = new FormData();
-		Array.from(files).forEach((file) => formData.append("files", file));
-		axiosFile.post(`/ombudsmen/upload/${id}`, formData);
+	async function postFiles(id) {
+		if (files.length > 0) {
+			const formData = new FormData();
+			Array.from(files).forEach((file) => formData.append("files", file));
+			return await axiosFile.post(`/ombudsmen/upload/${id}`, formData);
+		}
 	}
 
 	function createTicket(data) {
@@ -66,10 +70,28 @@ export default function OmbudsmanCreate({ closeCallback }) {
 		console.log(data);
 		axios
 			.post("/ombudsmen", data)
-			.then((res) => {
-				postFiles(res.data.id);
+			.then(async (res) => {
+				await postFiles(res.data.id);
+				setRequestResult("Ticket criado com sucesso!");
 			})
 			.catch((err) => {});
+	}
+
+	function closeResult(result) {
+		switch (result) {
+			case "Ticket criado com sucesso!":
+				setData({
+					description: "",
+					title: "",
+					type: "",
+				});
+				setRequestResult("");
+				setFiles([]);
+				closeCallback();
+				break;
+			default:
+				setRequestResult("");
+		}
 	}
 
 	return (
@@ -114,7 +136,7 @@ export default function OmbudsmanCreate({ closeCallback }) {
 			{requestResult && (
 				<PopUP
 					title="Resultado"
-					closeCallback={() => setRequestResult("")}
+					closeCallback={() => closeResult(requestResult)}
 				>
 					{requestResult}
 				</PopUP>

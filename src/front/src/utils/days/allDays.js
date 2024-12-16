@@ -8,6 +8,8 @@ const daysOfWeek = {
 	saturday: ["Sábado", "Saturday"],
 };
 
-export {
-	daysOfWeek
-};
+const daysOfWeekArray = Object.keys(daysOfWeek).map((each) =>
+	each.toUpperCase()
+);
+
+export { daysOfWeek, daysOfWeekArray };

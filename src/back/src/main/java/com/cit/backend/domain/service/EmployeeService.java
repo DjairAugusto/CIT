@@ -3,6 +3,7 @@ package com.cit.backend.domain.service;
 import com.cit.backend.domain.entity.Condominium;
 import com.cit.backend.domain.entity.Employee;
 import com.cit.backend.domain.entity.Profile;
+import com.cit.backend.domain.entity.Resident;
 import com.cit.backend.domain.entity.enums.ProfilePermissions;
 import com.cit.backend.domain.repository.EmployeeRepository;
 import com.cit.backend.exceptions.UniqueColumnAlreadyExistsException;
@@ -59,5 +60,9 @@ public class EmployeeService {
 
     public Employee findByProfile(Profile profile) {
         return employeeRepository.findByProfile(profile).orElse(null);
+    }
+
+    public Employee findUserinfoByProfile(Profile profile) {
+        return employeeRepository.findByProfile(profile).orElseThrow(() -> new ResolutionException("User not found"));
     }
 }

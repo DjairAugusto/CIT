@@ -12,7 +12,7 @@ export default function ContactResident() {
 	const getContacts = async () => {
 		try {
 			let response;
-			response = await Axios.get('contacts')
+			response = await Axios.get('/condominium/contacts')
 			setContacts(response.data);
 		}
 		catch(error) {
@@ -48,7 +48,7 @@ export default function ContactResident() {
 			<div className='flex flex-row flex-wrap justify-around'>
 				{
 					(contacts.length > 0) &&
-					contacts.map(contact => (<ConteinerOptions title={contact.name} options={contact.contacts}/>))
+					contacts.map(contact => (<ConteinerOptions title={contact.location} options={contact.contacts}/>))
 				}
 			</div>
 		</main>

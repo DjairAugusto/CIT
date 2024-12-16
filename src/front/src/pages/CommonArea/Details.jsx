@@ -5,7 +5,7 @@ import formatPrice from "../../utils/formatPrice";
 import sortDaysOfWeek from "../../utils/days/sortDaysOfWeek";
 import translateDayOfWeek from "../../utils/days/translateDayOfWeek";
 import Roles from "../../utils/roles";
-import { Pencil, Trash } from "lucide-react";
+import { ArrowLeft, Pencil, Trash } from "lucide-react";
 import Loading from "../../components/Loading";
 import CommonAreaBase from "./Base";
 
@@ -20,7 +20,7 @@ export default function CommonAreaDetails() {
 			// TODO fetch file from backend
 		}
 
-		if (!state?.commonAreaId) navigate("/common-area");
+		if (!state?.commonAreaId) navigate("../");
 		else
 			axios
 				.get(`/common-area/${state.commonAreaId}`)
@@ -44,6 +44,12 @@ export default function CommonAreaDetails() {
 						src={image}
 						alt=""
 					/>
+					<button
+						onClick={() => navigate("../")}
+						className="absolute top-4 left-4 bg-black bg-opacity-10 p-3 rounded-full"
+					>
+						<ArrowLeft />
+					</button>
 				</div>
 				<div className="flex w-full h-3/5 p-6 [&>*]:p-4">
 					<div className="flex-auto w-7/12 h-full">
@@ -80,7 +86,13 @@ export default function CommonAreaDetails() {
 						)}
 						<div className="mt-auto flex gap-1">
 							<button
-								onClick={() => {}}
+								onClick={() => {
+									navigate("../reserve", {
+										state: {
+											commonAreaId: commonArea.id,
+										},
+									});
+								}}
 								className="text-white bg-primary-1000 w-full px-4 py-2 text-xl"
 							>
 								Fazer Reserva
