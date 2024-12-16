@@ -5,12 +5,13 @@ import OmbudsmanListTicket from "./ListTicket";
 import isResident from "../../utils/roles/isResident";
 import Loading from "../../components/Loading";
 import axios from "../../utils/requisition/citRequisition";
+import "./fix.css";
 
 export default function OmbudsmanList() {
 	const [tickets, setTickets] = useState(null);
 	const [isCreating, setIsCreating] = useState(false);
 
-	useEffect(() => {
+	function updateTickes() {
 		axios
 			.get(`/ombudsmen`)
 			.then((res) => {
@@ -19,12 +20,16 @@ export default function OmbudsmanList() {
 			.catch((err) => {
 				// TOOD tratar os erros
 			});
+	}
+
+	useEffect(() => {
+		updateTickes();
 	}, []);
 
 	if (tickets === null) return <Loading />;
 
 	return (
-		<main className="w-dvw h-dvh overflow-hidden">
+		<main id="ombudsman" className="w-dvw h-dvh overflow-hidden">
 			<div className="max-w-screen-2xl px-4 lg:px-0 w-full lg:w-2/3 h-full mx-auto flex flex-col py-4 gap-5">
 				<div className="flex flex-col gap-2 w-1/5 mx-auto items-center">
 					<span className="text-4xl">Ouvidoria</span>
@@ -60,7 +65,13 @@ export default function OmbudsmanList() {
 			</div>
 
 			{isCreating && (
-				<OmbudsmanCreate closeCallback={() => setIsCreating(false)} />
+				<OmbudsmanCreate
+					closeCallback={() => {
+						setIsCreating(false);
+						setTickets(null);
+						updateTickes();
+					}}
+				/>
 			)}
 		</main>
 	);
