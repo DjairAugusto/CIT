@@ -2,7 +2,7 @@ import axios from "axios";
 import getCookie from "../cookies/getCookies";
 
 const token = getCookie("AuthorizationToken") || "";
-const BACKEND_URL = `${window.location.protocol}//${window.location.hostname}:8080`;
+const BACKEND_URL = `${window.location.protocol}//${window.location.hostname}:${process.env.PORT}`;
 
 const AuthorizedInstance = axios.create({
 	baseURL: BACKEND_URL,
@@ -33,6 +33,15 @@ const blobInstance = axios.create({
 		Authorization: `Bearer ${token}`,
 	},
 	responseType: "blob",
+});
+
+[AuthorizedInstance, nonAuthorizedInstance, multiPartInstance, blobInstance].forEach((instance) => {
+	instance.interceptors.request.use(
+		function (config) {
+			config.headers.Authorization = `Bearer ${getCookie("AuthorizationToken") || ""}`;
+			return config;
+		}
+	);
 });
 
 export { AuthorizedInstance, nonAuthorizedInstance, multiPartInstance, blobInstance };
