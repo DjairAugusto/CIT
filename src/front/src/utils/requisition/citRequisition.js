@@ -2,9 +2,10 @@ import axios from "axios";
 import getCookie from "../cookies/getCookies";
 
 const token = getCookie("AuthorizationToken") || "";
+const BACKEND_URL = `${window.location.protocol}//${window.location.hostname}:8080`;
 
 const AuthorizedInstance = axios.create({
-	baseURL: "http://localhost:8080/",
+	baseURL: BACKEND_URL,
 	headers: {
 		"Content-Type": "application/json",
 		Authorization: `Bearer ${token}`,
@@ -12,14 +13,14 @@ const AuthorizedInstance = axios.create({
 });
 
 const nonAuthorizedInstance = axios.create({
-	baseURL: "http://localhost:8080",
+	baseURL: BACKEND_URL,
 	headers: {
 		"Content-Type": "application/json",
 	},
 });
 
 const multiPartInstance = axios.create({
-	baseURL: "http://localhost:8080",
+	baseURL: BACKEND_URL,
 	headers: {
 		"Content-Type": "multipart/form-data",
 		Authorization: `Bearer ${token}`,
@@ -27,7 +28,7 @@ const multiPartInstance = axios.create({
 });
 
 const blobInstance = axios.create({
-	baseURL: "http://localhost:8080",
+	baseURL: BACKEND_URL,
 	headers: {
 		Authorization: `Bearer ${token}`,
 	},
