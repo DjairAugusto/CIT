@@ -1,16 +1,17 @@
-FROM node:22-alpine
-
-#USER node
+FROM node:22 AS builder
 
 ENV HOME=/app
-ENV PORT=3000
 
 WORKDIR $HOME
 
-COPY . .
+COPY package*.json ./
+RUN npm i
 
-RUN npm i -g serve && \
-	npm i && \
-	npm run build
+COPY public/ ./public
+COPY src/ ./src
+COPY tailwind.config.js ./
+RUN npm run build
 
-CMD serve -s build -p 80
+FROM nginx:stable-alpine
+
+COPY --from=builder /app/build /usr/share/nginx/html
