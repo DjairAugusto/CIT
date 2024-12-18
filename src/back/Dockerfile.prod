@@ -3,9 +3,13 @@ FROM eclipse-temurin:21-jdk AS builder
 ENV HOME=/build
 WORKDIR $HOME
 
+RUN apt update \
+	apt install -y dos2unix
+
 COPY . .
 COPY .mvn ./.mvn
-RUN chmod +x ./mvnw && \
+RUN dos2unix ./mvnw \
+	chmod +x ./mvnw && \
 	./mvnw package
 
 FROM eclipse-temurin:21-jre-alpine AS runner
