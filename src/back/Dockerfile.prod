@@ -14,14 +14,13 @@ RUN dos2unix ./mvnw && \
 
 FROM eclipse-temurin:21-jre-alpine AS runner
 
-USER java
-
 ENV HOME=/app
 WORKDIR $HOME
 
 ENV NAME="backend"
 ENV VERSION="0.0.1-SNAPSHOT"
 ENV FILE_NAME=${NAME}-${VERSION}.jar
+ENV PORT=8080
 
 COPY --from=builder "/build/target/${FILE_NAME}" .
 
